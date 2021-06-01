@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://chps1/schemas/idMap.xsd">
+	<parameter external="TCI" internal="INFW"/>
+	<parameter external="UZTWC_PERC" internal="UZTWF"/>
+	<parameter external="UZFWC_PERC" internal="UZFWF"/>
+	<parameter external="LZTWC_PERC" internal="LZTWF"/>
+	<parameter external="LZFSC_PERC" internal="LZFSF"/>
+	<parameter external="LZFPC_PERC" internal="LZFPF"/>
+	<parameter external="ADIMC_PERC" internal="ADIMF"/>
+	<enableOneToOneMapping/>
+</idMap>

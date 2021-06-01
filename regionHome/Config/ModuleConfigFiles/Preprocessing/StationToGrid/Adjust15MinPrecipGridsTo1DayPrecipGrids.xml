@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/transformationModule.xsd"
+    version="1.0"
+>
+
+<!--Combine 15-minute observed data and daily observed data. In previous steps,
+    15-minute data were aggregated to daily and included to produce daily grids
+    (representing 7am-7am rainfall totals). 15-minute grids were also produced.
+    In this step, the 15-minute grids are used to define the distribution of the
+    daily totals. If 12 hours or less of 15-minute grids are missing, the missing 
+    grids are assumed to equal zero for the purposes of distributing the daily
+    grid. If the data gap exceeds 12 hours, the gap will not be filled and a
+    default disaggregation will be used. If a daily volume is not available (for
+    example, during the current day after 7 am) but 15-minute grids are available,
+    the 15-minute grids will be used directly.
+    -->
+
+    <!--Input data-->
+    <variable>
+        <variableId>dailyGrids</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>Interpolate1DayPrecipGrids</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>QPE</parameterId>
+            <locationId>Interpolated</locationId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="day" multiplier="1" timeZone="GMT+11"/>
+            <relativeViewPeriod unit="hour" start="-288" startOverrulable="true" end="24"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>15MinGrids</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>Interpolate15MinPrecipGrids</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>QPE</parameterId>
+            <locationId>Interpolated</locationId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-288" startOverrulable="true" end="24"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <!--Internal time series-->
+    <variable>
+        <variableId>Filled15MinGrids</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>Adjust15MinPrecipGridsTo1DayPrecipGrids</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>PP</parameterId>
+            <qualifierId>Filled</qualifierId>
+            <locationId>Interpolated</locationId>
+            <timeSeriesType>temporary</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-288" startOverrulable="true" end="24"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>Accumulated15Min</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>Adjust15MinPrecipGridsTo1DayPrecipGrids</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>PP</parameterId>
+            <qualifierId>Accumulated15Min</qualifierId>
+            <locationId>Interpolated</locationId>
+            <timeSeriesType>temporary</timeSeriesType>
+            <timeStep unit="day" multiplier="1" timeZone="GMT+11"/>
+            <relativeViewPeriod unit="hour" start="-288" startOverrulable="true" end="24"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>adjustmentRatio</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>Adjust15MinPrecipGridsTo1DayPrecipGrids</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>DFAC</parameterId>
+            <qualifierId>AdjustmentRatio</qualifierId>
+            <locationId>Interpolated</locationId>
+            <timeSeriesType>temporary</timeSeriesType>
+            <timeStep unit="day" multiplier="1" timeZone="GMT+11"/>
+            <relativeViewPeriod unit="hour" start="-288" startOverrulable="true" end="24"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>adjustmentRatioDisagg</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>Adjust15MinPrecipGridsTo1DayPrecipGrids</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>DFAC</parameterId>
+            <qualifierId>AdjustmentRatio</qualifierId>
+            <locationId>Interpolated</locationId>
+            <timeSeriesType>temporary</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-288" startOverrulable="true" end="24"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>dailyDistributed</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>Adjust15MinPrecipGridsTo1DayPrecipGrids</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>QPE</parameterId>
+            <qualifierId>AdjustmentRatioApplied</qualifierId>
+            <locationId>Interpolated</locationId>
+            <timeSeriesType>temporary</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-288" startOverrulable="true" end="24"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>dailyDefaultDisagg</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>Adjust15MinPrecipGridsTo1DayPrecipGrids</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>QPE</parameterId>
+            <qualifierId>DefaultDisagg</qualifierId>
+            <locationId>Interpolated</locationId>
+            <timeSeriesType>temporary</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-288" startOverrulable="true" end="24"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <!--Output grid -->
+    <variable>
+        <variableId>finalPrecip</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>Adjust15MinPrecipGridsTo1DayPrecipGrids</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>QPE</parameterId>
+            <locationId>Interpolated</locationId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-288" startOverrulable="true" end="24"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+
+    <!--Fill up to 12 consecutive hours (48 time steps) of missing 15-minute grids 
+    with zeros. The filled grids will be used only for the disaggregation of 
+    the daily volumes. -->
+    <transformation id="fill_hourly">
+        <interpolationSerial>
+            <default>
+                <inputVariable>
+                    <variableId>15MinGrids</variableId>
+                </inputVariable>
+                <maxGapLength>48</maxGapLength>  <!--48 15-min intervals = 12 hours-->
+                <defaultValue>0.00</defaultValue>
+                <outputVariable>
+                    <variableId>Filled15MinGrids</variableId>
+                </outputVariable>
+            </default>
+        </interpolationSerial>
+    </transformation>
+
+    <!--Aggregate 15-min grids to daily (aggregates 7am-7am local) -->
+    <transformation id="hourly_aggregation">
+        <aggregation>
+            <accumulative>
+                <inputVariable>
+                    <variableId>Filled15MinGrids</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>Accumulated15Min</variableId>
+                </outputVariable>
+            </accumulative>
+        </aggregation>
+    </transformation>
+
+    <!--Divide daily by Accumulated15Min to yield daily adjustment ratio -->
+    <transformation id="adjustment_ratio">
+        <user>
+            <simple>
+                <expression>dailyGrids / Accumulated15Min</expression>
+                <outputVariable>
+                    <variableId>adjustmentRatio</variableId>
+                </outputVariable>
+            </simple>
+        </user>
+    </transformation>
+
+    <!--Disaggregate adjustment ratio to 15 minute -->
+    <transformation id="disaggregate_adjustment_ratio">
+        <disaggregation>
+            <meanToMean>
+                <inputVariable>
+                    <variableId>adjustmentRatio</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>adjustmentRatioDisagg</variableId>
+                </outputVariable>
+            </meanToMean>
+        </disaggregation>
+    </transformation>
+
+
+    <!--Multiply 15-min filled by adjustment ratio (final 15-min grids will sum to
+    equal the daily grids) -->
+    <transformation id="daily_distributed">
+        <user>
+            <simple>
+                <expression>Filled15MinGrids * adjustmentRatioDisagg</expression>
+                <outputVariable>
+                    <variableId>dailyDistributed</variableId>
+                </outputVariable>
+            </simple>
+        </user>
+    </transformation>
+
+    <!--For cases where sufficient 15-minute data were not available, use a default
+    distribution to disaggregate the daily grids. -->
+    <transformation id="disaggregate_daily_with_default">
+        <disaggregation>
+            <weights>
+                <inputVariable>
+                    <variableId>dailyGrids</variableId>
+                </inputVariable>
+                <!--default: distribute all precipitation over 8 hours at night-->
+                <weight>0</weight> <!--hour 14:00 GMT/8:00 local-->
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0.03125</weight> <!--hour 00:00 GMT/18:00 local-->
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> <!--hour 01:00 GMT/19:00 local-->
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> <!--hour 02:00 GMT/20:00 local-->
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> <!--hour 03:00 GMT/21:00 local-->
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> <!--hour 04:00 GMT/22:00 local-->
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> <!--hour 05:00 GMT/23:00 local-->
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> <!--hour 06:00 GMT/24:00 local-->
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> <!--hour 07:00 GMT/25:00 local-->
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> 
+                <weight>0.03125</weight> 
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <weight>0</weight>
+                <outputVariable>
+                    <variableId>dailyDefaultDisagg</variableId>
+                </outputVariable>
+            </weights>
+        </disaggregation>
+    </transformation>
+
+
+    <!--For the final precipitation, use the following in order:
+        1) daily disaggregated using hourly
+        2) daily disaggregated with default distribution
+        3) 15-minute grids when daily are unavailable
+    -->
+    <transformation id="final_merge">
+        <merge>
+            <simple>
+                <inputVariable>
+                    <variableId>dailyDistributed</variableId>
+                </inputVariable>
+                <inputVariable>
+                    <variableId>dailyDefaultDisagg</variableId>
+                </inputVariable>
+                <inputVariable>
+                    <variableId>15MinGrids</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>finalPrecip</variableId>
+                </outputVariable>
+            </simple>
+        </merge>
+    </transformation>     
+      
+</transformationModule>

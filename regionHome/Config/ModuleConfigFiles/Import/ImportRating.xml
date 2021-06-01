@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://chps1/schemas/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>NWS-DATACARD-RATING-CURVE</importType>
+			<folder>$IMPORT_FOLDER_RATING$</folder>
+			<!--<unitConversionsId>ImportEnglishUnits</unitConversionsId>-->
+			<importTimeZone>
+				<timeZoneOffset>+00:00</timeZoneOffset>
+			</importTimeZone>
+		</general>
+	</import>
+</timeSeriesImportRun>

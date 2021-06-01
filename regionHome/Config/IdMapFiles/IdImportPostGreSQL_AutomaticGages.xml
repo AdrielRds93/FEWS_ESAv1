@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap
+    xmlns="http://www.wldelft.nl/fews"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd"
+    version="1.1"
+>
+    <map internalLocation="A_CITALA" internalParameter="PP" externalLocation="13" externalParameter="P6"/>
+    <map internalLocation="A_CITALA" internalParameter="STG" externalLocation="250" externalParameter="HG"/>
+    <!--Accumulated precipitation-->
+    <parameter internal="PC" external="PC"/>
+    <!--Hourly incremental precipitation-->
+    <parameter internal="PP" external="PH"/>
+    <!--15-min incremental precipitation-->
+    <parameter internal="PP" external="P4"/>
+    <!--10-min incremental precipitation-->
+    <parameter internal="PP" external="P6"/>
+    <!--Stage-->
+    <parameter internal="STG" external="HG"/>
+ 
+    <locationIdFunction internalLocationSet="AllGages" externalLocationFunction="@PostGreSQL_ID@"/>
+  
+     <enableOneToOneMapping/>
+    
+</idMap>

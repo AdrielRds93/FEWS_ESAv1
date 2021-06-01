@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters version="1.5" xsi:schemaLocation="http://www.wldelft.nl/fews/PI pi_modelparameters.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews/PI">
+  <group id="default">
+<!-- from spreadsheet -->
+    <parameter id="PXADJ">
+      <dblValue>1</dblValue>
+    </parameter>
+    <parameter id="PEADJ">
+      <dblValue>1</dblValue>
+    </parameter>
+    <parameter id="UZTWM">
+      <dblValue>35</dblValue>
+    </parameter>
+    <parameter id="UZFWM">
+      <dblValue>70</dblValue>
+    </parameter>
+    <parameter id="UZK">
+      <dblValue>0.4</dblValue>
+    </parameter> 
+    <parameter id="PCTIM">
+      <dblValue>0.01</dblValue>
+    </parameter>  
+    <parameter id="ADIMP">
+      <dblValue>0.01</dblValue>
+    </parameter>
+    <parameter id="RIVA">
+      <dblValue>0</dblValue>
+    </parameter>
+    <parameter id="ZPERC">
+      <dblValue>150</dblValue>
+    </parameter>
+    <parameter id="REXP">
+      <dblValue>2</dblValue>
+    </parameter>
+    <parameter id="LZTWM">
+      <dblValue>175</dblValue>
+    </parameter>    
+    <parameter id="LZFSM">
+      <dblValue>30</dblValue>
+    </parameter>    
+    <parameter id="LZFPM">
+      <dblValue>50</dblValue>
+    </parameter>    
+    <parameter id="LZSK">
+      <dblValue>0.17</dblValue>
+    </parameter>    
+    <parameter id="LZPK">
+      <dblValue>0.008</dblValue>
+    </parameter>
+    <parameter id="PFREE">
+      <dblValue>0.02</dblValue>
+    </parameter>    
+    <parameter id="SIDE">
+      <dblValue>0</dblValue>
+    </parameter>
+    <parameter id="RSERV">
+      <dblValue>0.3</dblValue>
+    </parameter>
+    <parameter id="EFC">
+      <dblValue>0</dblValue>
+    </parameter>
+    <parameter id="ET_DEMAND_CURVE">
+      <table>
+        <columnTypes A="double"/>
+        <row A="4.49"/>
+        <row A="5.05"/>
+        <row A="5.7"/>
+        <row A="5.94"/>
+        <row A="5.41"/>
+        <row A="5.04"/>
+        <row A="5.32"/>
+        <row A="5.17"/>
+        <row A="4.67"/>
+        <row A="4.58"/>
+        <row A="4.42"/>
+        <row A="4.24"/>
+      </table>
+    </parameter>
+<!-- other parameters -->
+    <parameter id="RUNOFF_COMPONENT_INTERVAL">
+      <intValue>1</intValue>
+    </parameter>
+    <parameter id="MAPE_INPUT">
+      <boolValue>false</boolValue>
+    </parameter>
+    <parameter id="FROZEN_GROUND_CALC_OPTION">
+      <boolValue>false</boolValue>
+    </parameter>
+    <parameter id="SASC_INPUT_OPTION">
+      <boolValue>false</boolValue>
+    </parameter>
+    <parameter id="SMZC_INTERVAL">
+      <intValue>1</intValue>
+    </parameter>
+  </group>
+</parameters>

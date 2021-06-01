@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule 
+    xmlns="http://www.wldelft.nl/fews"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/transformationModule.xsd"
+    version="1.0"
+>
+    <variable>
+        <variableId>SQIN_15Min</variableId>
+        <timeSeriesSet>
+            <moduleInstanceSetId>SimulatedFlows_15Min</moduleInstanceSetId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationSetId>15MinOutletsWithoutObserved</locationSetId>
+            <timeSeriesType>simulated forecasting</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="0" end="0" endOverrulable="true"/>            
+            <readWriteMode>read only</readWriteMode>
+            <ensembleId>ESP</ensembleId>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>QINE_15Min</variableId>
+        <timeSeriesSet>
+            <moduleInstanceSetId>AdjustedFlows_15Min</moduleInstanceSetId>
+            <valueType>scalar</valueType>
+            <parameterId>QINE</parameterId>
+            <locationSetId>15MinOutletsWithObserved</locationSetId>
+            <timeSeriesType>simulated forecasting</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="0" end="0" endOverrulable="true"/>            
+            <readWriteMode>read only</readWriteMode>
+            <ensembleId>ESP</ensembleId>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>SQIN_1Hr</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ESP_15MinTo1Hr</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationSetId>15MinOutletsWithoutObserved</locationSetId>
+            <timeSeriesType>simulated forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="0" end="0" endOverrulable="true"/>            
+            <readWriteMode>add originals</readWriteMode>
+            <ensembleId>ESP</ensembleId>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>QINE_1Hr</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ESP_15MinTo1Hr</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>QINE</parameterId>
+            <locationSetId>15MinOutletsWithObserved</locationSetId>
+            <timeSeriesType>simulated forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="0" end="0" endOverrulable="true"/>            
+            <readWriteMode>add originals</readWriteMode>
+            <ensembleId>ESP</ensembleId>
+        </timeSeriesSet>
+    </variable>    
+
+    <transformation id="SQIN_15MinTo1Hr">
+        <aggregation>
+            <instantaneous>
+                <inputVariable>
+                    <variableId>SQIN_15Min</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>SQIN_1Hr</variableId>
+                </outputVariable>
+            </instantaneous>
+        </aggregation>
+    </transformation>
+    <transformation id="QINE_15MinTo1Hr">
+        <aggregation>
+            <instantaneous>
+                <inputVariable>
+                    <variableId>QINE_15Min</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>QINE_1Hr</variableId>
+                </outputVariable>
+            </instantaneous>
+        </aggregation>
+    </transformation>
+
+</transformationModule>

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/transformationModule.xsd"
+                      version="1.0"
+>
+
+    <!--    
+    This module:
+    1. Creates the FMAP ensemble members from different combinations of FMAP sources
+    2. Merges the FMAP sources and applies the FMAP modifier to the final FMAP time series
+    -->
+    
+    <!--Modifier variable-->
+    <variable>
+        <variableId>FMAPSource</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ExportMODS</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>selectFMAP</parameterId>
+            <locationSetId>ActiveRegions</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-24" end="240" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>FMAPSource_ByCatchment</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ElSalvador_SampleAndMergeFMAP</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>selectFMAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-24" end="240" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <!--available FMAP sources-->
+    <variable>
+        <variableId>FMAP_Manual</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>FMAP_Manual</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>FMAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-24" end="240" endOverrulable="true"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>FMAP_WRF</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>FMAP_WRF</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>FMAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-24" end="240" endOverrulable="true"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>FMAP_CAWRF</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>FMAP_CAWRF</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>FMAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-24" end="240" endOverrulable="true"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>FMAP_NAM</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>FMAP_NAM</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>FMAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-24" end="240" endOverrulable="true"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>FMAP_GFS</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>FMAP_GFS</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>FMAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-24" end="240" endOverrulable="true"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <!--Produce the ALLQPF ensemble members-->
+    <variable>
+        <variableId>MergedWRF_GFS</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ElSalvador_SampleAndMergeFMAP</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>FMAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-24" end="240" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+            <ensembleId>ALLQPF</ensembleId>
+            <ensembleMemberIndex>1</ensembleMemberIndex>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>MergedCAWRF_GFS</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ElSalvador_SampleAndMergeFMAP</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>FMAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-24" end="240" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+            <ensembleId>ALLQPF</ensembleId>
+            <ensembleMemberIndex>2</ensembleMemberIndex>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>MergedNAM_GFS</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ElSalvador_SampleAndMergeFMAP</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>FMAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-24" end="240" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+            <ensembleId>ALLQPF</ensembleId>
+            <ensembleMemberIndex>3</ensembleMemberIndex>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>MergedAll_Default</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ElSalvador_SampleAndMergeFMAP</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>FMAP</parameterId>
+            <qualifierId>MergedAll_Default</qualifierId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-24" end="240" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>MergedAll_Selected</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ElSalvador_SampleAndMergeFMAP</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>FMAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-24" end="240" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+            <ensembleId>ALLQPF</ensembleId>
+            <ensembleMemberIndex>0</ensembleMemberIndex>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>15MinEnsemble</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ElSalvador_SampleAndMergeFMAP</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>FMAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-24" end="240" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+            <ensembleId>ALLQPF</ensembleId>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>1HrEnsemble</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ElSalvador_SampleAndMergeFMAP</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>FMAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-24" end="240" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+            <ensembleId>ALLQPF</ensembleId>
+        </timeSeriesSet>
+    </variable>
+
+    <transformation id="MergeWRF_GFS">
+        <merge>
+            <simple>
+                <inputVariable>
+                    <variableId>FMAP_WRF</variableId>
+                </inputVariable>
+                <inputVariable>
+                    <variableId>FMAP_GFS</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>MergedWRF_GFS</variableId>
+                </outputVariable>
+            </simple>
+        </merge>
+    </transformation>
+    <transformation id="MergeCAWRF_GFS">
+        <merge>
+            <simple>
+                <inputVariable>
+                    <variableId>FMAP_CAWRF</variableId>
+                </inputVariable>
+                <inputVariable>
+                    <variableId>FMAP_GFS</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>MergedCAWRF_GFS</variableId>
+                </outputVariable>
+            </simple>
+        </merge>
+    </transformation>
+    <transformation id="MergeNAM_GFS">
+        <merge>
+            <simple>
+                <inputVariable>
+                    <variableId>FMAP_NAM</variableId>
+                </inputVariable>
+                <inputVariable>
+                    <variableId>FMAP_GFS</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>MergedNAM_GFS</variableId>
+                </outputVariable>
+            </simple>
+        </merge>
+    </transformation>
+
+    <!--Produce a default FMAP as the merger of all available data sources. This can be 
+        overridden with a modifier (next transformation). If a modifier is not 
+        specified, this default FMAP time series will be used.
+    -->
+    <transformation id="MergedAll_Default">
+        <merge>
+            <simple>
+                <inputVariable>
+                    <variableId>FMAP_Manual</variableId>
+                </inputVariable>
+                <inputVariable>
+                    <variableId>FMAP_WRF</variableId>
+                </inputVariable>
+                <inputVariable>
+                    <variableId>FMAP_CAWRF</variableId>
+                </inputVariable>
+                <inputVariable>
+                    <variableId>FMAP_NAM</variableId>
+                </inputVariable>
+                <inputVariable>
+                    <variableId>FMAP_GFS</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>MergedAll_Default</variableId>
+                </outputVariable>
+            </simple>
+        </merge>
+    </transformation>
+    
+    <!--Set default value for modifier -->
+    <transformation id="FillModifier">
+        <interpolationSerial>
+            <default>
+                <inputVariable>
+                    <variableId>FMAPSource</variableId>
+                </inputVariable>
+                <!--Default = MergedAll_Default = 10-->
+                <defaultValue>10</defaultValue>
+                <outputVariable>
+                    <variableId>FMAPSource</variableId>
+                </outputVariable>
+            </default>
+        </interpolationSerial>
+    </transformation>
+    
+    <!--Copy MAPSource modifier from regions to catchments-->
+    <transformation id="SpatiallyInterpolateModifier">        
+        <interpolationSpatial>
+            <containingPolygon>
+                <inputVariable>
+                    <variableId>FMAPSource</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>FMAPSource_ByCatchment</variableId>
+                </outputVariable>
+            </containingPolygon>
+        </interpolationSpatial>
+    </transformation>                    
+
+    <transformation id="SelectFMAP">
+        <user>
+            <simple>
+                <expression>if(FMAPSource_ByCatchment &lt; 1.01, MergedWRF_GFS,
+                    if(FMAPSource_ByCatchment &lt; 2.01, MergedCAWRF_GFS,
+                    if(FMAPSource_ByCatchment &lt; 3.01, MergedNAM_GFS,
+                    MergedAll_Default)))
+                </expression>
+                <outputVariable>
+                    <variableId>MergedAll_Selected</variableId>
+                </outputVariable>
+            </simple>
+        </user>
+    </transformation>
+
+<!--Aggregate the MAP ensemble to 1 hour-->
+    <transformation id="Aggregate_1Hr">
+        <aggregation>
+            <accumulative>
+                <inputVariable>
+                    <variableId>15MinEnsemble</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>1HrEnsemble</variableId>
+                </outputVariable>
+            </accumulative>
+        </aggregation>
+    </transformation>
+
+</transformationModule>

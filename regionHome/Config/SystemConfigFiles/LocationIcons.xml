@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locationIcons xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://chps1/schemas/locationIcons.xsd">
+	<rootDir>Icons</rootDir>
+	<locationIcon>
+		<description>Streamflow sites</description>
+		<iconId>fluvial_site_data</iconId>
+		<locationSetId>ActiveStreamGages</locationSetId>
+	</locationIcon>
+	<locationIcon>
+		<description>Meteorological sites</description>
+		<iconId>meteo_site_data</iconId>
+		<locationSetId>ActivePrecipGages</locationSetId>
+	</locationIcon>
+	<locationIcon>
+		<description>AllCatchments</description>
+		<iconId>catchment_centre_point_data</iconId>
+		<locationSetId>AllCatchments</locationSetId>
+	</locationIcon>
+</locationIcons>

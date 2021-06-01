@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/timeSeriesImportRun.xsd"
+>
+  <import>
+    <general>
+      <importType>GRIB2</importType>
+      <folder>$IMPORT_FOLDER_WRF_ELSAL$</folder>
+            <failedFolder>$FAILED_FOLDER_WRF_ELSAL$</failedFolder>
+            <backupFolder>$BACKUP_FOLDER_WRF_ELSAL$</backupFolder>
+      <idMapId>IdImportWRF_ElSal</idMapId>
+      <importTimeZone>
+        <timeZoneOffset>+00:00</timeZoneOffset>
+      </importTimeZone>
+      <gridStartPoint>SW</gridStartPoint>
+    </general>
+    <timeSeriesSet>
+      <moduleInstanceId>ImportWRF_ElSal</moduleInstanceId>
+      <valueType>grid</valueType>
+      <parameterId>QPF</parameterId>
+      <locationId>WRF_ElSal</locationId>
+      <timeSeriesType>external forecasting</timeSeriesType>
+      <timeStep unit="hour" multiplier="1"/>
+      <readWriteMode>add originals</readWriteMode>
+    </timeSeriesSet>
+  </import>
+
+</timeSeriesImportRun>
+

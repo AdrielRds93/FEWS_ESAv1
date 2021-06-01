@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://chps1/schemas/transformationModule.xsd" version="1.0">
+    <variable>
+        <variableId>LastObserved</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>SetTimes_LastObserved</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>MAP</parameterId>
+            <locationId>LastObserved</locationId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <transformation id="InterpolateDefault">
+        <interpolationSerial>
+            <default>
+                <inputVariable>
+                    <variableId>LastObserved</variableId>
+                </inputVariable>
+                <defaultValue>0.00</defaultValue>
+                <outputVariable>
+                    <variableId>LastObserved</variableId>
+                </outputVariable>
+            </default>
+        </interpolationSerial>
+    </transformation>
+</transformationModule>

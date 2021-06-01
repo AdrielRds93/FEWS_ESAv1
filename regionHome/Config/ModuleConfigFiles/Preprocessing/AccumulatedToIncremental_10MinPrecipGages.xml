@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/transformationModule.xsd"
+                      version="1.0"
+>
+
+<!--Convert accumulated precipitation into incremental precipitation. If there
+    are missing data in the accumulated precipitation that were not filled in
+    previous steps, the gaps as well as the first data point after the gap
+    will be set to missing in the resulting incremental precipitation. -->
+
+    <variable>
+        <variableId>Accumulated_NE</variableId>
+         <timeSeriesSet>
+            <moduleInstanceId>CopyRawToQCed_Accumulated</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>PC</parameterId>
+            <locationSetId>10MinPrecipGages</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="nonequidistant"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>Accumulated_10Min</variableId>
+         <timeSeriesSet>
+            <moduleInstanceId>AccumulatedToIncremental_10MinPrecipGages</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>PC</parameterId>
+            <locationSetId>10MinPrecipGages</locationSetId>
+            <timeSeriesType>temporary</timeSeriesType>
+            <timeStep unit="minute" multiplier="10"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>AccumulatedTimeShifted_10Min</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>AccumulatedToIncremental_10MinPrecipGages</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>PC</parameterId>
+            <qualifierId>timeShifted</qualifierId>
+            <locationSetId>10MinPrecipGages</locationSetId>
+            <timeSeriesType>temporary</timeSeriesType>
+            <timeStep unit="minute" multiplier="10"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>Incremental_10Min</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>AccumulatedToIncremental_10MinPrecipGages</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>PP</parameterId>
+            <locationSetId>10MinPrecipGages</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="10"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <transformation id="Equidistant">
+        <interpolationSerial>
+            <linear>
+                <inputVariable>
+                    <variableId>Accumulated_NE</variableId>
+                </inputVariable>
+                <!--fill up to 6 hours = 36 time steps-->
+                <maxGapLength>36</maxGapLength>
+                <outputVariable>
+                    <variableId>Accumulated_10Min</variableId>
+                </outputVariable>
+            </linear>
+        </interpolationSerial>
+    </transformation>
+
+    <transformation id="Timeshift">
+        <timeShift>
+            <constant>
+                <inputVariable>
+                    <variableId>Accumulated_10Min</variableId>
+                </inputVariable>
+                <numberOfTimeSteps>-1</numberOfTimeSteps>
+                <outputVariable>
+                    <variableId>AccumulatedTimeShifted_10Min</variableId>
+                </outputVariable>
+            </constant>
+        </timeShift>
+    </transformation>
+
+    <transformation id="Subtraction">
+        <user>
+            <simple>
+                <expression>(Accumulated_10Min - AccumulatedTimeShifted_10Min)</expression>
+                <outputVariable>
+                    <variableId>Incremental_10Min</variableId>
+                </outputVariable>
+            </simple>
+        </user>
+    </transformation>
+
+</transformationModule>

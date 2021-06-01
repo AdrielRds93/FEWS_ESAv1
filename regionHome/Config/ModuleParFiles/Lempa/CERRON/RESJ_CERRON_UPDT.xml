@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters version="1.5" xsi:schemaLocation="http://www.wldelft.nl/fews/PI pi_modelparameters.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews/PI">
+  <group id="default">
+    <parameter id="">
+      <table>
+        <row A="Dummy"/>
+      </table>
+    </parameter>
+    <parameter id="OPERATION_CONTENTS">
+      <stringValue>#
+################################################################{
+ TIMESERIES
+ TIMESTEP   1
+  ###### ######## #### ## ############
+  INPUT  CERRON   SQIN  1 RES_INFLOW   # Reservoir inflow (cms)
+  INPUT  C_CERRON MAP   1 PRECIP       # Precipitation on lake (mm)
+  INPUT  A_CERRON RQOT  1 OBS_RELEASE  # Observed total outflow (cms)
+  INPUT  A_CERRON PELV  1 OBS_POOL     # Observed pool elev (m)
+  
+  OUTPUT CERRON   QINE  1 SIM_RELEASE  # Simulated release (cms)
+  OUTPUT CERRON   PELE  1 SIM_POOL     # Simulated pool elev (m)
+  OUTPUT CERRON   DQIE  1 RAINFALL     # Precipitation on lake (cms) 
+  OUTPUT CERRON   SDQI  1 EVAP         # Evaporation from lake (cms) 
+ ENDTIMESERIES
+ ################################################################}
+ ################################################################{
+ TOPOLOGY
+  NODE PRECIP
+  RESERVOIR CERRON  BELOW PRECIP
+ ENDTOPOLOGY
+ ################################################################}
+ ################################################################{
+ PARAMETERS
+  UNITS METRIC
+  # Elevation (M), Storage (M3), Rainfall (MM), Discharge (CMS)
+  ############ ############{
+  NODE         PRECIP
+   TSINPUT  INFLOW    RES_INFLOW
+   TSOUTPUT DIVERSION RAINFALL
+  ENDNODE
+  ############ ############}
+  ############ ############{
+  RESERVOIR    CERRON 
+   TSOUTPUT POOL     SIM_POOL
+   TSOUTPUT RELEASE  SIM_RELEASE
+   TSOUTPUT WITHDRAW EVAP
+   TABLE ELEV_STOR
+    181           0
+    183      293181
+    185      503204
+    187     1430060
+    189     3732153
+    191     8042356
+    193    13381640
+    195    19898183
+    197    27769760
+    199    37174144
+    201    48305541
+    203    62104648
+    205    79001289
+    207    98940484
+    209   121867252
+    211   148357269
+    213   177941774
+    215   214599980
+    217   259233336
+    219   312743288
+    221   376031284
+    223   449998771
+    225   535547196
+    227   633578007
+    229   744992651
+    231   870073677
+    233   1014523662
+    235   1180001436
+    237   1366007593
+    239   1572042727
+    241   1797607431
+    243   2042202300
+    243.1 2054876300
+   ENDTABLE
+   INITIALPOOL      242.66   
+   INITIALRELEASE    0.000 
+   MINPOOL    190.
+   MINRELEASE   0.
+  ENDRESERVOIR
+  ############ ############}
+  ############ ############ ############{
+  LOOKUP3      PRECIP       PRECIP
+  # Convert rainfall to equivalent inflow  
+   ROWVAR       CERRON.STARTINGPOOL
+   TSINDEX      COLUMNS      PRECIP
+   COLUMNVAR    INPUT_TS MM
+   TABLEVAR     AUGMENTATION
+    VALUES
+             0      1000.0
+     181.0   0         0.0
+     183.0   0        15.9
+     185.0   0        76.5
+     187.0   0       212.5
+     189.0   0       443.1
+     191.0   0       666.3
+     193.0   0       823.7
+     195.0   0       995.6
+     197.0   0      1191.6
+     199.0   0      1421.1
+     201.0   0      1733.1
+     203.0   0      2128.8
+     205.0   0      2551.9
+     207.0   0      2981.0
+     209.0   0      3394.6
+     211.0   0      3897.9
+     213.0   0      4633.7
+     215.0   0      5587.7
+     217.0   0      6736.3
+     219.0   0      8055.7
+     221.0   0      9522.0
+     223.0   0     11111.4
+     225.0   0     12800.2
+     227.0   0     14564.6
+     229.0   0     16380.8
+     231.0   0     18708.3
+     233.0   0     21528.6
+     235.0   0     24384.2
+     237.0   0     27226.1
+     239.0   0     30005.4
+     241.0   0     32673.3
+     243.0   0     35180.8
+     243.1   0     35301.6
+    ENDVALUES
+   INTERPOLATE ALL
+  ENDLOOKUP3
+  ############ ############ ############}
+  ############ ############ ############{
+  LOOKUP3      CERRON       EVAP
+  # Convert evaporation to equivalent withdrawal
+   ROWVAR       CERRON.STARTINGPOOL
+   COLUMNVAR    DATE
+   TABLEVAR     WITHDRAWAL
+   VALUES
+          01/15 02/15 03/15 04/15 05/15 06/15 07/15 08/15 09/15 10/15 11/15 12/15
+    181.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+    183.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+    185.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+    187.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+    189.0   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1
+    191.0   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1
+    193.0   0.1   0.2   0.2   0.2   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1
+    195.0   0.2   0.2   0.2   0.2   0.2   0.2   0.2   0.2   0.1   0.1   0.1   0.2
+    197.0   0.2   0.3   0.2   0.3   0.2   0.2   0.2   0.2   0.2   0.2   0.2   0.2
+    199.0   0.2   0.3   0.3   0.3   0.2   0.2   0.2   0.2   0.2   0.2   0.2   0.2
+    201.0   0.3   0.4   0.4   0.4   0.3   0.3   0.3   0.3   0.2   0.2   0.2   0.3
+    203.0   0.4   0.5   0.4   0.5   0.4   0.4   0.3   0.3   0.3   0.3   0.3   0.3
+    205.0   0.4   0.5   0.5   0.5   0.4   0.4   0.4   0.4   0.4   0.3   0.4   0.4
+    207.0   0.5   0.6   0.6   0.6   0.5   0.5   0.5   0.5   0.4   0.4   0.4   0.5
+    209.0   0.6   0.7   0.7   0.7   0.6   0.6   0.5   0.5   0.5   0.5   0.5   0.5
+    211.0   0.7   0.8   0.8   0.8   0.7   0.6   0.6   0.6   0.5   0.5   0.6   0.6
+    213.0   0.8   1.0   1.0   1.0   0.8   0.8   0.7   0.7   0.6   0.6   0.7   0.7
+    215.0   1.0   1.2   1.2   1.2   0.9   0.9   0.9   0.9   0.8   0.8   0.8   0.9
+    217.0   1.2   1.4   1.4   1.5   1.1   1.1   1.1   1.0   0.9   0.9   1.0   1.1
+    219.0   1.4   1.7   1.7   1.7   1.4   1.3   1.3   1.2   1.1   1.1   1.2   1.3
+    221.0   1.7   2.0   2.0   2.0   1.6   1.6   1.5   1.5   1.3   1.3   1.4   1.5
+    223.0   1.9   2.4   2.3   2.4   1.9   1.9   1.8   1.7   1.5   1.5   1.6   1.8
+    225.0   2.2   2.7   2.7   2.8   2.2   2.1   2.1   2.0   1.8   1.7   1.8   2.1
+    227.0   2.5   3.1   3.0   3.1   2.4   2.4   2.3   2.3   2.0   2.0   2.1   2.3
+    229.0   2.9   3.5   3.4   3.5   2.8   2.7   2.6   2.5   2.3   2.2   2.3   2.6
+    231.0   3.3   4.0   3.9   4.0   3.1   3.1   3.0   2.9   2.6   2.5   2.7   3.0
+    233.0   3.8   4.6   4.5   4.6   3.6   3.6   3.5   3.3   3.0   2.9   3.1   3.5
+    235.0   4.3   5.2   5.1   5.2   4.1   4.1   3.9   3.8   3.4   3.3   3.5   3.9
+    237.0   4.8   5.8   5.7   5.9   4.6   4.5   4.4   4.2   3.8   3.7   3.9   4.4
+    239.0   5.2   6.4   6.3   6.5   5.0   5.0   4.8   4.6   4.2   4.0   4.3   4.8
+    241.0   5.7   7.0   6.8   7.0   5.5   5.4   5.3   5.1   4.5   4.4   4.7   5.3
+    243.0   6.1   7.5   7.3   7.6   5.9   5.9   5.7   5.4   4.9   4.7   5.0   5.7
+    243.1   6.2   7.5   7.4   7.6   5.9   5.9   5.7   5.5   4.9   4.7   5.1   5.7
+   ENDVALUES
+   INTERPOLATE ALL
+  ENDLOOKUP3
+  ############ ############ ############}
+  ############ ############ ############{
+  SETRELEASE   CERRON       CERRON_REL
+   VALUES
+    ELEV  230 233 235 237 238 238.5 239 241 243.1 ENDELEV
+    01/01  67  67  67 100 100   134 134 134  3000
+    02/15  67  67 135 135 135   135 135 135   400
+    09/15  67  67 135 135 135   135 135 135   160
+    11/01  67  67  67  67  67    95 100 115   150
+    12/16  40  40  45  50  50    50  50  51    62
+   ENDVALUES          
+   INTERPOLATE ALL
+   BLEND  0  1
+   BLENDTS  0  1
+  ENDSETRELEASE
+  ############ ############ ############}
+  ############# ############ ############{
+  SETELEVATION CERRON       CERRON_ELEV
+   VALUES
+    01/15   241.
+    02/15   240.
+    03/15   238.
+    04/15   232.
+    05/15   230.
+    06/15   230.
+    07/15   231.
+    08/15   234.
+    09/15   238.
+    10/15   243.
+    11/15   242.5
+    12/15   242.
+   ENDVALUES
+   BLEND  0  1
+   BLENDTS  0  1
+   INTERPOLATE ALL
+  ENDSETELEVATION
+  ############ ############ ############}
+  ########### ############ ############{
+  SETMIN       CERRON       ELEV/REL
+   SETELEVATION CERRON       CERRON_ELEV
+   SETRELEASE   CERRON       CERRON_REL
+  ENDSETMIN
+  ########### ############ ############}
+  ############ ############ ############{
+  ADJUST       CERRON       SET_TO_OBS
+  # Adjust release whenever it is available
+   TSINPUT OBSERVEDRELEASE   OBS_RELEASE
+   ADJSIM ON
+  ENDADJUST
+  ############ ############ ############}
+  ############ ############ ############{
+  ADJUST       CERRON       ADJ_CO_SAVE
+  # Adjust pool elevation at start of run
+   TSINPUT OBSERVEDPOOL      OBS_POOL
+   ADJSIM OFF
+  ENDADJUST
+  ############ ############ ############}
+ ENDPARAMETERS
+ ################################################################}
+ ################################################################{
+ RULES
+  [ TRUE ]
+     ############ ############ ############
+   ::LOOKUP3      PRECIP       PRECIP
+   ::LOOKUP3      CERRON       EVAP
+   ::SETMIN       CERRON       ELEV/REL
+     #SETELEVATION CERRON       CERRON_ELEV
+     #SETRELEASE   CERRON       CERRON_REL
+   ::ADJUST       CERRON       SET_TO_OBS
+   ::ADJUST       CERRON       ADJ_CO_SAVE
+ ENDRULES
+ ################################################################}
+ENDRES-J
+</stringValue>
+    </parameter>
+  </group>
+</parameters>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualifiers  xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://chps1/schemas/qualifiers.xsd">
+
+    <allowReferencingUndefinedQualifiers>true</allowReferencingUndefinedQualifiers>
+    <qualifier id="X" name="X"> </qualifier>
+        
+</qualifiers>

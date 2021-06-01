@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://chps1/schemas/generalAdapterRun.xsd">
+    <general>
+        <description>Jiboa ESPADP Input Generator</description>
+        <piVersion>1.8</piVersion>
+        <rootDir>$MODELDIR$/ohd/ens_post</rootDir>
+        <workDir>%ROOT_DIR%/work</workDir>
+        <exportDir>%ROOT_DIR%/input</exportDir>
+        <exportDataSetDir>%ROOT_DIR%/input</exportDataSetDir>
+        <exportIdMap>IdExportESPADP_Generator</exportIdMap>  
+        <importDir>%ROOT_DIR%/output</importDir>
+        <importIdMap>IdImportESPADP_Generator</importIdMap>   
+        <dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+        <dumpDir>%ROOT_DIR%</dumpDir>
+        <diagnosticFile>%ROOT_DIR%/output/diag.fi</diagnosticFile>
+        <missVal>-999</missVal>
+        <timeZone>
+            <timeZoneOffset>-00:00</timeZoneOffset>
+        </timeZone> 
+    </general>
+    <activities>
+        <startUpActivities>
+            <purgeActivity>
+                <filter>%ROOT_DIR%/states/*</filter>
+            </purgeActivity>
+            <purgeActivity>
+                <filter>%ROOT_DIR%/work/*</filter>
+            </purgeActivity>
+            <purgeActivity>
+                <filter>%ROOT_DIR%/input/*</filter>
+            </purgeActivity>
+            <purgeActivity>
+                <filter>%ROOT_DIR%/output/*</filter>
+            </purgeActivity>
+        </startUpActivities>
+        <exportActivities>
+            <exportTimeSeriesActivity>
+                <exportFile>inputs.fi</exportFile>
+                <exportBinFile>true</exportBinFile>				
+                <timeSeriesSets>
+                    <!--gaged outlets-->
+                    <timeSeriesSet>
+                        <moduleInstanceSetId>AdjustedFlows_1Hr</moduleInstanceSetId>
+                        <valueType>scalar</valueType>
+                        <parameterId>QINE</parameterId>
+                        <locationSetId>OutletsWithObserved</locationSetId>
+                        <timeSeriesType>simulated forecasting</timeSeriesType>
+                        <timeStep unit="hour" multiplier="1"/>
+                        <relativeViewPeriod unit="hour" start="0" end="0" endOverrulable="true"/>
+                        <readWriteMode>read only</readWriteMode>
+                        <ensembleId>ESP</ensembleId>
+                        <!--<ensembleMemberIndexRange start='1970' end='2011'/>-->
+                    </timeSeriesSet>       
+                    <!--ungaged outlets-->             
+                    <timeSeriesSet>
+                        <moduleInstanceSetId>SimulatedFlows_1Hr</moduleInstanceSetId>
+                        <valueType>scalar</valueType>
+                        <parameterId>SQIN</parameterId>
+                        <locationSetId>OutletsWithoutObserved</locationSetId>
+                        <timeSeriesType>simulated forecasting</timeSeriesType>
+                        <timeStep unit="hour" multiplier="1"/>
+                        <relativeViewPeriod unit="hour" start="0" end="0" endOverrulable="true"/>
+                        <readWriteMode>read only</readWriteMode>
+                        <ensembleId>ESP</ensembleId>
+                        <!--<ensembleMemberIndexRange start='1970' end='2011'/>-->
+                    </timeSeriesSet>
+
+                    <!--reservoir outflow-->
+                    <timeSeriesSet>
+                        <moduleInstanceSetId>AdjustedFlows_1Hr</moduleInstanceSetId>
+                        <valueType>scalar</valueType>
+                        <parameterId>QINE</parameterId>
+                        <locationSetId>ReservoirOutlets</locationSetId>
+                        <timeSeriesType>simulated forecasting</timeSeriesType>
+                        <timeStep unit="hour" multiplier="1"/>
+                        <relativeViewPeriod unit="hour" start="0" end="0" endOverrulable="true"/>
+                        <readWriteMode>read only</readWriteMode>
+                        <ensembleId>ESP</ensembleId>
+                        <!--<ensembleMemberIndexRange start='1970' end='2011'/>-->
+                    </timeSeriesSet>
+
+                    <!--reservoir inflow-->
+                    <timeSeriesSet>
+                        <moduleInstanceSetId>SimulatedFlows_1Hr</moduleInstanceSetId>
+                        <valueType>scalar</valueType>
+                        <parameterId>SQIN</parameterId>
+                        <locationSetId>ReservoirOutlets</locationSetId>
+                        <timeSeriesType>simulated forecasting</timeSeriesType>
+                        <timeStep unit="hour" multiplier="1"/>
+                        <relativeViewPeriod unit="hour" start="0" end="0" endOverrulable="true"/>
+                        <readWriteMode>read only</readWriteMode>
+                        <ensembleId>ESP</ensembleId>
+                        <!--<ensembleMemberIndexRange start='1970' end='2011'/>-->
+                    </timeSeriesSet>
+
+                    <!--reservoir pool-->
+                    <timeSeriesSet>
+                        <moduleInstanceSetId>RESJ</moduleInstanceSetId>
+                        <valueType>scalar</valueType>
+                        <parameterId>PELE</parameterId>
+                        <locationSetId>ReservoirOutlets</locationSetId>
+                        <timeSeriesType>simulated forecasting</timeSeriesType>
+                        <timeStep unit="hour" multiplier="1"/>
+                        <relativeViewPeriod unit="hour" start="0" end="0" endOverrulable="true"/>
+                        <readWriteMode>read only</readWriteMode>
+                        <ensembleId>ESP</ensembleId>
+                        <!--<ensembleMemberIndexRange start='1970' end='2011'/>-->
+                    </timeSeriesSet>
+                                        
+                </timeSeriesSets>
+            </exportTimeSeriesActivity>
+            <exportParameterActivity>
+                <fileName>params</fileName>
+                <moduleInstanceId>ESPADP_InputGenerator</moduleInstanceId>
+            </exportParameterActivity>  
+            <exportRunFileActivity>
+                <exportFile>%ROOT_DIR%/run_info.xml</exportFile>
+                <properties>
+                    <string key="model" value="ohd.hseb.ensutilities.espadpingen.ESPADPInputGeneratorModelDriver"/> 
+                    <string key="legacyLocation" value="$OHDBINDIR$"/>
+                    <int key="printDebugInfo" value="0"/>
+                    <string key="outputDirectory" value="$EXPORT_FOLDER$/ESPTS"/> 
+                </properties>
+            </exportRunFileActivity>
+        </exportActivities>
+        <executeActivities>
+            <executeActivity>
+                <command>
+                    <className>ohd.hseb.ohdfewsadapter.OHDFewsAdapter</className>
+                    <binDir>$OHDBINDIR$</binDir>
+                </command>
+                <arguments>
+                    <argument>%ROOT_DIR%/run_info.xml</argument>
+                </arguments>
+                <timeOut>600000</timeOut>
+            </executeActivity>
+        </executeActivities>
+    </activities>
+</generalAdapterRun>

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/transformationModule.xsd"
+                      version="1.0"
+>
+    <!--Modifier variable-->
+    <variable>
+        <variableId>MAPSource</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ExportMODS</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>selectMAP</parameterId>
+            <locationSetId>ActiveRegions</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-244" startOverrulable="true" end="0"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>MAPSource_ByCatchment</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ElSalvador_MergeMAP</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>selectMAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-244" startOverrulable="true" end="0"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <!--available MAP sources-->
+    <variable>
+        <variableId>MAP_RADAR_Enhanced</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>MAP_RADAR_Enhanced</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>MAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-244" startOverrulable="true" end="0"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>MAP_StationBased</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>MAP_Station</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>MAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-244" startOverrulable="true" end="0"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>MAP_RADAR</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>MAP_RADAR</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>MAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-244" startOverrulable="true" end="0"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>MAP_CMORPH</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>MAP_CMORPH</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>MAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-244" startOverrulable="true" end="0"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>MAP_QMORPH</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>MAP_QMORPH</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>MAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-244" startOverrulable="true" end="0"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>MAP_HISTORICAL_NAM</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>MAP_NAM</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>MAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-244" startOverrulable="true" end="0"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <!--Combined satellite data-->
+    <variable>
+        <variableId>MAP_satellite</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ElSalvador_MergeMAP</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>MAP</parameterId>
+            <qualifierId>Satellite</qualifierId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-244" startOverrulable="true" end="0"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <variable>
+        <variableId>MAP_merged</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ElSalvador_MergeMAP</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>MAP</parameterId>
+            <qualifierId>Merged</qualifierId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-244" startOverrulable="true" end="0"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <variable>
+        <variableId>SelectedMAP</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ElSalvador_MergeMAP</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>MAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-244" startOverrulable="true" end="0"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <variable>
+        <variableId>SelectedMAP_1Hr</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ElSalvador_MergeMAP</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>MAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-244" startOverrulable="true" end="0"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <!--Merge satellite data-->
+    <transformation id="MergeSatellite">
+        <merge>
+            <simple>
+                <inputVariable>
+                    <variableId>MAP_CMORPH</variableId>
+                </inputVariable>
+                <inputVariable>
+                    <variableId>MAP_QMORPH</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>MAP_satellite</variableId>
+                </outputVariable>
+            </simple>
+        </merge>
+    </transformation>
+
+    <!--Produce a default MAP as the merger of available data sources. This can be 
+        overridden with a modifier (next transformation). If a modifier is not 
+        specified, the merged MAP time series will be used.
+        The MAP time series are merged according to the following order (if the
+        first ones are available, they will be used; otherwise, move down the list
+        until something is available).
+    -->
+    <transformation id="MergeMAP">        
+        <merge>
+            <simple>
+                <inputVariable>
+                    <variableId>MAP_RADAR_Enhanced</variableId>
+                </inputVariable>
+                <inputVariable>
+                    <variableId>MAP_StationBased</variableId>
+                </inputVariable>
+                <inputVariable>
+                    <variableId>MAP_RADAR</variableId>
+                </inputVariable>
+                <inputVariable>
+                    <variableId>MAP_satellite</variableId>
+                </inputVariable>
+                <inputVariable>
+                    <variableId>MAP_HISTORICAL_NAM</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>MAP_merged</variableId>
+                </outputVariable>
+            </simple>
+        </merge>
+    </transformation>
+
+    <!--Set default value for modifier -->
+    <transformation id="FillModifier">
+        <interpolationSerial>
+            <default>
+                <inputVariable>
+                    <variableId>MAPSource</variableId>
+                </inputVariable>
+                <!--Default = MAP_merged = 10-->
+                <defaultValue>10</defaultValue>
+                <outputVariable>
+                    <variableId>MAPSource</variableId>
+                </outputVariable>
+            </default>
+        </interpolationSerial>
+    </transformation>
+
+    <!--Copy MAPSource modifier from regions to catchments-->
+    <transformation id="SpatiallyInterpolateModifier">        
+        <interpolationSpatial>
+            <containingPolygon>
+                <inputVariable>
+                    <variableId>MAPSource</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>MAPSource_ByCatchment</variableId>
+                </outputVariable>
+            </containingPolygon>
+        </interpolationSpatial>
+    </transformation>                    
+                
+    <transformation id="SelectMAP">
+        <user>
+            <simple>
+                <expression>if(MAPSource_ByCatchment &lt; 1.01, MAP_RADAR_Enhanced,
+                    if(MAPSource_ByCatchment &lt; 2.01, MAP_StationBased,
+                    if(MAPSource_ByCatchment &lt; 3.01, MAP_RADAR,
+                    if(MAPSource_ByCatchment &lt; 4.01, MAP_satellite,
+                    if(MAPSource_ByCatchment &lt; 5.01, MAP_HISTORICAL_NAM,
+                    MAP_merged)))))
+                </expression>
+                <outputVariable>
+                    <variableId>SelectedMAP</variableId>
+                </outputVariable>
+            </simple>
+        </user>
+    </transformation>
+
+    <transformation id="Aggregate_1Hr">
+        <aggregation>
+            <accumulative>
+                <inputVariable>
+                    <variableId>SelectedMAP</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>SelectedMAP_1Hr</variableId>
+                </outputVariable>
+            </accumulative>
+        </aggregation>
+    </transformation>
+
+</transformationModule>

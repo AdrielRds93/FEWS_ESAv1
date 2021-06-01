@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun 
+    xmlns="http://www.wldelft.nl/fews"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/timeSeriesImportRun.xsd"
+>
+    <!-- historical MAP is DataCard format, this module will import this data -->
+    <import>
+        <general>
+            <importType>NWS-DATACARD</importType>
+            <folder>$IMPORT_FOLDER_HISTORICALMAP$</folder>
+            <idMapId>IdImportHistoricalMAP</idMapId>
+            <missingValue>-999.0</missingValue>
+            <importTimeZone>
+                <timeZoneOffset>+00:00</timeZoneOffset>
+            </importTimeZone>
+        </general>
+        <timeSeriesSet>
+            <moduleInstanceId>ImportHistoricalMAP</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>MAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <readWriteMode>add originals</readWriteMode>
+            <expiryTime unit="year" multiplier="100"/>
+        </timeSeriesSet>
+    </import>
+</timeSeriesImportRun>

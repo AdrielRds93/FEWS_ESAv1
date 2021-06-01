@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters version="1.5" xsi:schemaLocation="http://www.wldelft.nl/fews/PI pi_modelparameters.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews/PI">
+    <group id="default">
+        <parameter id="OPERATION_CONTENTS">
+            <stringValue>TILAPA   SQIN  1 TILAPA   SQIN  1     0     0 METR 0.00       0.0
+1
+0
+0
+            </stringValue>
+        </parameter>
+    </group>
+</parameters>

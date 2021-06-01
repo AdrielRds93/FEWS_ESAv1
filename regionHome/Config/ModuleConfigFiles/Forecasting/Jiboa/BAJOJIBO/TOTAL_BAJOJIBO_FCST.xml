@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+
+    <variable>
+        <variableId>PNTVIEJO_ROUTED</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>LAGK_PNTVIEJO_FCST</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>PNTVIEJO</locationId>
+            <timeSeriesType>simulated forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" endOverrulable="true"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <variable>
+        <variableId>SEPAQUIA_ROUTED</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>LAGK_SEPAQUIA_FCST</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>SEPAQUIA</locationId>
+            <timeSeriesType>simulated forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" endOverrulable="true"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <variable>
+        <variableId>TILAPA_ROUTED</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>LAGK_TILAPA_FCST</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>TILAPA</locationId>
+            <timeSeriesType>simulated forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" endOverrulable="true"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <variable>
+        <variableId>LOCAL</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>UNITHG_BAJOJIBO_FCST</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>BAJOJIBO</locationId>
+            <timeSeriesType>simulated forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" endOverrulable="true"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>TOTAL_SQIN</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>TOTAL_BAJOJIBO_FCST</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>BAJOJIBO</locationId>
+            <timeSeriesType>simulated forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <transformation id="ComputeTotal">
+        <user>
+            <simple>
+                <expression>LOCAL + PNTVIEJO_ROUTED + SEPAQUIA_ROUTED + TILAPA_ROUTED</expression>
+                <outputVariable>
+                    <variableId>TOTAL_SQIN</variableId>
+                </outputVariable>
+            </simple>
+        </user>
+    </transformation>
+
+</transformationModule>

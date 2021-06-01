@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+
+    <variable>
+        <variableId>ELPIRO</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>TOTAL_ELPIRO_FCST</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>ELPIRO</locationId>
+            <timeSeriesType>simulated forecasting</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" endOverrulable="true"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+ 
+    <variable>
+        <variableId>ELPIRO_ROUTED</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>TOTAL_BELLOSO_FCST</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <qualifierId>Routed</qualifierId>
+            <locationId>ELPIRO</locationId>
+            <timeSeriesType>simulated forecasting</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" endOverrulable="true"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>    
+
+    <variable>
+        <variableId>LOCAL</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>UNITHG_BELLOSO_FCST</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>BELLOSO</locationId>
+            <timeSeriesType>simulated forecasting</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" endOverrulable="true"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>OBSERVED</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>StageQ</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>QIN</parameterId>
+            <locationId>A_BELLOSO</locationId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" endOverrulable="true"/>
+            <readWriteMode>read only</readWriteMode>
+            <ensembleId>main</ensembleId>
+        </timeSeriesSet>
+    </variable>
+
+    <variable>
+        <variableId>TOTAL_SQIN</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>TOTAL_BELLOSO_FCST</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>BELLOSO</locationId>
+            <timeSeriesType>simulated forecasting</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <variable>
+        <variableId>TOTAL_QINE</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>TOTAL_BELLOSO_FCST</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>QINE</parameterId>
+            <locationId>BELLOSO</locationId>
+            <timeSeriesType>simulated forecasting</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <variable>
+        <variableId>TOTAL_QINE_1HR</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>TOTAL_BELLOSO_FCST</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>QINE</parameterId>
+            <locationId>BELLOSO</locationId>
+            <timeSeriesType>simulated forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <transformation id="RoutedUpstream">
+        <timeShift>
+            <constant>
+                <inputVariable>
+                    <variableId>ELPIRO</variableId>
+                </inputVariable>
+                <numberOfTimeSteps>-2</numberOfTimeSteps>
+                <outputVariable>
+                    <variableId>ELPIRO_ROUTED</variableId>
+                </outputVariable>
+            </constant>
+        </timeShift>
+    </transformation>
+
+    <transformation id="ComputeTotal">
+        <user>
+            <simple>
+                <expression>LOCAL + ELPIRO_ROUTED</expression>
+                <outputVariable>
+                    <variableId>TOTAL_SQIN</variableId>
+                </outputVariable>
+            </simple>
+        </user>
+    </transformation>
+
+    <transformation id="AdjustToObserved">
+        <adjust>
+            <adjustQUsingObservedInstantaneousDischarge>
+                <observedDischarge>
+                    <variableId>OBSERVED</variableId>
+                </observedDischarge>
+                <simulatedInstantaneousDischarge>
+                    <variableId>TOTAL_SQIN</variableId>
+                </simulatedInstantaneousDischarge>
+                <moduleParameterFile>ADJUSTQ_BELLOSO_UPDT</moduleParameterFile>
+                <adjustedForecastDischarge>
+                    <variableId>TOTAL_QINE</variableId>
+                </adjustedForecastDischarge>
+            </adjustQUsingObservedInstantaneousDischarge>
+        </adjust>
+    </transformation>
+
+    <!--Convert 15-minute flows to 1-hour-->
+    <transformation id="ChangeInterval">
+        <aggregation>
+            <instantaneous>
+                <inputVariable>
+                    <variableId>TOTAL_QINE</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>TOTAL_QINE_1HR</variableId>
+                </outputVariable>
+            </instantaneous>
+        </aggregation>
+    </transformation>
+
+</transformationModule>

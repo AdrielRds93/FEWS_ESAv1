@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://chps1/schemas/workflow.xsd" version="1.1">
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>SACSMA_CERRONLOC_FCST</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>UNITHG_CERRONLOC_FCST</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>LAGK_TAMARIND_FCST</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>LAGK_ACELHUAT_FCST</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>LAGK_QUEZALAP_FCST</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>LAGK_METAYATE_FCST</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>LAGK_CHALATEN_FCST</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>LAGK_TAMULASC_FCST</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>INFLOW_CERRON_FCST</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>RESJ_CERRON_FCST</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>CERRON_PRECIP_EVAP_FCST</moduleInstanceId>
+    </activity>
+</workflow>

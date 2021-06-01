@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gridDisplay xmlns="http://www.wldelft.nl/fews"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/gridDisplay.xsd"
+>
+
+    <!--
+    Different options for specifying colors
+    You can specify a html color (see http://www.columbia.edu/~sue/colors-on-white.html) or a
+    hexadecimal RGB color e.g FF0000 is red.
+    See http://www.squarebox.co.uk/users/rolf/download/ColourWheel/ or
+    http://javaboutique.internet.com/ColorPicker/ to compose your own color
+    -->
+
+    <title>Spatial Display</title>
+    <defaults>
+        <!--        <plotGroupId>Station-based</plotGroupId>
+        <plotGroupId>Satellite</plotGroupId>
+        <plotGroupId>Radar</plotGroupId>
+        <plotGroupId>Forecast</plotGroupId>
+        <plotGroupId>MAP</plotGroupId>
+        <plotGroupId>SACSMA</plotGroupId>-->
+        <geoMap>
+            <geoDatum>WGS 1984</geoDatum>
+            <projection>orthographic</projection>
+            <defaultExtent id="ElSalvador" name="El Salvador">
+                <left>-90.153</left>
+                <right>-87.644</right>
+                <top>14.480</top>
+                <bottom>13.154</bottom>
+            </defaultExtent>
+            <extraExtent id="Jiboa" name="Jiboa">
+                <left>-89.2</left>
+                <right>-88.8</right>
+                <top>13.8</top>
+                <bottom>13.3</bottom>
+            </extraExtent>
+            <extraExtent id="BahiaDeJiquilisco" name="Bahia De Jiquilisco"> 
+                <left>-88.760417</left>
+                <right>-88.231967</right>
+                <top>13.497757</top>
+                <bottom>13.163768</bottom>
+            </extraExtent>
+            <extraExtent id="CaraSucia+SanPedro" name="Cara Sucia + San Pedro"> 
+                <left>-90.102094</left>
+                <right>-89.759019</right>
+                <top>13.885067</top>
+                <bottom>13.598373</bottom>
+            </extraExtent>
+            <extraExtent id="EsteroDeJaltepeque" name="Estero De Jaltepeque"> 
+                <left>-89.033754</left>
+                <right>-88.6823</right>
+                <top>13.614675</top>
+                <bottom>13.26048</bottom>
+            </extraExtent>
+            <extraExtent id="Goascoran" name="Goascoran"> 
+                <left>-88.005021</left>
+                <right>-87.582377</right>
+                <top>14.166294</top>
+                <bottom>13.362992</bottom>
+            </extraExtent>
+            <extraExtent id="GrandeDeSanMiguel" name="Grande De San Miguel"> 
+                <left>-88.469749</left>
+                <right>-87.958979</right>
+                <top>13.791888</top>
+                <bottom>13.167756</bottom>
+            </extraExtent>
+            <extraExtent id="GrandeDeSonsonate+Banderas" name="Grande De Sonsonate + Banderas"> 
+                <left>-89.843595</left>
+                <right>-89.493089</right>
+                <top>13.902805</top>
+                <bottom>13.522977</bottom>
+            </extraExtent>
+            <extraExtent id="Jiboa" name="Jiboa"> 
+                <left>-89.186581</left>
+                <right>-88.837655</right>
+                <top>13.75012</top>
+                <bottom>13.353592</bottom>
+            </extraExtent>
+            <extraExtent id="LagoDeCoatepeque" name="Lago De Coatepeque"> 
+                <left>-89.634218</left>
+                <right>-89.51509</right>
+                <top>13.896947</top>
+                <bottom>13.826493</bottom>
+            </extraExtent>
+            <extraExtent id="Lempa" name="Lempa"> 
+                <left>-90.112382</left>
+                <right>-87.80639</right>
+                <top>14.712419</top>
+                <bottom>13.231514</bottom>
+            </extraExtent>
+            <extraExtent id="Mandinga+Comalapa" name="Mandinga + Comalapa"> 
+                <left>-89.732937</left>
+                <right>-89.062988</right>
+                <top>13.684119</top>
+                <bottom>13.404078</bottom>
+            </extraExtent>
+            <extraExtent id="Paz" name="Paz"> 
+                <left>-90.276278</left>
+                <right>-89.57465</right>
+                <top>14.403582</top>
+                <bottom>13.722829</bottom>
+            </extraExtent>
+            <extraExtent id="Sirama" name="Sirama"> 
+                <left>-88.242815</left>
+                <right>-87.779521</right>
+                <top>13.600249</top>
+                <bottom>13.154899</bottom>
+            </extraExtent>
+            <scaleBarVisible>true</scaleBarVisible>
+            <northArrowVisible>true</northArrowVisible>
+            <labelsVisible>true</labelsVisible>
+            <backgroundColor>light steel blue2</backgroundColor>
+            <openStreetMapLayer id="Osm" name="Open Street Map">
+                <url>http://tile.openstreetmap.org</url>
+                <visible>true</visible>
+                <cacheDir>$MAP_DIR$/mapcache/openstreetmaps</cacheDir>
+            </openStreetMapLayer>
+            <esriShapeLayer id="Countries">
+                <description>Countries</description>
+                <file>countries.shp</file>
+                <geoDatum>WGS 1984</geoDatum>
+                <visible>false</visible>
+                <lineColor>black</lineColor>
+                <fillRgbColor>F7F5B8</fillRgbColor>
+            </esriShapeLayer>
+            <esriShapeLayer id="Basins">
+                <description>Basins</description>
+                <file>ElSalvadorBasins.shp</file>
+                <geoDatum>WGS 1984</geoDatum>
+                <visible>true</visible>
+                <lineColor>black</lineColor>
+                <fillRgbColor>669966</fillRgbColor>
+            </esriShapeLayer>
+            <esriShapeLayer id="Daily Gages">
+                <description>Daily Gages</description>
+                <file>DailyGages_UTM16N.shp</file>
+                <geoDatum>UTM16N</geoDatum>
+                <visible>true</visible>
+                <lineColor>black</lineColor>
+                <fillColor>black</fillColor>
+            </esriShapeLayer>
+            <esriShapeLayer id="Automatic Gages">
+                <description>Automatic Gages</description>
+                <file>AutomaticGages_UTM16N.shp</file>
+                <geoDatum>UTM16N</geoDatum>
+                <visible>true</visible>
+                <lineColor>black</lineColor>
+                <fillColor>black</fillColor>
+            </esriShapeLayer>
+            <esriShapeLayer id="Outlet Points">
+                <description>Outlet Points</description>
+                <file>Outlets.shp</file>
+                <geoDatum>WGS 1984</geoDatum>
+                <visible>true</visible>
+                <lineColor>black</lineColor>
+                <fillColor>black</fillColor>
+            </esriShapeLayer>
+            <esriShapeLayer id="Rivers">
+                <description>Rivers</description>
+                <file>Rivers.shp</file>
+                <geoDatum>WGS 1984</geoDatum>
+                <visible>true</visible>
+                <lineColor>blue</lineColor>
+                <fillColor>blue</fillColor>
+            </esriShapeLayer>
+            <esriShapeLayer id="Lakes">
+                <description>Lakes</description>
+                <file>Lakes.shp</file>
+                <geoDatum>WGS 1984</geoDatum>
+                <visible>true</visible>
+                <lineColor>blue</lineColor>
+                <fillColor>light sky blue2</fillColor>
+            </esriShapeLayer>
+        </geoMap>
+    </defaults>
+    <defaults>
+        <plotGroupId>Observed Precipitation</plotGroupId>
+        <classBreaks>
+            <color color="gray60" opaquenessPercentage="50" lowerValue="0" label="Zero"/>
+            <color opaquenessPercentage="80" lowerValue="0.001" color="1C92FC" label="Trace"/>
+            <color opaquenessPercentage="80" lowerValue="0.01" color="04FEFC" label="0.01 to 0.1"/>
+            <color opaquenessPercentage="80" lowerValue="0.1" color="046604" label="0.1 to 1"/>
+            <color opaquenessPercentage="80" lowerValue="1" color="04FE04" label="1 to 4"/>
+            <color opaquenessPercentage="80" lowerValue="4" color="ACFE2C" label="4 to 6"/>
+            <color opaquenessPercentage="80" lowerValue="6" color="FCFE04" label="6 to 8"/>
+            <color opaquenessPercentage="80" lowerValue="8" color="ECCA04" label="8 to 10"/>
+            <color opaquenessPercentage="80" lowerValue="10" color="FC7E04" label="10 to 20"/>
+            <color opaquenessPercentage="80" lowerValue="20" color="FC0204" label="20 to 30"/>
+            <color opaquenessPercentage="80" lowerValue="30" color="CC0204" label="30 to 40"/>
+            <color opaquenessPercentage="80" lowerValue="40" color="8C0204" label="40 to 50"/>
+            <color opaquenessPercentage="80" lowerValue="50" color="FC02FC" label="50 to 60"/>
+            <color opaquenessPercentage="80" lowerValue="60" color="9C32CC" label="60 to 80"/>
+            <color opaquenessPercentage="80" lowerValue="80" color="541ACC" label="Above 80 mm"/>
+        </classBreaks>
+    </defaults>
+    <defaults>
+        <plotGroupId>Forecasted Precipitation</plotGroupId>
+        <classBreaks>
+            <color color="gray60" opaquenessPercentage="50" lowerValue="0" label="Zero"/>
+            <color opaquenessPercentage="80" lowerValue="0.001" color="1C92FC" label="Trace"/>
+            <color opaquenessPercentage="80" lowerValue="0.01" color="04FEFC" label="0.01 to 0.1"/>
+            <color opaquenessPercentage="80" lowerValue="0.1" color="046604" label="0.1 to 1"/>
+            <color opaquenessPercentage="80" lowerValue="1" color="04FE04" label="1 to 4"/>
+            <color opaquenessPercentage="80" lowerValue="4" color="ACFE2C" label="4 to 6"/>
+            <color opaquenessPercentage="80" lowerValue="6" color="FCFE04" label="6 to 8"/>
+            <color opaquenessPercentage="80" lowerValue="8" color="ECCA04" label="8 to 10"/>
+            <color opaquenessPercentage="80" lowerValue="10" color="FC7E04" label="10 to 20"/>
+            <color opaquenessPercentage="80" lowerValue="20" color="FC0204" label="20 to 30"/>
+            <color opaquenessPercentage="80" lowerValue="30" color="CC0204" label="30 to 40"/>
+            <color opaquenessPercentage="80" lowerValue="40" color="8C0204" label="40 to 50"/>
+            <color opaquenessPercentage="80" lowerValue="50" color="FC02FC" label="50 to 60"/>
+            <color opaquenessPercentage="80" lowerValue="60" color="9C32CC" label="60 to 80"/>
+            <color opaquenessPercentage="80" lowerValue="80" color="541ACC" label="Above 80 mm"/>
+        </classBreaks>
+    </defaults>
+    <defaults>
+        <plotGroupId>MAP</plotGroupId>
+        <classBreaks>
+            <color color="gray60" opaquenessPercentage="50" lowerValue="0" label="Zero"/>
+            <color opaquenessPercentage="80" lowerValue="0.001" color="1C92FC" label="Trace"/>
+            <color opaquenessPercentage="80" lowerValue="0.01" color="04FEFC" label="0.01 to 0.1"/>
+            <color opaquenessPercentage="80" lowerValue="0.1" color="046604" label="0.1 to 1"/>
+            <color opaquenessPercentage="80" lowerValue="1" color="04FE04" label="1 to 4"/>
+            <color opaquenessPercentage="80" lowerValue="4" color="ACFE2C" label="4 to 6"/>
+            <color opaquenessPercentage="80" lowerValue="6" color="FCFE04" label="6 to 8"/>
+            <color opaquenessPercentage="80" lowerValue="8" color="ECCA04" label="8 to 10"/>
+            <color opaquenessPercentage="80" lowerValue="10" color="FC7E04" label="10 to 20"/>
+            <color opaquenessPercentage="80" lowerValue="20" color="FC0204" label="20 to 30"/>
+            <color opaquenessPercentage="80" lowerValue="30" color="CC0204" label="30 to 40"/>
+            <color opaquenessPercentage="80" lowerValue="40" color="8C0204" label="40 to 50"/>
+            <color opaquenessPercentage="80" lowerValue="50" color="FC02FC" label="50 to 60"/>
+            <color opaquenessPercentage="80" lowerValue="60" color="9C32CC" label="60 to 80"/>
+            <color opaquenessPercentage="80" lowerValue="80" color="541ACC" label="Above 80 mm"/>
+        </classBreaks>
+    </defaults>
+    <defaults>
+        <plotGroupId>SACSMA</plotGroupId>
+        <classBreaks>
+            <color color="gray60" opaquenessPercentage="50" lowerValue="0" label="Zero"/>
+            <color opaquenessPercentage="80" lowerValue="0.00001" color="1C92FC" label="0 to 0.1"/>
+            <color opaquenessPercentage="80" lowerValue="0.1" color="04FEFC" label="0.1 to 0.2"/>
+            <color opaquenessPercentage="80" lowerValue="0.2" color="046604" label="0.2 to 0.3"/>
+            <color opaquenessPercentage="80" lowerValue="0.3" color="04FE04" label="0.3 to 0.4"/>
+            <color opaquenessPercentage="80" lowerValue="0.4" color="ACFE2C" label="0.4 to 0.5"/>
+            <color opaquenessPercentage="80" lowerValue="0.5" color="FCFE04" label="0.5 to 0.6"/>
+            <color opaquenessPercentage="80" lowerValue="0.6" color="ECCA04" label="0.6 to 0.7"/>
+            <color opaquenessPercentage="80" lowerValue="0.7" color="FC7E04" label="0.7 to 0.8"/>
+            <color opaquenessPercentage="80" lowerValue="0.8" color="FC0204" label="0.8 to 0.9"/>
+            <color opaquenessPercentage="80" lowerValue="0.9" color="CC0204" label="0.9 to 1"/>
+        </classBreaks>
+    </defaults>
+
+    <gridPlotGroup id="Observed Precipitation" name="Observed Precipitation">
+        <gridPlotGroup id="Station-based" name="Stations">
+            <gridPlot id="Automatic Stations">
+                <timeSeriesSet>
+                    <moduleInstanceId>ConvertTo15Min_1HrPrecipGages</moduleInstanceId>
+                    <valueType>scalar</valueType>
+                    <parameterId>PP</parameterId>
+                    <locationSetId>1HrPrecipGages</locationSetId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="minute" multiplier="15"/>
+                    <relativeViewPeriod unit="hour" start="-120" end="0"/>
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>MergeRawAndQCed_15MinPrecipGages</moduleInstanceId>
+                    <valueType>scalar</valueType>
+                    <parameterId>PP</parameterId>
+                    <locationSetId>15MinPrecipGages</locationSetId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="minute" multiplier="15"/>
+                    <relativeViewPeriod unit="hour" start="-120" end="0"/>
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>ConvertTo15Min_10MinPrecipGages</moduleInstanceId>
+                    <valueType>scalar</valueType>
+                    <parameterId>PP</parameterId>
+                    <locationSetId>10MinPrecipGages</locationSetId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="minute" multiplier="15"/>
+                    <relativeViewPeriod unit="hour" start="-120" end="0"/>
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <movingAccumulationTimeSpan unit="hour" multiplier="1"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="120"/>
+            </gridPlot>
+            <gridPlot id="Daily Stations">
+                <timeSeriesSet>
+                    <moduleInstanceId>CopyRawToQCed_DailyPrecip</moduleInstanceId>
+                    <valueType>scalar</valueType>
+                    <parameterId>PP</parameterId>
+                    <locationSetId>DailyPrecipGages</locationSetId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <!--The daily data represent 7am - 7am local time (13:00-13:00 GMT)
+                    accumulations-->
+                    <timeStep unit="day" multiplier="1" timeZone="GMT+11"/>
+                    <relativeViewPeriod unit="hour" start="-120" end="0"/>
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="120"/>
+            </gridPlot>
+            <gridPlot id="Station-Based Grids">
+                <timeSeriesSet>
+                    <moduleInstanceId>Adjust15MinPrecipGridsTo1DayPrecipGrids</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>QPE</parameterId>
+                    <locationId>Interpolated</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="minute" multiplier="15"/>
+                    <relativeViewPeriod unit="hour" start="-120" end="0"/>
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <movingAccumulationTimeSpan unit="hour" multiplier="1"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="120"/>
+            </gridPlot>
+        </gridPlotGroup>
+        <gridPlotGroup id="Radar" name="Radar Precipitation">
+            <gridPlot id="Enhanced Radar">
+                <timeSeriesSet>
+                    <moduleInstanceId>ImportRADAR_Enhanced</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>QPE</parameterId>
+                    <locationId>RADAR</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="minute" multiplier="15"/>
+                    <relativeViewPeriod unit="hour" start="-120" end="0"/>
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <movingAccumulationTimeSpan unit="hour" multiplier="1"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="120"/>
+            </gridPlot>
+            <gridPlot id="Radar">
+                <timeSeriesSet>
+                    <moduleInstanceId>ImportRADAR</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>QPE</parameterId>
+                    <locationId>RADAR</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="minute" multiplier="15"/>
+                    <relativeViewPeriod unit="hour" start="-120" end="0"/>
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <movingAccumulationTimeSpan unit="hour" multiplier="1"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="120"/>
+            </gridPlot>
+        </gridPlotGroup>
+        <gridPlotGroup id="Satellite" name="Satellite Observed Precipitation">
+            <gridPlot id="CMORPH">
+                <timeSeriesSet>
+                    <moduleInstanceId>ImportCMORPH</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>QPE</parameterId>
+                    <locationId>CMORPH</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="minute" multiplier="60"/>
+                    <relativeViewPeriod unit="hour" start="-120" end="0"/>
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="120"/>
+            </gridPlot>
+            <gridPlot id="QMORPH">
+                <timeSeriesSet>
+                    <moduleInstanceId>ImportQMORPH</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>QPE</parameterId>
+                    <locationId>QMORPH</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="minute" multiplier="60"/>
+                    <relativeViewPeriod unit="hour" start="-120" end="0"/>
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+                <movingAccumulationTimeSpan unit="hour" multiplier="120"/>
+            </gridPlot>
+        </gridPlotGroup>
+    </gridPlotGroup>
+    <gridPlotGroup id="Forecasted Precipitation" name="Forecasted Precipitation">
+        <gridPlot id="WRF">
+            <timeSeriesSet>
+                <moduleInstanceId>AccumulatedToIncremental_WRF</moduleInstanceId>
+                <valueType>grid</valueType>
+                <parameterId>QPF</parameterId>
+                <locationId>WRF</locationId>
+                <timeSeriesType>external forecasting</timeSeriesType>
+                <timeStep unit="hour" multiplier="1"/>
+                <readWriteMode>read complete forecast</readWriteMode>
+            </timeSeriesSet>
+            <movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="120"/>
+        </gridPlot>
+<gridPlot id="WRF_ElSal" name="WRF El Salvador (acc)">
+    <timeSeriesSet>
+        <moduleInstanceId>ImportWRF_ElSal</moduleInstanceId>
+        <valueType>grid</valueType>
+        <parameterId>QPF</parameterId>
+        <locationId>WRF_ElSal</locationId>
+        <timeSeriesType>external forecasting</timeSeriesType>
+        <timeStep unit="hour" multiplier="1"/>
+        <readWriteMode>read complete forecast</readWriteMode>
+    </timeSeriesSet>
+    <movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+    <movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+    <movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+    <movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+    <movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+    <movingAccumulationTimeSpan unit="hour" multiplier="120"/>
+</gridPlot>
+        <gridPlot id="CAWRF">
+            <timeSeriesSet>
+                <moduleInstanceId>AccumulatedToIncremental_CAWRF</moduleInstanceId>
+                <valueType>grid</valueType>
+                <parameterId>QPF</parameterId>
+                <locationId>CAWRF</locationId>
+                <timeSeriesType>external forecasting</timeSeriesType>
+                <timeStep unit="hour" multiplier="1"/>
+                <readWriteMode>read complete forecast</readWriteMode>
+            </timeSeriesSet>
+            <movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="120"/>
+        </gridPlot>
+        <gridPlot id="NAM">
+            <timeSeriesSet>
+                <moduleInstanceId>ImportNAM</moduleInstanceId>
+                <valueType>grid</valueType>
+                <parameterId>QPF</parameterId>
+                <locationId>NAM</locationId>
+                <timeSeriesType>external forecasting</timeSeriesType>
+                <timeStep unit="hour" multiplier="3"/>
+                <readWriteMode>read complete forecast</readWriteMode>
+            </timeSeriesSet>
+            <movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="120"/>
+        </gridPlot>
+        <gridPlot id="GFS">
+            <timeSeriesSet>
+                <moduleInstanceId>ImportGFS</moduleInstanceId>
+                <valueType>grid</valueType>
+                <parameterId>QPF</parameterId>
+                <locationId>GFS</locationId>
+                <timeSeriesType>external forecasting</timeSeriesType>
+                <timeStep unit="hour" multiplier="3"/>
+                <readWriteMode>read complete forecast</readWriteMode>
+            </timeSeriesSet>
+            <movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="120"/>
+        </gridPlot>
+    </gridPlotGroup>
+
+    <gridPlotGroup id="MAP" name="Mean Areal Precipitation (MAP)">
+        <gridPlot id="MAP Source Selection">
+            <timeSeriesSet>
+                <moduleInstanceId>ExportMODS</moduleInstanceId>
+                <valueType>scalar</valueType>
+                <parameterId>selectMAP</parameterId>
+                <locationSetId>ActiveRegions</locationSetId>
+                <timeSeriesType>external historical</timeSeriesType>
+                <timeStep unit="minute" multiplier="15"/>
+                <relativeViewPeriod unit="hour" start="-120" end="0"/>
+                <readWriteMode>read only</readWriteMode>
+            </timeSeriesSet>
+            <classBreaks>
+                <missingValueColor>gray70</missingValueColor>
+                <color opaquenessPercentage="80" lowerValue="0.5" color="0066CC" label="Enhanced Radar"/>
+                <color opaquenessPercentage="80" lowerValue="1.5" color="FFFF00" label="Station-based"/>
+                <color opaquenessPercentage="80" lowerValue="2.5" color="CC0033" label="Radar"/>
+                <color opaquenessPercentage="80" lowerValue="3.5" color="00FF00" label="Satellite"/>
+                <color opaquenessPercentage="80" lowerValue="4.5" color="660066" label="Historic NAM forecast"/>
+            </classBreaks>
+        </gridPlot>   
+        <gridPlot id="FMAP Source Selection">
+            <timeSeriesSet>
+                <moduleInstanceId>ExportMODS</moduleInstanceId>
+                <valueType>scalar</valueType>
+                <parameterId>selectFMAP</parameterId>
+                <locationSetId>ActiveRegions</locationSetId>
+                <timeSeriesType>external historical</timeSeriesType>
+                <timeStep unit="minute" multiplier="15"/>
+                <relativeViewPeriod unit="hour" start="-24" end="120"/>
+                <readWriteMode>read only</readWriteMode>
+            </timeSeriesSet>
+            <classBreaks>
+                <missingValueColor>gray70</missingValueColor>
+                <color opaquenessPercentage="80" lowerValue="0.5" color="0066CC" label="Manual"/>
+                <color opaquenessPercentage="80" lowerValue="1.5" color="FFFF00" label="WRF"/>
+                <color opaquenessPercentage="80" lowerValue="2.5" color="CC0033" label="CA-WRF"/>
+                <color opaquenessPercentage="80" lowerValue="3.5" color="00FF00" label="NAM"/>
+                <color opaquenessPercentage="80" lowerValue="4.5" color="660066" label="GFS"/>
+            </classBreaks>
+        </gridPlot>
+        <gridPlot id="Final composite MAP/FMAP for forecasts">
+            <timeSeriesSet>
+                <moduleInstanceId>ElSalvador_MergeMAP_FMAP_FCST</moduleInstanceId>
+                <valueType>scalar</valueType>
+                <parameterId>MAP</parameterId>
+                <locationSetId>AllCatchments</locationSetId>
+                <timeSeriesType>simulated forecasting</timeSeriesType>
+                <timeStep unit="minute" multiplier="15"/>
+                <relativeViewPeriod unit="hour" start="-120" end="240"/>
+                <readWriteMode>read only</readWriteMode>
+                <ensembleId>ALLQPF</ensembleId>
+                <ensembleMemberIndex>0</ensembleMemberIndex>
+
+            </timeSeriesSet>
+            <movingAccumulationTimeSpan unit="hour" multiplier="1"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+            <movingAccumulationTimeSpan unit="hour" multiplier="120"/>
+        </gridPlot>
+    </gridPlotGroup>
+
+    <gridPlotGroup id="SACSMA" name="Soil Moisture SAC-SMA Contents (% full)">
+        <gridPlot id="(UZTWF) Upper Zone Tension Water Contents">
+            <timeSeriesSet>
+                <moduleInstanceSetId>SACSMA_Forecast</moduleInstanceSetId>
+                <valueType>scalar</valueType>
+                <parameterId>UZTWF</parameterId>
+                <locationSetId>AllCatchments</locationSetId>
+                <timeSeriesType>simulated forecasting</timeSeriesType>
+                <timeStep unit="hour" multiplier="1"/>
+                <relativeViewPeriod unit="hour" start="-120" end="240"/>
+                <readWriteMode>read only</readWriteMode>
+                <ensembleId>ALLQPF</ensembleId>
+                <ensembleMemberIndex>0</ensembleMemberIndex>
+            </timeSeriesSet>
+        </gridPlot>
+        <gridPlot id="(UZFWF) Upper Zone Free Water Contents">
+            <timeSeriesSet>
+                <moduleInstanceSetId>SACSMA_Forecast</moduleInstanceSetId>
+                <valueType>scalar</valueType>
+                <parameterId>UZFWF</parameterId>
+                <locationSetId>AllCatchments</locationSetId>
+                <timeSeriesType>simulated forecasting</timeSeriesType>
+                <timeStep unit="hour" multiplier="1"/>
+                <relativeViewPeriod unit="hour" start="-120" end="240"/>
+                <readWriteMode>read only</readWriteMode>
+                <ensembleId>ALLQPF</ensembleId>
+                <ensembleMemberIndex>0</ensembleMemberIndex>
+            </timeSeriesSet>
+        </gridPlot>
+        <gridPlot id="(LZTWF) Lower Zone Tension Water Contents">
+            <timeSeriesSet>
+                <moduleInstanceSetId>SACSMA_Forecast</moduleInstanceSetId>
+                <valueType>scalar</valueType>
+                <parameterId>LZTWF</parameterId>
+                <locationSetId>AllCatchments</locationSetId>
+                <timeSeriesType>simulated forecasting</timeSeriesType>
+                <timeStep unit="hour" multiplier="1"/>
+                <relativeViewPeriod unit="hour" start="-120" end="240"/>
+                <readWriteMode>read only</readWriteMode>
+                <ensembleId>ALLQPF</ensembleId>
+                <ensembleMemberIndex>0</ensembleMemberIndex>
+            </timeSeriesSet>
+        </gridPlot>
+        <gridPlot id="(LZFSF) Lower Zone Free Supplimental Contents">
+            <timeSeriesSet>
+                <moduleInstanceSetId>SACSMA_Forecast</moduleInstanceSetId>
+                <valueType>scalar</valueType>
+                <parameterId>LZFSF</parameterId>
+                <locationSetId>AllCatchments</locationSetId>
+                <timeSeriesType>simulated forecasting</timeSeriesType>
+                <timeStep unit="hour" multiplier="1"/>
+                <relativeViewPeriod unit="hour" start="-120" end="240"/>
+                <readWriteMode>read only</readWriteMode>
+                <ensembleId>ALLQPF</ensembleId>
+                <ensembleMemberIndex>0</ensembleMemberIndex>
+            </timeSeriesSet>
+        </gridPlot>
+        <gridPlot id="(LZFPF) Lower Zone Free Primary Contents">
+            <timeSeriesSet>
+                <moduleInstanceSetId>SACSMA_Forecast</moduleInstanceSetId>
+                <valueType>scalar</valueType>
+                <parameterId>LZFPF</parameterId>
+                <locationSetId>AllCatchments</locationSetId>
+                <timeSeriesType>simulated forecasting</timeSeriesType>
+                <timeStep unit="hour" multiplier="1"/>
+                <relativeViewPeriod unit="hour" start="-120" end="240"/>
+                <readWriteMode>read only</readWriteMode>
+                <ensembleId>ALLQPF</ensembleId>
+                <ensembleMemberIndex>0</ensembleMemberIndex>
+            </timeSeriesSet>
+        </gridPlot>
+        <gridPlot id="(ADMIF) Additional Impervious Contents">
+            <timeSeriesSet>
+                <moduleInstanceSetId>SACSMA_Forecast</moduleInstanceSetId>
+                <valueType>scalar</valueType>
+                <parameterId>ADIMF</parameterId>
+                <locationSetId>AllCatchments</locationSetId>
+                <timeSeriesType>simulated forecasting</timeSeriesType>
+                <timeStep unit="hour" multiplier="1"/>
+                <relativeViewPeriod unit="hour" start="-120" end="240"/>
+                <readWriteMode>read only</readWriteMode>
+                <ensembleId>ALLQPF</ensembleId>
+                <ensembleMemberIndex>0</ensembleMemberIndex>
+            </timeSeriesSet>
+        </gridPlot>
+    </gridPlotGroup>
+</gridDisplay>
+

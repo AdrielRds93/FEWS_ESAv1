@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/transformationModule.xsd"
+                      version="1.0"
+>
+<!--Convert nonequidistant to equidistant-->
+    <variable>
+        <variableId>STG_15Min</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>CopyRawToQCed_StageReservoir</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>STG</parameterId>
+            <locationSetId>15MinStreamGages</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>    
+    <variable>
+        <variableId>STG_10Min</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>CopyRawToQCed_StageReservoir</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>STG</parameterId>
+            <locationSetId>10MinStreamGages</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="10"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>    
+    <variable>
+        <variableId>STG_15MinToHour</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>To1Hr_Stage</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>STG</parameterId>
+            <locationSetId>15MinStreamGages</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>    
+    <variable>
+        <variableId>STG_10MinTo5Min</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>To1Hr_Stage</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>STG</parameterId>
+            <locationSetId>10MinStreamGages</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="5"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>    
+    <variable>
+        <variableId>STG_10MinTo15Min</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>To1Hr_Stage</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>STG</parameterId>
+            <locationSetId>10MinStreamGages</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>    
+    <variable>
+        <variableId>STG_10MinToHour</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>To1Hr_Stage</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>STG</parameterId>
+            <locationSetId>10MinStreamGages</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>    
+
+
+    <transformation id="15MinTo1Hour">
+        <aggregation>
+            <instantaneous>
+                <inputVariable>
+                    <variableId>STG_15Min</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>STG_15MinToHour</variableId>
+                </outputVariable>
+            </instantaneous>
+        </aggregation>
+    </transformation>
+
+    <transformation id="10MinTo5Min">
+        <disaggregation>
+            <instantaneous>
+                <inputVariable>
+                    <variableId>STG_10Min</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>STG_10MinTo5Min</variableId>
+                </outputVariable>
+            </instantaneous>
+        </disaggregation>
+    </transformation>
+    <transformation id="5MinTo15Min">
+        <aggregation>
+            <instantaneous>
+                <inputVariable>
+                    <variableId>STG_10MinTo5Min</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>STG_10MinTo15Min</variableId>
+                </outputVariable>
+            </instantaneous>
+        </aggregation>
+    </transformation>
+
+    <transformation id="10MinTo1Hour">
+        <aggregation>
+            <instantaneous>
+                <inputVariable>
+                    <variableId>STG_10Min</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>STG_10MinToHour</variableId>
+                </outputVariable>
+            </instantaneous>
+        </aggregation>
+    </transformation>
+
+</transformationModule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://chps1/schemas/idMap.xsd">
+
+<!-- PP (point precip), PC (accumulated precip), HG (stage), HP (pool elevation) -->
+    <parameter external="PP" internal="PP"/>
+    <parameter external="PC" internal="PC"/>
+    <parameter external="HG" internal="STG"/>
+    <parameter external="HP" internal="PELV"/>
+
+
+    <enableOneToOneMapping/>
+</idMap>

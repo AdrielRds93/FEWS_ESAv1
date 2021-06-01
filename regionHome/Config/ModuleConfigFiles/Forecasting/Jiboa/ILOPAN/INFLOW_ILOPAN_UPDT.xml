@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+    <variable>
+        <variableId>CHAGUITE_SQIN</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>UNITHG_CHAGUITE_UPDT</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>CHAGUITE</locationId>
+            <timeSeriesType>simulated historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" />
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>SMARTIN_SQIN</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>UNITHG_SMARTIN_UPDT</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>SMARTIN</locationId>
+            <timeSeriesType>simulated historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" />
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>GULUCHAP_SQIN</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>UNITHG_GULUCHAP_UPDT</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>GULUCHAP</locationId>
+            <timeSeriesType>simulated historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" />
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>CUJUAPNO_SQIN</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>UNITHG_CUJUAPNO_UPDT</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>CUJUAPNO</locationId>
+            <timeSeriesType>simulated historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" />
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>CUJUAPSU_SQIN</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>UNITHG_CUJUAPSU_UPDT</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>CUJUAPSU</locationId>
+            <timeSeriesType>simulated historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" />
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>ILOPANLOC_SQIN</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>UNITHG_ILOPANLOC_UPDT</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>ILOPANLOC</locationId>
+            <timeSeriesType>simulated historical</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" />
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <variable>
+        <variableId>Sum15MinInflow_15Min</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>INFLOW_ILOPAN_UPDT</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>ILOPAN</locationId>
+            <timeSeriesType>temporary</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" />
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>Sum15MinInflow_1Hr</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>INFLOW_ILOPAN_UPDT</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <qualifierId>Sum15Min</qualifierId>
+            <locationId>ILOPAN</locationId>
+            <timeSeriesType>temporary</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" />
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>TotalInflow_1Hr</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>INFLOW_ILOPAN_UPDT</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>ILOPAN</locationId>
+            <timeSeriesType>simulated historical</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" />
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <!--Sum 15-minute flows from headwaters (all but ILOPANLOC)-->
+    <transformation id="Sum15MinInflow_15Min">
+        <user>
+            <simple>
+                <expression>(CHAGUITE_SQIN + SMARTIN_SQIN + GULUCHAP_SQIN + CUJUAPNO_SQIN + CUJUAPSU_SQIN)</expression>
+                <outputVariable>
+                    <variableId>Sum15MinInflow_15Min</variableId>
+                </outputVariable>
+            </simple>
+        </user>
+    </transformation>
+
+    <!--Convert sum of 15-minute flows to 1-hour-->
+    <transformation id="Aggregate">
+        <aggregation>
+            <instantaneous>
+                <inputVariable>
+                    <variableId>Sum15MinInflow_15Min</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>Sum15MinInflow_1Hr</variableId>
+                </outputVariable>
+            </instantaneous>
+        </aggregation>
+    </transformation>
+
+    <!--Add ILOPANLOC 1-hour flows to yield total 1-hour inflow-->
+    <transformation id="TotalFlow">
+        <user>
+            <simple>
+                <expression>Sum15MinInflow_1Hr + ILOPANLOC_SQIN</expression>
+                <outputVariable>
+                    <variableId>TotalInflow_1Hr</variableId>
+                </outputVariable>
+            </simple>
+        </user>
+    </transformation>
+
+</transformationModule>

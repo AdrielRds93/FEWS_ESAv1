@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/generalAdapterRun.xsd"
+>
+
+    <general>
+        <description>General Adapter Test</description>
+        <piVersion>1.5</piVersion>
+        <rootDir>$MODELDIR$/RTi/WRF_ElSal</rootDir>
+        <workDir>%ROOT_DIR%/work</workDir>
+        <exportDir>%ROOT_DIR%/input</exportDir>
+        <exportDataSetDir>%ROOT_DIR%</exportDataSetDir>
+        <importDir>%ROOT_DIR%/output</importDir>
+        <dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+        <dumpDir>%ROOT_DIR%</dumpDir>
+        <diagnosticFile>%ROOT_DIR%/output/diag.xml</diagnosticFile>
+    </general>
+    <activities>
+        <startUpActivities>
+            <purgeActivity>
+                <filter>%ROOT_DIR%/work/*.*</filter>
+            </purgeActivity>
+            <purgeActivity>
+                <filter>%ROOT_DIR%/output/*.*</filter>
+            </purgeActivity>
+        </startUpActivities>
+        <exportActivities>
+
+         <exportStateActivity>
+                <moduleInstanceId>PullWRF_ElSal</moduleInstanceId>
+                <stateExportDir>%ROOT_DIR%/states</stateExportDir>
+                <stateConfigFile>%ROOT_DIR%/states/states.xml</stateConfigFile>
+                <stateLocations type="file">
+                    <stateLocation>
+                        <readLocation>lastTimeI.txt</readLocation>
+                        <writeLocation>lastTimeO.txt</writeLocation>
+                    </stateLocation>
+                </stateLocations>
+                <stateSelection>
+                    <warmState>
+                        <stateSearchPeriod unit="hour" start="-2400" end="120"/>
+                    </warmState>
+                </stateSelection>
+            </exportStateActivity>
+                <exportRunFileActivity>
+                <exportFile>%ROOT_DIR%/run_info.xml</exportFile>
+                <properties>
+                    <string key="WRF_ElSal_ImportDirectory" value="$IMPORT_FOLDER_WRF_ELSAL$"/>
+                    <string key="WRF_ElSal_Server" value="$WRF_ELSAL_SERVER$"/>
+                    <string key="WRF_ElSal_Remote_Folder" value="$WRF_ELSAL_REMOTEFOLDER$"/>
+                    <string key="WRF_ElSal_Bin_Folder" value="$MODELDIR$/RTi/bin"/>
+                </properties>
+                </exportRunFileActivity>
+        </exportActivities>
+        <executeActivities>
+                <executeActivity>
+                <command>
+                    <executable>$PYTHON_EXE$</executable>
+                </command>
+                <arguments>
+                    <argument>$MODELDIR$/RTi/bin/importWRF_ElSal.py</argument>
+                    <argument>%ROOT_DIR%/run_info.xml</argument>
+                </arguments>
+                <!--time in milliseconds, allowing 15 minutes to download wrf-->
+                <timeOut>900000</timeOut>
+                </executeActivity>
+        </executeActivities>
+        <importActivities>
+                <importStateActivity>
+                <stateConfigFile>%ROOT_DIR%/states/states.xml</stateConfigFile>
+                </importStateActivity>
+        </importActivities>
+    </activities>
+</generalAdapterRun>
+

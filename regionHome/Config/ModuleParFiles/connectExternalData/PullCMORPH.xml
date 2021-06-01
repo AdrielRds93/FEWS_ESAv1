@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters version="1.5"
+xsi:schemaLocation="http://www.wldelft.nl/fews/PI http://schemas/pi_modelparameters.xsd"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.wldelft.nl/fews/PI"
+>
+
+    <group id="default">
+        <parameter id="TITLE">
+          <stringValue>correlation estimates</stringValue>
+        </parameter>
+        <parameter id="OPTIONS">
+          <stringValue>yrev big_endian</stringValue>
+        </parameter>
+        <parameter id="UNDEF">
+          <intValue>255</intValue>
+        </parameter>
+        <parameter id="XDEF">
+          <stringValue>LINEAR</stringValue>
+        </parameter>
+        <parameter id="YDEF">
+          <stringValue>LINEAR</stringValue>
+        </parameter>
+        <parameter id="ZDEF">
+          <stringValue>LEVELS</stringValue>
+        </parameter>
+        <parameter id="TDEF">
+          <stringValue>LINEAR</stringValue>
+        </parameter>
+        <parameter id="COLUMNS">
+          <intValue>4948</intValue>
+        </parameter>
+        <parameter id="ROWS">
+          <intValue>1649</intValue>
+        </parameter>
+        <parameter id="NUMBERLEVELS">
+          <intValue>1</intValue>
+        </parameter>
+        <parameter id="LATITUDE">
+          <dblValue>0.036378335</dblValue>
+        </parameter>
+        <parameter id="LONGITUDE">
+          <dblValue>-59.963614</dblValue>
+        </parameter>
+        <parameter id="XCELLSIZE">
+          <dblValue>0.072756669</dblValue>
+        </parameter>
+        <parameter id="YCELLSIZE">
+          <dblValue>0.072771377</dblValue>
+        </parameter>
+        <parameter id="LEVELS">
+            <table>
+                <columnTypes A="double"/>
+                <row A="1.0"/>
+            </table>
+        </parameter>
+        <parameter id="TIMESTEPS">
+          <intValue>99999</intValue>
+        </parameter>
+        <parameter id="TIMESTEP">
+          <stringValue>60mn</stringValue>
+        </parameter>
+        <parameter id="VARIABLES">
+            <table>
+                <columnTypes A="string"/>
+                <row A="cmorph1  1  -1,40,1,-1 xxxxxx yyyyy  (mult. by 0.2 to get mm/hr units)"/>
+                <row A="time1    1  -1,40,1,-1 xxxxxx yyyyy"/>
+                <row A="satid1   1  -1,40,1,-1 xxxxxx yyyyy"/>
+                <row A="cmorph2  1  -1,40,1,-1 xxxxxx yyyyy  (mult. by 0.2 to get mm/hr units)"/>
+                <row A="time2    1  -1,40,1,-1 xxxxxx yyyyy"/>
+                <row A="satid2   1  -1,40,1,-1 xxxxxx yyyyy"/>
+            </table>
+        </parameter>
+        <parameter id="MINIMUM_LON">
+          <dblValue>-91</dblValue>
+        </parameter>
+        <parameter id="MAXIMUM_LON">
+          <dblValue>-87</dblValue>
+        </parameter>
+        <parameter id="MINIMUM_LAT">
+          <dblValue>12</dblValue>
+        </parameter>
+        <parameter id="MAXIMUM_LAT">
+          <dblValue>15</dblValue>
+        </parameter>
+        <parameter id="EQUATIONS">
+            <table>
+                <columnTypes A="string"/>
+                <row A="hrprecip = (cmorph1*0.1)+(cmorph2*0.1)"/>
+            </table>
+        </parameter>
+        <parameter id="WRITE_VARIABLES">
+            <table>
+                <columnTypes A="string"/>
+                <row A="hrprecip"/>
+            </table>
+        </parameter>
+        <parameter id="SDF_OPTIONS">
+          <stringValue>-4d</stringValue>
+        </parameter>
+  </group>
+</parameters>
