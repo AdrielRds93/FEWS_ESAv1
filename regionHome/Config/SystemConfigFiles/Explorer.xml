@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<explorer version="1.1" 
+          xmlns="http://www.wldelft.nl/fews"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/explorer.xsd"
+>
+
+    <!--
+    Different options for specifying colors:
+    You can specify a html color (see http://www.columbia.edu/~sue/colors-on-white.html) or a
+    hexadecimal RGB color e.g FF0000 is red.
+    See http://www.squarebox.co.uk/users/rolf/download/ColourWheel/ or
+    http://javaboutique.internet.com/ColorPicker/ to compose your own color
+    -->
+
+    <description>Configuration of the main FEWS display</description>
+    <systemInformation>
+        <systemCaption>El Salvador</systemCaption>
+        <systemHelpFile/>
+    </systemInformation>
+    <globalDatum>Elevation</globalDatum>
+    <map>
+        <geoDatum>WGS 1984</geoDatum>
+        <projection>orthographic</projection>
+        <defaultExtent id="ElSalvador" name="El Salvador">
+            <left>-90.153</left>
+            <right>-87.644</right>
+            <top>14.712419</top>
+            <bottom>13.154</bottom>
+        </defaultExtent>
+        <extraExtent id="Jiboa" name="Jiboa"> 
+            <left>-89.186581</left>
+            <right>-88.837655</right>
+            <top>13.75012</top>
+            <bottom>13.353592</bottom>
+        </extraExtent>
+        <extraExtent id="Lempa" name="Lempa"> 
+            <left>-90.112382</left>
+            <right>-87.80639</right>
+            <top>14.712419</top>
+            <bottom>13.231514</bottom>
+        </extraExtent>
+        <extraExtent id="BahiaDeJiquilisco" name="Bahia De Jiquilisco"> 
+            <left>-88.760417</left>
+            <right>-88.231967</right>
+            <top>13.497757</top>
+            <bottom>13.163768</bottom>
+        </extraExtent>
+        <extraExtent id="CaraSucia+SanPedro" name="Cara Sucia + San Pedro"> 
+            <left>-90.102094</left>
+            <right>-89.759019</right>
+            <top>13.885067</top>
+            <bottom>13.598373</bottom>
+        </extraExtent>
+        <extraExtent id="EsteroDeJaltepeque" name="Estero De Jaltepeque"> 
+            <left>-89.033754</left>
+            <right>-88.6823</right>
+            <top>13.614675</top>
+            <bottom>13.26048</bottom>
+        </extraExtent>
+        <extraExtent id="Goascoran" name="Goascoran"> 
+            <left>-88.005021</left>
+            <right>-87.582377</right>
+            <top>14.166294</top>
+            <bottom>13.362992</bottom>
+        </extraExtent>
+        <extraExtent id="GrandeDeSanMiguel" name="Grande De San Miguel"> 
+            <left>-88.469749</left>
+            <right>-87.958979</right>
+            <top>13.791888</top>
+            <bottom>13.167756</bottom>
+        </extraExtent>
+        <extraExtent id="GrandeDeSonsonate+Banderas" name="Grande De Sonsonate + Banderas"> 
+            <left>-89.843595</left>
+            <right>-89.493089</right>
+            <top>13.902805</top>
+            <bottom>13.522977</bottom>
+        </extraExtent>
+        <extraExtent id="LagoDeCoatepeque" name="Lago De Coatepeque"> 
+            <left>-89.634218</left>
+            <right>-89.51509</right>
+            <top>13.896947</top>
+            <bottom>13.826493</bottom>
+        </extraExtent>
+        <extraExtent id="Mandinga+Comalapa" name="Mandinga + Comalapa"> 
+            <left>-89.732937</left>
+            <right>-89.062988</right>
+            <top>13.684119</top>
+            <bottom>13.404078</bottom>
+        </extraExtent>
+        <extraExtent id="Paz" name="Paz"> 
+            <left>-90.276278</left>
+            <right>-89.57465</right>
+            <top>14.403582</top>
+            <bottom>13.722829</bottom>
+        </extraExtent>
+        <extraExtent id="Sirama" name="Sirama"> 
+            <left>-88.242815</left>
+            <right>-87.779521</right>
+            <top>13.600249</top>
+            <bottom>13.154899</bottom>
+        </extraExtent>
+        <scaleBarVisible>true</scaleBarVisible>
+        <northArrowVisible>true</northArrowVisible>
+        <labelsVisible>true</labelsVisible>
+        <backgroundColor>light steel blue2</backgroundColor>
+        <openStreetMapLayer id="Osm" name="Open Street Map">
+            <url>http://tile.openstreetmap.org</url>
+            <visible>true</visible>
+            <cacheDir>$MAP_DIR$/mapcache/openstreetmaps</cacheDir>
+        </openStreetMapLayer>
+        <esriShapeLayer id="Countries">
+            <description>Countries</description>
+            <file>Countries.shp</file>
+            <geoDatum>WGS 1984</geoDatum>
+            <visible>false</visible>
+            <lineColor>black</lineColor>
+            <fillColor>light goldenrod2</fillColor>
+        </esriShapeLayer>
+        <esriShapeLayer id="Basins">
+            <description>Basins</description>
+            <file>ElSalvadorBasins.shp</file>
+            <geoDatum>WGS 1984</geoDatum>
+            <visible>true</visible>
+            <lineColor>black</lineColor>
+            <fillColor>medium forest green</fillColor>
+            <opaquenessPercentage>30</opaquenessPercentage>
+        </esriShapeLayer>
+        <esriShapeLayer id="Countries outline">
+            <description>Countries outline</description>
+            <file>Countries.shp</file>
+            <geoDatum>WGS 1984</geoDatum>
+            <visible>true</visible>
+            <lineColor>green</lineColor>
+            <opaquenessPercentage>0</opaquenessPercentage>
+            <linePattern>dotted</linePattern>
+        </esriShapeLayer>
+        <esriShapeLayer id="Regions">
+            <description>Regions</description>
+            <file>Regions.shp</file>
+            <geoDatum>WGS 1984</geoDatum>
+            <visible>true</visible>
+            <lineColor>orange red3</lineColor>
+            <opaquenessPercentage>0</opaquenessPercentage>
+            <lineWidth value="2"/>
+        </esriShapeLayer>
+        <esriShapeLayer id="Daily Gages">
+            <description>Daily Gages</description>
+            <file>DailyGages_UTM16N.shp</file>
+            <geoDatum>UTM16N</geoDatum>
+            <visible>true</visible>
+            <lineColor>black</lineColor>
+            <fillColor>black</fillColor>
+        </esriShapeLayer>
+        <esriShapeLayer id="Automatic Gages">
+            <description>Automatic Gages</description>
+            <file>AutomaticGages_UTM16N.shp</file>
+            <geoDatum>UTM16N</geoDatum>
+            <visible>true</visible>
+            <lineColor>black</lineColor>
+            <fillColor>black</fillColor>
+        </esriShapeLayer>
+        <esriShapeLayer id="Outlet Points">
+            <description>Outlet Points</description>
+            <file>Outlets.shp</file>
+            <geoDatum>WGS 1984</geoDatum>
+            <visible>true</visible>
+            <lineColor>black</lineColor>
+            <fillColor>black</fillColor>
+        </esriShapeLayer>
+        <esriShapeLayer id="Rivers">
+            <description>Rivers</description>
+            <file>Rivers.shp</file>
+            <geoDatum>WGS 1984</geoDatum>
+            <visible>true</visible>
+            <lineColor>blue</lineColor>
+            <fillColor>blue</fillColor>
+        </esriShapeLayer>
+        <esriShapeLayer id="Lakes">
+            <description>Lakes</description>
+            <file>Lakes.shp</file>
+            <geoDatum>WGS 1984</geoDatum>
+            <visible>true</visible>
+            <lineColor>blue</lineColor>
+            <fillColor>light steel blue2</fillColor>
+        </esriShapeLayer>
+    </map>
+    <fileMenu>
+        <exportTimeSeries visible="true"/>
+    </fileMenu>
+    <explorerTasks>
+        <explorerTask name="Manual Forecast">
+            <iconFile>manforc.png</iconFile>
+            <mnemonic>n</mnemonic>
+            <taskClass>nl.wldelft.fews.gui.plugin.manualforecast.ManualForecastDialog</taskClass>
+            <toolbarTask>true</toolbarTask>
+            <menubarTask>true</menubarTask>
+            <accelerator>ctrl N</accelerator>
+            <loadAtStartup>true</loadAtStartup>
+        </explorerTask>
+        <explorerTask name="Modifiers">
+            <iconFile>wrench.png</iconFile>
+            <mnemonic>M</mnemonic>
+            <taskClass>nl.wldelft.fews.gui.plugin.modifiersdisplay.ModifiersPanel</taskClass>
+            <toolbarTask>true</toolbarTask>
+            <menubarTask>true</menubarTask>
+            <accelerator>ctrl M</accelerator>
+            <loadAtStartup>true</loadAtStartup>
+        </explorerTask>
+        <explorerTask name="Topology">
+            <iconFile>interactive_forecast.png</iconFile>
+            <mnemonic>T</mnemonic>
+            <taskClass>nl.wldelft.fews.gui.plugin.forecast.TopologyPanel</taskClass>
+            <toolbarTask>true</toolbarTask>
+            <menubarTask>true</menubarTask>
+            <accelerator>ctrl T</accelerator>
+            <loadAtStartup>true</loadAtStartup>
+        </explorerTask>
+        <explorerTask name="Plots">
+            <iconFile>graph.gif</iconFile>
+            <mnemonic>l</mnemonic>
+            <taskClass>nl.wldelft.fews.gui.plugin.timeseries.PlotsTimeSeriesDialog</taskClass>
+            <toolbarTask>true</toolbarTask>
+            <menubarTask>true</menubarTask>
+            <allowMultipleInstances>true</allowMultipleInstances>
+            <accelerator>ctrl D</accelerator>
+            <loadAtStartup>true</loadAtStartup>
+        </explorerTask>
+        <explorerTask name="Data Editor">
+            <iconFile>edit.png</iconFile>
+            <mnemonic>E</mnemonic>
+            <taskClass>nl.wldelft.fews.gui.plugin.timeseries.DataEditorTimeSeriesDialog</taskClass>
+            <toolbarTask>true</toolbarTask>
+            <menubarTask>true</menubarTask>
+            <accelerator>ctrl E</accelerator>
+        </explorerTask>
+        <explorerTask name="Spatial Data">
+            <iconFile>map.png</iconFile>
+            <mnemonic>p</mnemonic>
+            <arguments>SpatialDisplay</arguments>
+            <taskClass>nl.wldelft.fews.gui.plugin.grid.GridDisplay</taskClass>
+            <toolbarTask>true</toolbarTask>
+            <menubarTask>true</menubarTask>
+            <allowMultipleInstances>true</allowMultipleInstances>
+            <accelerator>ctrl P</accelerator>
+        </explorerTask>
+        <explorerTask name="Separator">
+            <separator></separator>
+            <toolbarTask>true</toolbarTask>
+            <menubarTask>true</menubarTask>
+        </explorerTask>
+        <explorerTask name="Forecast Management">
+            <iconFile>forcman.png</iconFile>
+            <mnemonic>F</mnemonic>
+            <taskClass>nl.wldelft.fews.gui.plugin.forecast.ForecastDialog</taskClass>
+            <toolbarTask>true</toolbarTask>
+            <menubarTask>true</menubarTask>
+            <accelerator>ctrl F</accelerator>
+        </explorerTask>
+        <explorerTask name="System Monitor">
+            <iconFile>sysmon.png</iconFile>
+            <mnemonic>S</mnemonic>
+            <taskClass>nl.wldelft.fews.gui.plugin.systemmonitor.SystemMonitorDialog</taskClass>
+            <toolbarTask>true</toolbarTask>
+            <menubarTask>true</menubarTask>
+            <accelerator>ctrl S</accelerator>
+        </explorerTask>
+        <explorerTask name="Workflow Navigator">
+            <iconFile>tree.png</iconFile>
+            <arguments>WorkflowNavigator</arguments>
+            <taskClass>nl.wldelft.fews.gui.plugin.workflownavigator.WorkflowNavigator</taskClass>
+            <toolbarTask>true</toolbarTask>
+            <menubarTask>true</menubarTask>
+        </explorerTask>
+        <explorerTask name="Separator">
+            <separator></separator>
+            <toolbarTask>true</toolbarTask>
+            <menubarTask>true</menubarTask>
+        </explorerTask>
+
+        <!--        <explorerTask name="What-if Scenario">
+            <iconFile>whatif.png</iconFile>
+            <mnemonic>W</mnemonic>
+            <arguments>WhatIfScenarioFilters</arguments>
+            <taskClass>nl.wldelft.fews.gui.plugin.scenario.WhatIfScenarioDialog</taskClass>
+            <toolbarTask>false</toolbarTask>
+            <menubarTask>false</menubarTask>
+            <accelerator>ctrl W</accelerator>
+        </explorerTask>-->
+        <explorerTask name="Map Display">
+            <iconFile>splitmap.gif</iconFile>
+            <mnemonic>a</mnemonic>
+            <taskClass>nl.wldelft.fews.gui.plugin.map.MapDisplay</taskClass>
+            <toolbarTask>false</toolbarTask>
+            <menubarTask>true</menubarTask>
+            <allowMultipleInstances>true</allowMultipleInstances>
+            <accelerator>ctrl A</accelerator>
+        </explorerTask>
+
+        <!--Forecaster notes provide a way to save notes on individual forecasts-->
+        <!--        <explorerTask name="Forecaster notes">
+            <taskClass>nl.wldelft.fews.gui.plugin.systemmonitor.ForecasterNotesPanel</taskClass>
+            <toolbarTask>false</toolbarTask>
+            <menubarTask>false</menubarTask>
+            <toolWindow>true</toolWindow>
+            <loadAtStartup>true</loadAtStartup>
+        </explorerTask>-->
+        <explorerTask name="Plot Overview">
+            <taskClass>nl.wldelft.fews.gui.plugin.displaythumbnails.ShortcutsThumbnailsDialog</taskClass>
+            <toolbarTask>false</toolbarTask>
+            <menubarTask>false</menubarTask>
+            <toolWindow>true</toolWindow>
+            <loadAtStartup>true</loadAtStartup>
+        </explorerTask>
+        <explorerTask name="Forecasts">
+            <taskClass>nl.wldelft.fews.gui.plugin.selection.SegmentSelectionDialog</taskClass>
+            <toolbarTask>false</toolbarTask>
+            <menubarTask>false</menubarTask>
+            <toolWindow>true</toolWindow>
+            <loadAtStartup>true</loadAtStartup>
+        </explorerTask>
+        <!--Forecaster help and document viewer are tied together; segment-specific documents-->
+        <explorerTask name="Forecaster help">
+            <iconFile>help.png</iconFile>
+            <taskClass>nl.wldelft.fews.gui.plugin.information.ForecasterAidSelectionPanel</taskClass>
+            <toolbarTask>false</toolbarTask>
+            <menubarTask>false</menubarTask>
+            <toolWindow>true</toolWindow>
+            <loadAtStartup>true</loadAtStartup>
+        </explorerTask>
+        <explorerTask name="Document Viewer">
+            <taskClass>nl.wldelft.fews.gui.plugin.information.ForecasterAidDocumentPanel</taskClass>
+            <toolbarTask>false</toolbarTask>
+            <menubarTask>true</menubarTask>
+        </explorerTask>
+        <explorerTask name="Run Info">
+            <taskClass>nl.wldelft.fews.gui.plugin.logger.SegmentSelectionLoggerPanel</taskClass>
+            <toolbarTask>false</toolbarTask>
+            <menubarTask>false</menubarTask>
+            <toolWindow>true</toolWindow>
+            <loadAtStartup>true</loadAtStartup>
+        </explorerTask>
+    </explorerTasks>
+    <statusBarConfig>
+        <description>Standard date-time format</description>
+        <dateTimeFormat>HH:mm:ss</dateTimeFormat>
+        <timeGMT>true</timeGMT>
+        <timeCurrent>true</timeCurrent>
+        <timeLastRefresh>true</timeLastRefresh>
+        <statusOfSystem>true</statusOfSystem>
+        <mouseCoordinates>true</mouseCoordinates>
+        <userName>true</userName>
+    </statusBarConfig>
+    <dateTime>
+        <timeZoneOffset>-06:00</timeZoneOffset>
+        <dateTimeFormat>yyyy-MM-dd HH:mm:ss</dateTimeFormat>
+        <cardinalTimeStep unit="minute" multiplier="15"/>
+        <adjustSystemTimeAutomatically>true</adjustSystemTimeAutomatically>
+    </dateTime>
+    <logPanelConfig>
+        <clientFilter>
+            <clientId>Stand alone</clientId>
+            <logFilter>
+                <level>INFO</level>
+                <eventType>system</eventType>
+            </logFilter>
+            <logFilter>
+                <level>INFO</level>
+                <eventType>debug</eventType>
+            </logFilter>
+        </clientFilter>
+        <clientFilter>
+            <clientId>Operator Client</clientId>
+            <logFilter>
+                <level>INFO</level>
+                <eventType>system</eventType>
+            </logFilter>
+            <logFilter>
+                <level>INFO</level>
+                <eventType>debug</eventType>
+            </logFilter>
+        </clientFilter>
+    </logPanelConfig>
+    <panelSizes>
+        <loggingPanelSize>20</loggingPanelSize>
+        <listsPanelSize>20</listsPanelSize>
+        <filterListSize>30</filterListSize>
+        <locationListSize>30</locationListSize>
+        <parameterListSize>20</parameterListSize>
+        <forecastListSize>20</forecastListSize>
+    </panelSizes>
+
+    <!--The following defines the port to listen to for SOAP requests 
+    (used for automated workflow execution in stand-alone mode)-->
+    <piServicePortRange start="8100" end="8200"/>
+</explorer>
