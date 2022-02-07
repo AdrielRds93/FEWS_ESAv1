@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun
+    xmlns="http://www.wldelft.nl/fews"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/timeSeriesImportRun.xsd"
+>
+    <import>
+        <general>
+            <importType>database</importType>
+            <jdbcDriverClass>net.sourceforge.jtds.jdbc.Driver</jdbcDriverClass>
+            <jdbcConnectionString>jdbc:postgresql://$POSTGRESQL_AUTOMATIC_HOST$:$POSTGRESQL_PORT$/$POSTGRESQL_AUTOMATIC_DBNAME$</jdbcConnectionString>
+            <user>$POSTGRESQL_AUTOMATIC_USER$</user>
+            <encryptedPassword>$POSTGRESQL_AUTOMATIC_PASSWORD$</encryptedPassword>
+            <!-- This relative view period sets the valid dates for import -->
+            <relativeViewPeriod unit="hour" start="-72" startOverrulable="true" end="12"/>
+
+            <!--Automatic stations-->
+            <table name="mediciones">
+                <locationColumn name="estacionid"/>
+                <parameterColumn name="parametroid"/>
+                <dateTimeColumn name="horafecha"/>
+                <!--Accumulated precipitation-->
+                <valueColumn name="medicion"/>
+                <unitColumn name="parametroid"/>
+            </table>
+    
+            <idMapId>IdImportPostGreSQL_AutomaticGages</idMapId>
+            <missingValue>-999.000</missingValue>
+        </general>
+
+        <!--Accumulated (raw) precipitation-->
+        <timeSeriesSet>
+            <moduleInstanceId>ImportPostGreSQL_AutomaticGages</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>PC</parameterId>
+            <locationSetId>AutomaticPrecipGages</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="nonequidistant"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+
+        <externUnit parameterId="PC" unit="MM"/>
+    </import>
+</timeSeriesImportRun>

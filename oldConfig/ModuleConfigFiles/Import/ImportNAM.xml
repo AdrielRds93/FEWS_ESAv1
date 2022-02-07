@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/timeSeriesImportRun.xsd"
+>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<folder>$IMPORT_FOLDER_NAM$</folder>
+                        <failedFolder>$FAILED_FOLDER_NAM$</failedFolder>
+                        <backupFolder>$BACKUP_FOLDER_NAM$</backupFolder>
+			<idMapId>IdImportNAM</idMapId>
+			<importTimeZone>
+				<timeZoneOffset>+00:00</timeZoneOffset>
+			</importTimeZone>
+			<gridStartPoint>SW</gridStartPoint>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportNAM</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>QPF</parameterId>
+			<locationId>NAM</locationId>
+                        <timeSeriesType>external forecasting</timeSeriesType>
+                        <timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
+	
+</timeSeriesImportRun>

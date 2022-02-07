@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+
+    <variable>
+        <variableId>METAPAN_ROUTED</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>LAGK_METAPAN_UPDT</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>METAPAN</locationId>
+            <timeSeriesType>simulated historical</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" />
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <variable>
+        <variableId>CRUCES_ROUTED</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>LAGK_CRUCES_UPDT</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>CRUCES</locationId>
+            <timeSeriesType>simulated historical</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" />
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <variable>
+        <variableId>SANJOSE_ROUTED</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>LAGK_SANJOSE_UPDT</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>SANJOSE</locationId>
+            <timeSeriesType>simulated historical</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" />
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <variable>
+        <variableId>LOCAL</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>UNITHG_GUAJOYLOC_UPDT</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>GUAJOYLOC</locationId>
+            <timeSeriesType>simulated historical</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" />
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>TOTAL_SQIN</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>INFLOW_GUAJOY_UPDT</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>GUAJOY</locationId>
+            <timeSeriesType>simulated historical</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" />
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <transformation id="ComputeTotal">
+        <user>
+            <simple>
+                <expression>LOCAL + METAPAN_ROUTED + CRUCES_ROUTED + SANJOSE_ROUTED</expression>
+                <outputVariable>
+                    <variableId>TOTAL_SQIN</variableId>
+                </outputVariable>
+            </simple>
+        </user>
+    </transformation>
+
+</transformationModule>

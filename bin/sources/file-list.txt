@@ -1,0 +1,16 @@
+JGrib-src.zip;82884;Bl314WURA6UkSKYv/Avfwbw20AzQ108x3Ouxkby6lpw=
+castor-0.9.5p-src.zip;1768743;fi47VgH9e8E+HuCgHb5KL2pq+2/op/j1MdsnwV6aWKg=
+commons-vfs-1.0p-src.zip;377276;5u/uLKnwT00pBr6AUSKJ2zVdmH6rRY7FtY8Syx7yDCc=
+datatips-0.2p-src.zip;21670;2VUnRsIhm+G6yZgkzXrrXckYkNkPSsoXlePFCCnoEg0=
+icepdf-core-p-src.zip;7373;UGyx1UhZJSpfNjE1A+I7tbVDghGRx4wFBV7CjfTCCV4=
+jaybird-2.2.14p-src.zip;817999;61EXmIiiqatqcTW/qdxPqeerJx77c6hrucs4qDH8+dU=
+jcalendar-1.4p-src.zip;96631;bWWDn/3GcICib7Hh+MvrGPIKLiBZyNGeQdZDW5dv18Y=
+jung-1.7.6p-src.zip;706368;GoUetj6U/j80suVbOqhblLz4uHNJ7XvHIKJE1QceYJs=
+mc_utils.zip;209759;q2dg5LQsE9SOMZ878Ees246XXF/29vSK93FWjOxG+Kw=
+mydoggy-api-src.zip;46671;i7kJBfdLdD84b6n9sELSfZZ3cHKfMvit+9JlYOdvLyE=
+mydoggy-plaf-src.zip;269141;CGVAEq1MUzk4OZzLbPld64I3+gsikJhd8FCurDr4imo=
+myswing20070720p-src.zip;49792;j1PY/8iO2wm9TFjTUq+q4b9trFVYc6xsVq1/9QJG60Q=
+netcdf-4.6.3p-src.zip;4853950;HqfhnGdDMm9uiK15XhkDVJEk2VM3Hsd1FqMMFVcxspc=
+openmap-3.7p-src.zip;1160979;ndrN+sNkOqYo24JQnAJr8t37f56fCrnAqz+Dv7R1ObE=
+postgresql-42.2.0p-src.zip;617922;mArwWIIUNX4tBs9F7rw9W+cS+JR7QO/4+Tbv6OjGAao=
+system_installation_example_files.zip;16542;nakFzZSBCHZsX1qxhD8nJhp6MklWG+pOIrc2PbN4UY8=

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesExportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews
+http://fews.wldelft.nl/schemas/version1.0/timeSeriesExportRun.xsd">
+    <export>
+        <general>
+            <exportTypeStandard>csv</exportTypeStandard>
+            <folder>$EXPORT_FOLDER$/PrecipStations</folder>
+            <exportFileName>
+                <name>1HrPrecipStations.csv</name>
+            </exportFileName>
+        </general>
+        <timeSeriesSet>
+            <moduleInstanceId>Interpolate15MinPrecipGrids</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>PP</parameterId>
+            <locationSetId>AutomaticPrecipGages</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-288" startOverrulable="true" end="24"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </export>
+</timeSeriesExportRun>

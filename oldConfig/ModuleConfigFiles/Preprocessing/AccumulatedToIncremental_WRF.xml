@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/transformationModule.xsd"
+    version="1.0"
+>
+    <variable>
+        <variableId>accumulated_wrf</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ImportWRF</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>QPF</parameterId>
+            <locationId>WRF</locationId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-48" startOverrulable="true" end="240" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <variable>
+        <variableId>timeshifted_wrf</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>AccumulatedToIncremental_WRF</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>QPF</parameterId>
+            <qualifierId>timeShifted</qualifierId>
+            <locationId>WRF</locationId>
+            <timeSeriesType>temporary</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-48" startOverrulable="true" end="240" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>incremental_wrf</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>AccumulatedToIncremental_WRF</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>QPF</parameterId>
+            <locationId>WRF</locationId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-48" startOverrulable="true" end="240" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <transformation id="Timeshift">
+        <timeShift>
+            <constant>
+                <inputVariable>
+                    <variableId>accumulated_wrf</variableId>
+                </inputVariable>
+                <numberOfTimeSteps>-1</numberOfTimeSteps>
+                <outputVariable>
+                    <variableId>timeshifted_wrf</variableId>
+                </outputVariable>
+            </constant>
+        </timeShift>
+    </transformation>
+
+    <transformation id="Subtraction">
+        <user>
+            <simple>
+                <expression>(accumulated_wrf - timeshifted_wrf)</expression>
+                <outputVariable>
+                    <variableId>incremental_wrf</variableId>
+                </outputVariable>
+            </simple>
+        </user>
+    </transformation>
+</transformationModule>

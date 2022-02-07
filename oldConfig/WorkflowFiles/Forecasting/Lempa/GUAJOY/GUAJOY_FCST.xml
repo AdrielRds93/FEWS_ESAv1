@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://chps1/schemas/workflow.xsd" version="1.1">
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>SACSMA_GUAJOYLOC_FCST</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>UNITHG_GUAJOYLOC_FCST</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>LAGK_METAPAN_FCST</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>LAGK_CRUCES_FCST</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>LAGK_SANJOSE_FCST</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>INFLOW_GUAJOY_FCST</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>RESJ_GUAJOY_FCST</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>GUAJOY_PRECIP_EVAP_FCST</moduleInstanceId>
+    </activity>
+</workflow>

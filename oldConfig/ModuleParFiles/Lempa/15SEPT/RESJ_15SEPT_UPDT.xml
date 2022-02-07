@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters version="1.5" xsi:schemaLocation="http://www.wldelft.nl/fews/PI pi_modelparameters.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews/PI">
+  <group id="default">
+    <parameter id="">
+      <table>
+        <row A="Dummy"/>
+      </table>
+    </parameter>
+    <parameter id="OPERATION_CONTENTS">
+      <stringValue>#
+################################################################{
+ TIMESERIES
+ TIMESTEP   1
+  ###### ######## #### ## ############
+  INPUT  15SEPT   SQIN  1 RES_INFLOW   # Reservoir inflow (cms)
+  INPUT  C_15SEPT MAP   1 PRECIP       # Precipitation on lake (mm)
+  INPUT  A_15SEPT RQOT  1 OBS_RELEASE  # Observed total outflow (cms)
+  INPUT  A_15SEPT PELV  1 OBS_POOL     # Observed pool elev (m)
+  
+  OUTPUT 15SEPT   QINE  1 SIM_RELEASE  # Simulated release (cms)
+  OUTPUT 15SEPT   PELE  1 SIM_POOL     # Simulated pool elev (m)
+  OUTPUT 15SEPT   DQIE  1 RAINFALL     # Precipitation on lake (cms) 
+  OUTPUT 15SEPT   SDQI  1 EVAP         # Evaporation from lake (cms) 
+ ENDTIMESERIES
+ ################################################################}
+ ################################################################{
+ TOPOLOGY
+  NODE PRECIP
+  RESERVOIR SEPT15 BELOW PRECIP
+ ENDTOPOLOGY
+ ################################################################}
+ ################################################################{
+ PARAMETERS
+  UNITS METRIC
+  # Elevation (M), Storage (M3), Rainfall (MM), Discharge (CMS)
+  ############ ############{
+  NODE         PRECIP
+   TSINPUT  INFLOW    RES_INFLOW
+   TSOUTPUT DIVERSION RAINFALL
+  ENDNODE
+  ############ ############}
+  ############ ############{
+  RESERVOIR    SEPT15
+   TSOUTPUT POOL     SIM_POOL
+   TSOUTPUT RELEASE  SIM_RELEASE
+   TSOUTPUT WITHDRAW EVAP
+   TABLE ELEV_STOR
+    14.9          0
+    15        30000
+    16       114459
+    17       380654
+    18       872806
+    19      1595397
+    20      2552908
+    21      3749823
+    22      5190622
+    23      6879788
+    24      8821803
+    25     11021149
+    26     13482308
+    27     16209762
+    28     19207993
+    29     22459026
+    30     26104251
+    31     30312093
+    32     35164230
+    33     40742337
+    34     47128090
+    35     54403167
+    36     62649243
+    37     71947995
+    38     82381099
+    39     94122362
+    40    106131383
+    41    119918390
+    42    135589468
+    43    153250705
+    44    173008186
+    45    194967996
+    46    219236222
+    47    245918949
+    48    275122264
+    49    306952252
+    49.1  310256474
+   ENDTABLE
+   INITIALPOOL      48.66   
+   INITIALRELEASE    0.000 
+   MINPOOL    14.9
+   MINRELEASE  0.0
+  ENDRESERVOIR
+  ############ ############}
+  ############ ############ ############{
+  LOOKUP3      PRECIP       PRECIP
+  # Convert rainfall to equivalent inflow  
+   ROWVAR       SEPT15.STARTINGPOOL
+   TSINDEX      COLUMNS      PRECIP
+   COLUMNVAR    INPUT_TS MM
+   TABLEVAR     AUGMENTATION
+    VALUES
+            0      1000.0
+     14.9   0         0.0
+     15.0   0         2.8
+     16.0   0        60.1
+     17.0   0       105.5
+     18.0   0       160.0
+     19.0   0       221.8
+     20.0   0       289.4
+     21.0   0       361.0
+     22.0   0       435.1
+     23.0   0       510.3
+     24.0   0       585.1
+     25.0   0       658.2
+     26.0   0       728.4
+     27.0   0       794.3
+     28.0   0       855.0
+     29.0   0       977.2
+     30.0   0      1105.9
+     31.0   0      1254.2
+     32.0   0      1432.1
+     33.0   0      1644.4
+     34.0   0      1891.1
+     35.0   0      2167.2
+     36.0   0      2462.8
+     37.0   0      2763.0
+     38.0   0      3048.1
+     39.0   0      3336.1
+     40.0   0      3661.2
+     41.0   0      4055.5
+     42.0   0      4539.3
+     43.0   0      5116.0
+     44.0   0      5773.4
+     45.0   0      6482.3
+     46.0   0      7197.8
+     47.0   0      7858.3
+     48.0   0      8386.0
+     49.0   0      9091.6
+     49.1   0      9157.5
+    ENDVALUES
+   INTERPOLATE ALL
+  ENDLOOKUP3
+  ############ ############ ############}
+  ############ ############ ############{
+  LOOKUP3      SEPT15       EVAP
+  # Convert evaporation to equivalent withdrawal
+   ROWVAR       SEPT15.STARTINGPOOL
+   COLUMNVAR    DATE
+   TABLEVAR     WITHDRAWAL
+   VALUES
+          01/15 02/15 03/15 04/15 05/15 06/15 07/15 08/15 09/15 10/15 11/15 12/15
+     14.9   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+     15.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+     16.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+     17.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+     18.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+     19.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+     20.0   0.1   0.1   0.1   0.1   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+     21.0   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.0   0.1   0.1
+     22.0   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1
+     23.0   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1
+     24.0   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1
+     25.0   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1
+     26.0   0.1   0.2   0.2   0.2   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1
+     27.0   0.1   0.2   0.2   0.2   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1
+     28.0   0.1   0.2   0.2   0.2   0.1   0.1   0.1   0.1   0.1   0.1   0.1   0.1
+     29.0   0.2   0.2   0.2   0.2   0.2   0.2   0.2   0.2   0.1   0.1   0.1   0.2
+     30.0   0.2   0.2   0.2   0.2   0.2   0.2   0.2   0.2   0.2   0.1   0.2   0.2
+     31.0   0.2   0.3   0.3   0.3   0.2   0.2   0.2   0.2   0.2   0.2   0.2   0.2
+     32.0   0.3   0.3   0.3   0.3   0.2   0.2   0.2   0.2   0.2   0.2   0.2   0.2
+     33.0   0.3   0.4   0.3   0.4   0.3   0.3   0.3   0.3   0.2   0.2   0.2   0.3
+     34.0   0.3   0.4   0.4   0.4   0.3   0.3   0.3   0.3   0.3   0.3   0.3   0.3
+     35.0   0.4   0.5   0.5   0.5   0.4   0.4   0.3   0.3   0.3   0.3   0.3   0.3
+     36.0   0.4   0.5   0.5   0.5   0.4   0.4   0.4   0.4   0.3   0.3   0.4   0.4
+     37.0   0.5   0.6   0.6   0.6   0.5   0.5   0.4   0.4   0.4   0.4   0.4   0.4
+     38.0   0.5   0.7   0.6   0.7   0.5   0.5   0.5   0.5   0.4   0.4   0.4   0.5
+     39.0   0.6   0.7   0.7   0.7   0.6   0.6   0.5   0.5   0.5   0.4   0.5   0.5
+     40.0   0.6   0.8   0.8   0.8   0.6   0.6   0.6   0.6   0.5   0.5   0.5   0.6
+     41.0   0.7   0.9   0.8   0.9   0.7   0.7   0.7   0.6   0.6   0.5   0.6   0.7
+     42.0   0.8   1.0   0.9   1.0   0.8   0.8   0.7   0.7   0.6   0.6   0.6   0.7
+     43.0   0.9   1.1   1.1   1.1   0.9   0.9   0.8   0.8   0.7   0.7   0.7   0.8
+     44.0   1.0   1.2   1.2   1.2   1.0   1.0   0.9   0.9   0.8   0.8   0.8   0.9
+     45.0   1.1   1.4   1.4   1.4   1.1   1.1   1.0   1.0   0.9   0.9   0.9   1.0
+     46.0   1.3   1.5   1.5   1.5   1.2   1.2   1.2   1.1   1.0   1.0   1.0   1.2
+     47.0   1.4   1.7   1.6   1.7   1.3   1.3   1.3   1.2   1.1   1.1   1.1   1.3
+     48.0   1.5   1.8   1.7   1.8   1.4   1.4   1.4   1.3   1.2   1.1   1.2   1.4
+     49.0   1.6   1.9   1.9   2.0   1.5   1.5   1.5   1.4   1.3   1.2   1.3   1.5
+     49.1   1.6   2.0   1.9   2.0   1.5   1.5   1.5   1.4   1.3   1.2   1.3   1.5
+   ENDVALUES
+   INTERPOLATE ALL
+  ENDLOOKUP3
+  ############ ############ ############}
+  ############ ############ ############{
+  SETRELEASE   SEPT15       SEPT15_REL
+   VALUES
+    ELEV   45  46  47  48  49 ENDELEV
+    12/20  50 130 150 160 3000
+    01/01  50 120 150 180 3000
+   ENDVALUES
+   BLEND  0  1
+   BLENDTS  0  1
+   INTERPOLATE ALL
+  ENDSETRELEASE
+  ############ ############ ############}
+  ############ ############ ############{
+  SETELEVATION SEPT15       SEPT15_ELEV
+   VALUES
+    01/01 47.5
+    12/31 47.5
+   ENDVALUES
+   BLEND  0  1
+   BLENDTS  0  1
+   INTERPOLATE ALL
+  ENDSETELEVATION
+  ############ ############ ############}
+  ############ ############ ############{
+  SETMIN       SEPT15       ELEV/REL
+   SETELEVATION SEPT15       SEPT15_ELEV
+   SETRELEASE   SEPT15       SEPT15_REL
+  ENDSETMIN
+  ############ ############ ############}
+  ############ ############ ############{
+  ADJUST       SEPT15       SET_TO_OBS
+  # Adjust release whenever it is available
+   TSINPUT OBSERVEDRELEASE   OBS_RELEASE
+   ADJSIM ON
+  ENDADJUST
+  ############ ############ ############}
+  ############ ############ ############{
+  ADJUST       SEPT15       ADJ_CO_SAVE
+  # Adjust pool elevation at start of run
+   TSINPUT OBSERVEDPOOL      OBS_POOL
+   ADJSIM OFF
+  ENDADJUST
+  ############ ############ ############}
+ ENDPARAMETERS
+ ################################################################}
+ ################################################################{
+ RULES
+  [ TRUE ]
+     ############ ############ ############
+   ::LOOKUP3      PRECIP       PRECIP
+   ::LOOKUP3      SEPT15       EVAP
+   ::SETMIN       SEPT15       ELEV/REL
+     #SETELEVATION SEPT15       SEPT15_ELEV
+     #SETRELEASE   SEPT15       SEPT15_REL
+   ::ADJUST       SEPT15       SET_TO_OBS
+   ::ADJUST       SEPT15       ADJ_CO_SAVE
+ ENDRULES
+ ################################################################}
+ENDRES-J
+</stringValue>
+    </parameter>
+  </group>
+</parameters>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesExportRun
+    xmlns="http://www.wldelft.nl/fews"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/timeSeriesExportRun.xsd"
+>
+    <!--
+    Data is exported only to the database. The export file is used to write log
+    messages. Connection details are included in .../Models/RTi/bin/Config/EXPORT_PostGreSQL_DailyGages_DEFS.xml
+    -->
+    <export>
+        <general>
+            <serializerClassName>us.riverside.timeseriesserializers.ExportPostGreSQL</serializerClassName>
+            <folder>$EXPORT_FOLDER$</folder>
+            <exportFileName>
+                <name>ExportPostGreSQL_DailyGages_LOG.txt</name>
+            </exportFileName>
+            <idMapId>IdExportPostGreSQL_DailyGages</idMapId>
+            <exportMissingValueString>-999</exportMissingValueString>
+        </general>
+
+<!--(Revised) Daily values-->
+        <timeSeriesSet>
+            <moduleInstanceId>CopyRawToQCed_DailyPrecip</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>PP</parameterId>
+            <locationSetId>DailyPrecipGages</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="day" multiplier="1" timeZone="GMT+11"/>
+            <relativeViewPeriod unit="hour" start="-240" end="0"/>
+            <readWriteMode>editing visible to all future task runs</readWriteMode>
+        </timeSeriesSet>
+                    
+    </export>
+</timeSeriesExportRun>

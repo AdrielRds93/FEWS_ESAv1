@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://chps1/schemas/workflow.xsd" version="1.1">
+
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>ImportPostGreSQL_AutomaticGages</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>ImportPostGreSQL_ReservoirGages</moduleInstanceId>
+    </activity>
+
+<!--Copy data (all but incremental)-->        
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>CopyRawToQCed_Accumulated</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>CopyRawToQCed_StageReservoir</moduleInstanceId>
+    </activity>
+
+<!--Convert accumulated to incremental, combine raw, QC'ed and edited incremental-->        
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>AccumulatedToIncremental_1HrPrecipGages</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>AccumulatedToIncremental_15MinPrecipGages</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>AccumulatedToIncremental_10MinPrecipGages</moduleInstanceId>
+    </activity>
+
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>MergeRawAndQCed_1HrPrecipGages</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>MergeRawAndQCed_15MinPrecipGages</moduleInstanceId>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>MergeRawAndQCed_10MinPrecipGages</moduleInstanceId>
+    </activity>
+
+</workflow>

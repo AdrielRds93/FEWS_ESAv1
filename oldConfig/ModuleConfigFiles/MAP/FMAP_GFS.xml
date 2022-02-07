@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    version="1.0"
+    xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/transformationModule.xsd">
+
+    <variable>
+        <variableId>grid</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ImportGFS</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>QPF</parameterId>
+            <locationId>GFS</locationId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="3"/>
+            <relativeViewPeriod unit="hour" start="-48" startOverrulable="true" end="240" endOverrulable="true"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>MAP_3hr</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>FMAP_GFS</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>FMAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>temporary</timeSeriesType>
+            <timeStep unit="hour" multiplier="3"/>
+            <relativeViewPeriod unit="hour" start="-48" startOverrulable="true" end="240" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>MAP_1hr</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>FMAP_GFS</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>FMAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-48" startOverrulable="true" end="240" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>MAP_15min</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>FMAP_GFS</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>FMAP</parameterId>
+            <locationSetId>AllCatchments</locationSetId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="hour" start="-48" startOverrulable="true" end="240" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <transformation id="SampleMAP">
+        <interpolationSpatial>
+            <average>
+                <inputVariable>
+                    <variableId>grid</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>MAP_3hr</variableId>
+                </outputVariable>
+            </average>
+        </interpolationSpatial>
+    </transformation>
+
+    <transformation id="disaggregation_3hrto1hr">
+        <disaggregation>
+            <accumulative>
+                <inputVariable>
+                    <variableId>MAP_3hr</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>MAP_1hr</variableId>
+                </outputVariable>
+            </accumulative>   
+        </disaggregation>
+    </transformation>
+
+    <transformation id="disaggregation_3hrto15min">
+        <disaggregation>
+            <accumulative>
+                <inputVariable>
+                    <variableId>MAP_3hr</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>MAP_15min</variableId>
+                </outputVariable>
+            </accumulative>
+        </disaggregation>
+    </transformation>
+
+</transformationModule>

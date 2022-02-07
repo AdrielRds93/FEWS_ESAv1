@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forecastLengthEstimator xmlns="http://www.wldelft.nl/fews" 
+                         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                         xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/forecastLengthEstimator.xsd"
+>
+    <externalHistoricalTimeSeries>
+        <moduleInstanceId>SetTimes_LastObserved</moduleInstanceId>
+        <valueType>scalar</valueType>
+        <parameterId>MAP</parameterId>
+        <locationId>LastObserved</locationId>
+        <timeSeriesType>external historical</timeSeriesType>
+        <timeStep unit="hour" multiplier="1"/>
+        <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+        <readWriteMode>read only</readWriteMode>
+    </externalHistoricalTimeSeries>
+    <externalForecastTimeSeries>
+        <moduleInstanceId>Jiboa_SampleESP</moduleInstanceId>
+        <valueType>scalar</valueType>
+        <parameterId>FMAP</parameterId>
+        <locationSetId>JiboaCatchments</locationSetId>
+        <timeSeriesType>external forecasting</timeSeriesType>
+        <timeStep unit="hour" multiplier="1"/>
+        <relativeViewPeriod unit="hour" start="0" end="365" endOverrulable="true"/>
+        <readWriteMode>read only</readWriteMode>
+    </externalForecastTimeSeries>
+    <minForecastLength multiplier="90" unit="day"/>
+</forecastLengthEstimator>

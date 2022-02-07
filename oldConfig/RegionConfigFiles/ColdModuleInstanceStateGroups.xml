@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coldModuleInstanceStateGroups xmlns="http://www.wldelft.nl/fews" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/coldModuleInstanceStateGroups.xsd"
+    version="1.0">
+        
+	<defaultGroup id="Default" name="Cold States">
+		<description>Cold States all models</description>
+	</defaultGroup>
+</coldModuleInstanceStateGroups>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/transformationModule.xsd"
+                      version="1.0"
+>
+
+    <!--Merge raw, quality controlled and edited time series; the "edit" time
+    series is required to allow daily precip values to be set to missing -->
+
+    <variable>
+        <variableId>QC</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>CopyRawToQCed_DailyPrecip</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>PP</parameterId>
+            <locationSetId>DailyPrecipGages</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+        <!--The daily data represent 7am - 7am local time (13:00-13:00 GMT)
+            accumulations-->
+            <timeStep unit="day" multiplier="1" timeZone="GMT+11"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>RAW</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ImportPostGreSQL_DailyGages</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>PP</parameterId>
+            <locationSetId>DailyPrecipGages</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+        <!--The daily data represent 7am - 7am local time (13:00-13:00 GMT)
+            accumulations-->
+            <timeStep unit="day" multiplier="1" timeZone="GMT+11"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>EDITS</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>Edits</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>PP</parameterId>
+            <qualifierId>Edits</qualifierId>
+            <locationSetId>DailyPrecipGages</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="day" multiplier="1" timeZone="GMT+11"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <!-- Merge new raw into QCed -->
+    <transformation id="MergeWithEdits">
+        <merge>
+            <simple>
+                <inputVariable>
+                    <variableId>EDITS</variableId>
+                </inputVariable>
+                <inputVariable>
+                    <variableId>QC</variableId>
+                </inputVariable>
+                <inputVariable>
+                    <variableId>RAW</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>QC</variableId>
+                </outputVariable>
+            </simple>
+        </merge>
+    </transformation>
+
+    <!--Copy time series in a transformation. This allows the validation rule to 
+        set invalid values (those that we manually set to missing) to missing-->
+    <transformation id="Copy">
+        <user>
+            <simple>
+                <expression>QC</expression>
+                <outputVariable>
+                    <variableId>QC</variableId>
+                </outputVariable>
+            </simple>
+        </user>
+    </transformation>
+    
+</transformationModule>

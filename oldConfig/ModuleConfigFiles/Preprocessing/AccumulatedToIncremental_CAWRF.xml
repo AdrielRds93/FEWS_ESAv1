@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/transformationModule.xsd"
+    version="1.0"
+>
+    <variable>
+        <variableId>accumulated_cawrf</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ImportCAWRF</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>QPF</parameterId>
+            <locationId>CAWRF</locationId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-48" startOverrulable="true" end="240" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <variable>
+        <variableId>timeshifted_cawrf</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>AccumulatedToIncremental_CAWRF</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>QPF</parameterId>
+            <qualifierId>timeShifted</qualifierId>
+            <locationId>CAWRF</locationId>
+            <timeSeriesType>temporary</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-48" startOverrulable="true" end="240" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>incremental_cawrf</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>AccumulatedToIncremental_CAWRF</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>QPF</parameterId>
+            <locationId>CAWRF</locationId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-288" startOverrulable="true" end="240" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <transformation id="Timeshift">
+        <timeShift>
+            <constant>
+                <inputVariable>
+                    <variableId>accumulated_cawrf</variableId>
+                </inputVariable>
+                <numberOfTimeSteps>-1</numberOfTimeSteps>
+                <outputVariable>
+                    <variableId>timeshifted_cawrf</variableId>
+                </outputVariable>
+            </constant>
+        </timeShift>
+    </transformation>
+
+    <transformation id="Subtraction">
+        <user>
+            <simple>
+                <expression>(accumulated_cawrf - timeshifted_cawrf)</expression>
+                <outputVariable>
+                    <variableId>incremental_cawrf</variableId>
+                </outputVariable>
+            </simple>
+        </user>
+    </transformation>
+</transformationModule>

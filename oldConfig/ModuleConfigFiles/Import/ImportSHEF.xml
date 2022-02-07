@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/timeSeriesImportRun.xsd"
+>
+    <import>
+        <general>
+            <parserClassName>us.riverside.timeseriesparsers.ImportSHEFSubHourly</parserClassName>
+            <folder>$IMPORT_FOLDER_SHEF$</folder>
+            <failedFolder>$FAILED_FOLDER_SHEF$</failedFolder>
+            <backupFolder>$BACKUP_FOLDER_SHEF$</backupFolder>
+            <idMapId>IdImportSHEF</idMapId>
+            <missingValue>-999.0</missingValue>
+            <importTimeZone>
+                <timeZoneOffset>-06:00</timeZoneOffset>
+            </importTimeZone>
+        </general>
+
+<!--Daily precipitation gage data-->
+        <tolerance locationSetId="Daily_Gages" parameterId="PP" timeUnit="hour" unitCount="8"/>
+        <timeSeriesSet>
+            <moduleInstanceId>ImportSHEF</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>PP</parameterId>
+            <locationSetId>DailyPrecipGages</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+        <!--The daily data represent 7am - 7am local time (13:00-13:00 GMT)
+            accumulations-->
+            <timeStep unit="day" multiplier="1" timeZone="GMT+11"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+
+<!--Automatic precipitation gage data-->
+        <timeSeriesSet>
+            <moduleInstanceId>ImportSHEF</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>PC</parameterId>
+            <locationSetId>AutomaticPrecipGages</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="nonequidistant"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+
+<!--Automatic stage gage data-->
+        <timeSeriesSet>
+            <moduleInstanceId>ImportSHEF</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>STG</parameterId>
+            <locationSetId>ActiveStreamGages</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="nonequidistant"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+
+<!--Observed Ilopango pool-->
+        <timeSeriesSet>
+            <moduleInstanceId>ImportSHEF</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>PELV</parameterId>
+            <locationId>ILOPAN</locationId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </import>
+
+</timeSeriesImportRun>

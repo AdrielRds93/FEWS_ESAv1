@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule 
+    xmlns="http://www.wldelft.nl/fews"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/transformationModule.xsd"
+    version="1.0"
+>
+    <variable>
+        <variableId>MAP_Historical</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ImportHistoricalMAP</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>MAP</parameterId>
+            <locationSetId>LempaCatchments</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="day" start="-36500" end="0"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>FMAP_ESP</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>Lempa_SampleESP</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>FMAP</parameterId>
+            <locationSetId>LempaCatchments</locationSetId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="day" start="0" end="90" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+            <ensembleId>ESP</ensembleId>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>FMAP_ESP_1HrTo15Min</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>Lempa_SampleESP</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>FMAP</parameterId>
+            <locationSetId>15MinLempaCatchments</locationSetId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="day" start="0" end="90" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+            <ensembleId>ESP</ensembleId>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>FMAP_ESP_15min</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>Lempa_SampleESP</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>FMAP</parameterId>
+            <locationSetId>15MinLempaCatchments</locationSetId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="minute" multiplier="15"/>
+            <relativeViewPeriod unit="day" start="0" end="90" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+            <ensembleId>ESP</ensembleId>
+        </timeSeriesSet>
+    </variable>
+
+
+    <transformation id="SampleESP_MAP">
+        <sample>
+            <historical>
+                <inputVariable>
+                    <variableId>MAP_Historical</variableId>
+                </inputVariable>
+                <moduleParameterFile>Lempa_SampleESP</moduleParameterFile>
+                <outputVariable>
+                    <variableId>FMAP_ESP</variableId>
+                </outputVariable>
+            </historical>
+        </sample>
+    </transformation>
+
+    <transformation id="Disaggregate">
+        <disaggregation>
+            <accumulative>
+                <inputVariable>
+                    <variableId>FMAP_ESP_1HrTo15Min</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>FMAP_ESP_15min</variableId>
+                </outputVariable>
+            </accumulative>
+        </disaggregation>
+    </transformation>
+    
+</transformationModule>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+
+    <variable>
+        <variableId>LOCAL</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>UNITHG_JIOTIQUE_FCST</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>JIOTIQUE</locationId>
+            <timeSeriesType>simulated forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" endOverrulable="true"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>TOTAL_SQIN</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>TOTAL_JIOTIQUE_FCST</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>SQIN</parameterId>
+            <locationId>JIOTIQUE</locationId>
+            <timeSeriesType>simulated forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="1"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0" endOverrulable="true"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <transformation id="ComputeTotal">
+        <user>
+            <simple>
+                <expression>LOCAL</expression>
+                <outputVariable>
+                    <variableId>TOTAL_SQIN</variableId>
+                </outputVariable>
+            </simple>
+        </user>
+    </transformation>
+
+</transformationModule>

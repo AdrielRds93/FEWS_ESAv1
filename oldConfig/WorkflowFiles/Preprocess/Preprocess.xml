@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+
+<!--Fill missing 15-min stage; convert to 1-hour stage; convert stage to discharge -->
+        <activity>
+		<runIndependent>true</runIndependent>
+		<workflowId>Preprocess_flow</workflowId>
+	</activity>
+
+<!--Compute gridded precipitation from station data-->
+        <activity>
+		<runIndependent>true</runIndependent>
+		<workflowId>Preprocess_StationToGrids</workflowId>
+	</activity>
+
+<!--Convert accumulated to incremental WRF and CAWRF forecast grids-->
+        <activity>
+		<runIndependent>true</runIndependent>
+		<workflowId>Preprocess_WRF</workflowId>
+	</activity>
+
+<!--Compute mean areal precipitation from each source-->
+        <activity>
+		<runIndependent>true</runIndependent>
+		<workflowId>Preprocess_MAP</workflowId>
+	</activity>
+</workflow>

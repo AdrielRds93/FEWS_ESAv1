@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd"
+>
+<!-- <import>
+		<general>
+			<importType>GRIB2</importType>
+			<folder>$IMPORT_FOLDER_GFS$</folder>
+                        <failedFolder>$FAILED_FOLDER_GFS$</failedFolder>
+                        <backupFolder>$BACKUP_FOLDER_GFS$</backupFolder>
+			<idMapId>IdImportGFS</idMapId>
+			<importTimeZone>
+				<timeZoneOffset>+00:00</timeZoneOffset>
+			</importTimeZone>
+			<gridStartPoint>SW</gridStartPoint>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportGFS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>QPF</parameterId>
+			<locationId>GFS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import> 
+-->
+    <import>
+        <general>
+            <importType>NETCDF-CF_GRID</importType><!-- <serverUrl>http://nomads.ncep.noaa.gov:9090/dods/gfs_0p25/gfs%TIME_ZERO(yyyyMMdd)%/gfs_0p25_%TIME_ZERO(HH)%z</serverUrl> 
+-->
+            <serverUrl>http://140.90.101.62:9090/dods/gfs_0p25/gfs%TIME_ZERO(yyyyMMdd)%/gfs_0p25_%TIME_ZERO(HH)%z</serverUrl>
+            <idMapId>IdImportGFS</idMapId>
+<!--            <unitConversionsId>ImportEnglishUnits</unitConversionsId>-->
+            <importTimeZone>
+                <timeZoneOffset>+00:00</timeZoneOffset>
+            </importTimeZone>
+            <dataFeedId>Grid-GFS</dataFeedId>
+        </general>
+        <timeSeriesSet>
+            <moduleInstanceId>ImportGFS</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>QPF</parameterId>
+<!--            <qualifierId>FCST</qualifierId>-->
+            <locationId>GFS</locationId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="3"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+        <externUnit parameterId="QPF" unit="MM"/>
+    </import>
+</timeSeriesImportRun>	
+	
+
+        

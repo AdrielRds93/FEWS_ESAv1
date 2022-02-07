@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<parameters xmlns="http://www.wldelft.nl/fews/PI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.5" xsi:schemaLocation="http://www.wldelft.nl/fews/PI http://chps1/schemas/pi-schemas/pi_modelparameters.xsd">
+       <group id="default">
+               <parameter id="DUMMY">
+                       <stringValue>DUMMY</stringValue>
+               </parameter>
+       </group>
+</parameters>

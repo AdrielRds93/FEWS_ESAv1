@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<moduleInstanceSets xmlns="http://www.wldelft.nl/fews"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/moduleInstanceSets.xsd"
+                    version="1.1">
+
+    <moduleInstanceSet id="SACSMA_Forecast" name="SACSMA_Forecast">
+        <description>SAC-SMA Basins</description>
+        <!--Jiboa sub-basins-->
+        <moduleInstanceId>SACSMA_CHAGUITE_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_SMARTIN_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_GULUCHAP_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_CUJUAPNO_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_CUJUAPSU_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_ILOPANLOC_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_SANRAMON_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_CONFLUEN_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_CHORRERN_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_PNTVIEJO_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_TILAPA_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_SEPAQUIA_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_BAJOJIBO_FCST</moduleInstanceId>
+        <!--Lempa sub-basins-->
+        <moduleInstanceId>SACSMA_LECHUZA_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_CRUCES_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_METAPAN_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_GUAJOYLOC_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_PCARGADA_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_CITALA_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_TAHUILAP_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_MONTCRIS_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_SANJOSE_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_ZAPOTILO_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_TALNIQUE_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_SUCIO_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_LASPAVAS_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_TAMARIND_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_ELPIRO_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_BELLOSO_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_GUAZAPA_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_ACELHUAT_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_QUEZALAP_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_METAYATE_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_CHALATEN_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_TAMULASC_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_CERRONLOC_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_LAFLORES_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_5NOVIELOC_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_GUARAJAM_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_BAJOGUAR_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_MOCAL_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_COPINOLA_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_SANGREGO_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_SANISIDR_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_OSICALA_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_TITIHUAP_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_TOROLA_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_JIOTIQUE_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_15SEPTLOC_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_SANVICEN_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_QUESERA_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_SANSIMON_FCST</moduleInstanceId>
+        <moduleInstanceId>SACSMA_SANMARCO_FCST</moduleInstanceId>
+    </moduleInstanceSet>
+
+    <moduleInstanceSet id="AdjustedFlows_1Hr" name="AdjustedFlows_1Hr">
+        <description>Adjusted 1-hour Sub-basin outflows</description>
+        <!--Jiboa-->
+        <moduleInstanceId>RESJ_ILOPAN_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_PNTVIEJO_FCST</moduleInstanceId>
+        <!--Lempa-->
+        <moduleInstanceId>TOTAL_LECHUZA_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_CRUCES_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_METAPAN_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_PCARGADA_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_CITALA_FCST</moduleInstanceId>
+        <!--<moduleInstanceId>TOTAL_MONTCRIS_FCST</moduleInstanceId>-->
+        <moduleInstanceId>TOTAL_ZAPOTILO_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_TALNIQUE_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_LASPAVAS_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_TAMARIND_FCST</moduleInstanceId>
+        <!--<moduleInstanceId>TOTAL_ELPIRO_FCST</moduleInstanceId>-->
+        <!--<moduleInstanceId>TOTAL_BELLOSO_FCST</moduleInstanceId>-->
+        <moduleInstanceId>TOTAL_GUAZAPA_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_LAFLORES_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_SANGREGO_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_SANISIDR_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_OSICALA_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_SANVICEN_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_QUESERA_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_SANMARCO_FCST</moduleInstanceId>
+        <moduleInstanceId>RESJ_15SEPT_FCST</moduleInstanceId>
+        <moduleInstanceId>RESJ_5NOVIE_FCST</moduleInstanceId>
+        <moduleInstanceId>RESJ_CERRON_FCST</moduleInstanceId>
+        <moduleInstanceId>RESJ_GUAJOY_FCST</moduleInstanceId>
+        <!--15-minute-->
+        <moduleInstanceId>ESP_15MinTo1Hr</moduleInstanceId>
+    </moduleInstanceSet>
+
+    <moduleInstanceSet id="AdjustedFlows_15Min" name="AdjustedFlows_15Min">
+        <description>Adjusted 15-min Sub-basin outflows</description>
+        <!--Lempa-->
+        <moduleInstanceId>TOTAL_MONTCRIS_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_ELPIRO_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_BELLOSO_FCST</moduleInstanceId>
+    </moduleInstanceSet>
+
+    <moduleInstanceSet id="SimulatedFlows_1Hr" name="SimulatedFlows_1Hr">
+        <description>Simulated 1-hour Sub-basin outflows</description>
+        <!--Jiboa-->
+        <moduleInstanceId>INFLOW_ILOPAN_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_SANRAMON_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_CONFLUEN_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_CHORRERN_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_PNTVIEJO_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_TILAPA_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_SEPAQUIA_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_BAJOJIBO_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_ACHIOTAL_FCST</moduleInstanceId>
+        <!--Lempa-->
+        <moduleInstanceId>TOTAL_LECHUZA_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_CRUCES_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_METAPAN_FCST</moduleInstanceId>
+        <moduleInstanceId>INFLOW_GUAJOY_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_PCARGADA_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_CITALA_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_TAHUILAP_FCST</moduleInstanceId>
+        <!--<moduleInstanceId>TOTAL_MONTCRIS_FCST</moduleInstanceId>-->
+        <moduleInstanceId>TOTAL_SANJOSE_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_ZAPOTILO_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_TALNIQUE_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_SUCIO_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_LASPAVAS_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_TAMARIND_FCST</moduleInstanceId>
+        <!--<moduleInstanceId>TOTAL_ELPIRO_FCST</moduleInstanceId>-->
+        <!--<moduleInstanceId>TOTAL_BELLOSO_FCST</moduleInstanceId>-->
+        <moduleInstanceId>TOTAL_GUAZAPA_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_ACELHUAT_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_QUEZALAP_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_METAYATE_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_CHALATEN_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_TAMULASC_FCST</moduleInstanceId>
+        <moduleInstanceId>INFLOW_CERRON_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_LAFLORES_FCST</moduleInstanceId>
+        <moduleInstanceId>INFLOW_5NOVIE_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_GUARAJAM_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_BAJOGUAR_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_MOCAL_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_COPINOLA_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_SANGREGO_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_SANISIDR_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_OSICALA_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_TITIHUAP_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_TOROLA_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_JIOTIQUE_FCST</moduleInstanceId>
+        <moduleInstanceId>INFLOW_15SEPT_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_SANVICEN_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_QUESERA_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_SANSIMON_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_SANMARCO_FCST</moduleInstanceId>
+        <!--15-minute-->
+        <moduleInstanceId>ESP_15MinTo1Hr</moduleInstanceId>
+    </moduleInstanceSet>
+
+    <moduleInstanceSet id="SimulatedFlows_15Min" name="SimulatedFlows_15Min">
+        <description>Simulated 15-min Sub-basin outflows</description>
+        <!--Jiboa-->
+        <moduleInstanceId>TOTAL_CHAGUITE_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_SMARTIN_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_GULUCHAP_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_CUJUAPNO_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_CUJUAPSU_FCST</moduleInstanceId>
+        <!--Lempa-->
+        <moduleInstanceId>TOTAL_MONTCRIS_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_ELPIRO_FCST</moduleInstanceId>
+        <moduleInstanceId>TOTAL_BELLOSO_FCST</moduleInstanceId>
+    </moduleInstanceSet>
+
+    <moduleInstanceSet id="RoutedFlows_1Hr" name="RoutedFlows_1Hr">
+        <description>Routed upstream flow contributions</description>
+        <!--Jiboa-->
+        <moduleInstanceId>LAGK_ILOPAN_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_SANRAMON_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_CONFLUEN_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_CHORRERN_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_PNTVIEJO_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_TILAPA_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_SEPAQUIA_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_BAJOJIBO_FCST</moduleInstanceId>
+        <!--Lempa-->
+        <moduleInstanceId>LAGK_15SEPT_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_5NOVIE_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_ACELHUAT_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_BAJOGUAR_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_BELLOSO_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_CERRON_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_CHALATEN_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_CITALA_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_COPINOLA_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_CRUCES_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_GUAJOY_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_GUARAJAM_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_GUAZAPA_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_JIOTIQUE_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_LAFLORES_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_LASPAVAS_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_LECHUZA_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_METAPAN_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_METAYATE_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_MOCAL_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_MONTCRIS_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_OSICALA_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_PCARGADA_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_QUESERA_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_QUEZALAP_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_SANGREGO_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_SANISIDR_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_SANJOSE_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_SANSIMON_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_SANVICEN_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_SUCIO_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_TAHUILAP_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_TALNIQUE_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_TAMARIND_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_TAMULASC_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_TITIHUAP_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_TOROLA_FCST</moduleInstanceId>
+        <moduleInstanceId>LAGK_ZAPOTILO_FCST</moduleInstanceId>
+    </moduleInstanceSet>                                                
+
+    <moduleInstanceSet id="LocalFlows_1Hr" name="LocalFlows_1Hr">
+        <description>Local flow contributions</description>
+        <!--Jiboa-->
+        <moduleInstanceId>UNITHG_ILOPANLOC_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_SANRAMON_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_CONFLUEN_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_CHORRERN_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_PNTVIEJO_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_TILAPA_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_SEPAQUIA_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_BAJOJIBO_FCST</moduleInstanceId>
+        <!--Lempa-->
+        <moduleInstanceId>UNITHG_LECHUZA_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_CRUCES_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_METAPAN_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_GUAJOYLOC_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_PCARGADA_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_CITALA_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_TAHUILAP_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_SANJOSE_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_ZAPOTILO_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_TALNIQUE_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_SUCIO_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_LASPAVAS_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_TAMARIND_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_GUAZAPA_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_ACELHUAT_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_QUEZALAP_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_METAYATE_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_CHALATEN_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_TAMULASC_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_CERRONLOC_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_LAFLORES_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_5NOVIELOC_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_GUARAJAM_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_BAJOGUAR_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_MOCAL_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_COPINOLA_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_SANGREGO_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_SANISIDR_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_OSICALA_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_TITIHUAP_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_TOROLA_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_JIOTIQUE_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_15SEPTLOC_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_SANVICEN_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_QUESERA_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_SANSIMON_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_SANMARCO_FCST</moduleInstanceId>
+    </moduleInstanceSet>                                                
+                                                                                                                                                
+    <moduleInstanceSet id="LocalFlows_15Min" name="LocalFlows_15Min">
+        <description>Local flow contributions</description>
+        <!--Jiboa-->
+        <moduleInstanceId>UNITHG_CHAGUITE_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_SMARTIN_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_GULUCHAP_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_CUJUAPNO_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_CUJUAPSU_FCST</moduleInstanceId>
+        <!--Lempa-->
+        <moduleInstanceId>UNITHG_MONTCRIS_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_ELPIRO_FCST</moduleInstanceId>
+        <moduleInstanceId>UNITHG_BELLOSO_FCST</moduleInstanceId>
+    </moduleInstanceSet>                                                                                                                                                                                                 
+                                                                                                                                                                                                                                                
+    <moduleInstanceSet id="ReservoirInflows" name="ReservoirInflows">
+        <description>Local flow contributions</description>
+        <!--Jiboa-->
+        <moduleInstanceId>INFLOW_ILOPAN_FCST</moduleInstanceId>
+        <!--Lempa-->
+        <moduleInstanceId>INFLOW_15SEPT_FCST</moduleInstanceId>
+        <moduleInstanceId>INFLOW_5NOVIE_FCST</moduleInstanceId>
+        <moduleInstanceId>INFLOW_CERRON_FCST</moduleInstanceId>
+        <moduleInstanceId>INFLOW_GUAJOY_FCST</moduleInstanceId>
+    </moduleInstanceSet>                                                                                                                                                                                                 
+                                                                                                                                                                                                                                                                                                
+    <moduleInstanceSet id="ReservoirRainEvap" name="ReservoirRainEvap">
+        <description>Rain-evaporation calculations for reservoirs</description>
+        <!--Jiboa-->
+        <moduleInstanceId>ILOPAN_PRECIP_EVAP_FCST</moduleInstanceId>
+        <!--Lempa-->
+        <moduleInstanceId>15SEPT_PRECIP_EVAP_FCST</moduleInstanceId>
+        <moduleInstanceId>5NOVIE_PRECIP_EVAP_FCST</moduleInstanceId>
+        <moduleInstanceId>CERRON_PRECIP_EVAP_FCST</moduleInstanceId>
+        <moduleInstanceId>GUAJOY_PRECIP_EVAP_FCST</moduleInstanceId>
+    </moduleInstanceSet>                                                                                                                                                                                                 
+    <moduleInstanceSet id="RESJ" name="RESJ">
+        <description>RESJ forecast modules</description>
+        <!--Jiboa-->
+        <moduleInstanceId>RESJ_ILOPAN_FCST</moduleInstanceId>
+        <!--Lempa-->
+        <moduleInstanceId>RESJ_15SEPT_FCST</moduleInstanceId>
+        <moduleInstanceId>RESJ_5NOVIE_FCST</moduleInstanceId>
+        <moduleInstanceId>RESJ_CERRON_FCST</moduleInstanceId>
+        <moduleInstanceId>RESJ_GUAJOY_FCST</moduleInstanceId>
+    </moduleInstanceSet>                                                                                                                                                                                                 
+</moduleInstanceSets>

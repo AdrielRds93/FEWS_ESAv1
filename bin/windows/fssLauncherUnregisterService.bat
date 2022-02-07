@@ -1,0 +1,1 @@
+%~dp0fssLauncherService.exe --WinRun4J:UnregisterService

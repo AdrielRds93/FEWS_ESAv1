@@ -1,0 +1,12 @@
+@ECHO OFF
+SETLOCAL ENABLEDELAYEDEXPANSION
+
+ECHO FEWS ENVIRONMENT VARIABLES
+FOR /f "delims== tokens=1,2" %%a IN ('set') DO (
+    SET VARIABLE=%%a
+    SET VALUE=%%b
+    SET PREFIX=!VARIABLE:~0,5!
+    IF /i "!VARIABLE:~0,5!"=="FEWS_" (
+      ECHO "!VARIABLE!"="!VALUE!"
+    )
+)

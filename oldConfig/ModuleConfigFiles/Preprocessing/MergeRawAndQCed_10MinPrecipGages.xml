@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/transformationModule.xsd"
+                      version="1.0"
+>
+
+    <!--Merge imported and computed incremental time series-->
+
+    <variable>
+        <variableId>ImportedIncremental_10Min</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>ImportPostGreSQL_AutomaticGages</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>PP</parameterId>
+            <locationSetId>10MinPrecipGages</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="10"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>ComputedIncremental_10Min</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>AccumulatedToIncremental_10MinPrecipGages</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>PP</parameterId>
+            <locationSetId>10MinPrecipGages</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="10"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>IncrementalEdits_10Min</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>Edits</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>PP</parameterId>
+            <qualifierId>Edits</qualifierId>
+            <locationSetId>10MinPrecipGages</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="10"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="48"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+    <variable>
+        <variableId>FinalIncremental_10Min</variableId>
+        <timeSeriesSet>
+            <moduleInstanceId>MergeRawAndQCed_10MinPrecipGages</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>PP</parameterId>
+            <locationSetId>10MinPrecipGages</locationSetId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="minute" multiplier="10"/>
+            <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="48"/>
+            <readWriteMode>read only</readWriteMode>
+        </timeSeriesSet>
+    </variable>
+
+    <transformation id="Merge">
+        <merge>
+            <simple>
+                <inputVariable>
+                    <variableId>IncrementalEdits_10Min</variableId>
+                </inputVariable>
+                <inputVariable>
+                    <variableId>FinalIncremental_10Min</variableId>
+                </inputVariable>
+                <inputVariable>
+                    <variableId>ImportedIncremental_10Min</variableId>
+                </inputVariable>
+                <inputVariable>
+                    <variableId>ComputedIncremental_10Min</variableId>
+                </inputVariable>
+                <outputVariable>
+                    <variableId>FinalIncremental_10Min</variableId>
+                </outputVariable>
+            </simple>
+        </merge>
+    </transformation>
+
+    <!--Copy time series in a transformation. This allows the validation rule to 
+        set invalid values (those that we manually set to missing) to missing-->
+    <transformation id="Copy">
+        <user>
+            <simple>
+                <expression>FinalIncremental_10Min</expression>
+                <outputVariable>
+                    <variableId>FinalIncremental_10Min</variableId>
+                </outputVariable>
+            </simple>
+        </user>
+    </transformation>
+
+</transformationModule>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/timeSeriesImportRun.xsd">
+
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<folder>$IMPORT_FOLDER_QMORPH$</folder>
+                        <failedFolder>$FAILED_FOLDER_QMORPH$</failedFolder>
+                        <backupFolder>$BACKUP_FOLDER_QMORPH$</backupFolder>
+			<idMapId>IdImportQMORPH</idMapId>
+                </general>
+		<tolerance timeUnit="hour" unitCount="1" parameterId="QPE"/>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportQMORPH</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>QPE</parameterId>
+			<locationId>QMORPH</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
+	
+</timeSeriesImportRun>

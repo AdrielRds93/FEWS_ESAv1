@@ -1,0 +1,1 @@
+%~dp0mcLauncherService.exe --WinRun4J:UnregisterService

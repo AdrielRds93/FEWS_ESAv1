@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+
+    <transformation id="1HourStageToDischarge">
+        <stageDischarge>
+            <ratingCurve>
+                <stage>
+                    <timeSeriesSet>
+                        <moduleInstanceId>To1Hr_Stage</moduleInstanceId>
+                        <valueType>scalar</valueType>
+                        <parameterId>STG</parameterId>
+                        <locationSetId>1HrForecastStreamGages</locationSetId>
+                        <timeSeriesType>external historical</timeSeriesType>
+                        <timeStep unit="hour" multiplier="1"/>
+                        <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+                        <readWriteMode>read only</readWriteMode>
+                        <!--<ensembleId>main</ensembleId>-->
+                    </timeSeriesSet>
+                </stage>
+                <discharge>
+                    <timeSeriesSet>
+                        <moduleInstanceId>StageQ</moduleInstanceId>
+                        <valueType>scalar</valueType>
+                        <parameterId>QIN</parameterId>
+                        <locationSetId>1HrForecastStreamGages</locationSetId>
+                        <timeSeriesType>external historical</timeSeriesType>
+                        <timeStep unit="hour" multiplier="1"/>
+                        <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+                        <readWriteMode>add originals</readWriteMode>
+                    </timeSeriesSet>
+                </discharge>
+            </ratingCurve>
+        </stageDischarge>
+    </transformation>
+
+    <transformation id="15MinStageToDischarge">
+        <stageDischarge>
+            <ratingCurve>
+                <stage>
+                    <timeSeriesSet>
+                        <moduleInstanceId>CopyRawToQCed_StageReservoir</moduleInstanceId>
+                        <moduleInstanceId>To1Hr_Stage</moduleInstanceId>
+                        <valueType>scalar</valueType>
+                        <parameterId>STG</parameterId>
+                        <locationSetId>15MinForecastStreamGages</locationSetId>
+                        <timeSeriesType>external historical</timeSeriesType>
+                        <timeStep unit="minute" multiplier="15"/>
+                        <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+                        <readWriteMode>read only</readWriteMode>
+                        <!--<ensembleId>main</ensembleId>-->
+                    </timeSeriesSet>
+                </stage>
+                <discharge>
+                    <timeSeriesSet>
+                        <moduleInstanceId>StageQ</moduleInstanceId>
+                        <valueType>scalar</valueType>
+                        <parameterId>QIN</parameterId>
+                        <locationSetId>15MinForecastStreamGages</locationSetId>
+                        <timeSeriesType>external historical</timeSeriesType>
+                        <timeStep unit="minute" multiplier="15"/>
+                        <relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+                        <readWriteMode>add originals</readWriteMode>
+                    </timeSeriesSet>
+                </discharge>
+            </ratingCurve>
+        </stageDischarge>
+    </transformation>
+
+</transformationModule>
