@@ -1,9 +1,28 @@
-<gridDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<gridDisplay xmlns="http://www.wldelft.nl/fews"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/gridDisplay.xsd"
+>
+
+    <!--
+    Different options for specifying colors
+    You can specify a html color (see http://www.columbia.edu/~sue/colors-on-white.html) or a
+    hexadecimal RGB color e.g FF0000 is red.
+    See http://www.squarebox.co.uk/users/rolf/download/ColourWheel/ or
+    http://javaboutique.internet.com/ColorPicker/ to compose your own color
+    -->
+
     <title>Spatial Display</title>
     <defaults>
+        <!--        <plotGroupId>Station-based</plotGroupId>
+        <plotGroupId>Satellite</plotGroupId>
+        <plotGroupId>Radar</plotGroupId>
+        <plotGroupId>Forecast</plotGroupId>
+        <plotGroupId>MAP</plotGroupId>
+        <plotGroupId>SACSMA</plotGroupId>-->
         <geoMap>
             <geoDatum>WGS 1984</geoDatum>
-            <projection>web_mercator</projection>
+            <projection>orthographic</projection>
             <defaultExtent id="ElSalvador" name="El Salvador">
                 <left>-90.153</left>
                 <right>-87.644</right>
@@ -92,11 +111,11 @@
             <northArrowVisible>true</northArrowVisible>
             <labelsVisible>true</labelsVisible>
             <backgroundColor>light steel blue2</backgroundColor>
-        <openStreetMapLayer id="Osm" name="Open Street Map">
-            <url>http://tile.openstreetmap.org</url>
-            <visible>true</visible>
-			<cacheDir>$MAPLAYERSCACHE_FOLDER$/OSM</cacheDir>
-        </openStreetMapLayer>
+            <openStreetMapLayer id="Osm" name="Open Street Map">
+                <url>http://tile.openstreetmap.org</url>
+                <visible>true</visible>
+                <cacheDir>$MAP_DIR$/mapcache/openstreetmaps</cacheDir>
+            </openStreetMapLayer>
             <esriShapeLayer id="Countries">
                 <description>Countries</description>
                 <file>countries.shp</file>

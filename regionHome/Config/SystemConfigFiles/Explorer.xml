@@ -4,15 +4,24 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/explorer.xsd"
 >
+
+    <!--
+    Different options for specifying colors:
+    You can specify a html color (see http://www.columbia.edu/~sue/colors-on-white.html) or a
+    hexadecimal RGB color e.g FF0000 is red.
+    See http://www.squarebox.co.uk/users/rolf/download/ColourWheel/ or
+    http://javaboutique.internet.com/ColorPicker/ to compose your own color
+    -->
+
     <description>Configuration of the main FEWS display</description>
     <systemInformation>
         <systemCaption>El Salvador</systemCaption>
-		<systemHelpUrl>https://publicwiki.deltares.nl/display/FEWSDOC/Home</systemHelpUrl>
+        <systemHelpFile/>
     </systemInformation>
     <globalDatum>Elevation</globalDatum>
     <map>
         <geoDatum>WGS 1984</geoDatum>
-        <projection>web_mercator</projection>
+        <projection>orthographic</projection>
         <defaultExtent id="ElSalvador" name="El Salvador">
             <left>-90.153</left>
             <right>-87.644</right>
@@ -98,7 +107,7 @@
         <openStreetMapLayer id="Osm" name="Open Street Map">
             <url>http://tile.openstreetmap.org</url>
             <visible>true</visible>
-			<cacheDir>$MAPLAYERSCACHE_FOLDER$/OSM</cacheDir>
+            <cacheDir>$MAP_DIR$/mapcache/openstreetmaps</cacheDir>
         </openStreetMapLayer>
         <esriShapeLayer id="Countries">
             <description>Countries</description>
@@ -180,125 +189,157 @@
         <exportTimeSeries visible="true"/>
     </fileMenu>
     <explorerTasks>
-		<explorerTask name="Map Display">
-			<mnemonic>A</mnemonic>
-			<arguments>MapDisplay</arguments>
-			<taskClass>nl.wldelft.fews.gui.plugin.map.MapDisplay</taskClass>
-			<toolbarTask>false</toolbarTask>
-			<menubarTask>true</menubarTask>
-			<accelerator>ctrl A</accelerator>
-		</explorerTask>
-		<explorerTask name="Data Display">
-			<mnemonic>D</mnemonic>
-			<taskClass>nl.wldelft.fews.gui.plugin.timeseries.EditorTimeSeriesDialog</taskClass>
-			<toolbarTask>true</toolbarTask>
-			<menubarTask>true</menubarTask>
-			<allowMultipleInstances>true</allowMultipleInstances>
-			<accelerator>ctrl D</accelerator>
-			<doubleClickLocationEnabled>false</doubleClickLocationEnabled>
-			<loadAtStartup>true</loadAtStartup>
-		</explorerTask>
-		<explorerTask name="Spatial Data">
-			<mnemonic>G</mnemonic>
-			<arguments>GridDisplay</arguments>
-			<taskClass>nl.wldelft.fews.gui.plugin.grid.GridDisplay</taskClass>
-			<toolbarTask>true</toolbarTask>
-			<menubarTask>true</menubarTask>
-			<allowMultipleInstances>true</allowMultipleInstances>
-			<accelerator>ctrl G</accelerator>
-			<loadAtStartup>true</loadAtStartup>
-		</explorerTask>
-		<explorerTask name="Manual Forecast">
-			<mnemonic>M</mnemonic>
-			<taskClass>nl.wldelft.fews.gui.plugin.manualforecast.ManualForecastDialog</taskClass>
-			<toolbarTask>true</toolbarTask>
-			<menubarTask>true</menubarTask>
-		</explorerTask>
-		<explorerTask name="Forecast Management">
-			<mnemonic>F</mnemonic>
-			<taskClass>nl.wldelft.fews.gui.plugin.forecast.ForecastDialog</taskClass>
-			<toolbarTask>true</toolbarTask>
-			<menubarTask>true</menubarTask>
-			<accelerator>ctrl F</accelerator>
-		</explorerTask>
-		<explorerTask name="Workflow Navigator">
-			<arguments>WorkflowNavigator</arguments>
-			<taskClass>nl.wldelft.fews.gui.plugin.workflownavigator.WorkflowNavigator</taskClass>
-			<toolbarTask>true</toolbarTask>
-			<menubarTask>true</menubarTask>
-			<loadAtStartup>true</loadAtStartup>
-		</explorerTask>
-		<explorerTask name="System Monitor">
-			<mnemonic>S</mnemonic>
-			<taskClass>nl.wldelft.fews.gui.plugin.systemmonitor.SystemMonitorDialog</taskClass>
-			<toolbarTask>true</toolbarTask>
-			<menubarTask>true</menubarTask>
-			<accelerator>ctrl S</accelerator>
-		</explorerTask>
-		<explorerTask name="Modifiers">
-			<mnemonic>X</mnemonic>
-			<taskClass>nl.wldelft.fews.gui.plugin.modifiersdisplay.ModifiersPanel</taskClass>
-			<toolbarTask>true</toolbarTask>
-			<menubarTask>false</menubarTask>
-			<allowMultipleInstances>false</allowMultipleInstances>
-			<accelerator>ctrl M</accelerator>
-			<toolWindow>false</toolWindow>
-			<loadAtStartup>false</loadAtStartup>
-		</explorerTask>
-		<explorerTask name="Forecast Tree">
-			<taskClass>nl.wldelft.fews.gui.plugin.selection.SegmentSelectionDialog</taskClass>
-			<toolbarTask>false</toolbarTask>
-			<menubarTask>false</menubarTask>
-			<toolWindow>true</toolWindow>
-			<loadAtStartup>true</loadAtStartup>
-		</explorerTask>
-		<explorerTask name="Forecaster Product Info">
-			<predefinedDisplay>forecast product info</predefinedDisplay>
-			<toolbarTask>false</toolbarTask>
-			<menubarTask>true</menubarTask>
-			<allowMultipleInstances>false</allowMultipleInstances>
-			<toolWindow>false</toolWindow>
-			<loadAtStartup>false</loadAtStartup>
-		</explorerTask>
-		<explorerTask name="Workflow Navigator">
-			<predefinedDisplay>workflow navigator</predefinedDisplay>
-			<toolbarTask>false</toolbarTask>
-			<menubarTask>false</menubarTask>
-			<toolWindow>false</toolWindow>
-			<loadAtStartup>false</loadAtStartup>
-		</explorerTask>
-		<explorerTask name="Database Lister">
-			<mnemonic>L</mnemonic>
-			<predefinedDisplay>time series lister</predefinedDisplay>
-			<toolbarTask>true</toolbarTask>
-			<menubarTask>true</menubarTask>
-			<accelerator>ctrl L</accelerator>
-			<toolWindow>false</toolWindow>
-			<loadAtStartup>false</loadAtStartup>
-		</explorerTask>
-		<explorerTask name="Config Metadata">
-			<mnemonic>T</mnemonic>
-			<predefinedDisplay>tabular config files display</predefinedDisplay>
-			<toolbarTask>false</toolbarTask>
-			<menubarTask>true</menubarTask>
-			<accelerator>ctrl T</accelerator>
-			<loadAtStartup>false</loadAtStartup>
-		</explorerTask>
-		<explorerTask name="Plot Overview">
-			<taskClass>nl.wldelft.fews.gui.plugin.displaythumbnails.ShortcutsThumbnailsDialog</taskClass>
-			<toolbarTask>false</toolbarTask>
-			<menubarTask>false</menubarTask>
-			<toolWindow>true</toolWindow>
-			<loadAtStartup>true</loadAtStartup>
-		</explorerTask>
-		<explorerTask name="Web Browser">
-			<mnemonic>h</mnemonic>
-			<taskClass>nl.wldelft.fews.gui.plugin.webbrowser.WebBrowserDisplay</taskClass>
-			<toolbarTask>false</toolbarTask>
-			<menubarTask>true</menubarTask>
-			<accelerator>ctrl R</accelerator>
-			<loadAtStartup>true</loadAtStartup>
-		</explorerTask>
+        <explorerTask name="Manual Forecast">
+            <iconFile>manforc.png</iconFile>
+            <mnemonic>n</mnemonic>
+            <taskClass>nl.wldelft.fews.gui.plugin.manualforecast.ManualForecastDialog</taskClass>
+            <toolbarTask>true</toolbarTask>
+            <menubarTask>true</menubarTask>
+            <accelerator>ctrl N</accelerator>
+            <loadAtStartup>true</loadAtStartup>
+        </explorerTask>
+        <explorerTask name="Modifiers">
+            <iconFile>wrench.png</iconFile>
+            <mnemonic>M</mnemonic>
+            <taskClass>nl.wldelft.fews.gui.plugin.modifiersdisplay.ModifiersPanel</taskClass>
+            <toolbarTask>true</toolbarTask>
+            <menubarTask>true</menubarTask>
+            <accelerator>ctrl M</accelerator>
+            <loadAtStartup>true</loadAtStartup>
+        </explorerTask>
+        <explorerTask name="Topology">
+            <iconFile>interactive_forecast.png</iconFile>
+            <mnemonic>T</mnemonic>
+            <taskClass>nl.wldelft.fews.gui.plugin.forecast.TopologyPanel</taskClass>
+            <toolbarTask>true</toolbarTask>
+            <menubarTask>true</menubarTask>
+            <accelerator>ctrl T</accelerator>
+            <loadAtStartup>true</loadAtStartup>
+        </explorerTask>
+        <explorerTask name="Plots">
+            <iconFile>graph.gif</iconFile>
+            <mnemonic>l</mnemonic>
+            <taskClass>nl.wldelft.fews.gui.plugin.timeseries.PlotsTimeSeriesDialog</taskClass>
+            <toolbarTask>true</toolbarTask>
+            <menubarTask>true</menubarTask>
+            <allowMultipleInstances>true</allowMultipleInstances>
+            <accelerator>ctrl D</accelerator>
+            <loadAtStartup>true</loadAtStartup>
+        </explorerTask>
+        <explorerTask name="Data Editor">
+            <iconFile>edit.png</iconFile>
+            <mnemonic>E</mnemonic>
+            <taskClass>nl.wldelft.fews.gui.plugin.timeseries.DataEditorTimeSeriesDialog</taskClass>
+            <toolbarTask>true</toolbarTask>
+            <menubarTask>true</menubarTask>
+            <accelerator>ctrl E</accelerator>
+        </explorerTask>
+        <explorerTask name="Spatial Data">
+            <iconFile>map.png</iconFile>
+            <mnemonic>p</mnemonic>
+            <arguments>SpatialDisplay</arguments>
+            <taskClass>nl.wldelft.fews.gui.plugin.grid.GridDisplay</taskClass>
+            <toolbarTask>true</toolbarTask>
+            <menubarTask>true</menubarTask>
+            <allowMultipleInstances>true</allowMultipleInstances>
+            <accelerator>ctrl P</accelerator>
+        </explorerTask>
+        <explorerTask name="Separator">
+            <separator></separator>
+            <toolbarTask>true</toolbarTask>
+            <menubarTask>true</menubarTask>
+        </explorerTask>
+        <explorerTask name="Forecast Management">
+            <iconFile>forcman.png</iconFile>
+            <mnemonic>F</mnemonic>
+            <taskClass>nl.wldelft.fews.gui.plugin.forecast.ForecastDialog</taskClass>
+            <toolbarTask>true</toolbarTask>
+            <menubarTask>true</menubarTask>
+            <accelerator>ctrl F</accelerator>
+        </explorerTask>
+        <explorerTask name="System Monitor">
+            <iconFile>sysmon.png</iconFile>
+            <mnemonic>S</mnemonic>
+            <taskClass>nl.wldelft.fews.gui.plugin.systemmonitor.SystemMonitorDialog</taskClass>
+            <toolbarTask>true</toolbarTask>
+            <menubarTask>true</menubarTask>
+            <accelerator>ctrl S</accelerator>
+        </explorerTask>
+        <explorerTask name="Workflow Navigator">
+            <iconFile>tree.png</iconFile>
+            <arguments>WorkflowNavigator</arguments>
+            <taskClass>nl.wldelft.fews.gui.plugin.workflownavigator.WorkflowNavigator</taskClass>
+            <toolbarTask>true</toolbarTask>
+            <menubarTask>true</menubarTask>
+        </explorerTask>
+        <explorerTask name="Separator">
+            <separator></separator>
+            <toolbarTask>true</toolbarTask>
+            <menubarTask>true</menubarTask>
+        </explorerTask>
+
+        <!--        <explorerTask name="What-if Scenario">
+            <iconFile>whatif.png</iconFile>
+            <mnemonic>W</mnemonic>
+            <arguments>WhatIfScenarioFilters</arguments>
+            <taskClass>nl.wldelft.fews.gui.plugin.scenario.WhatIfScenarioDialog</taskClass>
+            <toolbarTask>false</toolbarTask>
+            <menubarTask>false</menubarTask>
+            <accelerator>ctrl W</accelerator>
+        </explorerTask>-->
+        <explorerTask name="Map Display">
+            <iconFile>splitmap.gif</iconFile>
+            <mnemonic>a</mnemonic>
+            <taskClass>nl.wldelft.fews.gui.plugin.map.MapDisplay</taskClass>
+            <toolbarTask>false</toolbarTask>
+            <menubarTask>true</menubarTask>
+            <allowMultipleInstances>true</allowMultipleInstances>
+            <accelerator>ctrl A</accelerator>
+        </explorerTask>
+
+        <!--Forecaster notes provide a way to save notes on individual forecasts-->
+        <!--        <explorerTask name="Forecaster notes">
+            <taskClass>nl.wldelft.fews.gui.plugin.systemmonitor.ForecasterNotesPanel</taskClass>
+            <toolbarTask>false</toolbarTask>
+            <menubarTask>false</menubarTask>
+            <toolWindow>true</toolWindow>
+            <loadAtStartup>true</loadAtStartup>
+        </explorerTask>-->
+        <explorerTask name="Plot Overview">
+            <taskClass>nl.wldelft.fews.gui.plugin.displaythumbnails.ShortcutsThumbnailsDialog</taskClass>
+            <toolbarTask>false</toolbarTask>
+            <menubarTask>false</menubarTask>
+            <toolWindow>true</toolWindow>
+            <loadAtStartup>true</loadAtStartup>
+        </explorerTask>
+        <explorerTask name="Forecasts">
+            <taskClass>nl.wldelft.fews.gui.plugin.selection.SegmentSelectionDialog</taskClass>
+            <toolbarTask>false</toolbarTask>
+            <menubarTask>false</menubarTask>
+            <toolWindow>true</toolWindow>
+            <loadAtStartup>true</loadAtStartup>
+        </explorerTask>
+        <!--Forecaster help and document viewer are tied together; segment-specific documents-->
+        <explorerTask name="Forecaster help">
+            <iconFile>help.png</iconFile>
+            <taskClass>nl.wldelft.fews.gui.plugin.information.ForecasterAidSelectionPanel</taskClass>
+            <toolbarTask>false</toolbarTask>
+            <menubarTask>false</menubarTask>
+            <toolWindow>true</toolWindow>
+            <loadAtStartup>true</loadAtStartup>
+        </explorerTask>
+        <explorerTask name="Document Viewer">
+            <taskClass>nl.wldelft.fews.gui.plugin.information.ForecasterAidDocumentPanel</taskClass>
+            <toolbarTask>false</toolbarTask>
+            <menubarTask>true</menubarTask>
+        </explorerTask>
+        <explorerTask name="Run Info">
+            <taskClass>nl.wldelft.fews.gui.plugin.logger.SegmentSelectionLoggerPanel</taskClass>
+            <toolbarTask>false</toolbarTask>
+            <menubarTask>false</menubarTask>
+            <toolWindow>true</toolWindow>
+            <loadAtStartup>true</loadAtStartup>
+        </explorerTask>
     </explorerTasks>
     <statusBarConfig>
         <description>Standard date-time format</description>

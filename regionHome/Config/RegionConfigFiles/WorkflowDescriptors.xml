@@ -1,6 +1,610 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workflowDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflowDescriptors.xsd" version="1.0">
-    <workflowDescriptor id="ImportGFS" name="Importar GFS" forecast="true" visible="true" allowApprove="true">
-        <description>Importar producto meteorológico GFS</description>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<workflowDescriptors xmlns="http://www.wldelft.nl/fews"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/workflowDescriptors.xsd"
+    version="1.0"
+>
+
+<!-- Workflows for reporting ==============================-->
+<!--    <workflowDescriptor id="Reporting" name="Generate Reports" forecast="false" visible="true" allowApprove="false">
+        <description>Generate Reports (under development)</description>
+    </workflowDescriptor>-->
+
+<!-- Workflows to pull data from external sources ==============================-->
+    <workflowDescriptor id="PullAll" name="Run all Pull workflows" forecast="false" visible="false" allowApprove="false">
+        <description>Run all Pull workflows and import grids</description>
     </workflowDescriptor>
+    <workflowDescriptor id="PullQMORPH" name="Pull QMORPH Observations" forecast="false" visible="false" allowApprove="false">
+        <description>Pull from QMORPH</description>
+    </workflowDescriptor>
+    <workflowDescriptor id="PullCMORPH" name="Pull CMORPH Observations" forecast="false" visible="false" allowApprove="false">
+        <description>Pull from CMORPH</description>
+    </workflowDescriptor>
+    <workflowDescriptor id="PullGFS" name="Pull GFS forecast" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Pull from GFS</description>
+    </workflowDescriptor>
+    <workflowDescriptor id="PullNAM" name="Pull NAM forecast" forecast="false" visible="false" allowApprove="false">
+        <description>Pull from NAM</description>
+    </workflowDescriptor>
+    <workflowDescriptor id="PullWRF" name="Pull WRF forecast" forecast="false" visible="false" allowApprove="false">
+        <description>Pull from WRF</description>
+    </workflowDescriptor>
+    <workflowDescriptor id="PullWRF_ElSal" name="Pull WRF_ElSal forecast" forecast="false" visible="false" allowApprove="false">
+        <description>Pull from WRF_ElSal</description>
+    </workflowDescriptor>
+    <workflowDescriptor id="PullCAWRF" name="Pull CA-WRF forecast" forecast="false" visible="false" allowApprove="false">
+        <description>Pull from CA-WRF</description>
+    </workflowDescriptor>
+
+<!-- QA/QC workflows ===========================================================-->
+    <workflowDescriptor id="ImportPostGreSQL_AutomaticGages_AccumulatedOnly" name="Import Automatic Accumulated Precipitation (do QC)" forecast="false" visible="true" allowApprove="false">
+        <description>Import the scalar automatic accumulated precipitation time series from the Hidrologia PostGreSQL database</description>
+        <runExpiryTime unit="day" multiplier="120"/>
+    </workflowDescriptor>
+    <workflowDescriptor id="ExportPostGreSQL_AutomaticAccumulated" name="Export QC'ed Accumulated Precipitation to DB" forecast="false" visible="true" allowApprove="false">
+        <description>Write the quality controlled accumulated precipitation time series to the Hidrologia PostGreSQL database</description>
+    </workflowDescriptor>
+    <workflowDescriptor id="ImportPostGreSQL_AutomaticGages" name="Import All Automatic Data (do QC)" forecast="false" visible="true" allowApprove="false">
+        <description>Import all of the scalar automatic time series (accumulated and incremental precipitation, stage, and reservoir time series from the Hidrologia PostGreSQL database</description>
+        <runExpiryTime unit="day" multiplier="120"/>
+    </workflowDescriptor>
+    <workflowDescriptor id="ApplyIncrementalEdits_Automatic" name="Apply Edits to Automatic Incremental Precipitation" forecast="false" visible="true" allowApprove="false">
+        <description>Merge automatic incremental precipitation data (QC'ed, raw, edits)</description>
+    </workflowDescriptor>
+    <workflowDescriptor id="ExportPostGreSQL_AutomaticIncremental" name="Export QC'ed Automatic Incremental Precipitation Data to DB" forecast="false" visible="true" allowApprove="false">
+        <description>Write the quality controlled incremental precipitation time series to the Hidrologia PostGreSQL database</description>
+    </workflowDescriptor>
+    <workflowDescriptor id="ExportPostGreSQL_StageReservoir" name="Export QC'ed Stage and Reservoir Data to DB" forecast="false" visible="true" allowApprove="false">
+        <description>Write quality controlled stage and reservoir time series to the Hidrologia PostGreSQL database</description>
+    </workflowDescriptor>
+
+<workflowDescriptor id="ImportPostGreSQL_DailyGages" name="Import Daily Incremental Precipitation (do QC)" forecast="false" visible="true" allowApprove="false">
+        <description>Import the scalar daily incremental precipitation time series from the Pronosticos PostGreSQL database</description>
+        <runExpiryTime unit="day" multiplier="120"/>
+    </workflowDescriptor>
+    <workflowDescriptor id="ApplyIncrementalEdits_Daily" name="Apply Edits to Daily Incremental Precipitation" forecast="false" visible="true" allowApprove="false">
+        <description>Merge daily incremental precipitation data (QC'ed, raw, edits)</description>
+    </workflowDescriptor>
+    <workflowDescriptor id="ExportPostGreSQL_DailyGages" name="Export QC'ed Daily Incremental Precipitation to DB" forecast="false" visible="true" allowApprove="false">
+        <description>Write the quality controlled daily incremental precipitation time series to the Pronosticos PostGreSQL database</description>
+    </workflowDescriptor>
+
+<!-- Import workflows ==========================================================-->
+    <workflowDescriptor id="ImportHistoricalPrecip" name="Import Historical gage precip" forecast="false" visible="false" allowApprove="false">
+        <description>Import the historical precipitation time series from the Import directory and delete the files after importing</description>
+    </workflowDescriptor>
+    <workflowDescriptor id="MAP_HistoricalFromDailyOnly" name="Compute historical MAP from daily stations only" forecast="false" visible="false" allowApprove="false">
+        <description>Compute MAP using only daily station data</description>
+    </workflowDescriptor>
+    <workflowDescriptor id="Export_MAPtoCSV" name="Export Historical MAP to CSV" forecast="false" visible="false" allowApprove="false">
+        <description>Export MAP to CSV (prep for calibration)</description>
+    </workflowDescriptor>
+    <workflowDescriptor id="ImportHistoricalMAP" name="Import Historical MAPs (for ensemble forecasting)" forecast="false" visible="false" allowApprove="false">
+        <description>Import the historical MAPs from the Import directory and delete the files after importing</description>
+        <runExpiryTime unit="year" multiplier="100"/>
+    </workflowDescriptor>
+   <workflowDescriptor id="ImportWRF_ElSal" name="Import: WRF SV" forecast="false" autoApprove="true" visible="true">
+      <cardinalTimeStep unit="hour" multiplier="6"/>
+   </workflowDescriptor>
+   <workflowDescriptor id="ImportGrids" name="Import Grids" forecast="false" visible="true" allowApprove="false" >
+        <description>Import the gridded time series from the Import directory</description>
+    </workflowDescriptor>
+
+<!-- Preprocess workflows ======================================================-->
+    <workflowDescriptor id="Preprocess" name="Preprocess stage to flow, MAP" forecast="true" visible="true" allowApprove="false">
+        <description>Run all preprocessors</description>
+        <runExpiryTime unit="day" multiplier="120"/>
+    </workflowDescriptor>
+    <workflowDescriptor id="Preprocess_flow" name="Process raw stage, convert to discharge" forecast="false" visible="false" allowApprove="false">
+        <description>Convert 15-min stage to 1-hour stage, convert to discharge</description>
+        <runExpiryTime unit="day" multiplier="120"/>
+    </workflowDescriptor>
+    <workflowDescriptor id="Preprocess_StationToGrids" name="Station to Gridded Precip" forecast="false" visible="false" allowApprove="false">
+        <description>Convert station precip to gridded</description>
+        <cardinalTimeStep id="13Z"/>
+    </workflowDescriptor>
+    <workflowDescriptor id="Preprocess_WRF" name="Convert WRF and CAWRF to incremental" forecast="true" visible="false" allowApprove="false">
+        <description>Convert WRF and CAWRF to incremental</description>
+    </workflowDescriptor>
+    <workflowDescriptor id="Preprocess_MAP" name="Compute MAP from each source" forecast="true" visible="false" allowApprove="false">
+        <description>Compute MAP from each source</description>
+        <runExpiryTime unit="day" multiplier="120"/>
+    </workflowDescriptor>
+
+<!-- Forecasting workflows =====================================================-->
+    <workflowDescriptor id="PreProcessing_FCST" name="PreProcessing_FCST" forecast="true" visible="false">
+        <description>Merge MAP and FMAP prior to running forecast</description>
+    </workflowDescriptor>
+     <workflowDescriptor id="PreProcessing_UPDT" name="PreProcessing_UPDT" forecast="true" visible="false">
+        <description>Merge MAP prior to running update states</description>
+    </workflowDescriptor>   
+
+<!--15-minute basin forecast-->
+    <workflowDescriptor id="15MinBasins_FCST" name="15-minute Basin Forecast" forecast="true" visible="true" allowApprove="true" autoApprove="true">
+        <description>15-minute basin forecast</description>
+    </workflowDescriptor>
+
+<!--Lempa workflows-->
+    <workflowDescriptor id="Lempa_FCST" stateWorkflowId="Lempa_UPDT" name="Lempa Forecast (all basins)" forecast="true" visible="true" allowApprove="true" autoApprove="true">
+        <description>Lempa Forecast</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+    <workflowDescriptor id="Lempa_15MinFCST" stateWorkflowId="Lempa_UPDT" name="Lempa Forecast (15-minute basins)" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Lempa 15-minute basin forecast</description>
+    </workflowDescriptor>
+    <workflowDescriptor id="Lempa_UPDT" name="Lempa Update States (save carryover)" forecast="true" visible="true" allowApprove="true" autoApprove="true">
+        <description>Lempa Update States (Save Carryover)</description>
+        <cardinalTimeStep id="12Z"/>
+        <runExpiryTime unit="day" multiplier="120"/>
+    </workflowDescriptor>
+    
+<!-- Segment LECHUZA -->
+    <workflowDescriptor id="LECHUZA_FCST" name="LECHUZA_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="LECHUZA_UPDT" name="LECHUZA_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="LECHUZA_SingleFCST" name="LECHUZA" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>La Lechuza</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment CRUCES -->
+    <workflowDescriptor id="CRUCES_FCST" name="CRUCES_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="CRUCES_UPDT" name="CRUCES_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="CRUCES_SingleFCST" name="CRUCES" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Las Cruces</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment METAPAN -->
+    <workflowDescriptor id="METAPAN_FCST" name="METAPAN_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="METAPAN_UPDT" name="METAPAN_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="METAPAN_SingleFCST" name="METAPAN" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Metapan</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment MONTCRIS -->
+    <workflowDescriptor id="MONTCRIS_FCST" name="MONTCRIS_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="MONTCRIS_UPDT" name="MONTCRIS_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="MONTCRIS_SingleFCST" name="MONTCRIS" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Montecristo</description>
+    </workflowDescriptor>
+
+<!-- Segment SANJOSE -->
+    <workflowDescriptor id="SANJOSE_FCST" name="SANJOSE_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="SANJOSE_UPDT" name="SANJOSE_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="SANJOSE_SingleFCST" name="SANJOSE" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>San Jose R</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment GUAJOY -->
+    <workflowDescriptor id="GUAJOY_FCST" name="GUAJOY_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="GUAJOY_UPDT" name="GUAJOY_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="GUAJOY_SingleFCST" name="GUAJOY" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Presa Guajoyo</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment PCARGADA -->
+    <workflowDescriptor id="PCARGADA_FCST" name="PCARGADA_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="PCARGADA_UPDT" name="PCARGADA_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="PCARGADA_SingleFCST" name="PCARGADA" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Piedra Cargada</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment CITALA -->
+    <workflowDescriptor id="CITALA_FCST" name="CITALA_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="CITALA_UPDT" name="CITALA_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="CITALA_SingleFCST" name="CITALA" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Citala</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment TAHUILAP -->
+    <workflowDescriptor id="TAHUILAP_FCST" name="TAHUILAP_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="TAHUILAP_UPDT" name="TAHUILAP_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="TAHUILAP_SingleFCST" name="TAHUILAP" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Tahuilapa R</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment ZAPOTILO -->
+    <workflowDescriptor id="ZAPOTILO_FCST" name="ZAPOTILO_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="ZAPOTILO_UPDT" name="ZAPOTILO_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="ZAPOTILO_SingleFCST" name="ZAPOTILO" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>El Zapotillo</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment LASPAVAS -->
+    <workflowDescriptor id="LASPAVAS_FCST" name="LASPAVAS_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="LASPAVAS_UPDT" name="LASPAVAS_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="LASPAVAS_SingleFCST" name="LASPAVAS" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Las Pavas</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment TALNIQUE -->
+    <workflowDescriptor id="TALNIQUE_FCST" name="TALNIQUE_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="TALNIQUE_UPDT" name="TALNIQUE_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="TALNIQUE_SingleFCST" name="TALNIQUE" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Talnique</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment SUCIO -->
+    <workflowDescriptor id="SUCIO_FCST" name="SUCIO_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="SUCIO_UPDT" name="SUCIO_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="SUCIO_SingleFCST" name="SUCIO" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Sucio R</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment TAMARIND -->
+    <workflowDescriptor id="TAMARIND_FCST" name="TAMARIND_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="TAMARIND_UPDT" name="TAMARIND_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="TAMARIND_SingleFCST" name="TAMARIND" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Tamarindo</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment ELPIRO -->
+    <workflowDescriptor id="ELPIRO_FCST" name="ELPIRO_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="ELPIRO_UPDT" name="ELPIRO_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="ELPIRO_SingleFCST" name="ELPIRO" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>El Piro</description>
+    </workflowDescriptor>
+
+<!-- Segment BELLOSO -->
+    <workflowDescriptor id="BELLOSO_FCST" name="BELLOSO_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="BELLOSO_UPDT" name="BELLOSO_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="BELLOSO_SingleFCST" name="BELLOSO" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Belloso</description>
+    </workflowDescriptor>
+
+<!-- Segment GUAZAPA -->
+    <workflowDescriptor id="GUAZAPA_FCST" name="GUAZAPA_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="GUAZAPA_UPDT" name="GUAZAPA_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="GUAZAPA_SingleFCST" name="GUAZAPA" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Guazapa</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment ACELHUAT -->
+    <workflowDescriptor id="ACELHUAT_FCST" name="ACELHUAT_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="ACELHUAT_UPDT" name="ACELHUAT_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="ACELHUAT_SingleFCST" name="ACELHUAT" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Acelhuate R</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment QUEZALAP -->
+    <workflowDescriptor id="QUEZALAP_FCST" name="QUEZALAP_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="QUEZALAP_UPDT" name="QUEZALAP_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="QUEZALAP_SingleFCST" name="QUEZALAP" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Quezalapa R</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment METAYATE -->
+    <workflowDescriptor id="METAYATE_FCST" name="METAYATE_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="METAYATE_UPDT" name="METAYATE_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="METAYATE_SingleFCST" name="METAYATE" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Metayate R</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment CHALATEN -->
+    <workflowDescriptor id="CHALATEN_FCST" name="CHALATEN_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="CHALATEN_UPDT" name="CHALATEN_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="CHALATEN_SingleFCST" name="CHALATEN" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Grande de Chalatenango R</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment TAMULASC -->
+    <workflowDescriptor id="TAMULASC_FCST" name="TAMULASC_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="TAMULASC_UPDT" name="TAMULASC_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="TAMULASC_SingleFCST" name="TAMULASC" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Tamulasco R</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment CERRON -->
+    <workflowDescriptor id="CERRON_FCST" name="CERRON_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="CERRON_UPDT" name="CERRON_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="CERRON_SingleFCST" name="CERRON" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Presa Cerron Grande</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment LAFLORES -->
+    <workflowDescriptor id="LAFLORES_FCST" name="LAFLORES_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="LAFLORES_UPDT" name="LAFLORES_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="LAFLORES_SingleFCST" name="LAFLORES" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Las Flores</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment 5NOVIE -->
+    <workflowDescriptor id="5NOVIE_FCST" name="5NOVIE_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="5NOVIE_UPDT" name="5NOVIE_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="5NOVIE_SingleFCST" name="5NOVIE" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Presa 5 de Noviembre</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment COPINOLA -->
+    <workflowDescriptor id="COPINOLA_FCST" name="COPINOLA_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="COPINOLA_UPDT" name="COPINOLA_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="COPINOLA_SingleFCST" name="COPINOLA" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Copinolapa R</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment MOCAL -->
+    <workflowDescriptor id="MOCAL_FCST" name="MOCAL_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="MOCAL_UPDT" name="MOCAL_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="MOCAL_SingleFCST" name="MOCAL" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Mocal</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment GUARAJAM -->
+    <workflowDescriptor id="GUARAJAM_FCST" name="GUARAJAM_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="GUARAJAM_UPDT" name="GUARAJAM_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="GUARAJAM_SingleFCST" name="GUARAJAM" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Guarajambala</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment BAJOGUAR -->
+    <workflowDescriptor id="BAJOGUAR_FCST" name="BAJOGUAR_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="BAJOGUAR_UPDT" name="BAJOGUAR_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="BAJOGUAR_SingleFCST" name="BAJOGUAR" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Guarajambala Cuenca Baja</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment SANGREGO -->
+    <workflowDescriptor id="SANGREGO_FCST" name="SANGREGO_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="SANGREGO_UPDT" name="SANGREGO_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="SANGREGO_SingleFCST" name="SANGREGO" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>San Gregorio</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment OSICALA -->
+    <workflowDescriptor id="OSICALA_FCST" name="OSICALA_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="OSICALA_UPDT" name="OSICALA_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="OSICALA_SingleFCST" name="OSICALA" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Osicala</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment TOROLA -->
+    <workflowDescriptor id="TOROLA_FCST" name="TOROLA_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="TOROLA_UPDT" name="TOROLA_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="TOROLA_SingleFCST" name="TOROLA" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Torola R</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment SANISIDR -->
+    <workflowDescriptor id="SANISIDR_FCST" name="SANISIDR_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="SANISIDR_UPDT" name="SANISIDR_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="SANISIDR_SingleFCST" name="SANISIDR" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>San Isidro</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment TITIHUAP -->
+    <workflowDescriptor id="TITIHUAP_FCST" name="TITIHUAP_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="TITIHUAP_UPDT" name="TITIHUAP_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="TITIHUAP_SingleFCST" name="TITIHUAP" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Titihuapa R</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment JIOTIQUE -->
+    <workflowDescriptor id="JIOTIQUE_FCST" name="JIOTIQUE_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="JIOTIQUE_UPDT" name="JIOTIQUE_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="JIOTIQUE_SingleFCST" name="JIOTIQUE" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Jiotique R</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment 15SEPT -->
+    <workflowDescriptor id="15SEPT_FCST" name="15SEPT_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="15SEPT_UPDT" name="15SEPT_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="15SEPT_SingleFCST" name="15SEPT" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Presa 15 de Septiembre</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment SANVICEN -->
+    <workflowDescriptor id="SANVICEN_FCST" name="SANVICEN_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="SANVICEN_UPDT" name="SANVICEN_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="SANVICEN_SingleFCST" name="SANVICEN" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>San Vicente Hidro</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment QUESERA -->
+    <workflowDescriptor id="QUESERA_FCST" name="QUESERA_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="QUESERA_UPDT" name="QUESERA_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="QUESERA_SingleFCST" name="QUESERA" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>La Quesera</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment SANSIMON -->
+    <workflowDescriptor id="SANSIMON_FCST" name="SANSIMON_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="SANSIMON_UPDT" name="SANSIMON_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="SANSIMON_SingleFCST" name="SANSIMON" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>San Simon R</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment SANMARCO -->
+    <workflowDescriptor id="SANMARCO_FCST" name="SANMARCO_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="SANMARCO_UPDT" name="SANMARCO_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="SANMARCO_SingleFCST" name="SANMARCO" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>San Marcos</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+
+
+<!-- Jiboa workflows-->
+    <workflowDescriptor id="Jiboa_FCST" stateWorkflowId="Jiboa_UPDT" name="Jiboa Forecast (all basins)" forecast="true" visible="true" allowApprove="true" autoApprove="true">
+        <description>Jiboa Forecast</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+    <workflowDescriptor id="Jiboa_15MinFCST" stateWorkflowId="Jiboa_UPDT" name="Jiboa Forecast (15-minute basins)" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Jiboa 15-minute basin forecast</description>
+    </workflowDescriptor>
+    <workflowDescriptor id="Jiboa_UPDT" name="Jiboa Update States (save carryover)" forecast="true" visible="true" allowApprove="true" autoApprove="true">
+        <description>Jiboa Update States (Save Carryover)</description>
+        <cardinalTimeStep id="12Z"/>
+        <runExpiryTime unit="day" multiplier="120"/>
+    </workflowDescriptor>
+
+<!-- Segment CHAGUITE -->
+    <workflowDescriptor id="CHAGUITE_FCST" name="CHAGUITE_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="CHAGUITE_UPDT" name="CHAGUITE_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="CHAGUITE_SingleFCST" name="CHAGUITE" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Rio Chaguite</description>
+    </workflowDescriptor>
+
+<!-- Segment SMARTIN -->
+    <workflowDescriptor id="SMARTIN_FCST" name="SMARTIN_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="SMARTIN_UPDT" name="SMARTIN_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="SMARTIN_SingleFCST" name="SMARTIN" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Arenal de San Martin</description>
+    </workflowDescriptor>
+
+<!-- Segment GULUCHAP -->
+    <workflowDescriptor id="GULUCHAP_FCST" name="GULUCHAP_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="GULUCHAP_UPDT" name="GULUCHAP_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="GULUCHAP_SingleFCST" name="GULUCHAP" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Rio Guluchapa</description>
+    </workflowDescriptor>
+
+<!-- Segment CUJUAPNO -->
+    <workflowDescriptor id="CUJUAPNO_FCST" name="CUJUAPNO_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="CUJUAPNO_UPDT" name="CUJUAPNO_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="CUJUAPNO_SingleFCST" name="CUJUAPNO" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Arenal de Cujuapa Norte</description>
+    </workflowDescriptor>
+
+<!-- Segment CUJUAPSU -->
+    <workflowDescriptor id="CUJUAPSU_FCST" name="CUJUAPSU_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="CUJUAPSU_UPDT" name="CUJUAPSU_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="CUJUAPSU_SingleFCST" name="CUJUAPSU" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Arenal de Cujuapa Sur</description>
+    </workflowDescriptor>
+
+<!-- Segment ILOPAN -->
+    <workflowDescriptor id="ILOPAN_FCST" name="ILOPAN_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="ILOPAN_UPDT" name="ILOPAN_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="ILOPAN_SingleFCST" name="ILOPAN" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Lago Ilopango</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment SAN RAMON -->
+    <workflowDescriptor id="SANRAMON_FCST" name="SANRAMON_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="SANRAMON_UPDT" name="SANRAMON_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="SANRAMON_SingleFCST" name="SANRAMON" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>San Ramon</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment CONFLUENCE -->
+    <workflowDescriptor id="CONFLUEN_FCST" name="CONFLUEN_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="CONFLUEN_UPDT" name="CONFLUEN_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="CONFLUEN_SingleFCST" name="CONFLUEN" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Bajo de la confluencia del Desague y Jiboa</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment RIO EL CHORRERON -->
+    <workflowDescriptor id="CHORRERN_FCST" name="CHORRERN_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="CHORRERN_UPDT" name="CHORRERN_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="CHORRERN_SingleFCST" name="CHORRERN" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Rio el chorreron</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment PUENTE VIEJO -->
+    <workflowDescriptor id="PNTVIEJO_FCST" name="PNTVIEJO_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="PNTVIEJO_UPDT" name="PNTVIEJO_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="PNTVIEJO_SingleFCST" name="PNTVIEJO" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Puente Viejo</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment RIO TILAPA -->
+    <workflowDescriptor id="TILAPA_FCST" name="TILAPA_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="TILAPA_UPDT" name="TILAPA_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="TILAPA_SingleFCST" name="TILAPA" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Rio Tilapa</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment RIO SEPAQUIAPA -->
+    <workflowDescriptor id="SEPAQUIA_FCST" name="SEPAQUIA_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="SEPAQUIA_UPDT" name="SEPAQUIA_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="SEPAQUIA_SingleFCST" name="SEPAQUIA" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Rio Sepaquiapa</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment JIBOA CUENCA BAJA -->
+    <workflowDescriptor id="BAJOJIBO_FCST" name="BAJOJIBO_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="BAJOJIBO_UPDT" name="BAJOJIBO_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="BAJOJIBO_SingleFCST" name="BAJOJIBO" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>Jiboa Cuenca Baja</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Segment EL ACHIOTAL -->
+    <workflowDescriptor id="ACHIOTAL_FCST" name="ACHIOTAL_Flow_Forecast" forecast="true" visible="false"/>
+    <workflowDescriptor id="ACHIOTAL_UPDT" name="ACHIOTAL_Flow_UpdateStates" forecast="true" visible="false"/>
+    <workflowDescriptor id="ACHIOTAL_SingleFCST" name="ACHIOTAL" forecast="true" visible="false" allowApprove="true" autoApprove="true">
+        <description>El Achiotal</description>
+        <cardinalTimeStep unit="hour" multiplier="1"/>
+    </workflowDescriptor>
+
+<!-- Separate ALLQPF traces-->
+    <workflowDescriptor id="Separate_Ensemble_15Min" name="Separate 15Min ALLQPF" forecast="true" visible="false" allowApprove="true" autoApprove="true"/>
+    <workflowDescriptor id="Separate_Ensemble_1Hr" name="Separate 1Hr ALLQPF" forecast="true" visible="false" allowApprove="true" autoApprove="true"/>
+
+<!-- ESP Forecast-->
+    <workflowDescriptor id="Jiboa_ESP_FCST" name="Jiboa ESP Flow Forecast" forecast="true" visible="true" allowApprove="true" autoApprove="true">
+        <cardinalTimeStep id="12Z"/>
+        <shiftAllExportedStatesToTime0>true</shiftAllExportedStatesToTime0>
+    </workflowDescriptor>        
+    <workflowDescriptor id="Lempa_ESP_FCST" name="Lempa ESP Flow Forecast" forecast="true" visible="true" allowApprove="true" autoApprove="true">
+        <cardinalTimeStep id="12Z"/>
+        <shiftAllExportedStatesToTime0>true</shiftAllExportedStatesToTime0>
+    </workflowDescriptor>        
+
+
+<!-- Export forecast data workflows ===============================================-->
+    <workflowDescriptor id="ExportPostGreSQL_Forecast" name="Export Forecasts to DB" forecast="false" visible="true">
+        <description>Export forecast data to the hidrologia PostGreSQL database</description>
+    </workflowDescriptor>
+
+<!-- System management workflows ===============================================-->
+    <workflowDescriptor id="RollingBarrel" forecast="false" visible="false">
+        <description>Performs the rolling barrel on a forecasting shell</description>
+    </workflowDescriptor>
+    <workflowDescriptor id="Amalgamate" forecast="false" visible="false">
+        <description>Amalgamates import (and preprocess) data to reduce the number of records</description>
+    </workflowDescriptor>
+
 </workflowDescriptors>
