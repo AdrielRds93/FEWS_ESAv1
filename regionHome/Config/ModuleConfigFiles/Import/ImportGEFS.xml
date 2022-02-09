@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>https://nomads.ncep.noaa.gov/dods/gefs/gefs%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-21600)%/gefs_pgrb2ap5_all_%RELATIVE_TIME_IN_SECONDS(HH,-21600)%z</serverUrl>
+			<idMapId>IdImportGEFS</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>GEFS</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportGEFS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.pro</parameterId>
+			<locationId>GEFS_ESA</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportGEFS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>T.pro</parameterId>
+			<locationId>GEFS_ESA</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
+		<externUnit parameterId="P.pro" unit="mm" cumulativeSum="false"/>
+		<externUnit parameterId="T.pro" unit="K"/>
+	</import>
+</timeSeriesImportRun>

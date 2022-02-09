@@ -1,811 +1,1024 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
-<parameterGroups version="1.0" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://chps1/schemas/parameters.xsd">
-	<!--<configUnitConversionsId>displayEnglishUnits</configUnitConversionsId>-->
-    <ratingCurveStageParameterId>STG</ratingCurveStageParameterId>
-    <ratingCurveDischargeParameterId>QINE</ratingCurveDischargeParameterId>
-    <parameterGroup id="Discharge">
-        <parameterType>instantaneous</parameterType>
-        <unit>CMS</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="QIN" name="River Discharge Observed Instantaneous">
-            <shortName>QIN</shortName>
-        </parameter>
-        <parameter id="QINE" name="River Discharge Adjusted Instantaneous">
-            <shortName>QINE</shortName>
-        </parameter>
-        <parameter id="QINH" name="River Discharge Computed Instantaneous">
-            <shortName>QINH</shortName>
-        </parameter>
-        <parameter id="RQIN" name="Reservoir Inflow (Observed)">
-            <shortName>RQIN</shortName>
-        </parameter>
-        <parameter id="RQOT" name="Reservoir Total Outflow">
-            <shortName>RQOT</shortName>
-        </parameter>
-        <parameter id="RQIE" name="Reservoir Outflow (Observed and Projected)">
-            <shortName>RQIE</shortName>
-        </parameter>
-        <parameter id="RQSW" name="Reservoir Spillway Observed">
-            <shortName>RQSW</shortName>
-        </parameter>
-        <parameter id="SDQI" name="Diversion Flow Simulated Instantaneous">
-            <shortName>SDQI</shortName>
-        </parameter>
-        <parameter id="SQIB" name="River Discharge Sim-Inst (Beginning)">
-            <shortName>SQIB</shortName>
-        </parameter>
-        <parameter id="SQIE" name="River Discharge Sim-Inst (End)">
-            <shortName>SQIE</shortName>
-        </parameter>
-        <parameter id="DQIE" name="DIVERSION FLOW OBSERVED+PROJECTED INSTANTANEOUS">
-            <shortName>DQIE</shortName>
-        </parameter>
-        <parameter id="DQIN" name="DIVERSION FLOW OBSERVED+PROJECTED INSTANTANEOUS">
-            <shortName>DQIN</shortName>
-        </parameter>
-        <parameter id="VSQI" name="STANDARD ERROR DISCHARGE SIMULATED INSTANTANEOUS">
-            <shortName>VSQI</shortName>
-        </parameter>
-        <parameter id="SQIN" name="River Discharge Simulated Instantaneous">
-            <shortName>SQIN</shortName>
-        </parameter>
-<!--Statistics computed for ensemble forecasting-->
-        <parameter id="MAX" name="MAX">
-            <shortName>Max</shortName>
-        </parameter>
-        <parameter id="MIN" name="MIN">
-            <shortName>Min</shortName>
-        </parameter>
-        <parameter id="MEAN" name="MEAN">
-            <shortName>Mean</shortName>
-        </parameter>
-        <parameter id="NON5" name="NON5">
-            <shortName>5% nonexceed prob</shortName>
-        </parameter>
-        <parameter id="NON10" name="NON10">
-            <shortName>10% nonexceed prob</shortName>
-        </parameter>
-        <parameter id="NON25" name="NON25">
-            <shortName>25% nonexceed prob</shortName>
-        </parameter>
-        <parameter id="NON75" name="NON75">
-            <shortName>75% nonexceed prob</shortName>
-        </parameter>
-        <parameter id="NON90" name="NON90">
-            <shortName>90% nonexceed prob</shortName>
-        </parameter>
-        <parameter id="NON95" name="NON95">
-            <shortName>95% nonexceed prob</shortName>
-        </parameter>
-        <!-- For Lake Processes -->
-        <parameter id="Q_EV" name="EVAPORATION LAKE (flow)">
-            <shortName>Q_EV</shortName>
-        </parameter>
-        <parameter id="Q_PP" name="PRECIPITATION LAKE (flow)">
-        <!--<parameter id="QPCP" name="EVAPORATION PAN">-->
-            <shortName>Q_PP</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Velocity">
-        <parameterType>instantaneous</parameterType>
-        <unit>M/S</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="SVIN" name="RIVER VELOCITY SIMULATED MEAN">
-            <shortName>SVIN</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Discharge Mean">
-        <parameterType>accumulative</parameterType>
-        <unit>CMSD</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="AQME" name="River Discharge Adjusted Mean">
-            <shortName>AQME</shortName>
-        </parameter>
-        <parameter id="QME" name="River Discharge Observed Mean">
-            <shortName>QME</shortName>
-        </parameter>
-        <parameter id="RQIM" name="Reservoir Inflow Observed Mean">
-            <shortName>RQIM</shortName>
-        </parameter>
-        <parameter id="RQME" name="Reservoir Outflow  (Observed and Projected) Mean">
-            <shortName>RQME</shortName>
-        </parameter>
-        <parameter id="RQMP" name="Reservoir Outflow  (Observed and Projected) Mean">
-            <shortName>RQMP</shortName>
-        </parameter>
-        <parameter id="SDQM" name="Diversion Flow Simulated Mean">
-            <shortName>SDQM</shortName>
-        </parameter>
-        <parameter id="SQME" name="River Discharge Simulated Mean">
-            <shortName>SQME</shortName>
-        </parameter>
-        <parameter id="DQME" name="DIVERSION FLOW OBSERVED+PROJECTED MEAN">
-            <shortName>DQME</shortName>
-        </parameter>
-        <parameter id="DQMP" name="DIVERSION FLOW OBSERVED+PROJECTED MEAN">
-            <shortName>DQMP</shortName>
-        </parameter>
-        <parameter id="RQGM" name="POWER GENERATION OBSERVED MEAN">
-            <shortName>RQGM</shortName>
-        </parameter>
-        <parameter id="VSQM" name="STANDARD ERROR DISCHARGE SIMULATED MEAN">
-            <shortName>VSQM</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Runoff">
-        <parameterType>accumulative</parameterType>
-        <unit>MM</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="INFW" name="Runoff Inflow to Channel">
-            <shortName>INFW</shortName>
-        </parameter>
-        <parameter id="TCI" name="Total Channel Info">
-            <shortName>TCI</shortName>
-        </parameter>
-        <parameter id="DIR_RO" name="DIRECT RUNOFF">
-            <shortName>DIR_RO</shortName>
-        </parameter>
-        <parameter id="IMP_RO" name="IMPERVIOUS RUNOFF">
-            <shortName>IMP_RO</shortName>
-        </parameter>
-        <parameter id="INT_RO" name="INTERMEDIATE RUNOFF">
-            <shortName>INT_RO</shortName>
-        </parameter>
-        <parameter id="PRI_RO" name="PRIMARY RUNOFF">
-            <shortName>PRI_RO</shortName>
-        </parameter>
-        <parameter id="SUP_RO" name="SUPPLEMENTARY RUNOFF">
-            <shortName>SUP_RO</shortName>
-        </parameter>
-        <parameter id="SUR_RO" name="SURFACE RUNOFF">
-            <shortName>SUR_RO</shortName>
-        </parameter>
-        <parameter id="ROCL" name="RUNOFF COMPONENTS (SAC)">
-            <shortName>ROCL</shortName>
-        </parameter>
-        <parameter id="GWRO" name="GROUNDWATER (BASEFLOW)">
-            <shortName>GWRO</shortName>
-        </parameter>
-        <parameter id="SURO" name="RUNOFF STORM">
-            <shortName>SURO</shortName>
-        </parameter>
-        <parameter id="MARO" name="RUNOFF AREAL MEAN">
-            <shortName>MARO</shortName>
-        </parameter>
-        <parameter id="GOUT" name="Glacier Outflow Melt">
-            <shortName>GOUT</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Level">
-        <parameterType>instantaneous</parameterType>
-        <unit>M</unit>
-        <valueResolution>0.001</valueResolution>
-        <usesDatum>true</usesDatum>
-        <parameter id="SSTG" name="River Stage Simulated">
-            <shortName>SSTG</shortName>
-        </parameter>
-        <parameter id="STG" name="River Stage Observed">
-            <shortName>STG</shortName>
-        </parameter>
-        <parameter id="STG01" name="River Stage Observed temporary calcs">
-            <shortName>STG</shortName>
-        </parameter>
-        <parameter id="STGE" name="River Stage Adjusted">
-            <shortName>STGE</shortName>
-        </parameter>
-        <parameter id="STGH" name="River Stage Computed Instantaneous">
-            <shortName>STGH</shortName>
-        </parameter>
-        <parameter id="STW" name="Tail Water Stage (Simulated)">
-            <shortName>STW</shortName>
-        </parameter>
-        <parameter id="TID" name="Observed Tide Instantaneous">
-            <shortName>TID</shortName>
-        </parameter>
-        <parameter id="TIDE" name="ADJUSTED TIDE OBSERVED+PROJECTED INSTANTANEOUS">
-            <shortName>TIDE</shortName>
-        </parameter>
-        <parameter id="STID" name="SIMULATED TIDE NOS GENERATED INSTANTANEOUS">
-            <shortName>STID</shortName>
-        </parameter>
-        <parameter id="FBEL" name="Reservoir Forebay Elevation (Observed)">
-            <shortName>FBEL</shortName>
-        </parameter>
-        <parameter id="PELE" name="Reservoir Pool Elevation (Simulated)">
-            <shortName>PELE</shortName>
-        </parameter>
-<!--    <parameter id="SPEL" name="Reservoir Pool Stage (Simulated)"> -->
-        <parameter id="SPEL" name="Reservoir Pool Elevation (Simulated)">
-            <shortName>SPEL</shortName>
-        </parameter>
-        <parameter id="PELV" name="Reservoir Pool Elevation (Observed)">
-            <shortName>PELV</shortName>
-        </parameter>
-        <parameter id="TWEL" name="TAIL WATER STAGE OBSERVED">
-            <shortName>TWEL</shortName>
-        </parameter>
-        <parameter id="TWSW" name="TAILWATER STAGE SPILLWAY OBSERVED">
-            <shortName>TWSW</shortName>
-        </parameter>
-        <parameter id="LAKH" name="TAILWATER STAGE SPILLWAY OBSERVED">
-            <shortName>LAKH</shortName>
-        </parameter>
-        <parameter id="LELV" name="LAKE HEIGHT OBSERVED">
-            <shortName>LELV</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Precipitation">
-        <parameterType>accumulative</parameterType>
-        <unit>MM</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="PC" name="Cumulative Precipitation">
-            <shortName>PC</shortName>
-        </parameter>
-        <parameter id="PC01" name="Cumulative Precipitation temporary calcs">
-            <shortName>PC</shortName>
-        </parameter>
-        <parameter id="PP24" name="Observed precipitation (24-hour)">
-            <shortName>PP24</shortName>
-        </parameter>
-        <parameter id="PP" name="Incremental Precipitation">
-            <shortName>PP</shortName>
-        </parameter>
-        <parameter id="PPedit" name="Edited precipitation">
-            <shortName>PPedit</shortName>
-        </parameter>
-        <parameter id="PP01" name="Precipitation temporary calcs">
-            <shortName>PP01</shortName>
-        </parameter>
-        <parameter id="PP02" name="Precipitation temporary calcs">
-            <shortName>PP02</shortName>
-        </parameter>
-        <parameter id="PPVR" name="Observed precipitation (less than 24 hour)">
-            <shortName>PPVR</shortName>
-        </parameter>
-        <parameter id="PTPP" name="Precipitation Point Missing not allowed">
-            <shortName>PTPP</shortName>
-        </parameter>
-        <parameter id="PTPX" name="Precipitation Point Missing allowed">
-            <shortName>PTPX</shortName>
-        </parameter>
-        <parameter id="MAP" name="Precipitation Areal Mean">
-            <shortName>MAP</shortName>
-        </parameter>
-        <parameter id="FMAP" name="Precipitation Areal Mean (Forecast)">
-            <shortName>FMAP</shortName>
-        </parameter>
-        <parameter id="MAPG" name="Grid Precipitation Areal Mean">
-            <shortName>MAPG</shortName>
-        </parameter>
-        <parameter id="MAPX" name="Gridded Precipitation Areal Mean">
-            <shortName>MAPX</shortName>
-        </parameter>
-        <parameter id="FMAPX" name="Forecast Gridded Precipitation Areal Mean">
-            <shortName>FMAPX</shortName>
-        </parameter>
-        <parameter id="QPF" name="Precipitation Forecast Gridded">
-            <shortName>QPF</shortName>
-        </parameter>
-        <parameter id="QPE" name="Precipitation Observed Gridded">
-            <shortName>QPE</shortName>
-        </parameter>
-        <parameter id="RAIM" name="Precipitation Rain + Melt">
-            <shortName>RAIM</shortName>
-        </parameter>
-        <parameter id="SNOF" name="SNOWFALL DEPTH OBSERVED">
-            <shortName>SNOF</shortName>
-        </parameter>
-        <parameter id="PSFALL" name="Precipitation as Snow">
-            <shortName>PSFALL</shortName>
-        </parameter>
-        <parameter id="PRAIN" name="Precipitation as Rain">
-            <shortName>PRAIN</shortName>
-        </parameter>
-                <!-- For ensemble plotting -->
-        <parameter id="MAP_QPF" name="Precipitation Areal Mean (QPF)">
-            <shortName>MAP_QPF</shortName>
-        </parameter>
-        <parameter id="MAP_RADAR" name="Precipitation Areal Mean (RADAR)">
-            <shortName>MAP_RADAR</shortName>
-        </parameter>
-        <parameter id="MAP_eRADAR" name="Precipitation Areal Mean (ENHANCED RADAR)">
-            <shortName>MAP_eRADAR</shortName>
-        </parameter>
-        <parameter id="MAP_PP" name="Precipitation Areal Mean (PP)">
-            <shortName>MAP_PP</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="API">
-        <parameterType>instantaneous</parameterType>
-        <unit>MM</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="MAPI" name="API Areal Mean">
-            <shortName>MAPI</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="TIME">
-        <parameterType>instantaneous</parameterType>
-        <unit>s</unit>
-        <valueResolution>1</valueResolution>
-        <parameter id="HDAT" name="HOURS TO DATE OF AN OBSERVATION">
-            <shortName>HDAT</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Gate">
-        <parameterType>instantaneous</parameterType>
-        <unit>M</unit>
-        <valueResolution>1</valueResolution>
-        <parameter id="GATE" name="GATE OPENINGS OBSERVED+PROJECTED">
-            <shortName>GATE</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Evaporation">
-        <parameterType>accumulative</parameterType>
-        <unit>MM</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="EPL" name="EVAPORATION LAKE">
-            <shortName>EPL</shortName>
-        </parameter>
-        <parameter id="EPAN" name="EVAPORATION PAN">
-            <shortName>EPAN</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Evapotranspiration">
-        <parameterType>accumulative</parameterType>
-        <unit>MM</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="MAPE" name="Evapotranspiration Potential Areal Mean">
-            <shortName>MAPE</shortName>
-        </parameter>
-        <parameter id="PTPE" name="EVAPOTRANSPIRATION POTENTIAL POINT">
-            <shortName>PTPE</shortName>
-        </parameter>
-        <parameter id="MOPE" name="EVAPOTRANSPIRATION POTENTIAL FROM MONTHLY MEAN">
-            <shortName>MOPE</shortName>
-        </parameter>
-        <parameter id="FMAPE" name="Forecasted Evapotranspiration Potential Areal Mean">
-            <shortName>FMAPE</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Temperature">
-        <parameterType>instantaneous</parameterType>
-        <unit>DEGC</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="TAIN" name="Air Temperature Point Instantaneous">
-            <shortName>TAIN</shortName>
-        </parameter>
-        <parameter id="TAVR" name="Observed Air Temperature (Instantaneous)">
-            <shortName>TAVR</shortName>
-        </parameter>
-        <parameter id="TAMN" name="Observed Air Temperature (24 hour Minimum)">
-            <shortName>TAMN</shortName>
-        </parameter>
-        <parameter id="TAMX" name="Observed Air Temperature (24 hour Maximum)">
-            <shortName>TAMX</shortName>
-        </parameter>
-        <parameter id="TFMN" name="Forecast Air Temperature (24 hour Minimum)">
-            <shortName>TFMN</shortName>
-        </parameter>
-        <parameter id="TFMX" name="Forecast Air Temperature (24 hour Maximum)">
-            <shortName>TFMX</shortName>
-        </parameter>
-        <parameter id="SST" name="Simulated Snow Temperature">
-            <shortName>SST</shortName>
-        </parameter>
-        <parameter id="SLSM" name="SLSM">
-            <shortName>SLSM</shortName>
-        </parameter>
-        <parameter id="FGINDEX" name="FGINDEX">
-            <shortName>FGINDEX</shortName>
-        </parameter>
-        <parameter id="QTF" name="Quantitative Temperature Forecast (Gridded)">
-            <shortName>QTF</shortName>
-        </parameter>
-        <parameter id="QTE" name="Quantitative Temperature Estimate (Gridded)">
-            <shortName>QTE</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Temperature Mean">
-        <parameterType>mean</parameterType>
-        <unit>DEGC</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="MAT" name="Air Temperature Areal Mean">
-            <shortName>MAT</shortName>
-        </parameter>
-        <parameter id="FMAT" name="Air Temperature Areal Mean (Forecast)">
-            <shortName>FMAT</shortName>
-        </parameter>
-        <parameter id="MATX" name="Gridded Temperature Areal Mean">
-            <shortName>MATX</shortName>
-        </parameter>
-        <parameter id="TAVG" name="AIR TEMPERATURE POINT MEAN">
-            <shortName>TAVG</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Snow Cover Depth">
-        <parameterType>instantaneous</parameterType>
-        <unit>MM</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="SNSG" name="Snow Cover Depth (Simulated)">
-            <shortName>SNSG</shortName>
-        </parameter>
-        <parameter id="SNOG" name="Snow Cover Depth (Observed)">
-            <shortName>SNOG</shortName>
-        </parameter>
-        <parameter id="SWE" name="Snow Cover Water Equivalent (Simulated)">
-            <shortName>SWE</shortName>
-        </parameter>
-        <parameter id="SNWE" name="Snow Cover Water Equivalent (Observed)">
-            <shortName>SNWE</shortName>
-        </parameter>
-        <parameter id="MAWE" name="SNOW COVER WATER EQUIVALENT AREAL MEAN">
-            <shortName>MAWE</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Dimensionless_Percentage" name="Dimensionless">
-        <parameterType>instantaneous</parameterType>
-        <unit>PCT</unit>
-        <valueResolution>0.1</valueResolution>
-        <parameter id="SSM" name="SSM">
-            <shortName>SSM</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Dimensionless_Fraction_Mean" name="Dimensionless">
-        <parameterType>mean</parameterType>
-        <unit>PCTD</unit>
-        <valueResolution>0.0001</valueResolution>
-        <parameter id="PTPS" name="Precipitation Snowfall (Fraction)">
-            <shortName>PTPS</shortName>
-        </parameter>
-        <parameter id="PSRO" name="RUNOFF SURFACE PERCENT">
-            <shortName>PSRO</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Dimensionless_Fraction" name="Dimensionless">
-        <parameterType>instantaneous</parameterType>
-        <unit>PCTD</unit>
-        <valueResolution>0.0001</valueResolution>
-        <parameter id="SASC" name="Snow Cover Areal Extent (Simulated)">
-            <shortName>SASC</shortName>
-        </parameter>
-        <parameter id="BFC" name="RECESSION COEFFICIENT BASEFLOW">
-            <shortName>BFC</shortName>
-        </parameter>
-        <parameter id="CVX" name="COEFFICIENT OF VARIATION INSTANTANEOUS">
-            <shortName>CVX</shortName>
-        </parameter>
-        <parameter id="FEIX" name="FROST EFFICIENCY INDEX SIMULATED">
-            <shortName>FEIX</shortName>
-        </parameter>
-        <parameter id="SSMP" name="SSMP">
-            <shortName>SSMP</shortName>
-        </parameter>
-        <parameter id="NFBD" name="FLASH BOARDS DOWN NUMBER OBSERVED+PROJECTED">
-            <shortName>NFBD</shortName>
-        </parameter>
-        <parameter id="OPKS" name="PEAK WITHIN FIXED WINDOW OBSERVED">
-            <shortName>OPKS</shortName>
-        </parameter>
-        <parameter id="PCFD" name="DIVERTED FLOW FROM CHANNEL PERCENT">
-            <shortName>PCFD</shortName>
-        </parameter>
-        <parameter id="PLDS" name="SIMULATED VALUE AT FIXED LEAD">
-            <shortName>PLDS</shortName>
-        </parameter>
-        <parameter id="SPKS" name="PEAK WITHIN FIXED WINDOW SIMULATED">
-            <shortName>SPKS</shortName>
-        </parameter>
-        <parameter id="ZRX" name="ZERO RAIN FRACTION INSTANTANEOUS">
-            <shortName>ZRX</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Dimensionless_Real" name="Dimensionless">
-        <parameterType>instantaneous</parameterType>
-        <unit>REAL</unit>
-        <valueResolution>0.0001</valueResolution>
-        <parameter id="DFAC" name="DIMENSIONLESS FACTOR SIMULATED INSTANTANEOUS">
-            <shortName>DFAC</shortName>
-        </parameter>
-        <parameter id="DFAC01" name="DIMENSIONLESS FACTOR temp calc">
-            <shortName>DFAC</shortName>
-        </parameter>
-        <parameter id="DFAC02" name="DIMENSIONLESS FACTOR temp calc">
-            <shortName>DFAC</shortName>
-        </parameter>
-        <parameter id="DFAC03" name="DIMENSIONLESS FACTOR temp calc">
-            <shortName>DFAC</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Dimensionless_Real_Mean" name="Dimensionless">
-        <parameterType>mean</parameterType>
-        <unit>REAL</unit>
-        <valueResolution>0.0001</valueResolution>
-        <parameter id="KP" name="ASSIMILATOR PRECIPITATION MULTIPLIER">
-            <shortName>KP</shortName>
-        </parameter>
-        <parameter id="JulianDate" name="Julian date">
-            <shortName>JulDate</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Dimensionless_Int" name="Dimensionless">
-        <parameterType>instantaneous</parameterType>
-        <unit>INT</unit>
-        <valueResolution>1</valueResolution>
-        <parameter id="GCS" name="Gate Control Switch">
-            <shortName>GCS</shortName>
-        </parameter>
-        <parameter id="GTCS" name="Gate Control Switch">
-            <shortName>GTCS</shortName>
-        </parameter>
-        <parameter id="selectMAP" name="Select MAP Source">
-            <shortName>sMAP</shortName>
-        </parameter>
-        <parameter id="selectFMAP" name="Select FMAP Source">
-            <shortName>sFMAP</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Reservoir Storage">
-        <parameterType>instantaneous</parameterType>
-        <unit>CMSD</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="CSTO" name="Reservoir Storage Change">
-            <shortName>CSTO</shortName>
-        </parameter>
-        <parameter id="RSTO" name="Reservoir Storage (Observed)">
-            <shortName>RSTO</shortName>
-        </parameter>
-        <parameter id="RSTE" name="Reservoir Storage (Adjusted)">
-            <shortName>RSTE</shortName>
-        </parameter>
-        <parameter id="SRSO" name="Reservoir Storage (Simulated)">
-            <shortName>SRSO</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Frost Depth">
-        <parameterType>instantaneous</parameterType>
-        <unit>MM</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="ICET" name="ICE THICKNESS OBSERVED">
-            <shortName>ICET</shortName>
-        </parameter>
-        <parameter id="FRZD" name="FRZD">
-            <shortName>FRZD</shortName>
-        </parameter>
-        <parameter id="FGDP" name="FROST DEPTH OBSERVED">
-            <shortName>FGDP</shortName>
-        </parameter>
-        <parameter id="FGIX" name="FROST INDEX SIMULATED INSTANTANEOUS">
-            <shortName>FGIX</shortName>
-        </parameter>
-        <parameter id="SFGD" name="FROST INDEX SIMULATED INSTANTANEOUS">
-            <shortName>SFGD</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Elevation Mean">
-        <parameterType>mean</parameterType>
-        <unit>M</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="RSEL" name="Rain-Snow Elevation">
-            <shortName>RSEL</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Elevation">
-        <parameterType>instantaneous</parameterType>
-        <unit>M</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="ZELV" name="Freezing Level (Observed)">
-            <shortName>ZELV</shortName>
-        </parameter>
-        <parameter id="ZELF" name="Freezing Level (Projected)">
-            <shortName>ZELF</shortName>
-        </parameter>
-        <parameter id="FLE" name="Freezing Level Estimate">
-            <shortName>FLE</shortName>
-        </parameter>
-        <parameter id="FLF" name="Freezing Level Forecast">
-            <shortName>FLF</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Temp">
-        <parameterType>instantaneous</parameterType>
-        <unit>-</unit>
-        <parameter id="TMP" name="Temp parameter">
-            <shortName>TMP</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Index_Real" name="Index">
-        <parameterType>instantaneous</parameterType>
-        <unit>-</unit>
-        <parameter id="AIAI" name="ANTECEDENT INDEX">
-            <shortName>AIAI</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Index_Temp" name="Index">
-        <parameterType>instantaneous</parameterType>
-        <unit>-</unit>
-        <parameter id="ATI" name="ANTECEDENT TEMPERATURE INDEX">
-            <shortName>ATI</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="Index_L" name="Index">
-        <parameterType>instantaneous</parameterType>
-        <unit>-</unit>
-        <parameter id="AEIS" name="ANTECEDENT EVAPORATION INDEX">
-            <shortName>AEIS</shortName>
-        </parameter>
-        <parameter id="APIC" name="API-CONT MODEL CONTENTS API,AI,SMI,BFSC,BFI">
-            <shortName>APIC</shortName>
-        </parameter>
-        <parameter id="APIS" name="ANTECEDENT PRECIPITATION INDEX">
-            <shortName>APIS</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="SARREGModifiers_L" name="SSARREG">
-        <parameterType>instantaneous</parameterType>
-        <unit>M</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="SETH" name="SET Level">
-            <shortName>SETH</shortName>
-        </parameter>
-        <parameter id="SETDH" name="SET Level change">
-            <shortName>SETDH</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="RESSNGLModifiers" name="RESSNGL">
-        <parameterType>mean</parameterType>
-        <unit>CMS</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="SETQMEAN" name="SETQMEAN">
-            <shortName>SETQMEAN</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="SARREGModifiers_L3/T" name="SSARREG">
-        <parameterType>instantaneous</parameterType>
-        <unit>CMS</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="SETQ" name="SET Discharge">
-            <shortName>SETQ</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="SARREGModifiers_L3" name="SSARREG">
-        <parameterType>accumulative</parameterType>
-        <unit>CMSD</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="SETDQ" name="SET Discharge change">
-            <shortName>SETDQ</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="SARREGModifiers_L3" name="SSARREG">
-        <parameterType>instantaneous</parameterType>
-        <unit>M3</unit>
-        <valueResolution>0.01</valueResolution>
-        <parameter id="SETS" name="SET Storage">
-            <shortName>SETQ</shortName>
-        </parameter>
-        <parameter id="SETDS" name="SET Storage change">
-            <shortName>SETDS</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="SARREGModifiers_Fraction" name="SSARREG">
-        <parameterType>instantaneous</parameterType>
-        <unit>INT</unit>
-        <valueResolution>1</valueResolution>
-        <parameter id="FREEFLOW" name="FREEFLOW">
-            <shortName>FREEFLOW</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="SNOW17Modifiers_Int" name="SNOW17 Mods">
-        <parameterType>instantaneous</parameterType>
-        <unit>INT</unit>
-        <valueResolution>1</valueResolution>
-        <parameter id="RAINSNOW" name="Rain/Snow switch">
-            <shortName>RAINSNOW</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="SNOW17Modifiers_Real" name="SNOW17 Mods">
-        <parameterType>instantaneous</parameterType>
-        <unit>REAL</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="MFC" name="Melt factor coefficient">
-            <shortName>MFC</shortName>
-        </parameter>
-        <parameter id="UADJ" name="Average wind function adjustment">
-            <shortName>UADJ</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="SNOW17Modifiers_L" name="SNOW17 Mods">
-        <parameterType>instantaneous</parameterType>
-        <unit>MM</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="WE" name="Water Equivalent">
-            <shortName>WE</shortName>
-        </parameter>
-        <parameter id="WEADD" name="Water Equivalent Addition">
-            <shortName>WEADD</shortName>
-        </parameter>
-        <parameter id="WECHNG" name="Water Equivalent Change">
-            <shortName>WECHNG</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="SNOW17Modifiers_Fraction" name="SNOW17 Mods">
-        <parameterType>instantaneous</parameterType>
-        <unit>PCTD</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="AESC" name="Areal extent of Snow Cover">
-            <shortName>AESC</shortName>
-        </parameter>
-        <parameter id="AESCCHNG" name="Areal extent of Snow Cover Change">
-            <shortName>AESCCHNG</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="SAC-SMA Modifiers_L" name="SAC-SMA States">
-        <parameterType>instantaneous</parameterType>
-        <unit>MM</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="UZTWC" name="Upper Zone Tension Water Content">
-            <shortName>UZTWC</shortName>
-        </parameter>
-        <parameter id="UZFWC" name="Upper Zone Free Water Content">
-            <shortName>UZFWC</shortName>
-        </parameter>
-        <parameter id="LZTWC" name="Lower Zone Tension Water Content">
-            <shortName>LZTWC</shortName>
-        </parameter>
-        <parameter id="LZFSC" name="Lower Zone Free Supplemental Content">
-            <shortName>LZFSC</shortName>
-        </parameter>
-        <parameter id="LZFPC" name="Lower Zone Free Primary Content">
-            <shortName>LZFPC</shortName>
-        </parameter>
-        <parameter id="UZTDEF" name="Upper Zone Tension Water Deficit">
-            <shortName>UZTDEF</shortName>
-        </parameter>
-        <parameter id="LZTDEF" name="Lower Zone Tension Water Deficit">
-            <shortName>LZTDEF</shortName>
-        </parameter>
-        <parameter id="UZTWD" name="Upper Zone Tension Water Deficit">
-            <shortName>UZTWD</shortName>
-        </parameter>
-        <parameter id="LZTWD" name="Lower Zone Tension Water Deficit">
-            <shortName>LZTWD</shortName>
-        </parameter>
-        <parameter id="SMZC" name="SOIL MOISTURE STORAGES (SAC)">
-            <shortName>SMZC</shortName>
-        </parameter>
-        <parameter id="ADIMC" name="Additional Impervious Area">
-            <shortName>ADIMC</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="SACSMA_Modifiers_Real" name="SAC-SMA Mods">
-        <parameterType>instantaneous</parameterType>
-        <unit>REAL</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="SACBASEF" name="Baseflow correction coefficient	">
-            <shortName>SACBASEF</shortName>
-        </parameter>
-    </parameterGroup>
-    <parameterGroup id="SACSMA_STATES_Fraction" name="SAC-SMA States Fractions">
-        <parameterType>instantaneous</parameterType>
-        <unit>PCTD</unit>
-        <valueResolution>0.001</valueResolution>
-        <parameter id="UZTWF" name="Upper Zone Tension Water Fraction">
-            <shortName>UZTWF</shortName>
-        </parameter>
-        <parameter id="UZFWF" name="Upper Zone Free Water Fraction">
-            <shortName>UZFWF</shortName>
-        </parameter>
-        <parameter id="LZTWF" name="Lower Zone Tension Water Fraction">
-            <shortName>LZTWF</shortName>
-        </parameter>
-        <parameter id="LZFSF" name="Lower Zone Free Supplemental Fraction">
-            <shortName>LZFSF</shortName>
-        </parameter>
-        <parameter id="LZFPF" name="Lower Zone Free Primary Fraction">
-            <shortName>LZFPF</shortName>
-        </parameter>
-        <parameter id="ADIMF" name="Additional Impervious Area Fraction">
-            <shortName>ADIMF</shortName>
-        </parameter>
-    </parameterGroup>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<parameterGroups version="1.0" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
+	<parameterGroup id="Valor_res1">
+		<parameterType>accumulative</parameterType>
+		<unit>-</unit>
+		<valueResolution>1</valueResolution>
+		<parameter id="SensorP.obs" name="SensorP.obs">
+			<shortName>SensorP.obs</shortName>
+		</parameter>
+		<parameter id="number" name="number">
+			<!-- RTC check! -->
+			<shortName>number</shortName>
+		</parameter>
+		<parameter id="number.user" name="number.user">
+			<!-- RTC check! -->
+			<shortName>number.user</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Valor_res0.1">
+		<parameterType>instantaneous</parameterType>
+		<unit>-</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="Machadinho.rule" name="Machadinho.rule">
+			<shortName>Machadinho.rule</shortName>
+		</parameter>
+		<parameter id="CamposNovos.rule" name="CamposNovos.rule">
+			<shortName>CamposNovos.rule</shortName>
+		</parameter>
+		<parameter id="BarraGrande.rule" name="BarraGrande.rule">
+			<shortName>BarraGrande.rule</shortName>
+		</parameter>
+		<parameter id="Ita.rule" name="Ita.rule">
+			<shortName>Ita.rule</shortName>
+		</parameter>
+		<parameter id="FozdoChapeco.rule" name="FozChapeco.rule">
+			<shortName>FozChapeco.rule</shortName>
+		</parameter>
+		<parameter id="PassoFundo.rule" name="PassoFundo.rule">
+			<shortName>PassoFundo.rule</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Valor_res0.01">
+		<parameterType>instantaneous</parameterType>
+		<unit>-</unit>
+		<valueResolution>0.001</valueResolution>
+		<parameter id="SensorH.obs" name="SensorH.obs">
+			<shortName>SensorH.obs</shortName>
+		</parameter>
+		<parameter id="Fraction" name="Fraction">
+			<shortName>Fraction</shortName>
+			<valueResolution>0.0001</valueResolution>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Precipitación">
+		<parameterType>accumulative</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="P" name="P (precipitación)">
+			<shortName>P</shortName>
+		</parameter>
+		<parameter id="P.obs" name="P.obs (Precipitación observada)">
+			<shortName>P.obs</shortName>
+		</parameter>
+		<parameter id="P.ZeroPrec" name="P.ZeroPrec (Precipitación pronosticada ZeroPrec)">
+			<shortName>P.ZeroPrec</shortName>
+		</parameter>
+		<parameter id="P.GFS" name="P.GFS (Precipitación pronosticada GFS)">
+			<shortName>P.GFS</shortName>
+		</parameter>
+		<parameter id="P.SMNETA" name="P.SMNETA (Precipitación pronosticada SMNETA)">
+			<shortName>P.SMNETA</shortName>
+		</parameter>
+		<parameter id="P.ECMWF" name="P.ECMWF (Precipitación ECMWF)">
+			<shortName>P.obs</shortName>
+		</parameter>
+		<parameter id="P.pro" name="P.pro (Precipitación pronosticada)">
+			<shortName>P.pro</shortName>
+		</parameter>
+		<parameter id="P.cuenca" name="P.cuenca (Precipitación media por cuenca)">
+			<shortName>P.cuenca</shortName>
+		</parameter>
+		<parameter id="P.cuenca.d1" name="P.cuenca (Precipitación pronosticada dia 1)">
+			<shortName>P.cuenca.d1</shortName>
+		</parameter>
+		<parameter id="P.cuenca.d2" name="P.cuenca (Precipitación pronosticada dia 2)">
+			<shortName>P.cuenca.d2</shortName>
+		</parameter>
+		<parameter id="P.cuenca.d3" name="P.cuenca (Precipitación pronosticada dia 3)">
+			<shortName>P.cuenca.d3</shortName>
+		</parameter>
+		<parameter id="P.cuenca.d4" name="P.cuenca (Precipitación pronosticada dia 4)">
+			<shortName>P.cuenca.d4</shortName>
+		</parameter>
+		<parameter id="P.cuenca.d5" name="P.cuenca (Precipitación pronosticada dia 5)">
+			<shortName>P.cuenca.d5</shortName>
+		</parameter>
+		<parameter id="P.cuenca.d6" name="P.cuenca (Precipitación pronosticada dia 6)">
+			<shortName>P.cuenca.d6</shortName>
+		</parameter>
+		<parameter id="P.cuenca.d7" name="P.cuenca (Precipitación pronosticada dia 7)">
+			<shortName>P.cuenca.d7</shortName>
+		</parameter>
+		<parameter id="P.rep.cuenca" name="Precipitación media">
+			<shortName>P.cuenca</shortName>
+		</parameter>
+		<parameter id="P.tramo" name="P.tramo (Precipitación media por tramos)">
+			<shortName>P.tramo</shortName>
+		</parameter>
+		<parameter id="EP" name="EP">
+			<shortName>EP</shortName>
+		</parameter>
+		<parameter id="TRMM-MERGE" name="TRMM-MERGE">
+			<shortName>TRMM-MERGE</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Precipitación_mm/h">
+		<parameterType>instantaneous</parameterType>
+		<unit>mm/h</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="P.pro.tasa" name="P.pro.tasa (Tasa de precipitación pronósticada)">
+			<shortName>P.pro.tasa</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Precipitación acumulada">
+		<parameterType>instantaneous</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="P.pro.acc" name="P.pro.acc (Precipitación pronósticada acumulada)">
+			<shortName>P.pro.acc</shortName>
+		</parameter>
+		<parameter id="P.pro.acc.GEFS.Perc000" name="P.pro.acc.GEFS.Perc000">
+			<shortName>P.pro.acc.GEFS.Perc000</shortName>
+		</parameter>
+		<parameter id="P.pro.acc.GEFS.Perc010" name="P.pro.acc.GEFS.Perc010">
+			<shortName>P.pro.acc.GEFS.Perc010</shortName>
+		</parameter>
+		<parameter id="P.pro.acc.GEFS.Perc020" name="P.pro.acc.GEFS.Perc020">
+			<shortName>P.pro.acc.GEFS.Perc020</shortName>
+		</parameter>
+		<parameter id="P.pro.acc.GEFS.Perc025" name="P.pro.acc.GEFS.Perc025">
+			<shortName>P.pro.acc.GEFS.Perc025</shortName>
+		</parameter>
+		<parameter id="P.pro.acc.GEFS.Perc033" name="P.pro.acc.GEFS.Perc033">
+			<shortName>P.pro.acc.GEFS.Perc033</shortName>
+		</parameter>
+		<parameter id="P.pro.acc.GEFS.Perc050" name="P.pro.acc.GEFS.Perc050">
+			<shortName>P.pro.acc.GEFS.Perc050</shortName>
+		</parameter>
+		<parameter id="P.pro.acc.GEFS.Perc067" name="P.pro.acc.GEFS.Perc067">
+			<shortName>P.pro.acc.GEFS.Perc067</shortName>
+		</parameter>
+		<parameter id="P.pro.acc.GEFS.Perc075" name="P.pro.acc.GEFS.Perc075">
+			<shortName>P.pro.acc.GEFS.Perc075</shortName>
+		</parameter>
+		<parameter id="P.pro.acc.GEFS.Perc080" name="P.pro.acc.GEFS.Perc080">
+			<shortName>P.pro.acc.GEFS.Perc080</shortName>
+		</parameter>
+		<parameter id="P.pro.acc.GEFS.Perc090" name="P.pro.acc.GEFS.Perc090">
+			<shortName>P.pro.acc.GEFS.Perc090</shortName>
+		</parameter>
+		<parameter id="P.pro.acc.GEFS.Perc100" name="P.pro.acc.GEFS.Perc100">
+			<shortName>P.pro.acc.GEFS.Perc100</shortName>
+		</parameter>
+		<parameter id="P.pro.acc.ECMWF-pf.Perc000" name="P.pro.acc.ECMWF-pf.Perc000">
+			<shortName>P.pro.acc.ECMWF-pf.Perc000</shortName>
+		</parameter>
+		<parameter id="P.pro.acc.ECMWF-pf.Perc010" name="P.pro.acc.ECMWF-pf.Perc010">
+			<shortName>P.pro.acc.ECMWF-pf.Perc010</shortName>
+		</parameter>
+		<parameter id="P.pro.acc.ECMWF-pf.Perc020" name="P.pro.acc.ECMWF-pf.Perc020">
+			<shortName>P.pro.acc.ECMWF-pf.Perc020</shortName>
+		</parameter>
+		<parameter id="P.pro.acc.ECMWF-pf.Perc033" name="P.pro.acc.ECMWF-pf.Perc033">
+			<shortName>P.pro.acc.ECMWF-pf.Perc033</shortName>
+		</parameter>
+		<parameter id="P.pro.acc.ECMWF-pf.Perc050" name="P.pro.acc.ECMWF-pf.Perc050">
+			<shortName>P.pro.acc.ECMWF-pf.Perc050</shortName>
+		</parameter>
+		<parameter id="P.pro.acc.ECMWF-pf.Perc067" name="P.pro.acc.ECMWF-pf.Perc067">
+			<shortName>P.pro.acc.ECMWF-pf.Perc067</shortName>
+		</parameter>
+		<parameter id="P.pro.acc.ECMWF-pf.Perc080" name="P.pro.acc.ECMWF-pf.Perc080">
+			<shortName>P.pro.acc.ECMWF-pf.Perc080</shortName>
+		</parameter>
+		<parameter id="P.pro.acc.ECMWF-pf.Perc090" name="P.pro.acc.ECMWF-pf.Perc090">
+			<shortName>P.pro.acc.ECMWF-pf.Perc090</shortName>
+		</parameter>
+		<parameter id="P.pro.acc.ECMWF-pf.Perc100" name="P.pro.acc.ECMWF-pf.Perc100">
+			<shortName>P.pro.acc.ECMWF-pf.Perc100</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Precipitación sum">
+		<parameterType>accumulative</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="P.ECMWF-SUM" name="P.ECMWF-SUM">
+			<shortName>P.ECMWF-SUM</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Precipitación Bias">
+		<parameterType>instantaneous</parameterType>
+		<unit>mm</unit>
+		<parameter id="P.BIAS.24h" name="P.BIAS.24h">
+			<shortName>P.BIAS.24h</shortName>
+		</parameter>
+		<parameter id="P.BIAS.48h" name="P.BIAS.48h">
+			<shortName>P.BIAS.48h</shortName>
+		</parameter>
+		<parameter id="P.BIAS.72h" name="P.BIAS.72h">
+			<shortName>P.BIAS.72h</shortName>
+		</parameter>
+		<parameter id="P.BIAS.168h" name="P.BIAS.168h">
+			<shortName>P.BIAS.168h</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Precipitación Squared Mean Error">
+		<parameterType>instantaneous</parameterType>
+		<unit>mm</unit>
+		<parameter id="P.MSE.24h" name="P.MSE.24h">
+			<shortName>P.MSE.24h</shortName>
+		</parameter>
+		<parameter id="P.MSE.48h" name="P.MSE.48h">
+			<shortName>P.MSE.48h</shortName>
+		</parameter>
+		<parameter id="P.MSE.72h" name="P.MSE.72h">
+			<shortName>P.MSE.72h</shortName>
+		</parameter>
+		<parameter id="P.MSE.168h" name="P.MSE.168h">
+			<shortName>P.MSE.168h</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Temperatura">
+		<parameterType>instantaneous</parameterType>
+		<unit>oC</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="T" name="T">
+			<shortName>T</shortName>
+		</parameter>
+		<parameter id="TM" name="TM">
+			<shortName>TM</shortName>
+		</parameter>
+		<parameter id="T.obs" name="T.obs (Temperatura Observada)">
+			<shortName>T.obs</shortName>
+		</parameter>
+		<parameter id="Td.obs" name="Td.obs (Temperatura de Rocío observada)">
+			<shortName>Td.obs</shortName>
+		</parameter>
+		<parameter id="T.CFS" name="T.CFS">
+			<shortName>T.CFS</shortName>
+		</parameter>
+		<parameter id="T.cuenca" name="T.cuenca (Temperatura media por cuenca)">
+			<shortName>T.cuenca</shortName>
+		</parameter>
+		<parameter id="T.pro" name="T.pro (Temperatura pronósticada)">
+			<shortName>T.pro</shortName>
+		</parameter>
+		<parameter id="Td.pro" name="Td.pro (Temperatura de Rocio pronósticada)">
+			<shortName>Td.pro</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Presión">
+		<parameterType>instantaneous</parameterType>
+		<unit>hPa</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="pr.obs" name="pr.obs (Presión observada)">
+			<shortName>pr.obs</shortName>
+		</parameter>
+		<parameter id="pr.pro" name="pr.pro (Presión pronósticada)">
+			<shortName>pr.pro</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Humedad relativa">
+		<parameterType>mean</parameterType>
+		<unit>%</unit>
+		<valueResolution>1</valueResolution>
+		<parameter id="Hr.obs" name="Hr.obs (Humedad Relativa)">
+			<shortName>Hr.obs</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Evaporación">
+		<parameterType>accumulative</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="EPiche.obs" name="EPiche.obs (Evaporacion Piche Observada)">
+			<shortName>EPiche.obs</shortName>
+		</parameter>
+		<parameter id="EPenman.obs" name="EPenman.obs (Evaporación Penman observada)">
+			<shortName>EPenman.obs</shortName>
+		</parameter>
+		<parameter id="EPenman.pro" name="EPenman.pro (Evaporación Penman pronósticada)">
+			<shortName>EPenman.pro</shortName>
+		</parameter>
+		<parameter id="ETanque.obs" name="ETanque.obs (Evaporación Tanque observada)">
+			<shortName>ETanque.obs</shortName>
+		</parameter>
+		<parameter id="E.cuenca" name="E.cuenca (Evaporación media por cuenca)">
+			<shortName>E.cuenca</shortName>
+		</parameter>
+		<parameter id="E.ECMWF" name="E.ECMWF (Evaporación ECMWF pronosticada)">
+			<shortName>E.ECMWF</shortName>
+		</parameter>
+		<parameter id="E.pro" name="E.pro (Evaporación ECMWF pronosticada)">
+			<shortName>E.ECMWF</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Evaporación suma">
+		<parameterType>accumulative</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="E.ECMWF-SUM" name="E.ECMWF-SUM">
+			<shortName>E.ECMWF-SUM</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="NetRadiación">
+		<parameterType>accumulative</parameterType>
+		<unit>kJ/m2</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="Rad.obs" name="Rad.obs (Radiación Neta)">
+			<shortName>Rad.obs</shortName>
+		</parameter>
+		<parameter id="Rad.pro" name="Rad.pro (Radiación Neta pronosticada)">
+			<shortName>Rad.pro</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Albedo">
+		<parameterType>accumulative</parameterType>
+		<unit>%</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="A.pro" name="A.obs (Albedo  pronosticada)">
+			<shortName>A.pro</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Viento">
+		<parameterType>instantaneous</parameterType>
+		<unit>m/s</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="u.obs" name="u.obs (Velocidad de Viento Observada)">
+			<shortName>u.obs</shortName>
+		</parameter>
+		<parameter id="u.pro" name="u.obs (Velocidad de Viento pronósticada)">
+			<shortName>u.pro</shortName>
+		</parameter>
+		<parameter id="ux.pro" name="ux.pro (Componente x de la velocidad de viento pronósticada)">
+			<shortName>ux.pro</shortName>
+		</parameter>
+		<parameter id="uy.pro" name="uy.pro (Componente y de la velocidad de viento pronósticada)">
+			<shortName>uy.pro</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Presión de vapor">
+		<parameterType>instantaneous</parameterType>
+		<unit>kPa</unit>
+		<valueResolution>0.0001</valueResolution>
+		<parameter id="VP.obs" name="VP.obs (Presión de vapor)">
+			<shortName>VP.obs</shortName>
+		</parameter>
+		<parameter id="VP.pro" name="VP.pro (Presión de vapor)">
+			<shortName>VP.pro</shortName>
+		</parameter>
+		<parameter id="VPsat.obs" name="VPsat.obs (Presión de vapor saturada)">
+			<shortName>VPsat.obs</shortName>
+		</parameter>
+		<parameter id="VPsat.pro" name="VPsat.pro (Presión de vapor saturada)">
+			<shortName>VPsat.pro</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Pendiente de Presión de vapor">
+		<parameterType>instantaneous</parameterType>
+		<unit>kPa/oC</unit>
+		<valueResolution>0.0001</valueResolution>
+		<parameter id="VP.slope" name="VP.slope (Pendiente de presión de vapor)">
+			<shortName>VP.slope</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Escurrimiento">
+		<parameterType>accumulative</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.001</valueResolution>
+		<parameter id="escurrimiento" name="Escurrimiento">
+			<shortName>Escurrimiento</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Caudal">
+		<parameterType>mean</parameterType>
+		<unit>m3/s</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="Q.cal" name="Q.cal (caudales calcualdos antiguamente por CTM)">
+			<shortName>Q.cal</shortName>
+		</parameter>
+		<parameter id="Q.cal.1d" name="Q.cal 1d ">
+			<shortName>Q.cal.1d</shortName>
+		</parameter>
+		<parameter id="Q.cal.3h" name="Q.cal 3h ">
+			<shortName>Q.cal.3h</shortName>
+		</parameter>
+		<parameter id="Q.cal.6h" name="Q.cal 6h media mobile">
+			<shortName>Q.cal.6h</shortName>
+		</parameter>
+		<parameter id="Q.cal.12h" name="Q.cal 12h media mobile">
+			<shortName>Q.cal.12h</shortName>
+		</parameter>
+		<parameter id="Q.cal.24h" name="Q.cal 24 h media mobile">
+			<shortName>Q.cal.24h</shortName>
+		</parameter>
+		<parameter id="Q.obs" name="Q.obs (Caudal observado)">
+			<shortName>Q.obs</shortName>
+		</parameter>
+		<parameter id="Q.rep.obs" name="Caudal observado">
+			<shortName>Q.obs</shortName>
+		</parameter>
+		<parameter id="Q.sim" name="Q.sim (Caudal simulado)">
+			<shortName>Q.sim</shortName>
+		</parameter>
+		<parameter id="Q.sim.d1" name="Q.sim.d1 (Caudal simulado  dia 1)">
+			<shortName>Q.sim.d1</shortName>
+		</parameter>
+		<parameter id="Q.sim.d2" name="Q.sim.d2 (Caudal simulado  dia 2)">
+			<shortName>Q.sim.d2</shortName>
+		</parameter>
+		<parameter id="Q.sim.d3" name="Q.sim.d3 (Caudal simulado  dia 3)">
+			<shortName>Q.sim.d3</shortName>
+		</parameter>
+		<parameter id="Q.sim.d4" name="Q.sim.d4 (Caudal simulado  dia 4)">
+			<shortName>Q.sim.d4</shortName>
+		</parameter>
+		<parameter id="Q.sim.d5" name="Q.sim.d5 (Caudal simulado  dia 5)">
+			<shortName>Q.sim.d5</shortName>
+		</parameter>
+		<parameter id="Q.sim.d6" name="Q.sim.d6 (Caudal simulado  dia 6)">
+			<shortName>Q.sim.d6</shortName>
+		</parameter>
+		<parameter id="Q.sim.d7" name="Q.sim.d7 (Caudal simulado  dia 7)">
+			<shortName>Q.sim.d7</shortName>
+		</parameter>
+		<parameter id="Q.sim.d8" name="Q.sim.d8 (Caudal simulado  dia 8)">
+			<shortName>Q.sim.d8</shortName>
+		</parameter>
+		<parameter id="Q.sim.d9" name="Q.sim.d9 (Caudal simulado  dia 9)">
+			<shortName>Q.sim.d9</shortName>
+		</parameter>
+		<parameter id="Q.sim.d10" name="Q.sim.d10 (Caudal simulado  dia 10)">
+			<shortName>Q.sim.d10</shortName>
+		</parameter>
+		<parameter id="Q.sim.d11" name="Q.sim.d11 (Caudal simulado  dia 11)">
+			<shortName>Q.sim.d11</shortName>
+		</parameter>
+		<parameter id="Q.sim.d12" name="Q.sim.d12 (Caudal simulado  dia 12)">
+			<shortName>Q.sim.d12</shortName>
+		</parameter>
+		<parameter id="Q.sim.d13" name="Q.sim.d13 (Caudal simulado  dia 13)">
+			<shortName>Q.sim.d13</shortName>
+		</parameter>
+		<parameter id="Q.sim.d14" name="Q.sim.d14 (Caudal simulado  dia 14)">
+			<shortName>Q.sim.d14</shortName>
+		</parameter>
+		<parameter id="Q.for" name="Q.for (Caudal pronosticado)">
+			<shortName>Q.for</shortName>
+		</parameter>
+		<parameter id="Q.rep.sim" name="Caudal simulado">
+			<shortName>Q.sim</shortName>
+		</parameter>
+		<parameter id="Q.upd" name="Q.upd (Caudal corregido)">
+			<shortName>Q.upd</shortName>
+		</parameter>
+		<parameter id="Q.in.ZeroPrec" name="Q.in.ZeroPrec (Caudal afluente Zero Prec)">
+			<shortName>Q.in.ZeroPrec</shortName>
+		</parameter>
+		<parameter id="Q.in.GFS" name="Q.in.GFS (Caudal afluente GFS)">
+			<shortName>Q.in.GFS</shortName>
+		</parameter>
+		<parameter id="Q.in.SMNETA" name="Q.in.SMNETA (Caudal afluente SMNETA)">
+			<shortName>Q.in.SMNETA</shortName>
+		</parameter>
+		<parameter id="Q.Route" name="Q.Route (Caudal afluente Route)">
+			<shortName>Q.Route</shortName>
+		</parameter>
+		<parameter id="Q.HECRAS" name="Q.HECRAS (Caudal afluente HECRAS)">
+			<shortName>Q.HECRAS</shortName>
+		</parameter>
+		<parameter id="Q.rtc" name="Q.rtc">
+			<shortName>Q.rtc</shortName>
+		</parameter>
+		<parameter id="Q.rtc.Opcion1" name="Q.rtc Opcion1">
+			<shortName>Q.rtc Opcion1</shortName>
+		</parameter>
+		<parameter id="Q.rtc.Opcion2" name="Q.rtc Opcion2">
+			<shortName>Q.rtc Opcion2</shortName>
+		</parameter>
+		<parameter id="Q.rtc.Opcion3" name="Q.rtc Opcion3">
+			<shortName>Q.rtc Opcion3</shortName>
+		</parameter>
+		<parameter id="Q.rtc.Opcion4" name="Q.rtc Opcion4">
+			<shortName>Q.rtc Opcion4</shortName>
+		</parameter>
+		<parameter id="Q.rule" name="Q.rule">
+			<shortName>Q.rule</shortName>
+		</parameter>
+		<parameter id="Q.evaporado" name="Q.evaporado">
+			<shortName>Q.evaporado</shortName>
+		</parameter>
+		<parameter id="Q.consuntivo" name="Q.consuntivo">
+			<shortName>Q.consuntivo</shortName>
+		</parameter>
+		<parameter id="Q.natural" name="Q.natural (Caudal natural estimado)">
+			<shortName>Q.natural</shortName>
+		</parameter>
+		<parameter id="Q.incremental" name="Q.incremental (Caudal incremental)">
+			<shortName>Q.incremental</shortName>
+		</parameter>
+		<parameter id="Q.incremental2" name="Q.incremental2 (Caudal incremental 2)">
+			<shortName>Q.incremental2</shortName>
+		</parameter>
+		<parameter id="Q.HIDROPRO" name="Q.HIDROPRO">
+			<!--RTC check!!-->
+			<shortName>Q.HIDROPRO</shortName>
+		</parameter>
+		<parameter id="Q.HIPROLLU" name="Q.HIPROLLU">
+			<!--RTC check!!-->
+			<shortName>Q.HIPROLLU</shortName>
+		</parameter>
+		<parameter id="Q.user" name="Q.user">
+			<shortName>Q.user</shortName>
+		</parameter>
+		<parameter id="Q.upd.GEFS.Perc000" name="Q.upd.GEFS.Perc000">
+			<shortName>Q.upd.GEFS.Perc000</shortName>
+		</parameter>
+		<parameter id="Q.upd.GEFS.Perc010" name="Q.upd.GEFS.Perc010">
+			<shortName>Q.upd.GEFS.Perc010</shortName>
+		</parameter>
+		<parameter id="Q.upd.GEFS.Perc020" name="Q.upd.GEFS.Perc020">
+			<shortName>Q.upd.GEFS.Perc020</shortName>
+		</parameter>
+		<parameter id="Q.upd.GEFS.Perc025" name="Q.upd.GEFS.Perc025">
+			<shortName>Q.upd.GEFS.Perc025</shortName>
+		</parameter>
+		<parameter id="Q.upd.GEFS.Perc033" name="Q.upd.GEFS.Perc033">
+			<shortName>Q.upd.GEFS.Perc033</shortName>
+		</parameter>
+		<parameter id="Q.upd.GEFS.Perc050" name="Q.upd.GEFS.Perc050">
+			<shortName>Q.upd.GEFS.Perc050</shortName>
+		</parameter>
+		<parameter id="Q.upd.GEFS.Perc067" name="Q.upd.GEFS.Perc067">
+			<shortName>Q.upd.GEFS.Perc067</shortName>
+		</parameter>
+		<parameter id="Q.upd.GEFS.Perc075" name="Q.upd.GEFS.Perc075">
+			<shortName>Q.upd.GEFS.Perc075</shortName>
+		</parameter>
+		<parameter id="Q.upd.GEFS.Perc080" name="Q.upd.GEFS.Perc080">
+			<shortName>Q.upd.GEFS.Perc080</shortName>
+		</parameter>
+		<parameter id="Q.upd.GEFS.Perc090" name="Q.upd.GEFS.Perc090">
+			<shortName>Q.upd.GEFS.Perc090</shortName>
+		</parameter>
+		<parameter id="Q.upd.GEFS.Perc100" name="Q.upd.GEFS.Perc100">
+			<shortName>Q.upd.GEFS.Perc100</shortName>
+		</parameter>
+		<parameter id="Q.upd.ECMWF-pf.Perc000" name="Q.upd.ECMWF-pf.Perc000">
+			<shortName>Q.upd.ECMWF-pf.Perc000</shortName>
+		</parameter>
+		<parameter id="Q.upd.ECMWF-pf.Perc010" name="Q.upd.ECMWF-pf.Perc010">
+			<shortName>Q.upd.ECMWF-pf.Perc010</shortName>
+		</parameter>
+		<parameter id="Q.upd.ECMWF-pf.Perc020" name="Q.upd.ECMWF-pf.Perc020">
+			<shortName>Q.upd.ECMWF-pf.Perc020</shortName>
+		</parameter>
+		<parameter id="Q.upd.ECMWF-pf.Perc033" name="Q.upd.ECMWF-pf.Perc033">
+			<shortName>Q.upd.ECMWF-pf.Perc033</shortName>
+		</parameter>
+		<parameter id="Q.upd.ECMWF-pf.Perc050" name="Q.upd.ECMWF-pf.Perc050">
+			<shortName>Q.upd.ECMWF-pf.Perc050</shortName>
+		</parameter>
+		<parameter id="Q.upd.ECMWF-pf.Perc067" name="Q.upd.ECMWF-pf.Perc067">
+			<shortName>Q.upd.ECMWF-pf.Perc067</shortName>
+		</parameter>
+		<parameter id="Q.upd.ECMWF-pf.Perc080" name="Q.upd.ECMWF-pf.Perc080">
+			<shortName>Q.upd.ECMWF-pf.Perc080</shortName>
+		</parameter>
+		<parameter id="Q.upd.ECMWF-pf.Perc090" name="Q.upd.ECMWF-pf.Perc090">
+			<shortName>Q.upd.ECMWF-pf.Perc090</shortName>
+		</parameter>
+		<parameter id="Q.upd.ECMWF-pf.Perc100" name="Q.upd.ECMWF-pf.Perc100">
+			<shortName>Q.upd.ECMWF-pf.Perc100</shortName>
+		</parameter>
+		<parameter id="Q.rtc.GEFS.Perc000" name="Q.rtc.GEFS.Perc000">
+			<shortName>Q.rtc.GEFS.Perc000</shortName>
+		</parameter>
+		<parameter id="Q.rtc.GEFS.Perc010" name="Q.rtc.GEFS.Perc010">
+			<shortName>Q.rtc.GEFS.Perc010</shortName>
+		</parameter>
+		<parameter id="Q.rtc.GEFS.Perc020" name="Q.rtc.GEFS.Perc020">
+			<shortName>Q.rtc.GEFS.Perc020</shortName>
+		</parameter>
+		<parameter id="Q.rtc.GEFS.Perc033" name="Q.rtc.GEFS.Perc033">
+			<shortName>Q.rtc.GEFS.Perc033</shortName>
+		</parameter>
+		<parameter id="Q.rtc.GEFS.Perc050" name="Q.rtc.GEFS.Perc050">
+			<shortName>Q.rtc.GEFS.Perc050</shortName>
+		</parameter>
+		<parameter id="Q.rtc.GEFS.Perc067" name="Q.rtc.GEFS.Perc067">
+			<shortName>Q.rtc.GEFS.Perc067</shortName>
+		</parameter>
+		<parameter id="Q.rtc.GEFS.Perc080" name="Q.rtc.GEFS.Perc080">
+			<shortName>Q.rtc.GEFS.Perc080</shortName>
+		</parameter>
+		<parameter id="Q.rtc.GEFS.Perc090" name="Q.rtc.GEFS.Perc090">
+			<shortName>Q.rtc.GEFS.Perc090</shortName>
+		</parameter>
+		<parameter id="Q.rtc.GEFS.Perc100" name="Q.rtc.GEFS.Perc100">
+			<shortName>Q.rtc.GEFS.Perc100</shortName>
+		</parameter>
+		<parameter id="Q.rtc.ECMWF-pf.Perc000" name="Q.rtc.ECMWF-pf.Perc000">
+			<shortName>Q.rtc.ECMWF-pf.Perc000</shortName>
+		</parameter>
+		<parameter id="Q.rtc.ECMWF-pf.Perc010" name="Q.rtc.ECMWF-pf.Perc010">
+			<shortName>Q.rtc.ECMWF-pf.Perc010</shortName>
+		</parameter>
+		<parameter id="Q.rtc.ECMWF-pf.Perc020" name="Q.rtc.ECMWF-pf.Perc020">
+			<shortName>Q.rtc.ECMWF-pf.Perc020</shortName>
+		</parameter>
+		<parameter id="Q.rtc.ECMWF-pf.Perc033" name="Q.rtc.ECMWF-pf.Perc033">
+			<shortName>Q.rtc.ECMWF-pf.Perc033</shortName>
+		</parameter>
+		<parameter id="Q.rtc.ECMWF-pf.Perc050" name="Q.rtc.ECMWF-pf.Perc050">
+			<shortName>Q.rtc.ECMWF-pf.Perc050</shortName>
+		</parameter>
+		<parameter id="Q.rtc.ECMWF-pf.Perc067" name="Q.rtc.ECMWF-pf.Perc067">
+			<shortName>Q.rtc.ECMWF-pf.Perc067</shortName>
+		</parameter>
+		<parameter id="Q.rtc.ECMWF-pf.Perc080" name="Q.rtc.ECMWF-pf.Perc080">
+			<shortName>Q.rtc.ECMWF-pf.Perc080</shortName>
+		</parameter>
+		<parameter id="Q.rtc.ECMWF-pf.Perc090" name="Q.rtc.ECMWF-pf.Perc090">
+			<shortName>Q.rtc.ECMWF-pf.Perc090</shortName>
+		</parameter>
+		<parameter id="Q.rtc.ECMWF-pf.Perc100" name="Q.rtc.ECMWF-pf.Perc100">
+			<shortName>Q.rtc.ECMWF-pf.Perc100</shortName>
+		</parameter>
+		<parameter id="Q.for.GEFS.Perc000" name="Q.for.GEFS.Perc000">
+			<shortName>Q.for.GEFS.Perc000</shortName>
+		</parameter>
+		<parameter id="Q.for.GEFS.Perc010" name="Q.for.GEFS.Perc010">
+			<shortName>Q.for.GEFS.Perc010</shortName>
+		</parameter>
+		<parameter id="Q.for.GEFS.Perc020" name="Q.for.GEFS.Perc020">
+			<shortName>Q.for.GEFS.Perc020</shortName>
+		</parameter>
+		<parameter id="Q.for.GEFS.Perc025" name="Q.for.GEFS.Perc025">
+			<shortName>Q.for.GEFS.Perc025</shortName>
+		</parameter>
+		<parameter id="Q.for.GEFS.Perc033" name="Q.for.GEFS.Perc033">
+			<shortName>Q.for.GEFS.Perc033</shortName>
+		</parameter>
+		<parameter id="Q.for.GEFS.Perc050" name="Q.for.GEFS.Perc050">
+			<shortName>Q.for.GEFS.Perc050</shortName>
+		</parameter>
+		<parameter id="Q.for.GEFS.Perc067" name="Q.for.GEFS.Perc067">
+			<shortName>Q.for.GEFS.Perc067</shortName>
+		</parameter>
+		<parameter id="Q.for.GEFS.Perc075" name="Q.for.GEFS.Perc075">
+			<shortName>Q.for.GEFS.Perc075</shortName>
+		</parameter>
+		<parameter id="Q.for.GEFS.Perc080" name="Q.for.GEFS.Perc080">
+			<shortName>Q.for.GEFS.Perc080</shortName>
+		</parameter>
+		<parameter id="Q.for.GEFS.Perc090" name="Q.for.GEFS.Perc090">
+			<shortName>Q.for.GEFS.Perc090</shortName>
+		</parameter>
+		<parameter id="Q.for.GEFS.Perc100" name="Q.for.GEFS.Perc100">
+			<shortName>Q.for.GEFS.Perc100</shortName>
+		</parameter>
+		<parameter id="Q.sim.ECMWF-pf.Perc000" name="Q.sim.ECMWF-pf.Perc000">
+			<shortName>Q.sim.ECMWF-pf.Perc000</shortName>
+		</parameter>
+		<parameter id="Q.sim.ECMWF-pf.Perc010" name="Q.sim.ECMWF-pf.Perc010">
+			<shortName>Q.sim.ECMWF-pf.Perc010</shortName>
+		</parameter>
+		<parameter id="Q.sim.ECMWF-pf.Perc020" name="Q.sim.ECMWF-pf.Perc020">
+			<shortName>Q.sim.ECMWF-pf.Perc020</shortName>
+		</parameter>
+		<parameter id="Q.sim.ECMWF-pf.Perc033" name="Q.sim.ECMWF-pf.Perc033">
+			<shortName>Q.sim.ECMWF-pf.Perc033</shortName>
+		</parameter>
+		<parameter id="Q.sim.ECMWF-pf.Perc050" name="Q.sim.ECMWF-pf.Perc050">
+			<shortName>Q.sim.ECMWF-pf.Perc050</shortName>
+		</parameter>
+		<parameter id="Q.sim.ECMWF-pf.Perc067" name="Q.sim.ECMWF-pf.Perc067">
+			<shortName>Q.sim.ECMWF-pf.Perc067</shortName>
+		</parameter>
+		<parameter id="Q.sim.ECMWF-pf.Perc080" name="Q.sim.ECMWF-pf.Perc080">
+			<shortName>Q.sim.ECMWF-pf.Perc080</shortName>
+		</parameter>
+		<parameter id="Q.sim.ECMWF-pf.Perc090" name="Q.sim.ECMWF-pf.Perc090">
+			<shortName>Q.sim.ECMWF-pf.Perc090</shortName>
+		</parameter>
+		<parameter id="Q.sim.ECMWF-pf.Perc100" name="Q.sim.ECMWF-pf.Perc100">
+			<shortName>Q.sim.ECMWF-pf.Perc100</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Caudal relativo">
+		<parameterType>mean</parameterType>
+		<unit>%</unit>
+		<valueResolution>1</valueResolution>
+		<parameter id="q.user" name="q.user (caudal relativo definido por usuario)">
+			<!--RTC check!!-->
+			<shortName>q.user</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Caudal Bias">
+		<parameterType>instantaneous</parameterType>
+		<unit>m3/s</unit>
+		<parameter id="Q.BIAS.24h" name="Q.BIAS.24h">
+			<shortName>Q.BIAS.24h</shortName>
+		</parameter>
+		<parameter id="Q.BIAS.48h" name="Q.BIAS.48h">
+			<shortName>Q.BIAS.48h</shortName>
+		</parameter>
+		<parameter id="Q.BIAS.72h" name="Q.BIAS.72h">
+			<shortName>Q.BIAS.72h</shortName>
+		</parameter>
+		<parameter id="Q.BIAS.168h" name="Q.BIAS.168h">
+			<shortName>Q.BIAS.168h</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Caudal Squared Mean Error">
+		<parameterType>instantaneous</parameterType>
+		<unit>m3/s</unit>
+		<parameter id="Q.MSE.24h" name="Q.MSE.24h">
+			<shortName>Q.MSE.24h</shortName>
+		</parameter>
+		<parameter id="Q.MSE.48h" name="Q.MSE.48h">
+			<shortName>Q.MSE.48h</shortName>
+		</parameter>
+		<parameter id="Q.MSE.72h" name="Q.MSE.72h">
+			<shortName>Q.MSE.72h</shortName>
+		</parameter>
+		<parameter id="Q.MSE.168h" name="Q.MSE.168h">
+			<shortName>Q.MSE.168h</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Nivel de agua">
+		<parameterType>instantaneous</parameterType>
+		<unit>m</unit>
+		<valueResolution>0.01</valueResolution>
+		<usesDatum>true</usesDatum>
+		<parameter id="H.obs" name="H.obs (Nivel de agua observado)">
+			<shortName>H.obs</shortName>
+		</parameter>
+		<parameter id="H.rep.obs" name="Nivel observado">
+			<shortName>H.obs</shortName>
+		</parameter>
+		<parameter id="H.sim" name="H simulated (Nivel de agua simulado)">
+			<shortName>H.sim</shortName>
+		</parameter>
+		<parameter id="H.for" name="H forecasted (Nivel de agua pronosticado)">
+			<shortName>H.for</shortName>
+		</parameter>
+		<parameter id="H.upd" name="H.upd (Nivel de agua corregido)">
+			<shortName>H.upd</shortName>
+		</parameter>
+		<parameter id="H.upd.GEFS.Perc025" name="H.upd.GEFS.Perc025">
+			<shortName>H.upd.GEFS.Perc025</shortName>
+		</parameter>
+		<parameter id="H.upd.GEFS.Perc050" name="H.upd.GEFS.Perc050">
+			<shortName>H.upd.GEFS.Perc050</shortName>
+		</parameter>
+		<parameter id="H.upd.GEFS.Perc075" name="H.upd.GEFS.Perc075">
+			<shortName>H.upd.GEFS.Perc075</shortName>
+		</parameter>
+		<parameter id="H.rtc" name="H.rtc">
+			<shortName>H.rtc</shortName>
+		</parameter>
+		<parameter id="H.merged" name="H.merged">
+			<shortName>H.merged</shortName>
+		</parameter>
+		<parameter id="H.user" name="H.user">
+			<shortName>H.user</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Nivel de agua percentil" name="Nivel de agua">
+		<parameterType>instantaneous</parameterType>
+		<unit>m</unit>
+		<valueResolution>0.01</valueResolution>
+		<usesDatum>true</usesDatum>
+		<parameter id="H.rtc.GEFS.Perc000" name="H.rtc.GEFS.Perc000">
+			<shortName>H.rtc.GEFS.Perc000</shortName>
+		</parameter>
+		<parameter id="H.rtc.GEFS.Perc010" name="H.rtc.GEFS.Perc010">
+			<shortName>H.rtc.GEFS.Perc010</shortName>
+		</parameter>
+		<parameter id="H.rtc.GEFS.Perc020" name="H.rtc.GEFS.Perc020">
+			<shortName>H.rtc.GEFS.Perc020</shortName>
+		</parameter>
+		<parameter id="H.rtc.GEFS.Perc033" name="H.rtc.GEFS.Perc033">
+			<shortName>H.rtc.GEFS.Perc033</shortName>
+		</parameter>
+		<parameter id="H.rtc.GEFS.Perc050" name="H.rtc.GEFS.Perc050">
+			<shortName>H.rtc.GEFS.Perc050</shortName>
+		</parameter>
+		<parameter id="H.rtc.GEFS.Perc067" name="H.rtc.GEFS.Perc067">
+			<shortName>H.rtc.GEFS.Perc067</shortName>
+		</parameter>
+		<parameter id="H.rtc.GEFS.Perc080" name="H.rtc.GEFS.Perc080">
+			<shortName>H.rtc.GEFS.Perc080</shortName>
+		</parameter>
+		<parameter id="H.rtc.GEFS.Perc090" name="H.rtc.GEFS.Perc090">
+			<shortName>H.rtc.GEFS.Perc090</shortName>
+		</parameter>
+		<parameter id="H.rtc.GEFS.Perc100" name="H.rtc.GEFS.Perc100">
+			<shortName>H.rtc.GEFS.Perc100</shortName>
+		</parameter>
+		<parameter id="H.rtc.ECMWF-pf.Perc000" name="H.rtc.ECMWF-pf.Perc000">
+			<shortName>H.rtc.ECMWF-pf.Perc000</shortName>
+		</parameter>
+		<parameter id="H.rtc.ECMWF-pf.Perc010" name="H.rtc.ECMWF-pf.Perc010">
+			<shortName>H.rtc.ECMWF-pf.Perc010</shortName>
+		</parameter>
+		<parameter id="H.rtc.ECMWF-pf.Perc020" name="H.rtc.ECMWF-pf.Perc020">
+			<shortName>H.rtc.ECMWF-pf.Perc020</shortName>
+		</parameter>
+		<parameter id="H.rtc.ECMWF-pf.Perc033" name="H.rtc.ECMWF-pf.Perc033">
+			<shortName>H.rtc.ECMWF-pf.Perc033</shortName>
+		</parameter>
+		<parameter id="H.rtc.ECMWF-pf.Perc050" name="H.rtc.ECMWF-pf.Perc050">
+			<shortName>H.rtc.ECMWF-pf.Perc050</shortName>
+		</parameter>
+		<parameter id="H.rtc.ECMWF-pf.Perc067" name="H.rtc.ECMWF-pf.Perc067">
+			<shortName>H.rtc.ECMWF-pf.Perc067</shortName>
+		</parameter>
+		<parameter id="H.rtc.ECMWF-pf.Perc080" name="H.rtc.ECMWF-pf.Perc080">
+			<shortName>H.rtc.ECMWF-pf.Perc080</shortName>
+		</parameter>
+		<parameter id="H.rtc.ECMWF-pf.Perc090" name="H.rtc.ECMWF-pf.Perc090">
+			<shortName>H.rtc.ECMWF-pf.Perc090</shortName>
+		</parameter>
+		<parameter id="H.rtc.ECMWF-pf.Perc100" name="H.rtc.ECMWF-pf.Perc100">
+			<shortName>H.rtc.ECMWF-pf.Perc100</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Energia_MWh">
+		<parameterType>accumulative</parameterType>
+		<unit>MWh</unit>
+		<valueResolution>1</valueResolution>
+		<parameter id="Energia.generada" name="Energia generada">
+			<shortName>Energia.generada</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Energia_GWh">
+		<parameterType>instantaneous</parameterType>
+		<unit>GWh</unit>
+		<valueResolution>1</valueResolution>
+		<parameter id="Energia.generada.rtc" name="Energia generada rtc">
+			<shortName>Energia.generada.rtc</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Potencia">
+		<parameterType>instantaneous</parameterType>
+		<unit>MW</unit>
+		<valueResolution>1</valueResolution>
+		<parameter id="Potencia.generada" name="potencia">
+			<shortName>Potencia.generada</shortName>
+		</parameter>
+		<parameter id="Potencia.generada.rtc" name="potencia rtc">
+			<shortName>Potencia.generada.rtc</shortName>
+		</parameter>
+		<parameter id="POTDIS" name="POTDIS (potencia disponible/real)">
+			<shortName>POTDIS</shortName>
+		</parameter>
+		<parameter id="POTPRE" name="POTPRE (potencia prevista)">
+			<shortName>POTPRE</shortName>
+		</parameter>
+		<parameter id="Potencia.user" name="potencia definida usuario">
+			<shortName>Potencia.user</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Precio">
+		<parameterType>instantaneous</parameterType>
+		<unit>-</unit>
+		<valueResolution>0.001</valueResolution>
+		<parameter id="price" name="price">
+			<!--RTC check!!-->
+			<shortName>price</shortName>
+		</parameter>
+		<parameter id="price.user" name="price.user">
+			<!--RTC check!!-->
+			<shortName>price.user</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Factor">
+		<parameterType>instantaneous</parameterType>
+		<unit>-</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="Factor" name="Factor">
+			<shortName>Factor</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Volumen">
+		<parameterType>instantaneous</parameterType>
+		<unit>%</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="V.rep.obs" name="V.obs (Volumen relativo observado)">
+			<shortName>V.obs</shortName>
+		</parameter>
+		<parameter id="V.obs" name="V.obs (Volumen relativo observado)">
+			<shortName>V.obs</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="hVolumenSaltoGrande">
+		<parameterType>instantaneous</parameterType>
+		<unit>hm3</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="V.rep.sim" name="Volumen simulado">
+			<shortName>V.sim</shortName>
+		</parameter>
+		<parameter id="V.rep.sim.ECMWF-pf.Perc010" name="Volumen simulado">
+			<shortName>V.sim</shortName>
+		</parameter>
+		<parameter id="V.rep.sim.ECMWF-pf.Perc020" name="Volumen simulado">
+			<shortName>V.sim</shortName>
+		</parameter>
+		<parameter id="V.rep.sim.ECMWF-pf.Perc033" name="Volumen simulado">
+			<shortName>V.sim</shortName>
+		</parameter>
+		<parameter id="V.rep.sim.ECMWF-pf.Perc050" name="Volumen simulado">
+			<shortName>V.sim</shortName>
+		</parameter>
+		<parameter id="V.rep.sim.ECMWF-pf.Perc067" name="Volumen simulado">
+			<shortName>V.sim</shortName>
+		</parameter>
+		<parameter id="V.rep.sim.ECMWF-pf.Perc080" name="Volumen simulado">
+			<shortName>V.sim</shortName>
+		</parameter>
+		<parameter id="V.rep.sim.ECMWF-pf.Perc090" name="Volumen simulado">
+			<shortName>V.sim</shortName>
+		</parameter>
+		<parameter id="V.rep.sim.GEFS.Perc010" name="Volumen simulado">
+			<shortName>V.sim</shortName>
+		</parameter>
+		<parameter id="V.rep.sim.GEFS.Perc020" name="Volumen simulado">
+			<shortName>V.sim</shortName>
+		</parameter>
+		<parameter id="V.rep.sim.GEFS.Perc033" name="Volumen simulado">
+			<shortName>V.sim</shortName>
+		</parameter>
+		<parameter id="V.rep.sim.GEFS.Perc050" name="Volumen simulado">
+			<shortName>V.sim</shortName>
+		</parameter>
+		<parameter id="V.rep.sim.GEFS.Perc067" name="Volumen simulado">
+			<shortName>V.sim</shortName>
+		</parameter>
+		<parameter id="V.rep.sim.GEFS.Perc080" name="Volumen simulado">
+			<shortName>V.sim</shortName>
+		</parameter>
+		<parameter id="V.rep.sim.GEFS.Perc090" name="Volumen simulado">
+			<shortName>V.sim</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="VolumenSaltoGrande">
+		<parameterType>instantaneous</parameterType>
+		<unit>m3</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="V.sim" name="V.sim (Volumen simulado)">
+			<shortName>V.sim</shortName>
+		</parameter>
+		<parameter id="V.cal" name="V.cal (Volumen calculado)">
+			<shortName>V.cal</shortName>
+		</parameter>
+		<parameter id="V.cal.shift" name="V.cal.shift (Volumen calculado)">
+			<shortName>V.cal.shift</shortName>
+		</parameter>
+		<parameter id="DV.cal" name="DV.cal (Volumen calculado)">
+			<shortName>DV.cal</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Volumen Bias">
+		<parameterType>instantaneous</parameterType>
+		<unit>m3/s</unit>
+		<parameter id="V.BIAS.168h" name="V.BIAS.168h">
+			<shortName>V.BIAS.168h</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Volumen Squared Mean Error">
+		<parameterType>instantaneous</parameterType>
+		<unit>m3/s</unit>
+		<parameter id="V.MSE.168h" name="V.MSE.168h">
+			<shortName>V.MSE.168h</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Commentarios Usuario">
+		<parameterType>instantaneous</parameterType>
+		<unit>-</unit>
+		<parameter id="Comm.user" name="Commentarios Usuario">
+			<shortName>Comm. Usuario</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Percentil de precipitacion">
+		<parameterType>instantaneous</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="P.3m.prctl" name="Percentil de precipitacion de 3 meses">
+			<shortName>P.3m.prctl</shortName>
+		</parameter>
+		<parameter id="P.6m.prctl" name="Percentil de precipitacion de 6 meses">
+			<shortName>P.6m.prctl</shortName>
+		</parameter>
+		<parameter id="P.12m.prctl" name="Percentil de precipitacion de 12 meses">
+			<shortName>P.12m.prctl</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Indice estandarizado de precipitacion">
+		<parameterType>instantaneous</parameterType>
+		<unit>-</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="P.3m.spi" name="Indice Estandarizado de Precipitacion de 3 meses">
+			<shortName>P.3m.spi</shortName>
+		</parameter>
+		<parameter id="P.6m.spi" name="Indice Estandarizado de Precipitacion de 6 meses">
+			<shortName>P.6m.spi</shortName>
+		</parameter>
+		<parameter id="P.12m.spi" name="Indice Estandarizado de Precipitacion de 12 meses">
+			<shortName>P.12m.spi</shortName>
+		</parameter>
+	</parameterGroup>
 </parameterGroups>

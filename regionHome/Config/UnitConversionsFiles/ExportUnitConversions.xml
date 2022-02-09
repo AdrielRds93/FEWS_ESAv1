@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unitConversions xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/unitConversions.xsd">
+	<unitConversion>
+		<inputUnitType>oC</inputUnitType>
+		<outputUnitType>deg C</outputUnitType>
+		<multiplier>1</multiplier>
+		<incrementer>0</incrementer>
+	</unitConversion>
+	<unitConversion>
+		<inputUnitType>mm/hr</inputUnitType>
+		<outputUnitType>mm/h</outputUnitType>
+		<multiplier>1</multiplier>
+		<incrementer>0</incrementer>
+	</unitConversion>
+	<unitConversion>
+		<inputUnitType>Pa</inputUnitType>
+		<outputUnitType>Bar</outputUnitType>
+		<multiplier>0.00001</multiplier>
+		<incrementer>0</incrementer>
+	</unitConversion>
+	<unitConversion>
+		<inputUnitType>W/m2</inputUnitType>
+		<outputUnitType>mW/m2</outputUnitType>
+		<multiplier>1000</multiplier>
+		<incrementer>0</incrementer>
+	</unitConversion>
+	<unitConversion>
+		<inputUnitType>mm</inputUnitType>
+		<outputUnitType>mm/h</outputUnitType>
+		<multiplier>1</multiplier>
+		<incrementer>0</incrementer>
+	</unitConversion>	
+</unitConversions>

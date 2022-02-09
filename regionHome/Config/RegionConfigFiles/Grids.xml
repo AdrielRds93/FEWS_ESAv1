@@ -1,172 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <grids xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/grids.xsd">
-    <regular locationId="GFS">
-        <rows>14</rows>
-        <columns>18</columns>
-        <geoDatum>WGS 1984</geoDatum>
-        <firstCellCenter>
-            <x>-91.0</x>
-            <y>15.0</y>
-            <z>0.0</z>
-        </firstCellCenter>
-        <xCellSize>0.25</xCellSize>
-        <yCellSize>0.25</yCellSize>
-    </regular>
-    <regular locationId="NAM">
-        <rows>30</rows>
-        <columns>39</columns>
-        <geoDatum>WGS 1984</geoDatum>
-        <firstCellCenter>
-            <x>-91.036</x>
-            <y>15.042</y>
-            <z>0.0</z>
-        </firstCellCenter>
-        <xCellSize>0.108</xCellSize>
-        <yCellSize>0.108</yCellSize>
-    </regular>
-        <regular locationId="WRF_ElSal">
-    <rows>155</rows>
-    <columns>195</columns>
-    <mercator>
-        <originLongitude>-84.7</originLongitude>
-        <standardParallelLatitude>13.0</standardParallelLatitude>
-    </mercator>
-    <!--Use grid corners rather than first cell. Extent is easily determined
-    from wgrib2 -->
-    <gridCorners>
-        <geoDatum>WGS 1984</geoDatum>
-        <upperLeft>
-            <x>-93.168000</x>
-            <y>19.006000</y>
-            <z>0.0</z>
-        </upperLeft>
-        <lowerRight>
-            <x>-82.119000</x>
-            <y>10.534000</y>
-            <z>0.0</z>
-        </lowerRight>
-    </gridCorners>
-</regular>
-    <regular locationId="WRF">
-        <rows>49</rows>
-        <columns>59</columns>
-        <lambertConformalConic>
-            <originLatitude>13.783333</originLatitude>
-            <originLongitude>-89.000000</originLongitude>
-            <firstStandardParallelLatitude>13.316667</firstStandardParallelLatitude>
-            <secondStandardParallelLatitude>14.250000</secondStandardParallelLatitude>
-        </lambertConformalConic>
-        <firstCellCenter>
-           <!--Upper left cell center-->
-            <!--Since there is no false easting/northing option, added these to the
-            projected coordinates of the upper left cell center-->
-            <x>-423458.5651</x>
-            <y>344668.8094</y>
-            <z>0.0</z>
-        </firstCellCenter>
-        <xCellSize>15000</xCellSize>
-        <yCellSize>15000</yCellSize>
-    </regular>
-    <regular locationId="CAWRF">
-        <rows>255</rows>
-        <columns>309</columns>
-        <mercator>
-            <originLongitude>-84.7</originLongitude>
-            <standardParallelLatitude>13.0</standardParallelLatitude>
-        </mercator>
-        <firstCellCenter>
-            <!--Upper left cell center-->
-            <!--
-            The CAWRF grids are in the above-specified Mercator projection.
-            However, using ArcGIS, the projected coordinates for the upper left
-            cell center do not result in a cell center where expected in FEWS;
-            it appears the projection calculations in FEWS are different from in
-            ArcGIS (by a lot). This was resolved by manually editing the cell
-            center information so that the grid cells lined up properly with the
-            basin locations.
-            Actual coordinates of the upper left corner from the CAWRF model:
-            <x>-93.22964</x>
-            <y>19.58791</y>
-            Projected coordinates (using ArcGIS) of the upper left corner:
-            <x>-925331.57409</x>
-            <y>2153681.05052</y>
-            This results in an upper left corner in FEWS of (-93.24, 19.49).
-            Manually adjusted coordinates used to make the grids align properly:
-            -->
-            <x>-924203.3326</x>
-            <y>2164883.624</y>
-            <z>0.0</z>
-        </firstCellCenter>
-        <xCellSize>6000</xCellSize>
-        <yCellSize>6000</yCellSize>
-    </regular>
-<!--the RADAR and RADAR_Enhanced grid definitions are placeholders only now-->
-    <regular locationId="RADAR">
-        <rows>480</rows>
-        <columns>480</columns>
-        <geoDatum>WGS 1984</geoDatum>
-        <firstCellCenter>
-            <x>-94.59733271</x>
-            <y>17.57180469</y>
-        </firstCellCenter>
-        <xCellSize>0.008990625</xCellSize>
-        <yCellSize>0.009334583</yCellSize>
-    </regular>
-    <regular locationId="RADAR_Enhanced">
-        <rows>480</rows>
-        <columns>480</columns>
-        <geoDatum>WGS 1984</geoDatum>
-        <firstCellCenter>
-            <x>-94.59733271</x>
-            <y>17.57180469</y>
-        </firstCellCenter>
-        <xCellSize>0.008990625</xCellSize>
-        <yCellSize>0.009334583</yCellSize>
-    </regular>
-    <regular locationId="CMORPH">
-        <rows>44</rows>
-        <columns>57</columns>
-        <geoDatum>WGS 1984</geoDatum>
-        <firstCellCenter>
-            <x>-91.05497125</x>
-            <y>15.06367569</y>
-        </firstCellCenter>
-        <xCellSize>0.072756669</xCellSize>
-        <yCellSize>0.072771377</yCellSize>
-    </regular>
-    <regular locationId="QMORPH">
-        <rows>44</rows>
-        <columns>57</columns>
-        <geoDatum>WGS 1984</geoDatum>
-        <firstCellCenter>
-            <x>-91.05497125</x>
-            <y>15.06367569</y>
-        </firstCellCenter>
-        <xCellSize>0.072756669</xCellSize>
-        <yCellSize>0.072771377</yCellSize>
-    </regular>
-    <regular locationId="Interpolated">
-        <rows>183</rows>
-        <columns>301</columns>
-        <geoDatum>UTM16N</geoDatum>
-        <firstCellCenter>
-            <x>140769.022</x>
-            <y>1634320.723</y>
-        </firstCellCenter>
-        <xCellSize>1000</xCellSize>
-        <yCellSize>1000</yCellSize>
-        <zMapLayerName>1kmfullextentclimatology.ASC</zMapLayerName>
-    </regular>
-<!--    <regular locationId="Interpolated">
-        <rows>42</rows>
-        <columns>51</columns>
-        <geoDatum>UTM16N</geoDatum>
-        <firstCellCenter>
-            <x>258769.022</x>
-            <y>1522320.723</y>
-        </firstCellCenter>
-        <xCellSize>1000</xCellSize>
-        <yCellSize>1000</yCellSize>
-        <zMapLayerName>adjusted_climatology.ASC</zMapLayerName>
-    </regular>-->
+	<regular locationId="GFS_ESA">
+		<rows>15</rows>
+		<columns>25</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>-92</x>
+			<y>16</y>
+		</firstCellCenter>
+		<xCellSize>0.25</xCellSize>
+		<yCellSize>0.25</yCellSize>
+	</regular>
+	<regular locationId="GEFS_ESA">
+		<rows>8</rows>
+		<columns>13</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>-92</x>
+			<y>16</y>
+		</firstCellCenter>
+		<xCellSize>0.5</xCellSize>
+		<yCellSize>0.5</yCellSize>
+	</regular>
 </grids>

@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <timeSteps xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSteps.xsd">
-	<timeStep id="12Z" times="12:00"/>
-        <timeStep id="13Z" times="13:00"/>
+	<timeStep id="daily07" times="07:00" label="Diario 07:00 horas " timeZone="GMT-6:00"/>
+	<timeStep id="daily" label="Diario" unit="day" timeZone="GMT-6:00"/>
+	<timeStep id="weekly" label="Semanal" unit="week" timeZone="GMT-6:00"/>
+	<timeStep id="monthly" label="Mensual" unit="month" timeZone="GMT-6:00"/>
+	<timeStep id="daily09" times="09:00" label="Diario 09:00 horas" timeZone="GMT-6:00"/>
+	<timeStep id="daily24" times="00:00" timeZone="GMT-6:00"/>
+	<timeStep id="daily12" times="12:00" timeZone="GMT-6:00"/>
+	<timeStep id="daily19" times="19:00" timeZone="GMT-6:00"/>
+	<timeStep id="071217" times="07:00 12:00 17:00" timeZone="GMT-6:00"/>
+	<timeStep id="071319" times="07:00 13:00 19:00" timeZone="GMT-6:00"/>
 </timeSteps>

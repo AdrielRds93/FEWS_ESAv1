@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<locationIcons xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://chps1/schemas/locationIcons.xsd">
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<locationIcons xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/locationIcons.xsd">
 	<rootDir>Icons</rootDir>
 	<locationIcon>
-		<description>Streamflow sites</description>
-		<iconId>fluvial_site_data</iconId>
-		<locationSetId>ActiveStreamGages</locationSetId>
-	</locationIcon>
-	<locationIcon>
-		<description>Meteorological sites</description>
 		<iconId>meteo_site_data</iconId>
-		<locationSetId>ActivePrecipGages</locationSetId>
+		<locationSetId>Grids</locationSetId>
 	</locationIcon>
 	<locationIcon>
-		<description>AllCatchments</description>
+		<iconId>meteo_site_data</iconId>
+		<locationSetId>MARN_P</locationSetId>
+	</locationIcon>
+	<!--<locationIcon>
 		<iconId>catchment_centre_point_data</iconId>
-		<locationSetId>AllCatchments</locationSetId>
+		<locationSetId>CuencasUruguay</locationSetId>
+	</locationIcon>-->
+	<locationIcon>
+		<iconId>fluvial_site_data</iconId>
+		<locationSetId>MARN_H</locationSetId>
 	</locationIcon>
 </locationIcons>

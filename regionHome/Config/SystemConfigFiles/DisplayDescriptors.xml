@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<displayDescriptors xmlns="http://www.wldelft.nl/fews"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/displayDescriptors.xsd"
-    version="1.0"
->
-
-        <displayDescriptor id="WhatIfScenario">
+<displayDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/displayDescriptors.xsd" version="1.0">
+	<displayDescriptor id="WhatIfScenario">
 		<description>What If Scenarios Dialog</description>
 		<className>nl.wldelft.fews.gui.plugin.scenario.WhatIfScenarioDialog</className>
 	</displayDescriptor>
@@ -17,29 +12,34 @@
 		<description>Longitudinal Display Component</description>
 		<className>nl.wldelft.fews.gui.plugin.longitudinaldisplay.LongitudinalDisplayDialog</className>
 	</displayDescriptor>
+	<displayDescriptor id="GridDisplay">
+		<description>Flood Map Display (Grids)</description>
+		<className>nl.wldelft.fews.gui.plugin.grid.GridDisplay</className>
+	</displayDescriptor>
+	<displayDescriptor id="ChartLayer">
+		<description>Display of Time series</description>
+		<className>nl.wldelft.fews.gui.plugin.chartlayer.ChartLayer</className>
+	</displayDescriptor>
 	<displayDescriptor id="CorrelationDisplay">
 		<description>Correlation display configurations</description>
 		<className>nl.wldelft.fews.gui.plugin.correlation.CorrelationDialog</className>
 	</displayDescriptor>
-	<displayDescriptor id="GridDisplay">
-		<description>Display of Grids</description>
-		<className>nl.wldelft.fews.gui.plugin.grid.GridDisplay</className>
+	<displayDescriptor id="ThresholdSkillScoreDisplay">
+		<description>Threshold Skill Score Display</description>
+		<className>nl.wldelft.fews.gui.plugin.thresholdskillscore.ThresholdSkillScoreDisplay</className>
 	</displayDescriptor>
-	<displayDescriptor id="ThresholdOverviewDisplay">
+	<displayDescriptor id="ThresholdDisplay">
+		<description>Threshold Display</description>
 		<className>nl.wldelft.fews.gui.plugin.thresholdoverview.ThresholdOverviewDisplay</className>
 	</displayDescriptor>
 	<displayDescriptor id="SystemMonitorDisplay">
 		<description>SystemMonitorDisplay</description>
 		<className>nl.wldelft.fews.gui.plugin.systemmonitor.SystemMonitorDialog</className>
 	</displayDescriptor>
-	<displayDescriptor id="ThresholdSkillScoreDisplay">
-		<description>Threshold Skill Score Display</description>
-		<className>nl.wldelft.fews.gui.plugin.thresholdskillscore.ThresholdSkillScoreDisplay</className>
-	</displayDescriptor>
 	<displayDescriptor id="ManualForecastDisplay">
 		<className>nl.wldelft.fews.gui.plugin.manualforecast.ManualForecastDialog</className>
 	</displayDescriptor>
-	 <displayDescriptor id="TaskRunDialog">
+	<displayDescriptor id="TaskRunDialog">
 		<description>TaskRunDialog</description>
 		<className>nl.wldelft.fews.gui.plugin.taskRunDialog.TaskRunDialogFewsExplorerPlugin</className>
 	</displayDescriptor>

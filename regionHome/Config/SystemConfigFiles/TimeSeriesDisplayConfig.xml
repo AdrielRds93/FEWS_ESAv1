@@ -1,10 +1,190 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<timeSeriesDisplay xmlns="http://www.wldelft.nl/fews" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.wldelft.nl/fews http://schemas/timeSeriesDisplay.xsd"
-    version="1.0">
-
-	<defaultViewPeriod unit="hour" start="-240" end="240"/>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<timeSeriesDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesDisplay.xsd" version="1.0">
+	<defaultViewPeriod unit="day" start="-20" end="14"/>
+	<classBreaks>
+		<classBreaks id="Class.Precipitacion">
+			<unitVisible>true</unitVisible>
+			<color color="white" lowerValue="0" opaquenessPercentage="30"/>
+			<color color="B4D7FF" lowerValue="0.1" opaquenessPercentage="40"/>
+			<color color="75BAFF" lowerValue="0.5" opaquenessPercentage="40"/>
+			<color color="359AFF" lowerValue="1" opaquenessPercentage="40"/>
+			<color color="0482FF" lowerValue="2" opaquenessPercentage="40"/>
+			<color color="0069D2" lowerValue="3" opaquenessPercentage="40"/>
+			<color color="00367F" lowerValue="5" opaquenessPercentage="40"/>
+			<color color="148F1B" lowerValue="7" opaquenessPercentage="40"/>
+			<color color="1ACF05" lowerValue="10" opaquenessPercentage="40"/>
+			<color color="63ED07" lowerValue="15" opaquenessPercentage="40"/>
+			<color color="FFF42B" lowerValue="20" opaquenessPercentage="40"/>
+			<color color="E8DC00" lowerValue="25" opaquenessPercentage="40"/>
+			<color color="F06000" lowerValue="30" opaquenessPercentage="40"/>
+			<color color="FF7F27" lowerValue="35" opaquenessPercentage="40"/>
+			<color color="FFA66A" lowerValue="40" opaquenessPercentage="40"/>
+			<color color="F84E78" lowerValue="45" opaquenessPercentage="40"/>
+			<color color="F71E54" lowerValue="50" opaquenessPercentage="40"/>
+			<color color="BF0000" lowerValue="60" opaquenessPercentage="40"/>
+			<color color="880000" lowerValue="70" opaquenessPercentage="40"/>
+			<color color="64007F" lowerValue="80" opaquenessPercentage="40"/>
+			<color color="C200FB" lowerValue="90" opaquenessPercentage="40"/>
+			<color color="DD66FF" lowerValue="100" opaquenessPercentage="40"/>
+			<color color="EBA6FF" lowerValue="125" opaquenessPercentage="40"/>
+			<color color="F9E6FF" lowerValue="150" opaquenessPercentage="40"/>
+			<color color="D4D4D4" lowerValue="200" opaquenessPercentage="40"/>
+		</classBreaks>
+		<classBreaks id="Class.Temperatura">
+			<unitVisible>true</unitVisible>
+			<lowerColor>F627EB</lowerColor>
+			<upperColor>00327F</upperColor>
+			<lowerOpaquenessPercentage>60</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>60</upperOpaquenessPercentage>
+			<lowerValue>-36</lowerValue>
+			<lowerValue>-30</lowerValue>
+			<lowerValue>-27</lowerValue>
+			<lowerValue>-24</lowerValue>
+			<lowerValue>-21</lowerValue>
+			<lowerColor>003C7F</lowerColor>
+			<upperColor>D9ECFF</upperColor>
+			<lowerOpaquenessPercentage>60</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>60</upperOpaquenessPercentage>
+			<lowerValue>-18</lowerValue>
+			<lowerValue>-15</lowerValue>
+			<lowerValue>-12</lowerValue>
+			<lowerValue>-9</lowerValue>
+			<lowerValue>-6</lowerValue>
+			<lowerValue>-3</lowerValue>
+			<lowerColor>B1F1D6</lowerColor>
+			<upperColor>E6F702</upperColor>
+			<lowerOpaquenessPercentage>60</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>60</upperOpaquenessPercentage>
+			<lowerValue>0</lowerValue>
+			<lowerValue>3</lowerValue>
+			<lowerValue>6</lowerValue>
+			<lowerValue>9</lowerValue>
+			<lowerValue>12</lowerValue>
+			<lowerColor>E6F702</lowerColor>
+			<upperColor>AE0F13</upperColor>
+			<lowerOpaquenessPercentage>60</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>60</upperOpaquenessPercentage>
+			<lowerValue>15</lowerValue>
+			<lowerValue>18</lowerValue>
+			<lowerValue>21</lowerValue>
+			<lowerValue>24</lowerValue>
+			<lowerValue>27</lowerValue>
+			<lowerColor>8C0000</lowerColor>
+			<upperColor>FFC8C8</upperColor>
+			<lowerOpaquenessPercentage>60</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>60</upperOpaquenessPercentage>
+			<lowerValue>30</lowerValue>
+			<lowerValue>33</lowerValue>
+			<lowerValue>36</lowerValue>
+			<lowerColor>FFDCDC</lowerColor>
+			<upperColor>898989</upperColor>
+			<lowerOpaquenessPercentage>60</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>60</upperOpaquenessPercentage>
+			<lowerValue>39</lowerValue>
+			<lowerValue>44</lowerValue>
+			<lowerValue>50</lowerValue>
+		</classBreaks>
+		<classBreaks id="Class.Evaporacion">
+			<color color="white" opaquenessPercentage="30" lowerValue="0"/>
+			<color color="070268" lowerValue="0.01"/>
+			<color color="0900AE" lowerValue="0.125"/>
+			<color color="4040FF" lowerValue="0.25"/>
+			<color color="0080C0" lowerValue="0.5"/>
+			<color color="129FFE" lowerValue="1.0"/>
+			<color color="00FF40" lowerValue="3.0"/>
+			<color color="FFFF00" lowerValue="4.0"/>
+			<color color="FF8000" lowerValue="5.0"/>
+			<color color="FF0000" lowerValue="6.0"/>
+			<color color="FF0080" lowerValue="7.0"/>
+			<color color="FFFFFF" lowerValue="8.0"/>
+		</classBreaks>
+		<classBreaks id="Class.Caudal">
+			<color color="FFFFFF" lowerValue="0" label=">=0" opaquenessPercentage="10"/>
+			<color color="E2E2E2" lowerValue="5" label=">=5" opaquenessPercentage="80"/>
+			<color color="DED783" lowerValue="10" label=">=10" opaquenessPercentage="80"/>
+			<color color="9BC856" lowerValue="25" label=">=25" opaquenessPercentage="80"/>
+			<color color="00C9A6" lowerValue="50" label=">=50" opaquenessPercentage="80"/>
+			<color color="00BAC3" lowerValue="75" label=">=75" opaquenessPercentage="80"/>
+			<color color="008EC4" lowerValue="100" label=">=100" opaquenessPercentage="80"/>
+			<color color="0065CA" lowerValue="250" label=">=250" opaquenessPercentage="80"/>
+			<color color="0040FE" lowerValue="500" label=">=500" opaquenessPercentage="80"/>
+			<color color="0022AA" lowerValue="1000" label=">=1000" opaquenessPercentage="80"/>
+		</classBreaks>
+		<classBreaks id="Class.Escorrentia">
+			<color color="FFFFFF" lowerValue="0" label=">=0" opaquenessPercentage="10"/>
+			<color color="E2E2E2" lowerValue="0.1" label=">=0.1" opaquenessPercentage="80"/>
+			<color color="DED783" lowerValue="0.2" label=">=0.2" opaquenessPercentage="80"/>
+			<color color="9BC856" lowerValue="0.3" label=">=0.3" opaquenessPercentage="80"/>
+			<color color="00C9A6" lowerValue="0.4" label=">=0.4" opaquenessPercentage="80"/>
+			<color color="00BAC3" lowerValue="0.5" label=">=0.5" opaquenessPercentage="80"/>
+			<color color="008EC4" lowerValue="1" label=">=1" opaquenessPercentage="80"/>
+			<color color="0065CA" lowerValue="2.5" label=">=2.5" opaquenessPercentage="80"/>
+			<color color="0040FE" lowerValue="5" label=">=5" opaquenessPercentage="80"/>
+			<color color="0022AA" lowerValue="10" label=">=10" opaquenessPercentage="80"/>
+		</classBreaks>
+		<classBreaks id="Class.Viento">
+			<unitVisible>true</unitVisible>
+			<lowerColor>green</lowerColor>
+			<upperColor>red</upperColor>
+			<lowerOpaquenessPercentage>60</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>60</upperOpaquenessPercentage>
+			<lowerSymbolSize>10</lowerSymbolSize>
+			<upperSymbolSize>20</upperSymbolSize>
+			<lowerValue>0</lowerValue>
+			<lowerValue>0.3</lowerValue>
+			<lowerValue>1.6</lowerValue>
+			<lowerValue>3.4</lowerValue>
+			<lowerValue>5.5</lowerValue>
+			<lowerValue>8.0</lowerValue>
+			<lowerValue>10.8</lowerValue>
+			<lowerValue>13.9</lowerValue>
+			<lowerValue>17.2</lowerValue>
+			<lowerValue>20.8</lowerValue>
+			<lowerValue>24.5</lowerValue>
+			<lowerValue>28.5</lowerValue>
+			<lowerValue>32.6</lowerValue>
+		</classBreaks>
+		<classBreaks id="Class.Presion">
+			<unitVisible>true</unitVisible>
+			<lowerColor>F627EB</lowerColor>
+			<upperColor>00528F</upperColor>
+			<lowerOpaquenessPercentage>60</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>60</upperOpaquenessPercentage>
+			<lowerValue>910</lowerValue>
+			<lowerValue>925</lowerValue>
+			<lowerValue>938</lowerValue>
+			<lowerValue>950</lowerValue>
+			<lowerValue>962</lowerValue>
+			<lowerValue>972</lowerValue>
+			<lowerColor>0072CF</lowerColor>
+			<upperColor>39C20C</upperColor>
+			<lowerOpaquenessPercentage>60</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>60</upperOpaquenessPercentage>
+			<lowerValue>978</lowerValue>
+			<lowerValue>984</lowerValue>
+			<lowerValue>990</lowerValue>
+			<lowerValue>1002</lowerValue>
+			<lowerColor>52CA0B</lowerColor>
+			<upperColor>BA130F</upperColor>
+			<lowerOpaquenessPercentage>60</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>60</upperOpaquenessPercentage>
+			<lowerValue>1008</lowerValue>
+			<lowerValue>1014</lowerValue>
+			<lowerValue>1020</lowerValue>
+			<lowerValue>1026</lowerValue>
+			<lowerValue>1032</lowerValue>
+			<lowerValue>1038</lowerValue>
+			<lowerColor>8C0000</lowerColor>
+			<upperColor>E2E2E2</upperColor>
+			<lowerOpaquenessPercentage>60</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>60</upperOpaquenessPercentage>
+			<lowerValue>1044</lowerValue>
+			<lowerValue>1050</lowerValue>
+			<lowerValue>1056</lowerValue>
+			<lowerValue>1062</lowerValue>
+		</classBreaks>
+	</classBreaks>
 	<timeMarkersDisplayConfig>
 		<timeMarkerDisplayOptions marker="systemTime">
 			<color>green</color>
@@ -24,239 +204,173 @@
 		</timeMarkerDisplayOptions>
 	</timeMarkersDisplayConfig>
 	<parametersDisplayConfig>
-		<parameterDisplayOptions id="STG">
-			<preferredColor>blue</preferredColor>
-			<lineStyle>dashed</lineStyle>
-			<markerStyle>circle</markerStyle>
-			<markerSize>3</markerSize>
+		<parameterDisplayOptions id="P.obs">
+			<preferredColor>deep sky blue2</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<min>0</min>
+			<max>5</max>
+			<precision>1</precision>
+			<inverted>true</inverted>
 		</parameterDisplayOptions>
-		<parameterDisplayOptions id="SSTG">
-			<preferredColor>blue</preferredColor>
-			<lineStyle>solid</lineStyle>
-			<markerStyle>none</markerStyle>
-			<markerSize>3</markerSize>
-		</parameterDisplayOptions>
-		<parameterDisplayOptions id="FBEL">
-			<preferredColor>green</preferredColor>
-			<lineStyle>solid</lineStyle>
-			<markerStyle>circle</markerStyle>
-			<markerSize>3</markerSize>
-		</parameterDisplayOptions>
-		<parameterDisplayOptions id="PELV">
-			<preferredColor>red</preferredColor>
-			<lineStyle>none</lineStyle>
-			<markerStyle>circle</markerStyle>
-			<markerSize>3</markerSize>
-		</parameterDisplayOptions>
-		<parameterDisplayOptions id="SPEL">
-			<preferredColor>red</preferredColor>
-			<lineStyle>dashdot;thick</lineStyle>
-			<markerStyle>none</markerStyle>
-			<markerSize>3</markerSize>
-		</parameterDisplayOptions>
-		<parameterDisplayOptions id="QIN">
-			<preferredColor>red</preferredColor>
-			<lineStyle>none</lineStyle>
-			<markerStyle>diamond</markerStyle>
-			<markerSize>3</markerSize>
-		</parameterDisplayOptions>
-		<parameterDisplayOptions id="QINE">
-			<preferredColor>orange</preferredColor>
-			<lineStyle>solid</lineStyle>
-			<markerStyle>none</markerStyle>
-			<markerSize>3</markerSize>
-		</parameterDisplayOptions>
-		<parameterDisplayOptions id="SQIN">
-			<preferredColor>blue</preferredColor>
-			<lineStyle>solid</lineStyle>
-			<markerStyle>none</markerStyle>
-			<markerSize>3</markerSize>
-		</parameterDisplayOptions>
-		<parameterDisplayOptions id="RQIN">
-			<preferredColor>orange</preferredColor>
-			<lineStyle>dashed</lineStyle>
-			<markerStyle>circle</markerStyle>
-			<markerSize>3</markerSize>
-		</parameterDisplayOptions>
-		<parameterDisplayOptions id="RQOT">
+		<parameterDisplayOptions id="H.rep.obs">
 			<preferredColor>black</preferredColor>
-			<lineStyle>dashed</lineStyle>
+			<lineStyle>solid</lineStyle>
+			<markerStyle>rectangle</markerStyle>
+			<markerSize>3</markerSize>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="H.obs">
+			<preferredColor>black</preferredColor>
+			<lineStyle>solid</lineStyle>
+			<markerStyle>rectangle</markerStyle>
+			<markerSize>3</markerSize>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="Q.rep.obs">
+			<preferredColor>black</preferredColor>
+			<lineStyle>solid</lineStyle>
 			<markerStyle>circle</markerStyle>
 			<markerSize>3</markerSize>
 		</parameterDisplayOptions>
-		<parameterDisplayOptions id="PPVR">
-			<preferredColor>blue</preferredColor>
-			<lineStyle>bar</lineStyle>
-			<markerStyle>none</markerStyle>
-			<markerSize>3</markerSize>
-			<min>0</min>
-			<max>1</max>
-			<precision>5</precision>
-			<scaleUnit>0.1</scaleUnit>
-		</parameterDisplayOptions>
-		<parameterDisplayOptions id="PP">
-			<preferredColor>blue</preferredColor>
-			<lineStyle>bar</lineStyle>
-			<markerStyle>none</markerStyle>
-			<markerSize>3</markerSize>
-			<min>0</min>
-			<max>1</max>
-			<precision>5</precision>
-			<scaleUnit>0.1</scaleUnit>
-		</parameterDisplayOptions>
-		<parameterDisplayOptions id="PP24">
-			<preferredColor>red</preferredColor>
-			<lineStyle>bar</lineStyle>
-			<markerStyle>none</markerStyle>
-			<markerSize>3</markerSize>
-			<min>0</min>
-			<max>1</max>
-			<precision>5</precision>
-			<scaleUnit>0.1</scaleUnit>
-		</parameterDisplayOptions>
-		<parameterDisplayOptions id="PTPX">
-			<preferredColor>blue violet</preferredColor>
-			<lineStyle>bar</lineStyle>
-			<markerStyle>none</markerStyle>
-			<markerSize>3</markerSize>
-			<min>0</min>
-			<max>1</max>
-			<precision>5</precision>
-			<scaleUnit>0.1</scaleUnit>
-		</parameterDisplayOptions>
-		<parameterDisplayOptions id="MAPX">
-			<preferredColor>blue violet</preferredColor>
-			<lineStyle>bar</lineStyle>
-			<markerStyle>none</markerStyle>
-			<markerSize>3</markerSize>
-			<min>0</min>
-			<max>1</max>
-			<precision>5</precision>
-			<scaleUnit>0.1</scaleUnit>
-		</parameterDisplayOptions>
-		<parameterDisplayOptions id="MAPG">
-			<preferredColor>blue violet</preferredColor>
-			<lineStyle>bar</lineStyle>
-			<markerStyle>none</markerStyle>
-			<markerSize>3</markerSize>
-			<min>0</min>
-			<max>1</max>
-			<precision>5</precision>
-			<scaleUnit>0.1</scaleUnit>
-		</parameterDisplayOptions>
-		<parameterDisplayOptions id="RAIM">
-			<preferredColor>green</preferredColor>
-			<lineStyle>bar</lineStyle>
-			<markerStyle>none</markerStyle>
-			<markerSize>3</markerSize>
-			<min>0</min>
-			<max>1</max>
-			<precision>5</precision>
-			<scaleUnit>0.1</scaleUnit>
-		</parameterDisplayOptions>
-		<parameterDisplayOptions id="MAP">
-			<preferredColor>blue</preferredColor>
-			<lineStyle>bar</lineStyle>
-			<markerStyle>none</markerStyle>
-			<markerSize>3</markerSize>
-			<min>0</min>
-			<max>1</max>
-			<precision>5</precision>
-			<scaleUnit>0.1</scaleUnit>
-		</parameterDisplayOptions>
-		<parameterDisplayOptions id="FMAP">
-			<preferredColor>blue</preferredColor>
-			<lineStyle>bar</lineStyle>
-			<markerStyle>none</markerStyle>
-			<markerSize>3</markerSize>
-			<min>0</min>
-			<max>1</max>
-			<precision>5</precision>
-			<scaleUnit>0.1</scaleUnit>
-		</parameterDisplayOptions>
-		<parameterDisplayOptions id="MAPE">
-			<preferredColor>orange</preferredColor>
-			<lineStyle>bar</lineStyle>
-			<markerStyle>none</markerStyle>
-			<markerSize>3</markerSize>
-			<min>0</min>
-			<max>1</max>
-			<precision>5</precision>
-			<scaleUnit>0.1</scaleUnit>
-		</parameterDisplayOptions>
-		<parameterDisplayOptions id="ZELF">
-			<preferredColor>orange red</preferredColor>
+		<parameterDisplayOptions id="Q.obs">
+			<preferredColor>black</preferredColor>
 			<lineStyle>solid</lineStyle>
-			<markerStyle>diamond</markerStyle>
-			<markerSize>6</markerSize>
-			<precision>5</precision>
-			<scaleUnit>250</scaleUnit>
-		</parameterDisplayOptions>
-		<parameterDisplayOptions id="ZELV">
-			<preferredColor>green</preferredColor>
-			<lineStyle>dashed</lineStyle>
 			<markerStyle>circle</markerStyle>
-			<markerSize>6</markerSize>
-			<precision>5</precision>
-			<scaleUnit>250</scaleUnit>
+			<markerSize>3</markerSize>
 		</parameterDisplayOptions>
-		<parameterDisplayOptions id="SWE">
+		<parameterDisplayOptions id="Q.cal.1d">
+			<preferredColor>black</preferredColor>
+			<lineStyle>none</lineStyle>
+			<markerStyle>circle</markerStyle>
+			<markerSize>3</markerSize>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="P.rep.cuenca">
+			<preferredColor>deep sky blue2</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<min>0</min>
+			<max>5</max>
+			<precision>1</precision>
+			<inverted>true</inverted>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="P.cuenca">
+			<preferredColor>deep sky blue2</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<min>0</min>
+			<max>5</max>
+			<precision>1</precision>
+			<inverted>true</inverted>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="P.cuenca.d1">
+			<preferredColor>deep sky blue</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<min>0</min>
+			<max>5</max>
+			<precision>1</precision>
+			<inverted>true</inverted>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="P.cuenca.d2">
+			<preferredColor>deep sky blue3</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<min>0</min>
+			<max>5</max>
+			<precision>1</precision>
+			<inverted>true</inverted>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="P.cuenca.d3">
+			<preferredColor>deep sky blue4</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<min>0</min>
+			<max>5</max>
+			<precision>1</precision>
+			<inverted>true</inverted>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="P.cuenca.d4">
 			<preferredColor>blue</preferredColor>
-			<lineStyle>solid;thick</lineStyle>
-			<markerStyle>none</markerStyle>
-			<markerSize>6</markerSize>
+			<lineStyle>bar</lineStyle>
 			<min>0</min>
-			<max>10</max>
-			<precision>5</precision>
-			<scaleUnit>1</scaleUnit>
+			<max>5</max>
+			<precision>1</precision>
+			<inverted>true</inverted>
 		</parameterDisplayOptions>
-		<parameterDisplayOptions id="SNSG">
-			<preferredColor>green</preferredColor>
-			<lineStyle>solid;thick</lineStyle>
-			<markerStyle>none</markerStyle>
-			<markerSize>6</markerSize>
+		<parameterDisplayOptions id="P.cuenca.d5">
+			<preferredColor>blue1</preferredColor>
+			<lineStyle>bar</lineStyle>
 			<min>0</min>
-			<max>10</max>
-			<precision>5</precision>
-			<scaleUnit>1</scaleUnit>
+			<max>5</max>
+			<precision>1</precision>
+			<inverted>true</inverted>
 		</parameterDisplayOptions>
-		<parameterDisplayOptions id="SASC">
+		<parameterDisplayOptions id="P.cuenca.d6">
+			<preferredColor>blue2</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<min>0</min>
+			<max>5</max>
+			<precision>1</precision>
+			<inverted>true</inverted>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="P.cuenca.d7">
+			<preferredColor>blue3</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<min>0</min>
+			<max>5</max>
+			<precision>1</precision>
+			<inverted>true</inverted>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="P.pro">
+			<preferredColor>deep sky blue2</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<min>0</min>
+			<max>5</max>
+			<precision>1</precision>
+			<inverted>true</inverted>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="P.pro.acc">
+			<ensembleId>GEFS</ensembleId>
+			<preferredColor>blue</preferredColor>
+			<lineStyle>none</lineStyle>
+			<lineWidth>1.5</lineWidth>
+			<precision>1</precision>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="P.pro.acc">
+			<preferredColor>blue</preferredColor>
+			<lineStyle>solid</lineStyle>
+			<lineWidth>1.5</lineWidth>
+			<precision>1</precision>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="T.pro">
+			<ensembleId>GEFS</ensembleId>
 			<preferredColor>orange</preferredColor>
-			<lineStyle>solid;thick</lineStyle>
-			<markerStyle>none</markerStyle>
-			<markerSize>6</markerSize>
-			<min>0</min>
-			<max>1</max>
-			<precision>5</precision>
-			<scaleUnit>0.1</scaleUnit>
+			<lineStyle>none</lineStyle>
+			<lineWidth>1.5</lineWidth>
 		</parameterDisplayOptions>
-
-                <!-- For ESP Display -->
-               <parameterDisplayOptions id="SQIN_QPF">
+		<parameterDisplayOptions id="T.pro">
+			<preferredColor>orange</preferredColor>
+			<lineStyle>solid</lineStyle>
+			<lineWidth>1.5</lineWidth>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="SQIN_QPF">
 			<preferredColor>blue</preferredColor>
 			<lineStyle>solid</lineStyle>
 			<markerStyle>none</markerStyle>
 			<markerSize>3</markerSize>
 		</parameterDisplayOptions>
-                <parameterDisplayOptions id="SQIN_eRADAR">
+		<parameterDisplayOptions id="SQIN_eRADAR">
 			<preferredColor>green</preferredColor>
 			<lineStyle>solid</lineStyle>
 			<markerStyle>none</markerStyle>
 			<markerSize>3</markerSize>
 		</parameterDisplayOptions>
-                <parameterDisplayOptions id="SQIN_RADAR">
+		<parameterDisplayOptions id="SQIN_RADAR">
 			<preferredColor>orange</preferredColor>
 			<lineStyle>solid</lineStyle>
 			<markerStyle>none</markerStyle>
 			<markerSize>3</markerSize>
 		</parameterDisplayOptions>
-                <parameterDisplayOptions id="SQIN_PP">
+		<parameterDisplayOptions id="SQIN_PP">
 			<preferredColor>red</preferredColor>
 			<lineStyle>solid</lineStyle>
 			<markerStyle>none</markerStyle>
 			<markerSize>3</markerSize>
 		</parameterDisplayOptions>
-                <parameterDisplayOptions id="MAP_QPF">
+		<parameterDisplayOptions id="MAP_QPF">
 			<preferredColor>blue</preferredColor>
 			<lineStyle>bar</lineStyle>
 			<markerStyle>none</markerStyle>
@@ -266,7 +380,7 @@
 			<precision>5</precision>
 			<scaleUnit>0.1</scaleUnit>
 		</parameterDisplayOptions>
-                <parameterDisplayOptions id="MAP_eRADAR">
+		<parameterDisplayOptions id="MAP_eRADAR">
 			<preferredColor>green</preferredColor>
 			<lineStyle>bar</lineStyle>
 			<markerStyle>none</markerStyle>
@@ -276,7 +390,7 @@
 			<precision>5</precision>
 			<scaleUnit>0.1</scaleUnit>
 		</parameterDisplayOptions>
-                <parameterDisplayOptions id="MAP_RADAR">
+		<parameterDisplayOptions id="MAP_RADAR">
 			<preferredColor>orange</preferredColor>
 			<lineStyle>bar</lineStyle>
 			<markerStyle>none</markerStyle>
@@ -286,7 +400,7 @@
 			<precision>5</precision>
 			<scaleUnit>0.1</scaleUnit>
 		</parameterDisplayOptions>
-                <parameterDisplayOptions id="MAP_PP">
+		<parameterDisplayOptions id="MAP_PP">
 			<preferredColor>red</preferredColor>
 			<lineStyle>bar</lineStyle>
 			<markerStyle>none</markerStyle>
@@ -297,10 +411,99 @@
 			<scaleUnit>0.1</scaleUnit>
 		</parameterDisplayOptions>
 	</parametersDisplayConfig>
-	<tickUnitsConfig>
-		<dateTickMarkPosition>
-			<dateTickUnit>hour</dateTickUnit>
-			<tickMarkPosition>12</tickMarkPosition>
-		</dateTickMarkPosition>
-	</tickUnitsConfig>
+	<statisticalFunctions>
+		<statisticalFunction function="cumulative">
+			<lineStyle>solid;thick</lineStyle>
+		</statisticalFunction>
+		<statisticalFunction function="durationNonExceedence" ignoreMissings="true"/>
+		<statisticalFunction function="doubleMassCurve"/>
+		<statisticalFunction function="showPeaksAbove"/>
+		<statisticalFunction function="showLowsBelow"/>
+		<statisticalFunction function="boxPlot" ignoreMissings="true">
+			<timeStep id="daily"/>
+			<timeStep id="weekly"/>
+		</statisticalFunction>
+		<statisticalFunction function="gaussianCurve"/>
+		<statisticalFunction function="frequencyDistribution">
+			<samples amount="20"/>
+			<samples amount="40"/>
+			<samples amount="60"/>
+			<samples amount="80"/>
+			<samples amount="100"/>
+		</statisticalFunction>
+		<statisticalFunction function="movingAverage" ignoreMissings="true">
+			<movingAccumulationTimeSpan unit="hour" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="4"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="8"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="4"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="30"/>
+		</statisticalFunction>
+		<statisticalFunction function="accumulationAggregation" ignoreMissings="true">
+			<movingAccumulationTimeSpan unit="hour" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="4"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="8"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="4"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="30"/>
+		</statisticalFunction>
+		<statisticalFunction function="scatterPlot"/>
+	</statisticalFunctions>
+	<descriptiveFunctionGroups>
+		<descriptiveFunctionGroup name="Percentile">
+			<descriptiveFunction function="mean" ignoreMissings="true"/>
+			<descriptiveFunction function="min"/>
+			<descriptiveFunction function="max"/>
+			<descriptiveFunction function="sum" ignoreMissings="true"/>
+			<descriptiveFunction function="standardDeviation" ignoreMissings="true"/>
+			<descriptiveFunction function="percentileExceedence">
+				<value>5</value>
+				<value>25</value>
+				<value>50</value>
+				<value>75</value>
+				<value>95</value>
+			</descriptiveFunction>
+		</descriptiveFunctionGroup>
+		<descriptiveFunctionGroup name="Time series info">
+			<descriptiveFunction function="infoLocationId"/>
+			<descriptiveFunction function="infoLocationName"/>
+			<descriptiveFunction function="infoParameterId"/>
+			<descriptiveFunction function="infoParameterName"/>
+			<descriptiveFunction function="infoModuleinstance"/>
+			<descriptiveFunction function="startTime"/>
+			<descriptiveFunction function="endTime"/>
+		</descriptiveFunctionGroup>
+		<descriptiveFunctionGroup name="Data quality">
+			<descriptiveFunction function="count"/>
+			<descriptiveFunction function="completed"/>
+			<descriptiveFunction function="corrected"/>
+			<descriptiveFunction function="reliables"/>
+			<descriptiveFunction function="doubtfuls"/>
+			<descriptiveFunction function="unreliables"/>
+			<descriptiveFunction function="missings"/>
+		</descriptiveFunctionGroup>
+	</descriptiveFunctionGroups>
+	<resampling>
+		<timeStep label="minute" unit="minute"/>
+		<timeStep label="5 minutes" unit="minute" multiplier="5"/>
+		<timeStep label="10 minutes" unit="minute" multiplier="10"/>
+		<timeStep label="15 minutes" unit="minute" multiplier="15"/>
+		<timeStep label="30 minutes" unit="minute" multiplier="30"/>
+		<timeStep label="hour" unit="hour"/>
+		<timeStep label="2 hour" unit="hour" multiplier="2"/>
+		<timeStep label="3 hour" unit="hour" multiplier="3"/>
+		<timeStep label="6 hour" unit="hour" multiplier="6"/>
+		<timeStep label="12 hour" unit="hour" multiplier="12"/>
+		<timeStep label="day" unit="day"/>
+		<timeStep label="week" unit="week"/>
+		<timeStep label="month" unit="month"/>
+		<timeStep label="year" unit="year"/>
+		<timeStep id="daily07" label="Diario07h"/>
+	</resampling>
 </timeSeriesDisplay>
