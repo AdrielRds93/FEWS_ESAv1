@@ -4,4 +4,7 @@
 	<qualifier id="GEFS" name="GEFS"/>
 	<qualifier id="7am" name="7am"/>
 	<qualifier id="9am" name="9am"/>
+	<qualifier id="q1" name="q1"/>
+	<qualifier id="q2" name="q2"/>
+	<qualifier id="q3" name="q3"/>
 </qualifiers>

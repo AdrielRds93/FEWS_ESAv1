@@ -33,6 +33,9 @@
 	<locationSet id="ESA_Q">
 		<locationSetId>MARN_Q</locationSetId>
 	</locationSet>
+	<locationSet id="ESA_T">
+		<locationSetId>MARN_T</locationSetId>
+	</locationSet>
 	<locationSet id="ESA_HQ">
 		<locationSetId>MARN_Q</locationSetId>
 	</locationSet>
@@ -92,6 +95,14 @@
 			</anyValid>
 		</constraints>
 	</locationSet>
+	<locationSet id="MARN_T">
+		<locationSetId>MARN</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextContains id="PARAMETROS" contains="T"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
 	<locationSet id="MARN_Q">
 		<locationSetId>MARN</locationSetId>
 		<constraints>
@@ -100,7 +111,17 @@
 			</anyValid>
 		</constraints>
 	</locationSet>
-	<!--Cuencas Artigas y Durazno-->
+	<!--Cuencas Rio Lempa-->
+	<locationSet id="CuencasESA">
+		<locationSetId>CuencasLempa</locationSetId>
+	</locationSet>
+	<locationSet id="CuencasLempa">
+		<esriShapeFile>
+			<file>Cuencas\Regions.shp</file>
+			<id>CuencasLempa</id>
+			<name>Cuenca del río Lempa</name>
+		</esriShapeFile>
+	</locationSet>
 	<!--Estaciones Artigas y Durazno-->
 	<!--Mapas de inundaciones-->
 	<!-- Observaciones Series de Tiempo -->

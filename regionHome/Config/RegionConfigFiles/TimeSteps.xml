@@ -5,10 +5,5 @@
 	<timeStep id="daily" label="Diario" unit="day" timeZone="GMT-6:00"/>
 	<timeStep id="weekly" label="Semanal" unit="week" timeZone="GMT-6:00"/>
 	<timeStep id="monthly" label="Mensual" unit="month" timeZone="GMT-6:00"/>
-	<timeStep id="daily09" times="09:00" label="Diario 09:00 horas" timeZone="GMT-6:00"/>
 	<timeStep id="daily24" times="00:00" timeZone="GMT-6:00"/>
-	<timeStep id="daily12" times="12:00" timeZone="GMT-6:00"/>
-	<timeStep id="daily19" times="19:00" timeZone="GMT-6:00"/>
-	<timeStep id="071217" times="07:00 12:00 17:00" timeZone="GMT-6:00"/>
-	<timeStep id="071319" times="07:00 13:00 19:00" timeZone="GMT-6:00"/>
 </timeSteps>
