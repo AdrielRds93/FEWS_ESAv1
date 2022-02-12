@@ -150,6 +150,22 @@
 					<fillRgbColor>FFFFFF</fillRgbColor>
 					<opaquenessPercentage>20</opaquenessPercentage>
 				</esriShapeLayer>
+				<esriShapeLayer id="Departments">
+					<file>ElSalvador_Departamentos.shp</file>
+					<geoDatum>WGS 1984</geoDatum>
+					<visible>false</visible>
+					<lineColor>black</lineColor>
+					<fillRgbColor>FFFFFF</fillRgbColor>
+					<opaquenessPercentage>20</opaquenessPercentage>
+				</esriShapeLayer>
+				<esriShapeLayer id="Municipalities">
+					<file>ElSalvador_Municipios.shp</file>
+					<geoDatum>WGS 1984</geoDatum>
+					<visible>false</visible>
+					<lineColor>black</lineColor>
+					<fillRgbColor>FFFFFF</fillRgbColor>
+					<opaquenessPercentage>20</opaquenessPercentage>
+				</esriShapeLayer>
 			</layerGroup>
 			<layerGroup id="Cuencas hidrograficas">
 				<esriShapeLayer id="Regiones">
