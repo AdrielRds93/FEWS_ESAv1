@@ -113,13 +113,14 @@
 	</locationSet>
 	<!--Cuencas Rio Lempa-->
 	<locationSet id="CuencasESA">
-		<locationSetId>CuencasLempa</locationSetId>
+		<locationSetId>BasinLempa</locationSetId>
 	</locationSet>
-	<locationSet id="CuencasLempa">
+	<locationSet id="BasinLempa">
 		<esriShapeFile>
-			<file>Cuencas\Regions.shp</file>
-			<id>CuencasLempa</id>
-			<name>Cuenca del río Lempa</name>
+			<file>Cuencas\Basin_Lempa.shp</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%gridcode%</id>
+			<name>Lempa Basin</name>
 		</esriShapeFile>
 	</locationSet>
 	<!--Estaciones Artigas y Durazno-->

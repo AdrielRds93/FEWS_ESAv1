@@ -99,7 +99,7 @@
 		</openStreetMapLayer>
 		<layer id="Canvas" name="ArcGIS Canvas World LightGray Base">
 			<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
-			<visible>false</visible>
+			<visible>true</visible>
 			<properties>
 				<string key="tileUrlPattern" value="http://server.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%"/>
 				<string key="cacheDir" value="$tempDir$/Esri_Canvas_World_Light_Gray_Base"/>
@@ -123,7 +123,7 @@
 		</layer>
 		<layer id="ArcGIS World Topo" name="ArcGIS World_Topo_Map">
 			<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
-			<visible>true</visible>
+			<visible>false</visible>
 			<properties>
 				<string key="tileUrlPattern" value="http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%"/>
 				<string key="cacheDir" value="%REGION_HOME%/mapcache/Esri_topo"/>
