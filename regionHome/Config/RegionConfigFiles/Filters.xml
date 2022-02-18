@@ -3,31 +3,19 @@
 <filters version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/filters.xsd">
 	<defaultFilterId>FEWS-ELSALVADOR</defaultFilterId>
 	<!--FILTER For PI Web Service-->
-	<filter id="FEWS-ELSALVADOR" name="Datos FEWS El Salvador">
-		<child foreignKey="Observaciones"/>
+	<filter id="FEWS-ELSALVADOR" name="FEWS El Salvador">
+		<child foreignKey="Observations"/>
 	</filter>
 	<!--FILTERS-->
-	<filter id="Observaciones" name="Observaciones">
-		<child foreignKey="Precipitación"/>
-		<child foreignKey="Nivel"/>
-		<child foreignKey="Caudal"/>
-		<child foreignKey="Temperatura"/>
+	<filter id="Observations" name="Observations">
+		<child foreignKey="Precipitation"/>
+		<child foreignKey="WaterStage"/>
+		<child foreignKey="Discharge"/>
+		<child foreignKey="Temperature"/>
 	</filter>
 	<!--SUB-FILTERS-->
-	<!--Observaciones-->
-	<filter id="Precipitación" name="Precipitación">
-		<child foreignKey="MARN_P"/>
-	</filter>
-	<filter id="Nivel" name="Nivel">
-		<child foreignKey="MARN_H"/>
-	</filter>
-	<filter id="Caudal" name="Caudal">
-		<child foreignKey="MARN_Q"/>
-	</filter>
-	<filter id="Temperatura" name="Temperatura del aire">
-		<child foreignKey="MARN_T"/>
-	</filter>
-	<filter id="MARN_P" name="MARN">
+	<!--Observations-->
+	<filter id="Precipitation" name="Precipitation">
 		<validationIconsVisible>true</validationIconsVisible>
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
@@ -55,6 +43,17 @@
 			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_15min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
 			<locationSetId>MARN_P_diaria</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="daily07"/>
@@ -63,13 +62,35 @@
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 	</filter>
-	<filter id="MARN_H" name="MARN">
+	<filter id="WaterStage" name="Water stage">
 		<validationIconsVisible>true</validationIconsVisible>
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>H.obs</parameterId>
-			<locationSetId>MARN_H</locationSetId>
+			<locationSetId>MARN_H_5min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationSetId>MARN_H_10min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="10"/>
+			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationSetId>MARN_H_15min</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="15"/>
 			<relativeViewPeriod unit="day" start="-3" end="0"/>
@@ -77,7 +98,7 @@
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 	</filter>
-	<filter id="MARN_Q" name="MARN">
+	<filter id="Discharge" name="Discharge">
 		<validationIconsVisible>true</validationIconsVisible>
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
@@ -90,7 +111,7 @@
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</filter>
-	<filter id="MARN_T" name="MARN">
+	<filter id="Temperature" name="Air temperature">
 		<validationIconsVisible>true</validationIconsVisible>
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
@@ -107,7 +128,7 @@
 	<!--PronosticosHydro-->
 	<!--InundacionesHistoricas-->
 	<!--ObservacionesCalibracion-->
-	<filter id="DATOS_CALIBRACION" name="Calibration data (Lempa basin)">
+	<filter id="DATA_CALIBRATION" name="Calibration data (Lempa basin)">
 		<child foreignKey="Observation_cal"/>
 	</filter>
 	<!--FILTERS-->
@@ -117,7 +138,7 @@
 		<child foreignKey="Q_C"/>
 		<child foreignKey="T_C"/>
 	</filter>
-	<filter id="P_C" name="Precipitación (cal)">
+	<filter id="P_C" name="Precipitation (cal)">
 		<validationIconsVisible>true</validationIconsVisible>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
@@ -160,7 +181,7 @@
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 	</filter>
-	<filter id="H_C" name="Nivel (cal)">
+	<filter id="H_C" name="Water stage (cal)">
 		<validationIconsVisible>true</validationIconsVisible>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
@@ -193,7 +214,7 @@
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 	</filter>
-	<filter id="Q_C" name="Caudal (cal)">
+	<filter id="Q_C" name="Discharge (cal)">
 		<validationIconsVisible>true</validationIconsVisible>
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
@@ -206,7 +227,7 @@
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 	</filter>
-	<filter id="T_C" name="Temperatura (cal)">
+	<filter id="T_C" name="Air temperature (cal)">
 		<validationIconsVisible>true</validationIconsVisible>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportMARN_c</moduleInstanceId>

@@ -1,69 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <parameterGroups version="1.0" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
-	<parameterGroup id="Precipitación">
+	<parameterGroup id="Precipitation">
 		<parameterType>accumulative</parameterType>
 		<unit>mm</unit>
 		<valueResolution>0.01</valueResolution>
-		<parameter id="P" name="P (precipitación)">
+		<parameter id="P" name="P (precipitation)">
 			<shortName>P</shortName>
 		</parameter>
-		<parameter id="P.obs" name="P.obs (Precipitación observada)">
+		<parameter id="P.obs" name="P.obs (Observed precipitation)">
 			<shortName>P.obs</shortName>
 		</parameter>
-		<parameter id="P.ZeroPrec" name="P.ZeroPrec (Precipitación pronosticada ZeroPrec)">
-			<shortName>P.ZeroPrec</shortName>
-		</parameter>
-		<parameter id="P.pro" name="P.pro (Precipitación pronosticada)">
+		<parameter id="P.pro" name="P.pro (Precipitation forecast)">
 			<shortName>P.pro</shortName>
 		</parameter>
-		<parameter id="P.cuenca" name="P.cuenca (Precipitación media por cuenca)">
-			<shortName>P.cuenca</shortName>
-		</parameter>
-		<parameter id="P.cuenca.d1" name="P.cuenca (Precipitación pronosticada dia 1)">
-			<shortName>P.cuenca.d1</shortName>
-		</parameter>
-		<parameter id="P.cuenca.d2" name="P.cuenca (Precipitación pronosticada dia 2)">
-			<shortName>P.cuenca.d2</shortName>
-		</parameter>
-		<parameter id="P.cuenca.d3" name="P.cuenca (Precipitación pronosticada dia 3)">
-			<shortName>P.cuenca.d3</shortName>
-		</parameter>
-		<parameter id="P.cuenca.d4" name="P.cuenca (Precipitación pronosticada dia 4)">
-			<shortName>P.cuenca.d4</shortName>
-		</parameter>
-		<parameter id="P.cuenca.d5" name="P.cuenca (Precipitación pronosticada dia 5)">
-			<shortName>P.cuenca.d5</shortName>
-		</parameter>
-		<parameter id="P.cuenca.d6" name="P.cuenca (Precipitación pronosticada dia 6)">
-			<shortName>P.cuenca.d6</shortName>
-		</parameter>
-		<parameter id="P.cuenca.d7" name="P.cuenca (Precipitación pronosticada dia 7)">
-			<shortName>P.cuenca.d7</shortName>
-		</parameter>
-		<parameter id="P.rep.cuenca" name="Precipitación media">
-			<shortName>P.cuenca</shortName>
-		</parameter>
-		<parameter id="TRMM-MERGE" name="TRMM-MERGE">
-			<shortName>TRMM-MERGE</shortName>
+		<parameter id="P.basin" name="P.basin (Mean areal precipitation)">
+			<shortName>P.basin</shortName>
 		</parameter>
 	</parameterGroup>
-	<parameterGroup id="Precipitación_mm/h">
-		<parameterType>instantaneous</parameterType>
-		<unit>mm/h</unit>
-		<valueResolution>0.1</valueResolution>
-		<parameter id="P.pro.tasa" name="P.pro.tasa (Tasa de precipitación pronósticada)">
-			<shortName>P.pro.tasa</shortName>
-		</parameter>
-	</parameterGroup>
-	<parameterGroup id="Precipitación acumulada">
+	<parameterGroup id="Accumulated precipitation">
 		<parameterType>instantaneous</parameterType>
 		<unit>mm</unit>
 		<valueResolution>0.1</valueResolution>
-		<parameter id="P.obs.acc" name="P.obs.acc (Precipitación observada acumulada)">
+		<parameter id="P.obs.acc" name="P.obs.acc (Observed accumulated precipitation)">
 			<shortName>P.obs.acc</shortName>
 		</parameter>
-		<parameter id="P.pro.acc" name="P.pro.acc (Precipitación pronósticada acumulada)">
+		<parameter id="P.pro.acc" name="P.pro.acc (Forecast accumulated Precipitation)">
 			<shortName>P.pro.acc</shortName>
 		</parameter>
 		<parameter id="P.pro.acc.GEFS.Perc000" name="P.pro.acc.GEFS.Perc000">
@@ -100,105 +62,40 @@
 			<shortName>P.pro.acc.GEFS.Perc100</shortName>
 		</parameter>
 	</parameterGroup>
-	<parameterGroup id="Temperatura">
+	<parameterGroup id="Temperature">
 		<parameterType>instantaneous</parameterType>
 		<unit>oC</unit>
 		<valueResolution>0.1</valueResolution>
 		<parameter id="T" name="T">
 			<shortName>T</shortName>
 		</parameter>
-		<parameter id="Tmed.obs" name="Tmed.obs (Temperatura Media Observada)">
+		<parameter id="Tmed.obs" name="Tmed.obs (Mean observed temperature)">
 			<shortName>Tmed.obs</shortName>
 		</parameter>
-		<parameter id="Tmin.obs" name="Tmin.obs (Temperatura Minima Observada)">
+		<parameter id="Tmin.obs" name="Tmin.obs (Min observed temperature)">
 			<shortName>Tmin.obs</shortName>
 		</parameter>
-		<parameter id="Tmax.obs" name="Tmax.obs (Temperatura Maxima Observada)">
+		<parameter id="Tmax.obs" name="Tmax.obs (Max observed temperature)">
 			<shortName>Tmax.obs</shortName>
 		</parameter>
-		<parameter id="T.obs" name="T.obs (Temperatura Observada)">
+		<parameter id="T.obs" name="T.obs (Observed temperature)">
 			<shortName>T.obs</shortName>
 		</parameter>
-		<parameter id="Td.obs" name="Td.obs (Temperatura de Rocío observada)">
-			<shortName>Td.obs</shortName>
+		<parameter id="T.basin" name="T.basin (Mean Temperature per basin)">
+			<shortName>T.basin</shortName>
 		</parameter>
-		<parameter id="T.CFS" name="T.CFS">
-			<shortName>T.CFS</shortName>
-		</parameter>
-		<parameter id="T.cuenca" name="T.cuenca (Temperatura media por cuenca)">
-			<shortName>T.cuenca</shortName>
-		</parameter>
-		<parameter id="T.pro" name="T.pro (Temperatura pronósticada)">
+		<parameter id="T.pro" name="T.pro (Forecast Temperatura)">
 			<shortName>T.pro</shortName>
-		</parameter>
-		<parameter id="Td.pro" name="Td.pro (Temperatura de Rocio pronósticada)">
-			<shortName>Td.pro</shortName>
-		</parameter>
-	</parameterGroup>
-	<parameterGroup id="Presión">
-		<parameterType>instantaneous</parameterType>
-		<unit>hPa</unit>
-		<valueResolution>0.1</valueResolution>
-		<parameter id="pr.obs" name="pr.obs (Presión observada)">
-			<shortName>pr.obs</shortName>
-		</parameter>
-		<parameter id="pr.pro" name="pr.pro (Presión pronósticada)">
-			<shortName>pr.pro</shortName>
-		</parameter>
-	</parameterGroup>
-	<parameterGroup id="Evaporación">
-		<parameterType>accumulative</parameterType>
-		<unit>mm</unit>
-		<valueResolution>0.01</valueResolution>
-		<parameter id="EPiche.obs" name="EPiche.obs (Evaporacion Piche Observada)">
-			<shortName>EPiche.obs</shortName>
-		</parameter>
-		<parameter id="EPenman.obs" name="EPenman.obs (Evaporación Penman observada)">
-			<shortName>EPenman.obs</shortName>
-		</parameter>
-		<parameter id="EPenman.pro" name="EPenman.pro (Evaporación Penman pronósticada)">
-			<shortName>EPenman.pro</shortName>
-		</parameter>
-		<parameter id="ETanque.obs" name="ETanque.obs (Evaporación Tanque observada)">
-			<shortName>ETanque.obs</shortName>
-		</parameter>
-		<parameter id="E.cuenca" name="E.cuenca (Evaporación media por cuenca)">
-			<shortName>E.cuenca</shortName>
-		</parameter>
-	</parameterGroup>
-	<parameterGroup id="Viento">
-		<parameterType>instantaneous</parameterType>
-		<unit>m/s</unit>
-		<valueResolution>0.1</valueResolution>
-		<parameter id="u.obs" name="u.obs (Velocidad de Viento Observada)">
-			<shortName>u.obs</shortName>
-		</parameter>
-		<parameter id="u.pro" name="u.obs (Velocidad de Viento pronósticada)">
-			<shortName>u.pro</shortName>
-		</parameter>
-		<parameter id="ux.pro" name="ux.pro (Componente x de la velocidad de viento pronósticada)">
-			<shortName>ux.pro</shortName>
-		</parameter>
-		<parameter id="uy.pro" name="uy.pro (Componente y de la velocidad de viento pronósticada)">
-			<shortName>uy.pro</shortName>
-		</parameter>
-	</parameterGroup>
-	<parameterGroup id="Escurrimiento">
-		<parameterType>accumulative</parameterType>
-		<unit>mm</unit>
-		<valueResolution>0.001</valueResolution>
-		<parameter id="escurrimiento" name="Escurrimiento">
-			<shortName>Escurrimiento</shortName>
 		</parameter>
 	</parameterGroup>
 	<parameterGroup id="Caudal">
 		<parameterType>mean</parameterType>
 		<unit>m3/s</unit>
 		<valueResolution>0.01</valueResolution>
-		<parameter id="Q.obs" name="Q.obs (Caudal observado)">
+		<parameter id="Q.obs" name="Q.obs (Observed discharge)">
 			<shortName>Q.obs</shortName>
 		</parameter>
-		<parameter id="Q.sim" name="Q.sim (Caudal simulado)">
+		<parameter id="Q.sim" name="Q.sim (Simulated discharge)">
 			<shortName>Q.sim</shortName>
 		</parameter>
 	</parameterGroup>
@@ -207,16 +104,16 @@
 		<unit>m</unit>
 		<valueResolution>0.01</valueResolution>
 		<usesDatum>true</usesDatum>
-		<parameter id="H.obs" name="H.obs (Nivel de agua observado)">
+		<parameter id="H.obs" name="H.obs (Observed water stage)">
 			<shortName>H.obs</shortName>
 		</parameter>
-		<parameter id="H.sim" name="H simulated (Nivel de agua simulado)">
+		<parameter id="H.sim" name="H simulated (Simulated water stage)">
 			<shortName>H.sim</shortName>
 		</parameter>
-		<parameter id="H.for" name="H forecasted (Nivel de agua pronosticado)">
+		<parameter id="H.for" name="H forecasted (Forecast water stage)">
 			<shortName>H.for</shortName>
 		</parameter>
-		<parameter id="H.upd" name="H.upd (Nivel de agua corregido)">
+		<parameter id="H.upd" name="H.upd (updated water stage)">
 			<shortName>H.upd</shortName>
 		</parameter>
 	</parameterGroup>
@@ -228,14 +125,11 @@
 			<shortName>Factor</shortName>
 		</parameter>
 	</parameterGroup>
-	<parameterGroup id="Volumen">
+	<parameterGroup id="Volume">
 		<parameterType>instantaneous</parameterType>
 		<unit>%</unit>
 		<valueResolution>0.01</valueResolution>
-		<parameter id="V.rep.obs" name="V.obs (Volumen relativo observado)">
-			<shortName>V.obs</shortName>
-		</parameter>
-		<parameter id="V.obs" name="V.obs (Volumen relativo observado)">
+		<parameter id="V.obs" name="V.obs (Observed volume)">
 			<shortName>V.obs</shortName>
 		</parameter>
 	</parameterGroup>

@@ -4,22 +4,18 @@
 	<rootDir>Icons</rootDir>
 	<locationIcon>
 		<iconId>meteo_site_data</iconId>
-		<locationSetId>Grids</locationSetId>
+		<locationSetId>MARN_P</locationSetId>
 	</locationIcon>
 	<locationIcon>
 		<iconId>meteo_site_data</iconId>
-		<locationSetId>MARN_P</locationSetId>
+		<locationSetId>MARN_C</locationSetId>
 	</locationIcon>
-	<!--<locationIcon>
-		<iconId>catchment_centre_point_data</iconId>
-		<locationSetId>CuencasUruguay</locationSetId>
-	</locationIcon>-->
 	<locationIcon>
 		<iconId>fluvial_site_data</iconId>
 		<locationSetId>MARN_H</locationSetId>
 	</locationIcon>
 	<locationIcon>
 		<iconId>meteo_site_data</iconId>
-		<locationSetId>MARN_C</locationSetId>
+		<locationSetId>Grids</locationSetId>
 	</locationIcon>
 </locationIcons>

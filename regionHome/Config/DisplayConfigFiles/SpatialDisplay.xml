@@ -3,7 +3,7 @@
 <gridDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 	<title>Spatial Display</title>
 	<defaults>
-		<parameterGroupId>Datos observados</parameterGroupId>
+		<parameterGroupId>Observed data</parameterGroupId>
 		<plotGroupId>P_Observed</plotGroupId>
 		<plotGroupId>Q_Observed</plotGroupId>
 		<geoMap>
@@ -191,7 +191,7 @@
 		<timeDisplayLabels>bottomRight</timeDisplayLabels>
 	</defaults>
 	<defaults>
-		<parameterGroupId>Precipitación pronósticada</parameterGroupId>
+		<parameterGroupId>Forecast precipitation</parameterGroupId>
 		<plotGroupId>GFS</plotGroupId>
 		<plotGroupId>GEFS</plotGroupId>
 		<geoMap>
@@ -378,8 +378,8 @@
 		</geoMap>
 		<timeDisplayLabels>bottomRight</timeDisplayLabels>
 	</defaults>
-	<gridPlotGroup id="P_Observed" name="Precipitacion observada procesada">
-		<gridPlot id="Observed Pluvio (diario) [mm]" name="Precipitación diaria [mm]">
+	<gridPlotGroup id="P_Observed" name="Observed precipitation">
+		<gridPlot id="Daily precipitation [mm]" name="Daily precipitation [mm]">
 			<dataLayer>
 				<visibleInSpatialDisplay>true</visibleInSpatialDisplay>
 				<onlyCircles>true</onlyCircles>
@@ -406,7 +406,7 @@
 			<movingAccumulationTimeSpan unit="day" multiplier="7"/>
 			<classBreaksId>Class.Precipitacion</classBreaksId>
 		</gridPlot>
-		<gridPlot id="Observed Meteo (horario) [mm]" name="Precipitación horaria [mm]">
+		<gridPlot id="Hourly precipitation [mm]" name="Hourly precipitation [mm]">
 			<dataLayer>
 				<onlyCircles>true</onlyCircles>
 				<circleSizeFunction>12</circleSizeFunction>
@@ -432,11 +432,11 @@
 			<movingAccumulationTimeSpan unit="hour" multiplier="72"/>
 			<classBreaksId>Class.Precipitacion</classBreaksId>
 		</gridPlot>
-		<gridPlot id="Observed Cuencas [mm]" name="Precipitación en cuencas [mm]">
+		<gridPlot id="Mean areal precipitation[mm]" name="Mean areal precipitation [mm]">
 			<timeSeriesSet>
 				<moduleInstanceId>PreprocessP</moduleInstanceId>
 				<valueType>scalar</valueType>
-				<parameterId>P.cuenca</parameterId>
+				<parameterId>P.basin</parameterId>
 				<locationSetId>CuencasESA</locationSetId>
 				<timeSeriesType>external historical</timeSeriesType>
 				<timeStep unit="hour" multiplier="3"/>
@@ -452,8 +452,8 @@
 			<classBreaksId>Class.Precipitacion</classBreaksId>
 		</gridPlot>
 	</gridPlotGroup>
-	<gridPlotGroup id="Q_Observed" name="Caudal observado procesado">
-		<gridPlot id="Q_Observed Meteo (3 horas) [m3/s]" name="Caudal observado [m3/s]">
+	<gridPlotGroup id="Q_Observed" name="Observed discharge">
+		<gridPlot id="Observed discharge [m3/s]" name="Observed discharge [m3/s]">
 			<dataLayer>
 				<onlyCircles>true</onlyCircles>
 				<circleSizeFunction>12</circleSizeFunction>
@@ -473,8 +473,8 @@
 			<classBreaksId>Class.Caudal</classBreaksId>
 		</gridPlot>
 	</gridPlotGroup>
-	<gridPlotGroup id="GFS" name="Pronóstico GFS">
-		<gridPlot id="GFS Precipitacion Original [mm]" name="Precipitación [mm]">
+	<gridPlotGroup id="GFS" name="GFS Forecast">
+		<gridPlot id="GFS Precipitation [mm]" name="Precipitation [mm]">
 			<timeSeriesSet>
 				<moduleInstanceId>ImportGFS</moduleInstanceId>
 				<valueType>grid</valueType>
@@ -491,7 +491,7 @@
 			<classBreaksId>Class.Precipitacion</classBreaksId>
 			<contourLinesColor>black</contourLinesColor>
 		</gridPlot>
-		<gridPlot id="GFS Temperatura [°C]" name="Temperatura [°C]">
+		<gridPlot id="GFS Temperature [°C]" name="Air temperature [°C]">
 			<timeSeriesSet>
 				<moduleInstanceId>ImportGFS</moduleInstanceId>
 				<valueType>grid</valueType>
@@ -505,7 +505,7 @@
 			<contourLinesColor>black</contourLinesColor>
 		</gridPlot>
 	</gridPlotGroup>
-	<gridPlotGroup id="GEFS" name="Pronóstico GEFS">
+	<gridPlotGroup id="GEFS" name="GEFS Forecast">
 		<gridPlot id="GEFS Precipitacion [mm]" name="Precipitación [mm]">
 			<timeSeriesSet>
 				<moduleInstanceId>ImportGEFS</moduleInstanceId>
