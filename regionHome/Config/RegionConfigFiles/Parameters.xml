@@ -60,6 +60,9 @@
 		<parameterType>instantaneous</parameterType>
 		<unit>mm</unit>
 		<valueResolution>0.1</valueResolution>
+		<parameter id="P.obs.acc" name="P.obs.acc (Precipitación observada acumulada)">
+			<shortName>P.obs.acc</shortName>
+		</parameter>
 		<parameter id="P.pro.acc" name="P.pro.acc (Precipitación pronósticada acumulada)">
 			<shortName>P.pro.acc</shortName>
 		</parameter>
@@ -104,8 +107,14 @@
 		<parameter id="T" name="T">
 			<shortName>T</shortName>
 		</parameter>
-		<parameter id="TM" name="TM">
-			<shortName>TM</shortName>
+		<parameter id="Tmed.obs" name="Tmed.obs (Temperatura Media Observada)">
+			<shortName>Tmed.obs</shortName>
+		</parameter>
+		<parameter id="Tmin.obs" name="Tmin.obs (Temperatura Minima Observada)">
+			<shortName>Tmin.obs</shortName>
+		</parameter>
+		<parameter id="Tmax.obs" name="Tmax.obs (Temperatura Maxima Observada)">
+			<shortName>Tmax.obs</shortName>
 		</parameter>
 		<parameter id="T.obs" name="T.obs (Temperatura Observada)">
 			<shortName>T.obs</shortName>

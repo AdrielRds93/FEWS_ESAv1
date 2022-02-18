@@ -15,6 +15,10 @@
 	<!--Forecast_GEFS workflows -->
 	<!-- Maintenance workflows -->
 	<!-- Calibration workflows -->
+	
 	<!-- Archive workflows -->
 	<!-- Export workflows -->
+	<workflowDescriptor id="ImportarCalibracion" name="Calibración: Importar Datos" forecast="false" visible="true" allowApprove="false">
+		<description>Importación de datos para la calibración</description>
+	</workflowDescriptor>
 </workflowDescriptors>

@@ -6,21 +6,33 @@
 		<csvFile>
 			<file>Estaciones</file>
 			<charset>UTF-8</charset>
-			<id>%N_Oficial%</id>
-			<name>%Nombre_estacion%</name>
-			<x>%longitude%</x>
-			<y>%latitude%</y>
-			<attribute id="INSTITUCION">
-				<text>%Institucion%</text>
+			<id>%ID%</id>
+			<name>%NAME%</name>
+			<x>%LONGITUDE%</x>
+			<y>%LATITUDE%</y>
+			<attribute id="SOURCE">
+				<text>%SOURCE%</text>
 			</attribute>
-			<attribute id="PARAMETROS">
-				<text>%Parametros_medidos%</text>
+			<attribute id="PARAMETER">
+				<text>%PARAMETER%</text>
 			</attribute>
-			<attribute id="RESOLUCION">
-				<text>%Resolucion_temporal%</text>
+			<attribute id="RESOLUTION_P">
+				<text>%TEMPORAL_RESOLUTION_P%</text>
+			</attribute>
+			<attribute id="RESOLUTION_H">
+				<text>%TEMPORAL_RESOLUTION_H%</text>
+			</attribute>
+			<attribute id="RESOLUTION_T">
+				<text>%TEMPORAL_RESOLUTION_T%</text>
 			</attribute>
 			<attribute id="ESTACION">
-				<text>%Tipo_estacion%</text>
+				<text>%GAUGE_TYPE%</text>
+			</attribute>
+			<attribute id="OPERATIONAL">
+				<text>%OPERATIONAL%</text>
+			</attribute>
+			<attribute id="CALIBRATION">
+				<text>%CALIBRATION%</text>
 			</attribute>
 		</csvFile>
 	</locationSet>
@@ -43,15 +55,23 @@
 		<locationSetId>Stations</locationSetId>
 		<constraints>
 			<anyValid>
-				<attributeTextContains id="INSTITUCION" contains="MARN"/>
+				<attributeTextContains id="SOURCE" contains="MARN"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="MARN_OPERATIONAL">
+		<locationSetId>MARN</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="OPERATIONAL" equals="yes"/>
 			</anyValid>
 		</constraints>
 	</locationSet>
 	<locationSet id="MARN_P">
-		<locationSetId>MARN</locationSetId>
+		<locationSetId>MARN_OPERATIONAL</locationSetId>
 		<constraints>
 			<anyValid>
-				<attributeTextContains id="PARAMETROS" contains="P"/>
+				<attributeTextContains id="PARAMETER" contains="P"/>
 			</anyValid>
 		</constraints>
 	</locationSet>
@@ -59,7 +79,7 @@
 		<locationSetId>MARN_P</locationSetId>
 		<constraints>
 			<anyValid>
-				<attributeTextContains id="RESOLUCION" contains="5 min"/>
+				<attributeTextEquals id="RESOLUTION_P" equals="5 min"/>
 			</anyValid>
 		</constraints>
 	</locationSet>
@@ -67,7 +87,7 @@
 		<locationSetId>MARN_P</locationSetId>
 		<constraints>
 			<anyValid>
-				<attributeTextContains id="RESOLUCION" contains="10 min"/>
+				<attributeTextEquals id="RESOLUTION_P" equals="10 min"/>
 			</anyValid>
 		</constraints>
 	</locationSet>
@@ -75,7 +95,7 @@
 		<locationSetId>MARN_P</locationSetId>
 		<constraints>
 			<anyValid>
-				<attributeTextContains id="RESOLUCION" contains="5 min"/>
+				<attributeTextEquals id="RESOLUTION_P" equals="15 min"/>
 			</anyValid>
 		</constraints>
 	</locationSet>
@@ -83,31 +103,63 @@
 		<locationSetId>MARN_P</locationSetId>
 		<constraints>
 			<anyValid>
-				<attributeTextContains id="RESOLUCION" contains="Diaria"/>
+				<attributeTextEquals id="RESOLUTION_P" equals="Diaria"/>
 			</anyValid>
 		</constraints>
 	</locationSet>
 	<locationSet id="MARN_H">
-		<locationSetId>MARN</locationSetId>
+		<locationSetId>MARN_OPERATIONAL</locationSetId>
 		<constraints>
 			<anyValid>
-				<attributeTextContains id="PARAMETROS" contains="H"/>
+				<attributeTextContains id="PARAMETER" contains="H"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="MARN_H_5min">
+		<locationSetId>MARN_H</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="RESOLUTION_H" equals="5 min"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="MARN_H_10min">
+		<locationSetId>MARN_H</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="RESOLUTION_H" equals="10 min"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="MARN_H_15min">
+		<locationSetId>MARN_H</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="RESOLUTION_H" equals="15 min"/>
 			</anyValid>
 		</constraints>
 	</locationSet>
 	<locationSet id="MARN_T">
-		<locationSetId>MARN</locationSetId>
+		<locationSetId>MARN_OPERATIONAL</locationSetId>
 		<constraints>
 			<anyValid>
-				<attributeTextContains id="PARAMETROS" contains="T"/>
+				<attributeTextContains id="PARAMETER" contains="T"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="MARN_T_10min">
+		<locationSetId>MARN_T</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="RESOLUTION_T" equals="10 min"/>
 			</anyValid>
 		</constraints>
 	</locationSet>
 	<locationSet id="MARN_Q">
-		<locationSetId>MARN</locationSetId>
+		<locationSetId>MARN_OPERATIONAL</locationSetId>
 		<constraints>
 			<anyValid>
-				<attributeTextContains id="PARAMETROS" contains="Q"/>
+				<attributeTextContains id="PARAMETER" contains="Q"/>
 			</anyValid>
 		</constraints>
 	</locationSet>
@@ -123,13 +175,121 @@
 			<name>Lempa Basin</name>
 		</esriShapeFile>
 	</locationSet>
-	<!--Estaciones Artigas y Durazno-->
-	<!--Mapas de inundaciones-->
-	<!-- Observaciones Series de Tiempo -->
 	<!--Grids-->
 	<locationSet id="Grids">
 		<locationId>GFS</locationId>
 		<locationId>GEFS</locationId>
 	</locationSet>
 	<!-- Locations for Calibration-->
+	<locationSet id="ESA_P_C">
+		<locationSetId>MARN_P_C</locationSetId>
+	</locationSet>
+	<locationSet id="ESA_H_C">
+		<locationSetId>MARN_H_C</locationSetId>
+	</locationSet>
+	<locationSet id="ESA_Q_C">
+		<locationSetId>MARN_Q_C</locationSetId>
+	</locationSet>
+	<locationSet id="ESA_T_C">
+		<locationSetId>MARN_T_C</locationSetId>
+	</locationSet>
+	<locationSet id="ESA_HQ_C">
+		<locationSetId>MARN_Q_C</locationSetId>
+	</locationSet>
+	<locationSet id="MARN_C">
+		<locationSetId>MARN</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="CALIBRATION" equals="yes"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="MARN_P_C">
+		<locationSetId>MARN_C</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextContains id="PARAMETER" contains="P"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="MARN_P_5min_C">
+		<locationSetId>MARN_P_C</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="RESOLUTION_P" equals="5 min"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="MARN_P_10min_C">
+		<locationSetId>MARN_P_C</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="RESOLUTION_P" equals="10 min"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="MARN_P_15min_C">
+		<locationSetId>MARN_P_C</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="RESOLUTION_P" equals="15 min"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="MARN_P_diaria_C">
+		<locationSetId>MARN_P_C</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="RESOLUTION_P" equals="Diaria"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="MARN_H_C">
+		<locationSetId>MARN_C</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextContains id="PARAMETER" contains="H"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="MARN_H_5min_C">
+		<locationSetId>MARN_H_C</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="RESOLUTION_H" equals="5 min"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="MARN_H_10min_C">
+		<locationSetId>MARN_H_C</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="RESOLUTION_H" equals="10 min"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="MARN_H_15min_C">
+		<locationSetId>MARN_H_C</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="RESOLUTION_H" equals="15 min"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="MARN_T_C">
+		<locationSetId>MARN_C</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextContains id="PARAMETER" contains="T"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="MARN_Q_C">
+		<locationSetId>MARN_C</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextContains id="PARAMETER" contains="Q"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
 </locationSets>

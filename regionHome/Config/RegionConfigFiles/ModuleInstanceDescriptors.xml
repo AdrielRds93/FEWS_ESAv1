@@ -24,4 +24,5 @@
 	<!--OpenArchive-->
 	<!--Mantenimiento de la base de datos-->
 	<!--Preprocess for Calibration-->
+	<moduleInstanceDescriptor id="ImportMARN_c"/>
 </moduleInstanceDescriptors>

@@ -18,4 +18,8 @@
 		<iconId>fluvial_site_data</iconId>
 		<locationSetId>MARN_H</locationSetId>
 	</locationIcon>
+	<locationIcon>
+		<iconId>meteo_site_data</iconId>
+		<locationSetId>MARN_C</locationSetId>
+	</locationIcon>
 </locationIcons>
