@@ -363,12 +363,12 @@
 		</clientFilter>
 	</logPanelConfig>
 	<panelSizes>
-		<loggingPanelSize>10</loggingPanelSize>
-		<listsPanelSize>20</listsPanelSize>
-		<filterListSize>80</filterListSize>
-		<locationListSize>60</locationListSize>
-		<parameterListSize>20</parameterListSize>
-		<forecastListSize>10</forecastListSize>
+		<loggingPanelSize>5</loggingPanelSize>
+		<listsPanelSize>22</listsPanelSize>
+		<filterListSize>29</filterListSize>
+		<locationListSize>45</locationListSize>
+		<parameterListSize>25</parameterListSize>
+		<forecastListSize>5</forecastListSize>
 	</panelSizes>
 	<!--The following defines the port to listen to for SOAP requests 
     (used for automated workflow execution in stand-alone mode)-->
