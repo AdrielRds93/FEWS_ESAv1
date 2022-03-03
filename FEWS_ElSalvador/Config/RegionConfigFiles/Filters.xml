@@ -18,7 +18,7 @@
 	<filter id="Precipitation" name="Precipitation">
 		<validationIconsVisible>true</validationIconsVisible>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>P.obs</parameterId>
 			<locationSetId>MARN_P_5min</locationSetId>
@@ -29,7 +29,7 @@
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>P.obs</parameterId>
 			<locationSetId>MARN_P_10min</locationSetId>
@@ -40,7 +40,7 @@
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>P.obs</parameterId>
 			<locationSetId>MARN_P_15min</locationSetId>
@@ -51,7 +51,7 @@
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>P.obs</parameterId>
 			<locationSetId>MARN_P_diaria</locationSetId>
@@ -65,7 +65,7 @@
 	<filter id="WaterStage" name="Water stage">
 		<validationIconsVisible>true</validationIconsVisible>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>H.obs</parameterId>
 			<locationSetId>MARN_H_5min</locationSetId>
@@ -76,18 +76,7 @@
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>H.obs</parameterId>
-			<locationSetId>MARN_H_10min</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="minute" multiplier="10"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
-			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
-		</timeSeriesSet>
-		<timeSeriesSet>
-			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>H.obs</parameterId>
 			<locationSetId>MARN_H_15min</locationSetId>
@@ -114,7 +103,7 @@
 	<filter id="Temperature" name="Air temperature">
 		<validationIconsVisible>true</validationIconsVisible>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>T.obs</parameterId>
 			<locationSetId>MARN_T</locationSetId>

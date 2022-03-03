@@ -4,7 +4,7 @@
 	<import>
 		<general>
 			<importType>csv</importType>
-			<folder>$IMPORT_FOLDER$/OperationalData/dailyGauges</folder>
+			<folder>$IMPORT_FOLDER$/Datos/Convencionales</folder>
 			<idMapId>IdImportMARN</idMapId>
 			<unitConversionsId>ImportUnitConversions</unitConversionsId>
 			<importTimeZone>
@@ -26,7 +26,7 @@
 	<import>
 		<general>
 			<importType>csv</importType>
-			<folder>$IMPORT_FOLDER$/OperationalData/telemetry</folder>
+			<folder>$IMPORT_FOLDER$/Datos/Telemetria</folder>
 			<idMapId>IdImportMARN</idMapId>
 			<unitConversionsId>ImportUnitConversions</unitConversionsId>
 			<importTimeZone>
@@ -41,16 +41,6 @@
 			<locationSetId>MARN_H_5min</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="5"/>
-			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
-		</timeSeriesSet>
-		<timeSeriesSet>
-			<moduleInstanceId>ImportMARN</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>H.obs</parameterId>
-			<locationSetId>MARN_H_10min</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="minute" multiplier="10"/>
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
@@ -98,7 +88,7 @@
 			<moduleInstanceId>ImportMARN</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>T.obs</parameterId>
-			<locationSetId>MARN_T_C</locationSetId>
+			<locationSetId>MARN_T</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="10"/>
 			<readWriteMode>add originals</readWriteMode>
