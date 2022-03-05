@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<variable>
+		<variableId>MARN_H_5min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationSetId>MARN_H_5min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>MARN_H_15min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationSetId>MARN_H_15min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>MARN_H_5minTo3Hour</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessH</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationSetId>MARN_H_5min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>MARN_H_15minTo3Hour</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessH</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationSetId>MARN_H_15min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>MARN_H_3hour</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessH</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationSetId>MARN_H</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+	</variable>
+	<!--<Transformations for Calibration>-->
+	<transformation id="Aggregation_MARN_5min">
+		<aggregation>
+			<meanToMean>
+				<inputVariable>
+					<variableId>MARN_H_5min</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>MARN_H_5minTo3Hour</variableId>
+				</outputVariable>
+			</meanToMean>
+		</aggregation>
+	</transformation>
+	<transformation id="Aggregation_MARN_15min">
+		<aggregation>
+			<meanToMean>
+				<inputVariable>
+					<variableId>MARN_H_15min</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>MARN_H_15minTo3Hour</variableId>
+				</outputVariable>
+			</meanToMean>
+		</aggregation>
+	</transformation>
+	<transformation id="Merge_MARN">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>MARN_H_5minTo3Hour</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>MARN_H_15minTo3Hour</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>MARN_H_3hour</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+</transformationModule>

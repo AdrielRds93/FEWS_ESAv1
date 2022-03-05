@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<RatingCurves xmlns="http://www.wldelft.nl/fews/PI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews/PI http://fews.wldelft.nl/schemas/version1.0/pi-schemas/pi_ratingcurves.xsd">
+	<timeZone>1.0</timeZone>
+	<ratingCurve>
+		<header>
+			<locationId>250</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="1900-01-01" time="00:00:00"/>
+			<stationName>CItalaR</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="0.8" maxStage="2.15" alpha="-0.797" beta="1.24" cr="114.107"/>
+		<powerEquation minStage="2.15" maxStage="7" alpha="-0.587" beta="1.53" cr="86.104"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>2</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="1900-01-01" time="00:00:00"/>
+			<stationName>El Zapotillo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="0.39" maxStage="2.28" alpha="-0.385" beta="2.16" cr="63.884"/>
+		<powerEquation minStage="2.28" maxStage="7" alpha="-0.385" beta="3.43" cr="28.173"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>143</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="1900-01-01" time="00:00:00"/>
+			<stationName>Paso del Oso</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="1.56" maxStage="15" alpha="-1.555" beta="1.77" cr="54.619"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>12</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="1900-01-01" time="00:00:00"/>
+			<stationName>Tamarindo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="1.74" maxStage="4.25" alpha="-1.74" beta="1.81" cr="74.788"/>
+		<powerEquation minStage="4.25" maxStage="7.00" alpha="-1.74" beta="1.97" cr="81.821"/>
+	</ratingCurve>
+</RatingCurves>
