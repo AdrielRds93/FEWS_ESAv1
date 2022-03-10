@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importTypeStandard>grib2</importTypeStandard>
+			<folder>$IMPORT_FOLDER$/WRF/</folder>
+			<idMapId>IdImportWRF</idMapId>	
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneOffset>+00:00</timeZoneOffset>
+			</importTimeZone>
+			<dataFeedId>WRF</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportWRF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.pro</parameterId>
+			<locationId>WRF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<externUnit parameterId="P.pro" unit="mm" cumulativeSum="true"/>
+	</import>
+</timeSeriesImportRun>
