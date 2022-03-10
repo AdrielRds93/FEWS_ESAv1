@@ -9,4 +9,8 @@
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>ImportGEFS</moduleInstanceId>
 	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportWRF</moduleInstanceId>
+	</activity>
 </workflow>

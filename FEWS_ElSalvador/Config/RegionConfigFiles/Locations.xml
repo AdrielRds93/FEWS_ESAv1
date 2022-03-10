@@ -5,6 +5,12 @@
 	<!--Estaciones INA-->
 	<!--Grids SISSA.  -->
 	<!-- grids - forecasting -->
+	<location id="WRF" name="WRF">
+		<description>WRF</description>
+		<shortName>WRF</shortName>
+		<x>-89.00</x>
+		<y>13.80</y>
+	</location>
 	<location id="GFS" name="GFS">
 		<description>GFS</description>
 		<shortName>GFS</shortName>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <workflowDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflowDescriptors.xsd" version="1.0">
 	<!-- Download data workflow -->
@@ -8,7 +8,7 @@
 	<workflowDescriptor id="Import" name="Import observations" forecast="false" visible="true" allowApprove="false">
 		<description>Import observed data</description>
 	</workflowDescriptor>
-	<workflowDescriptor id="ImportForecast" name="Import meteorological forecast" forecast="true" visible="true" autoApprove="true">
+	<workflowDescriptor id="ImportForecast" name="Import meteorological forecast" forecast="true" visible="true" autoApprove="false">
 		<description>Importar pronosticos meteorologicos NOAA</description>
 		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
 	</workflowDescriptor>

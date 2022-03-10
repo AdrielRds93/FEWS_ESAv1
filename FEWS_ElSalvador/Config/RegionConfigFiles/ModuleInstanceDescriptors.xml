@@ -6,6 +6,7 @@
 	<moduleInstanceDescriptor id="ImportMARN"/>
 	<moduleInstanceDescriptor id="ImportGFS"/>
 	<moduleInstanceDescriptor id="ImportGEFS"/>
+	<moduleInstanceDescriptor id="ImportWRF"/>
 	<!-- Exports -->
 	<moduleInstanceDescriptor id="ExportCalibrationData"/>
 	<!--Preprocess and analysis-->
