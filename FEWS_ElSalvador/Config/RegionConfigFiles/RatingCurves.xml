@@ -49,4 +49,48 @@
 		<powerEquation minStage="1.74" maxStage="4.25" alpha="-1.74" beta="1.81" cr="74.788"/>
 		<powerEquation minStage="4.25" maxStage="7.00" alpha="-1.74" beta="1.97" cr="81.821"/>
 	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>59</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="1900-01-01" time="00:00:00"/>
+			<stationName>Montecristo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="0.37" maxStage="1.40" alpha="-0.33" beta="2.23" cr="26.477"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>132</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="1900-01-01" time="00:00:00"/>
+			<stationName>SF Dos Cerros</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="0.10" maxStage="6.24" alpha="-0.10" beta="1.89" cr="17.745"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>129</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="1900-01-01" time="00:00:00"/>
+			<stationName>El Jocote</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="0.40" maxStage="6.50" alpha="-0.395" beta="1.978" cr="20.475"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>257</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="1900-01-01" time="00:00:00"/>
+			<stationName>Metayate</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="0.99" maxStage="2.00" alpha="-0.985" beta="3.96" cr="82.678"/>
+	</ratingCurve>
 </RatingCurves>

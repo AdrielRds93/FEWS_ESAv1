@@ -2,25 +2,25 @@ ID,NAME,SOURCE,LATITUDE,LONGITUDE,GAUGE_TYPE,PARAMETER,TEMPORAL_RESOLUTION_P,TEM
 2,El Zapotillo,MARN,14.1753,-89.4130,HIDRO,PHQ,5 min,15 min,,yes,yes
 4,Ilopango,MARN,13.6983,-89.1183,MET,PT,10 min,,10 min,no,yes
 8,Chapeltique,MARN,13.6424,-88.2608,PLUVIO,P,15 min,,,no,yes
-9,Osicala,MARN,13.8332,-88.1500,HIDRO,PHQ,5 min,5 min,,no,yes
-10,San Marcos Lempa,MARN,13.4235,-88.6969,HIDRO,PHQ,5 min,15 min,,no,yes
-11,Las Flores,MARN,14.0434,-88.8090,HIDRO,PHQ,5 min,15 min,,no,yes
+9,Osicala,MARN,13.8332,-88.1500,HIDRO,PH,5 min,5 min,,no,yes
+10,San Marcos Lempa,MARN,13.4235,-88.6969,HIDRO,PH,5 min,15 min,,no,yes
+11,Las Flores,MARN,14.0434,-88.8090,HIDRO,PH,5 min,15 min,,no,yes
 12,Tamarindo,MARN,14.0469,-89.2525,HIDRO,PHQ,5 min,15 min,,yes,yes
 13,CITALA,MARN,14.3700,-89.2130,HIDRO,PH,5 min,15 min,,yes,no
-17,El Sauce,MARN,13.6496,-87.7898,HIDRO,PHQ,5 min,15 min,,no,yes
-18,Puente Viejo,MARN,13.5179,-88.9882,HIDRO,PHQ,5 min,15 min,,no,yes
-20,El Jobo,MARN,14.0175,-89.9070,HIDRO,PHQ,5 min,15 min,,no,yes
-21,Hachadura,MARN,13.8607,-90.0878,HIDRO,PHQ,5 min,15 min,,no,yes
+17,El Sauce,MARN,13.6496,-87.7898,HIDRO,PH,5 min,15 min,,no,yes
+18,Puente Viejo,MARN,13.5179,-88.9882,HIDRO,PH,5 min,15 min,,no,yes
+20,El Jobo,MARN,14.0175,-89.9070,HIDRO,PH,5 min,15 min,,no,yes
+21,Hachadura,MARN,13.8607,-90.0878,HIDRO,PH,5 min,15 min,,no,yes
 25,Santiago Nonualco,MARN,13.4307,-88.9784,PLUVIO,P,5 min,,,no,yes
 26,Zacatecoluca,MARN,13.5082,-88.8578,PLUVIO,P,5 min,,,no,yes
-28,Belloso,MARN,13.6931,-89.1910,HIDRO,PHQ,5 min,5 min,,no,yes
+28,Belloso,MARN,13.6931,-89.1910,HIDRO,PH,5 min,5 min,,no,yes
 31,La Union,MARN,13.3333,-87.8236,MET,PT,10 min,,10 min,no,yes
 32,San Miguel,MARN,13.4389,-88.1591,MET,PT,10 min,,10 min,no,yes
 33,Santa Ana,MARN,13.9825,-89.5488,MET,PT,10 min,,10 min,yes,yes
 35,Boqueron,MARN,13.7339,-89.2675,MET,PT,10 min,,10 min,yes,yes
 36,PROCAFÉ,MARN,13.6843,-89.2866,MET,PT,10 min,,10 min,yes,yes
 37,Acajutla,MARN,13.5678,-89.8333,MET,PT,10 min,,10 min,no,yes
-38,Concepción de Oriente,MARN,13.7970,-87.7101,HIDRO,PHQ,5 min,15 min,,no,yes
+38,Concepción de Oriente,MARN,13.7970,-87.7101,HIDRO,PH,5 min,15 min,,no,yes
 39,San Vicente,MARN,13.5958,-88.8390,MET,PT,10 min,,10 min,no,yes
 40,Las Pilas,MARN,14.3710,-89.0960,MET,PT,10 min,,10 min,yes,yes
 42,El Pacayal,MARN,13.4690,-88.3233,MET,PT,10 min,,10 min,no,yes
@@ -40,7 +40,7 @@ ID,NAME,SOURCE,LATITUDE,LONGITUDE,GAUGE_TYPE,PARAMETER,TEMPORAL_RESOLUTION_P,TEM
 63,La Cima,MARN,13.6588,-89.2150,PLUVIO,P,5 min,,,no,yes
 64,Guacotecti,MARN,13.8713,-88.6448,MET,PT,10 min,,10 min,no,yes
 65,Puerto Parada,MARN,13.2507,-88.4392,MET,PT,10 min,,10 min,no,yes
-66,Moropala,MARN,13.2839,-88.3192,HIDRO,PHQ,5 min,15 min,,no,yes
+66,Moropala,MARN,13.2839,-88.3192,HIDRO,PH,5 min,15 min,,no,yes
 67,Huizucar,MARN,13.6093,-89.2345,PLUVIO,P,5 min,,,no,yes
 72,Apaneca,MARN,13.8412,-89.7980,PLUVIO,P,5 min,,,no,yes
 75,Panchimalco,MARN,13.6089,-89.1812,PLUVIO,P,5 min,,,no,yes
@@ -51,21 +51,21 @@ ID,NAME,SOURCE,LATITUDE,LONGITUDE,GAUGE_TYPE,PARAMETER,TEMPORAL_RESOLUTION_P,TEM
 82,Chirilagua,MARN,13.2556,-88.1966,PLUVIO,P,5 min,,,no,yes
 84,Berlin,MARN,13.4831,-88.5199,PLUVIO,P,5 min,,,no,yes
 85,Conchagua,MARN,13.2763,-87.8339,PLUVIO,P,5 min,,,no,yes
-86,Melara,MARN,13.4874,-89.2067,HIDRO,PHQ,5 min,15 min,,no,yes
-88,San Isidro,MARN,13.7902,-88.6984,HIDRO,PHQ,5 min,15 min,,no,yes
-89,Laquesera,MARN,13.5821,-88.6483,HIDRO,PHQ,5 min,15 min,,no,yes
-90,San Vicente,MARN,13.6492,-88.7726,HIDRO,PHQ,5 min,15 min,,no,yes
-91,Pasaquina,MARN,13.5645,-87.7800,HIDRO,PHQ,5 min,15 min,,no,yes
-92,La Canoa,MARN,13.3282,-88.1655,HIDRO,PHQ,5 min,15 min,,no,yes
+86,Melara,MARN,13.4874,-89.2067,HIDRO,PH,5 min,15 min,,no,yes
+88,San Isidro,MARN,13.7902,-88.6984,HIDRO,PH,5 min,15 min,,no,yes
+89,Laquesera,MARN,13.5821,-88.6483,HIDRO,PH,5 min,15 min,,no,yes
+90,San Vicente,MARN,13.6492,-88.7726,HIDRO,PH,5 min,15 min,,no,yes
+91,Pasaquina,MARN,13.5645,-87.7800,HIDRO,PH,5 min,15 min,,no,yes
+92,La Canoa,MARN,13.3282,-88.1655,HIDRO,PH,5 min,15 min,,no,yes
 94,La Cañada,MARN,13.3098,-87.8894,MET,PT,10 min,,10 min,no,yes
 95,Santa Cruz Porrillo,MARN,13.4394,-88.8012,MET,PT,10 min,,10 min,no,yes
 96,Perquin,MARN,13.9611,-88.1584,MET,PT,10 min,,10 min,no,yes
 97,Apopa,MARN,13.7956,-89.1742,PLUVIO,P,5 min,,,no,yes
 103,Cojutepeque,MARN,13.7206,-88.9263,PLUVIO,P,5 min,,,no,yes
-104,Atalaya,MARN,13.6082,-89.8304,HIDRO,PHQ,5 min,15 min,,no,yes
-106,El Piro,MARN,13.6815,-89.2436,HIDRO,PHQ,5 min,15 min,,no,yes
+104,Atalaya,MARN,13.6082,-89.8304,HIDRO,PH,5 min,15 min,,no,yes
+106,El Piro,MARN,13.6815,-89.2436,HIDRO,PH,5 min,15 min,,no,yes
 107,Santiago de María,MARN,13.4796,-88.4715,PLUVIO,P,5 min,,,no,yes
-108,Sensunapan,MARN,13.6602,-89.7639,HIDRO,PHQ,5 min,15 min,,no,yes
+108,Sensunapan,MARN,13.6602,-89.7639,HIDRO,PH,5 min,15 min,,no,yes
 111,Izalco,MARN,13.7569,-89.7030,PLUVIO,P,5 min,,,no,yes
 112,Nueva Esparta,MARN,13.7870,-87.8354,PLUVIO,P,5 min,,,no,yes
 114,Zaragoza,MARN,13.5763,-89.2895,PLUVIO,P,5 min,,,no,yes
@@ -79,7 +79,7 @@ ID,NAME,SOURCE,LATITUDE,LONGITUDE,GAUGE_TYPE,PARAMETER,TEMPORAL_RESOLUTION_P,TEM
 122,Tepetitan,MARN,13.6256,-88.8428,MET,PT,10 min,,10 min,no,yes
 123,Concepción Quezaltepeque,MARN,14.0808,-88.9679,MET,PT,10 min,,10 min,no,yes
 124,Berlin Met,MARN,13.5072,-88.5064,MET,PT,10 min,,10 min,no,yes
-125,San Francisco,MARN,13.6950,-88.1080,HIDRO,PHQ,5 min,15 min,,no,yes
+125,San Francisco,MARN,13.6950,-88.1080,HIDRO,PH,5 min,15 min,,no,yes
 126,Talnique,MARN,13.7510,-89.4310,HIDRO,P,5 min,,,yes,no
 127,Ciudad Barrios,MARN,13.7250,-88.2730,MET,PT,10 min,,10 min,no,yes
 128,El Camalote,MARN,14.1675,-88.9235,PLUVIO,P,5 min,,,no,yes
@@ -95,19 +95,19 @@ ID,NAME,SOURCE,LATITUDE,LONGITUDE,GAUGE_TYPE,PARAMETER,TEMPORAL_RESOLUTION_P,TEM
 249,Ciudad Arce,MARN,13.8300,-89.4373,PLUVIO,P,5 min,,,yes,yes
 250,CitalaR,MARN,14.3703,-89.2126,HIDRO,PHQ,5 min,15 min,,yes,yes
 252,Nuevo Cuscatlan,MARN,13.6210,-89.2640,PLUVIO,P,5 min,,,no,yes
-253,San Simon,MARN,13.5745,-88.5461,HIDRO,PHQ,5 min,15 min,,no,yes
-254,Acomunca,MARN,13.4446,-88.8831,HIDRO,PHQ,5 min,15 min,,no,yes
-255,El Naranjo,MARN,13.6970,-89.9380,HIDRO,PHQ,5 min,15 min,,no,yes
-256,Chilama,MARN,13.4919,-89.3254,HIDRO,PHQ,5 min,15 min,,no,yes
+253,San Simon,MARN,13.5745,-88.5461,HIDRO,PH,5 min,15 min,,no,yes
+254,Acomunca,MARN,13.4446,-88.8831,HIDRO,PH,5 min,15 min,,no,yes
+255,El Naranjo,MARN,13.6970,-89.9380,HIDRO,PH,5 min,15 min,,no,yes
+256,Chilama,MARN,13.4919,-89.3254,HIDRO,PH,5 min,15 min,,no,yes
 257,Metayate,MARN,14.1421,-89.2131,HIDRO,PHQ,5 min,15 min,,yes,yes
-258,San Lorenzo,MARN,14.0343,-89.7771,HIDRO,PHQ,5 min,15 min,,no,yes
-259,Cara Sucia,MARN,13.7739,-90.0445,HIDRO,PHQ,5 min,15 min,,no,yes
-260,Banderas,MARN,13.5880,-89.7350,HIDRO,PHQ,5 min,15 min,,no,yes
-262,El Desparramo,MARN,13.2900,-88.5404,HIDRO,PHQ,5 min,15 min,,no,yes
-263,Jalponga,MARN,13.5012,-88.9463,HIDRO,PHQ,5 min,15 min,,no,yes
-264,Zoologico,MARN,13.6836,-89.1948,HIDRO,PHQ,5 min,15 min,,no,yes
+258,San Lorenzo,MARN,14.0343,-89.7771,HIDRO,PH,5 min,15 min,,no,yes
+259,Cara Sucia,MARN,13.7739,-90.0445,HIDRO,PH,5 min,15 min,,no,yes
+260,Banderas,MARN,13.5880,-89.7350,HIDRO,PH,5 min,15 min,,no,yes
+262,El Desparramo,MARN,13.2900,-88.5404,HIDRO,PH,5 min,15 min,,no,yes
+263,Jalponga,MARN,13.5012,-88.9463,HIDRO,PH,5 min,15 min,,no,yes
+264,Zoologico,MARN,13.6836,-89.1948,HIDRO,PH,5 min,15 min,,no,yes
 265,Apaneca Met,MARN,13.8479,-89.8389,MET,PT,10 min,,10 min,no,yes
-267,La Bermeja,MARN,13.6905,-89.2097,HIDRO,PHQ,5 min,15 min,,no,yes
+267,La Bermeja,MARN,13.6905,-89.2097,HIDRO,PH,5 min,15 min,,no,yes
 270,ENA-SanAndrés,MARN,13.8064,-89.4037,MET,PT,10 min,,10 min,no,yes
 271,Providencia1,MARN,13.4740,-89.0960,MET,PT,10 min,,10 min,no,yes
 A15,GUIJA,MARN,14.2270,-89.4700,CONVENCIONAL,P,Diaria,,,yes,yes
