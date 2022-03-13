@@ -36,11 +36,11 @@
 			<valueType>scalar</valueType>
 			<parameterId>H.obs</parameterId>
 			<locationSetId>MARN_H_5min</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
+			<timeSeriesType>temporary</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
+			<synchLevel>9</synchLevel>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -50,11 +50,11 @@
 			<valueType>scalar</valueType>
 			<parameterId>H.obs</parameterId>
 			<locationSetId>MARN_H_15min</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
+			<timeSeriesType>temporary</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
+			<synchLevel>9</synchLevel>
 		</timeSeriesSet>
 	</variable>
 	<variable>

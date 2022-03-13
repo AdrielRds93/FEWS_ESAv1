@@ -2,7 +2,16 @@
 <!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <topology xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/topology.xsd">
 	<enableAutoRun>false</enableAutoRun>
-	<nodes id="Import_Forecasts" name="Importar y procesar pronósticos">
+	<nodes id="Import_Observations" name="Import observations">
+		<workflowId>Import</workflowId>
+		<localRun>false</localRun>
+		<node id="ImportObservations_MARN" name="MARN">
+			<graceTime unit="hour" multiplier="3"/>
+			<localRun>false</localRun>
+		</node>
+		<graceTime unit="hour" multiplier="3"/>
+	</nodes>
+	<nodes id="Import_Forecasts" name="Import and process forecast">
 		<workflowId>ImportForecast</workflowId>
 		<localRun>false</localRun>
 		<node id="ImportForecasts_GFS" name="GFS">
