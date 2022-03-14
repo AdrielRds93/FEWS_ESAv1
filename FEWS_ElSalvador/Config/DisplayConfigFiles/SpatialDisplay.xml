@@ -539,4 +539,33 @@
 			<classBreaksId>Class.Temperatura</classBreaksId>
 		</gridPlot>
 	</gridPlotGroup>
+	<gridPlotGroup id="WRF" name="WRF Forecast">
+		<gridPlot id="WRF Precipitacion [mm]" name="Precipitación [mm]">
+			<timeSeriesSet>
+				<moduleInstanceId>ImportWRF</moduleInstanceId>
+				<valueType>grid</valueType>
+				<parameterId>P.pro</parameterId>
+				<locationId>WRF</locationId>
+				<timeSeriesType>external forecasting</timeSeriesType>
+				<timeStep unit="hour" multiplier="1"/>
+				<readWriteMode>read complete forecast</readWriteMode>
+			</timeSeriesSet>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="72"/>
+			<classBreaksId>Class.Precipitacion</classBreaksId>
+		</gridPlot>
+		<gridPlot id="GEFS Temperatura [oC]" name="Temperatura [°C]">
+			<timeSeriesSet>
+				<moduleInstanceId>ImportWRF</moduleInstanceId>
+				<valueType>grid</valueType>
+				<parameterId>T.pro</parameterId>
+				<locationId>WRF</locationId>
+				<timeSeriesType>external forecasting</timeSeriesType>
+				<timeStep unit="hour" multiplier="1"/>
+				<readWriteMode>read complete forecast</readWriteMode>
+			</timeSeriesSet>
+		</gridPlot>
+	</gridPlotGroup>
 </gridDisplay>

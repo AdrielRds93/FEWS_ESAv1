@@ -19,7 +19,16 @@
 			<parameterId>P.pro</parameterId>
 			<locationId>WRF</locationId>
 			<timeSeriesType>external forecasting</timeSeriesType>
-			<timeStep unit="nonequidistant"/>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportWRF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>T.pro</parameterId>
+			<locationId>WRF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<externUnit parameterId="P.pro" unit="mm" cumulativeSum="true"/>
