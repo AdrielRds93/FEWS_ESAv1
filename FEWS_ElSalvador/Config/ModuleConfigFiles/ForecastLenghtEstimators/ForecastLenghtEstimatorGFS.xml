@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forecastLengthEstimator xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/forecastLengthEstimator.xsd">
+	<!--externalHistoricalTimeSeries - dummy to avoid warning on lastObservationDateTime - do not remove-->
+	<externalHistoricalTimeSeries>
+		<moduleInstanceId>ImportGFS</moduleInstanceId>
+		<valueType>grid</valueType>
+		<parameterId>P.pro</parameterId>
+		<locationId>GFS</locationId>
+		<timeSeriesType>external historical</timeSeriesType>
+		<timeStep unit="hour" multiplier="6"/>
+		<readWriteMode>read only</readWriteMode>
+	</externalHistoricalTimeSeries>
+	<!--externalForecastTimeSeries - real reference for forecast length estimator-->
+	<externalForecastTimeSeries>
+		<moduleInstanceId>ImportGFS</moduleInstanceId>
+		<valueType>grid</valueType>
+		<parameterId>P.pro</parameterId>
+		<locationId>GFS</locationId>
+		<timeSeriesType>external forecasting</timeSeriesType>
+		<timeStep unit="hour" multiplier="6"/>
+		<readWriteMode>read complete forecast</readWriteMode>
+	</externalForecastTimeSeries>
+	<minForecastLength unit="day" multiplier="14"/>
+</forecastLengthEstimator>

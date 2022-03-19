@@ -175,6 +175,16 @@
 			<name>Lempa Basin</name>
 		</esriShapeFile>
 	</locationSet>
+	<locationSet id="SubbasinLempa">
+		<esriShapeFile>
+			<file>Subbasin_Lempa</file>
+			<id>%BasinName%</id>
+			<name>%BasinName%</name>
+			<attribute id="SubBasin">
+				<text>%BasinName%</text>
+			</attribute>
+		</esriShapeFile>
+	</locationSet>
 	<!--Grids-->
 	<locationSet id="Grids">
 		<locationId>GFS</locationId>

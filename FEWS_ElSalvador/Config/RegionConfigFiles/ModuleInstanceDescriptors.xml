@@ -8,14 +8,16 @@
 	<moduleInstanceDescriptor id="ImportGEFS"/>
 	<moduleInstanceDescriptor id="ImportWRF"/>
 	<!-- Exports -->
-	<moduleInstanceDescriptor id="ExportCalibrationData"/>
 	<!--Preprocess and analysis-->
 	<moduleInstanceDescriptor id="PreprocessP"/>
 	<moduleInstanceDescriptor id="PreprocessH"/>
 	<moduleInstanceDescriptor id="PreprocessHQ"/>
 	<moduleInstanceDescriptor id="PreprocessQ"/>
 	<moduleInstanceDescriptor id="PreprocessT"/>
+	<moduleInstanceDescriptor id="PreprocessGFS"/>
+	<moduleInstanceDescriptor id="PreprocessGEFS"/>
 	<!--Forecast Length Estimator Modules-->
+	<moduleInstanceDescriptor id="ForecastLenghtEstimatorGFS"/>
 	<!--PREP Modules Update and Fcst-->
 	<!--POST Modules-->
 	<!-- SAC-SMA -->

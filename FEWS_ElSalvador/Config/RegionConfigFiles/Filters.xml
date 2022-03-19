@@ -5,6 +5,7 @@
 	<!--FILTER For PI Web Service-->
 	<filter id="FEWS-ELSALVADOR" name="FEWS El Salvador">
 		<child foreignKey="Observations"/>
+		<child foreignKey="ForecastLempaBasin"/>
 	</filter>
 	<!--FILTERS-->
 	<filter id="Observations" name="Observations">
@@ -12,6 +13,11 @@
 		<child foreignKey="WaterStage"/>
 		<child foreignKey="Discharge"/>
 		<child foreignKey="Temperature"/>
+	</filter>
+	<filter id="ForecastLempaBasin" name="Forecast data - By Basins">
+		<child foreignKey="GFSLempa"/>
+		<child foreignKey="GEFSLempa"/>
+		<child foreignKey="WRFLempa"/>
 	</filter>
 	<!--SUB-FILTERS-->
 	<!--Observations-->
@@ -113,7 +119,41 @@
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</filter>
-	<!--PronosticosMeteo-->
+	<!--Forecast Lempa Basin-->
+	<filter id="GFSLempa" name="GFS @ Lempa">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="GEFSLempa" name="GEFS @ Lempa">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro</parameterId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="WRFLempa" name="WRF @ Lempa">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro</parameterId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</filter>
 	<!--PronosticosHydro-->
 	<!--InundacionesHistoricas-->
 	<!--ObservacionesCalibracion-->
