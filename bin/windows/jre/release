@@ -1,2 +1,2 @@
-JAVA_VERSION="11.0.5"
-MODULES="java.base java.compiler java.datatransfer java.xml java.prefs java.desktop java.instrument java.logging java.management java.security.sasl java.naming java.rmi java.management.rmi java.net.http java.scripting java.security.jgss java.transaction.xa java.sql java.sql.rowset java.xml.crypto java.se java.smartcardio jdk.charsets jdk.crypto.ec jdk.dynalink jdk.management jdk.scripting.nashorn jdk.security.auth jdk.unsupported jdk.xml.dom"
+JAVA_VERSION="11.0.9.11.2"
+MODULES="java.base java.compiler java.datatransfer java.xml java.prefs java.desktop java.instrument java.logging java.management java.security.sasl java.naming java.rmi java.management.rmi java.net.http java.scripting java.security.jgss java.transaction.xa java.sql java.sql.rowset java.xml.crypto java.se java.smartcardio jdk.charsets jdk.crypto.ec jdk.crypto.mscapi jdk.dynalink jdk.localedata jdk.management jdk.scripting.nashorn jdk.security.auth jdk.unsupported jdk.xml.dom"
