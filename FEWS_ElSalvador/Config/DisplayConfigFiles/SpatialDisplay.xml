@@ -342,6 +342,7 @@
 					<file>ElSalvador_Departamentos.shp</file>
 					<geoDatum>WGS 1984</geoDatum>
 					<visible>false</visible>
+					<toolTip>%NA2%</toolTip>
 					<lineColor>black</lineColor>
 					<fillRgbColor>FFFFFF</fillRgbColor>
 					<opaquenessPercentage>20</opaquenessPercentage>
@@ -350,6 +351,7 @@
 					<file>ElSalvador_Municipios.shp</file>
 					<geoDatum>WGS 1984</geoDatum>
 					<visible>false</visible>
+					<toolTip>%NA2%</toolTip>
 					<lineColor>black</lineColor>
 					<fillRgbColor>FFFFFF</fillRgbColor>
 					<opaquenessPercentage>20</opaquenessPercentage>
@@ -361,6 +363,7 @@
 					<file>Regions.shp</file>
 					<geoDatum>WGS 1984</geoDatum>
 					<visible>true</visible>
+					<toolTip>%region%</toolTip>
 					<lineColor>black</lineColor>
 					<fillRgbColor>FFFFFF</fillRgbColor>
 					<opaquenessPercentage>20</opaquenessPercentage>
