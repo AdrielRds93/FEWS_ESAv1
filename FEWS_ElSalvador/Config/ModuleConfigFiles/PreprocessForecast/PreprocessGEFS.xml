@@ -46,12 +46,27 @@
 		</timeSeriesSet>
 	</variable>
 	<variable>
+		<variableId>PSuma_Cuencas</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>GEFS</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-36" end="336" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
 		<variableId>PSuma033_Cuencas</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>P.pro.acc.GEFS.Perc033</parameterId>
-			<locationSetId>CuencasUruguay</locationSetId>
+			<locationSetId>SubbasinLempa</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<relativeViewPeriod unit="hour" start="-36" end="336" endOverrulable="true"/>
@@ -65,7 +80,7 @@
 			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>P.pro.acc.GEFS.Perc050</parameterId>
-			<locationSetId>CuencasUruguay</locationSetId>
+			<locationSetId>SubbasinLempa</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<relativeViewPeriod unit="hour" start="-36" end="336" endOverrulable="true"/>
@@ -79,7 +94,7 @@
 			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>P.pro.acc.GEFS.Perc067</parameterId>
-			<locationSetId>CuencasUruguay</locationSetId>
+			<locationSetId>SubbasinLempa</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<relativeViewPeriod unit="hour" start="-36" end="336" endOverrulable="true"/>

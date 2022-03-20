@@ -16,8 +16,10 @@
 	<moduleInstanceDescriptor id="PreprocessT"/>
 	<moduleInstanceDescriptor id="PreprocessGFS"/>
 	<moduleInstanceDescriptor id="PreprocessGEFS"/>
+	<moduleInstanceDescriptor id="PreprocessWRF"/>
 	<!--Forecast Length Estimator Modules-->
 	<moduleInstanceDescriptor id="ForecastLenghtEstimatorGFS"/>
+	<moduleInstanceDescriptor id="ForecastLenghtEstimatorGEFS"/>
 	<!--PREP Modules Update and Fcst-->
 	<!--POST Modules-->
 	<!-- SAC-SMA -->

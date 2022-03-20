@@ -99,7 +99,7 @@
 		</openStreetMapLayer>
 		<layer id="Canvas" name="ArcGIS Canvas World LightGray Base">
 			<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
-			<visible>true</visible>
+			<visible>false</visible>
 			<properties>
 				<string key="tileUrlPattern" value="http://server.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%"/>
 				<string key="cacheDir" value="$tempDir$/Esri_Canvas_World_Light_Gray_Base"/>
@@ -111,7 +111,7 @@
 		</layer>
 		<layer id="ArcGIS World" name="ArcGIS World_Imagery">
 			<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
-			<visible>false</visible>
+			<visible>true</visible>
 			<properties>
 				<string key="tileUrlPattern" value="http://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%"/>
 				<string key="cacheDir" value="$tempDir$/ArcGIS World_Imagery"/>
@@ -168,8 +168,8 @@
 				<opaquenessPercentage>20</opaquenessPercentage>
 			</esriShapeLayer>
 		</layerGroup>
-		<layerGroup id="Cuencas hidrograficas">
-			<esriShapeLayer id="Regiones">
+		<layerGroup id="Watersheds">
+			<esriShapeLayer id="Regiones" name="Hydrological Regions">
 				<description>Regions</description>
 				<file>Regions.shp</file>
 				<geoDatum>WGS 1984</geoDatum>
@@ -179,13 +179,23 @@
 				<opaquenessPercentage>20</opaquenessPercentage>
 				<lineWidth value="2"/>
 			</esriShapeLayer>
-			<esriShapeLayer id="Red hidrográfica">
+			<esriShapeLayer id="Red hidrográfica" name="Drainage">
 				<description>Rivers</description>
 				<file>Rivers.shp</file>
 				<geoDatum>WGS 1984</geoDatum>
-				<visible>true</visible>
+				<visible>false</visible>
 				<lineColor>light blue</lineColor>
 				<opaquenessPercentage>20</opaquenessPercentage>
+			</esriShapeLayer>
+			<esriShapeLayer id="Lempa" name="Lempa Subbasins">
+				<description>Lempa subbasins</description>
+				<file>Subbasin_Lempa.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>false</visible>
+				<lineColor>black</lineColor>
+				<fillRgbColor>FFFFFF</fillRgbColor>
+				<opaquenessPercentage>20</opaquenessPercentage>
+				<lineWidth value="2"/>
 			</esriShapeLayer>
 		</layerGroup>
 	</map>
@@ -322,16 +332,6 @@
 		<mouseCoordinates>true</mouseCoordinates>
 		<userName>true</userName>
 	</statusBarConfig>
-	<!--<statusBarConfig>
-		<description>Standard date-time format</description>
-		<dateTimeFormat>HH:mm:ss</dateTimeFormat>
-		<timeGMT>true</timeGMT>
-		<timeCurrent>true</timeCurrent>
-		<timeLastRefresh>true</timeLastRefresh>
-		<statusOfSystem>true</statusOfSystem>
-		<mouseCoordinates>true</mouseCoordinates>
-		<userName>true</userName>
-	</statusBarConfig>-->
 	<dateTime>
 		<timeZoneOffset>-06:00</timeZoneOffset>
 		<dateTimeFormat>yyyy-MM-dd HH:mm:ss</dateTimeFormat>

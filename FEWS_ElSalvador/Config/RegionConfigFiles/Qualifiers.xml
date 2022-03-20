@@ -2,6 +2,7 @@
 <qualifiers xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/qualifiers.xsd">
 	<qualifier id="GFS" name="GFS"/>
 	<qualifier id="GEFS" name="GEFS"/>
+	<qualifier id="WRF" name="WRF"/>
 	<qualifier id="7am" name="7am"/>
 	<qualifier id="9am" name="9am"/>
 	<qualifier id="q1" name="q1"/>

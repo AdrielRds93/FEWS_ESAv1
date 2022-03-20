@@ -134,20 +134,42 @@
 	</filter>
 	<filter id="GEFSLempa" name="GEFS @ Lempa">
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>P.pro</parameterId>
+			<parameterId>P.pro.acc.GEFS.Perc033</parameterId>
 			<locationSetId>SubbasinLempa</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="6"/>
+			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc.GEFS.Perc050</parameterId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc.GEFS.Perc067</parameterId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
 		</timeSeriesSet>
 	</filter>
 	<filter id="WRFLempa" name="WRF @ Lempa">
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<moduleInstanceId>PreprocessWRF</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>P.pro</parameterId>
+			<qualifierId>WRF</qualifierId>
 			<locationSetId>SubbasinLempa</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>

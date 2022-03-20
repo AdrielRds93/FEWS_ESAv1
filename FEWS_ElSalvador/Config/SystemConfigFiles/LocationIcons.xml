@@ -19,6 +19,10 @@
 		<locationSetId>MARN_C</locationSetId>
 	</locationIcon>
 	<locationIcon>
+		<iconId>catchment_centre_point_data</iconId>
+		<locationSetId>SubbasinLempa</locationSetId>
+	</locationIcon>
+	<locationIcon>
 		<iconId>meteo_site_data</iconId>
 		<locationSetId>Grids</locationSetId>
 	</locationIcon>
