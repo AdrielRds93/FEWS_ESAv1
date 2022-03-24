@@ -2,6 +2,44 @@
 <!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <timeSeriesDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesDisplay.xsd" version="1.0">
 	<defaultViewPeriod unit="day" start="-20" end="14"/>
+	<thresholdDisplayConfig>
+		<thresholdDisplayOptions id="Sin alerta" visible="true">
+			<color>green</color>
+			<backgroundOpaquenessPercentage>5</backgroundOpaquenessPercentage>
+			<lineStyle>dashed</lineStyle>
+			<labelAlignment>right</labelAlignment>
+		</thresholdDisplayOptions>
+		<thresholdDisplayOptions id="Preaviso" visible="true">
+			<color>green</color>
+			<backgroundOpaquenessPercentage>5</backgroundOpaquenessPercentage>
+			<lineStyle>dashed;thick</lineStyle>
+			<labelAlignment>right</labelAlignment>
+		</thresholdDisplayOptions>
+		<thresholdDisplayOptions id="Aviso" visible="true">
+			<color>yellow</color>
+			<backgroundOpaquenessPercentage>5</backgroundOpaquenessPercentage>
+			<lineStyle>dashed;thick</lineStyle>
+			<labelAlignment>right</labelAlignment>
+		</thresholdDisplayOptions>
+		<thresholdDisplayOptions id="Alerta" visible="true">
+			<color>red</color>
+			<backgroundOpaquenessPercentage>5</backgroundOpaquenessPercentage>
+			<lineStyle>dashed;thick</lineStyle>
+			<labelAlignment>right</labelAlignment>
+		</thresholdDisplayOptions>
+		<thresholdDisplayOptions id="Emergencia" visible="true">
+			<color>red</color>
+			<backgroundOpaquenessPercentage>5</backgroundOpaquenessPercentage>
+			<lineStyle>dashed;thick</lineStyle>
+			<labelAlignment>right</labelAlignment>
+		</thresholdDisplayOptions>
+		<thresholdDisplayOptions id="Nivel de desborde" visible="true">
+			<color>red</color>
+			<backgroundOpaquenessPercentage>5</backgroundOpaquenessPercentage>
+			<lineStyle>dashed;thick</lineStyle>
+			<labelAlignment>right</labelAlignment>
+		</thresholdDisplayOptions>
+	</thresholdDisplayConfig>
 	<classBreaks>
 		<classBreaks id="Class.Precipitacion">
 			<unitVisible>true</unitVisible>

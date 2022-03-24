@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<thresholdGroups xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/thresholds.xsd">
+	<thresholdGroup id="Level Thresholds" name="Level Thresholds">
+		<defaultThreshold shortName="Sin alerta"/>
+		<levelThreshold id="Sin alerta" name="Sin alerta" shortName="Sin alerta">
+			<upWarningLevelId>0</upWarningLevelId>
+		</levelThreshold>
+		<levelThreshold id="Preaviso" name="Preaviso" shortName="Preaviso">
+			<upWarningLevelId>1</upWarningLevelId>
+		</levelThreshold>
+		<levelThreshold id="Aviso" name="Aviso" shortName="Aviso">
+			<upWarningLevelId>2</upWarningLevelId>
+		</levelThreshold>
+		<levelThreshold id="Alerta" name="Alerta" shortName="Alerta">
+			<upWarningLevelId>3</upWarningLevelId>
+		</levelThreshold>
+		<levelThreshold id="Emergencia" name="Emergencia" shortName="Emergencia">
+			<upWarningLevelId>4</upWarningLevelId>
+		</levelThreshold>
+		<levelThreshold id="Nivel de desborde" name="Nivel de desborde" shortName="Nivel de desborde">
+			<upWarningLevelId>5</upWarningLevelId>
+		</levelThreshold>
+	</thresholdGroup>
+</thresholdGroups>
