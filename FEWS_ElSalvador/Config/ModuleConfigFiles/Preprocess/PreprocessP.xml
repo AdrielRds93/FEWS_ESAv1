@@ -79,6 +79,124 @@
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>
+	<variable>
+		<variableId>MARN_5minToHourly</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_5min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>MARN_10minToHourly</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_10min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>MARN_15minToHourly</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_15min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>MARN_5minToDay</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_5min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>MARN_10minToDay</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_10min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>MARN_15minToDay</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_15min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>MARN_day</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_diaria</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>hourMerged</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>ESA_P</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>dayMerged</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>ESA_P</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--Deaccumulate rainfall to inst rainfall-->
 	<transformation id="MARN_Instantaneous_5min">
 		<deaccumulation>
 			<sum>
@@ -115,6 +233,118 @@
 			</sum>
 		</deaccumulation>
 	</transformation>
-	<!-- Spatial interpolation -->
+	<!--Aggregate to HOURLY measurement and combine it-->
+	<transformation id="MARN_Aggregation_5minToHourly">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>MARN_5min</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>MARN_5minToHourly</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<transformation id="MARN_Aggregation_10minToHourly">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>MARN_10min</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>MARN_10minToHourly</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<transformation id="MARN_Aggregation_15minToHourly">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>MARN_15min</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>MARN_15minToHourly</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<transformation id="Merge hourly data">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>MARN_5minToHourly</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>MARN_10minToHourly</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>MARN_15minToHourly</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>hourMerged</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<!--Aggregate to DAILY measurement and combine it-->
+	<transformation id="MARN_Aggregation_5minToDaily">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>MARN_5min</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>MARN_5minToDay</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<transformation id="MARN_Aggregation_10minToDaily">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>MARN_10min</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>MARN_10minToDay</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<transformation id="MARN_Aggregation_15minToDaily">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>MARN_15min</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>MARN_15minToDay</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<transformation id="Merge daily data">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>MARN_day</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>MARN_5minToDay</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>MARN_10minToDay</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>MARN_15minToDay</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>dayMerged</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
 	<!-- Combine hourly and daily -->
 </transformationModule>
