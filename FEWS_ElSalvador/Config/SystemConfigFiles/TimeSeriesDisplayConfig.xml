@@ -288,7 +288,7 @@
 			<precision>1</precision>
 			<inverted>true</inverted>
 		</parameterDisplayOptions>
-		<parameterDisplayOptions id="P.cuenca">
+		<parameterDisplayOptions id="P.basin">
 			<preferredColor>deep sky blue2</preferredColor>
 			<lineStyle>bar</lineStyle>
 			<min>0</min>

@@ -5,6 +5,7 @@
 	<!--FILTER For PI Web Service-->
 	<filter id="FEWS-ELSALVADOR" name="FEWS El Salvador">
 		<child foreignKey="Observations"/>
+		<child foreignKey="ObservedLempaBasin"/>
 		<child foreignKey="ForecastLempaBasin"/>
 	</filter>
 	<!--FILTERS-->
@@ -13,6 +14,9 @@
 		<child foreignKey="WaterStage"/>
 		<child foreignKey="Discharge"/>
 		<child foreignKey="Temperature"/>
+	</filter>
+	<filter id="ObservedLempaBasin" name="Observed data - By Basins">
+		<child foreignKey="StationLempa"/>
 	</filter>
 	<filter id="ForecastLempaBasin" name="Forecast data - By Basins">
 		<child foreignKey="GFSLempa"/>
@@ -117,6 +121,19 @@
 			<timeStep unit="minute" multiplier="10"/>
 			<relativeViewPeriod unit="day" start="-3" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<!--Observed data Lempa Basin-->
+	<filter id="StationLempa" name="Stations @ Lempa">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.basin</parameterId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0"/>
+			<readWriteMode>read only</readWriteMode>
 		</timeSeriesSet>
 	</filter>
 	<!--Forecast Lempa Basin-->
