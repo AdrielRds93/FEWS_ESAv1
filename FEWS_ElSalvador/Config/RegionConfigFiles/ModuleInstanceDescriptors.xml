@@ -31,4 +31,5 @@
 	<!--Mantenimiento de la base de datos-->
 	<!--Preprocess for Calibration-->
 	<moduleInstanceDescriptor id="ImportMARN_c"/>
+	<moduleInstanceDescriptor id="PreprocessP_c"/>
 </moduleInstanceDescriptors>

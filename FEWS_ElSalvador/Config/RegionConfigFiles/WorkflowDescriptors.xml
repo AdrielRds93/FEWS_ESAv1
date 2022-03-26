@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <workflowDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflowDescriptors.xsd" version="1.0">
 	<!-- Download data workflow -->
@@ -21,6 +21,9 @@
 	<!-- Archive workflows -->
 	<!-- Export workflows -->
 	<workflowDescriptor id="ImportarCalibracion" name="Calibration: import observations" forecast="false" visible="true" allowApprove="false">
+		<description>Importación de datos para la calibración</description>
+	</workflowDescriptor>
+	<workflowDescriptor id="PreprocesarCalibracion" name="Calibration: Preprocess observations" forecast="false" visible="true" allowApprove="false">
 		<description>Importación de datos para la calibración</description>
 	</workflowDescriptor>
 </workflowDescriptors>
