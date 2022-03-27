@@ -3,8 +3,7 @@
 <timeSeriesDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesDisplay.xsd" version="1.0">
 	<defaultViewPeriod unit="day" start="-20" end="14"/>
 	<thresholdDisplayConfig>
-		<thresholdDisplayOptions id="Sin alerta" visible="true">
-			<color>green</color>
+		<thresholdDisplayOptions id="Sin alerta" visible="false">
 			<backgroundOpaquenessPercentage>5</backgroundOpaquenessPercentage>
 			<lineStyle>dashed</lineStyle>
 			<labelAlignment>right</labelAlignment>

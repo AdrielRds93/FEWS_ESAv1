@@ -2,7 +2,7 @@
 <!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <thresholdWarningLevels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/thresholdWarningLevels.xsd">
 	<thresholdWarningLevel id="0" name="Sin alerta">
-		<color>green</color>
+		<color>white</color>
 		<iconName>default1.gif</iconName>
 		<historicOverlayIconName>default1.gif</historicOverlayIconName>
 		<forecastOverlayIconName>default1.gif</forecastOverlayIconName>
