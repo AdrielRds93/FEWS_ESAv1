@@ -6,7 +6,7 @@
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessGFS</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>P.basin</parameterId>
+			<parameterId>P.pro</parameterId>
 			<qualifierId>GFS</qualifierId>
 			<locationSetId>SubbasinLempa</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>

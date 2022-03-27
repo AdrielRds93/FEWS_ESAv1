@@ -6,7 +6,7 @@
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>P.basin</parameterId>
+			<parameterId>P.pro</parameterId>
 			<qualifierId>GEFS</qualifierId>
 			<locationSetId>SubbasinLempa</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
@@ -21,7 +21,7 @@
 		<timeSeriesSet>
 			<moduleInstanceId>AggregateInputsGEFS</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>P.basin</parameterId>
+			<parameterId>P.pro</parameterId>
 			<qualifierId>GEFS</qualifierId>
 			<locationSetId>SubbasinLempa</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
