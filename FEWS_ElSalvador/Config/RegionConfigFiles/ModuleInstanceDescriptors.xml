@@ -17,6 +17,10 @@
 	<moduleInstanceDescriptor id="PreprocessGFS"/>
 	<moduleInstanceDescriptor id="PreprocessGEFS"/>
 	<moduleInstanceDescriptor id="PreprocessWRF"/>
+	<moduleInstanceDescriptor id="MergeInputsGFS"/>
+	<moduleInstanceDescriptor id="MergeInputsGEFS"/>
+	<moduleInstanceDescriptor id="AggregateInputsGFS"/>
+	<moduleInstanceDescriptor id="AggregateInputsGEFS"/>	
 	<!--Forecast Length Estimator Modules-->
 	<moduleInstanceDescriptor id="ForecastLenghtEstimatorGFS"/>
 	<moduleInstanceDescriptor id="ForecastLenghtEstimatorGEFS"/>
