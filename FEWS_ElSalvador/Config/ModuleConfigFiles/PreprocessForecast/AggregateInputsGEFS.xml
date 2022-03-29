@@ -24,7 +24,7 @@
 			<parameterId>P.pro</parameterId>
 			<qualifierId>GEFS</qualifierId>
 			<locationSetId>SubbasinLempa</locationSetId>
-			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep id="daily09"/>
 			<relativeViewPeriod unit="hour" start="-240" end="336" endOverrulable="true"/>
 			<readWriteMode>read only</readWriteMode>
