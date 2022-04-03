@@ -126,11 +126,6 @@
 					<plotId>Cuencas_GFS</plotId>
 				</display>
 			</displayGroup>
-			<displayGroup name="GEFS">
-				<display name="Cuencas_GEFS_Percentiles">
-					<plotId>Cuencas_GEFS_Percentiles</plotId>
-				</display>
-			</displayGroup>
 		</displayGroup>
 	</displayGroup>
 </displayGroups>
