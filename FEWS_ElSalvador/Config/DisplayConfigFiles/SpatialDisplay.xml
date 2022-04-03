@@ -592,6 +592,7 @@
 				<timeStep unit="hour" multiplier="1"/>
 				<readWriteMode>read complete forecast</readWriteMode>
 			</timeSeriesSet>
+			<classBreaksId>Class.Temperatura</classBreaksId>
 		</gridPlot>
 	</gridPlotGroup>
 </gridDisplay>
