@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>https://gpm1.gesdisc.eosdis.nasa.gov/opendap/GPM_L3/GPM_3IMERGHHE.06/%TIME_ZERO(yyyy)%/%TIME_ZERO(DDD)%/catalog.xml</serverUrl>
+			<fileNameObservationDateTimePattern>'3B-HHR-E.MS.MRG.3IMERG.'yyyyMMdd'-S'HHmmss'-E?'</fileNameObservationDateTimePattern>
+			<user>%USERGPM%</user>
+			<password>%PSWRDGPM%</password>
+			<relativeViewPeriod unit="hour" start="-6" end="0" startOverrulable="true" endOverrulable="true"/>
+			<idMapId>IdImportGPM</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneOffset>+00:00</timeZoneOffset>
+			</importTimeZone>
+			<dataFeedId>GPM</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportGPM</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationId>GPM</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="30"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<externUnit parameterId="P.obs" unit="mm" cumulativeSum="true"/>
+	</import>
+</timeSeriesImportRun>

@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <workflowDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflowDescriptors.xsd" version="1.0">
 	<!-- Download data workflow -->
 	<!-- Import data workflow -->
+	<workflowDescriptor id="ImportGPM" name="Import GPM observations" forecast="false" visible="true" allowApprove="false">
+		<description>Import GPM observed data</description>
+	</workflowDescriptor>
 	<!-- preprocess data workflow -->
 	<!-- Import forecast workflow -->
 	<workflowDescriptor id="Import" name="Import observations" forecast="false" visible="true" allowApprove="false">

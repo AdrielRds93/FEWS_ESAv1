@@ -458,6 +458,31 @@
 			<movingAccumulationTimeSpan unit="hour" multiplier="72"/>
 			<classBreaksId>Class.Precipitacion</classBreaksId>
 		</gridPlot>
+		<gridPlot id="GPM hourly precipitation [mm]" name="GPM Hourly precipitation [mm]">
+			<dataLayer>
+				<onlyCircles>true</onlyCircles>
+				<circleSizeFunction>12</circleSizeFunction>
+				<circleBorderSize>1</circleBorderSize>
+				<circleBorderColor>gray</circleBorderColor>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportGPM</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>P.obs</parameterId>
+					<locationId>GPM</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="minute" multiplier="30"/>
+					<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</dataLayer>
+			<movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="72"/>
+			<classBreaksId>Class.Precipitacion</classBreaksId>
+		</gridPlot>
 		<gridPlot id="Mean areal precipitation[mm]" name="Mean areal precipitation [mm]">
 			<timeSeriesSet>
 				<moduleInstanceId>PreprocessP</moduleInstanceId>

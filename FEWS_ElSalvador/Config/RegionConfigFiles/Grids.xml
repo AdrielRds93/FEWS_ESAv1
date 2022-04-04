@@ -44,4 +44,15 @@
             </lowerRight>
         </gridCorners>
 	</regular>
+	<regular locationId="GPM">
+		<rows>60</rows>
+		<columns>80</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>-93.25</x>
+			<y>16.05</y>
+		</firstCellCenter>
+		<xCellSize>0.1</xCellSize>
+		<yCellSize>0.1</yCellSize>
+	</regular>
 </grids>
