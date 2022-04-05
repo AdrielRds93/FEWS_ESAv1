@@ -1,0 +1,12 @@
+ADDITIONAL_LICENSE_INFO;49;6/l3e9MH7Xic6r8oKprKFow5HH9I4Vpgk5NS77PqM/k=
+ASSEMBLY_EXCEPTION;44;uZjNoQHloevPtf+c3ddu1DovIWlnZZLUKLfA14BmXyo=
+LICENSE;33;huBRa4iCdqSSsZ+ahPWoZu02kl+uFRCzqUoLYhPmkZI=
+colorimaging.md;167;BNYePo5x3UUuvlIAivU3jZ9mQNFFeK61FdxTdZc7AYk=
+freetype.md;25313;BxxrtqM4he67SWlnwjJqqLgF32RHUAzF22xv7B1Am0A=
+giflib.md;1138;sPezWjALeMZJ4ZPVI+KDN+MNy80g6PaY6md68SdAqvA=
+harfbuzz.md;2753;fKiFtACpQvi6EpWKiCZsJ4THPIbh9Yjux8ebjFVvrcE=
+jpeg.md;3997;XfQsEGO/YA+fSZ2ZaEoGVYtCYyWauPBidI1UnfJdeLA=
+lcms.md;1177;d2RqpD451MS0/Boh0sbAfnnS24PZRWmR+CAentpWbZE=
+libpng.md;5398;+eGg5VbzMJJG0wxi7xWd5+Ids5NhF23tpvtXghyYcuw=
+mesa3d.md;1170;GeFdAwDUKQhHX3Mw371ScpYmSOuxvwVP1Au9g56kTCg=
+opengl.md;1158;1TtwMZjJkJPgkEeRAfN1f+zrq2sxPi4VFnzDwkA52ps=
