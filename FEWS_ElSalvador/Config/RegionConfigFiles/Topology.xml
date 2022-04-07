@@ -7,7 +7,11 @@
 			<graceTime unit="hour" multiplier="3"/>
 			<localRun>false</localRun>
 		</node>
-		<graceTime unit="hour" multiplier="3"/>
+		<node id="ImportObservations_GPM" name="GPM">
+			<workflowId>ImportGPM</workflowId>
+			<graceTime unit="hour" multiplier="3"/>
+			<localRun>false</localRun>
+		</node>
 	</nodes>
 	<nodes id="Import_Forecasts" name="Import and process forecast">
 		<node id="ImportForecasts_GFS" name="GFS">

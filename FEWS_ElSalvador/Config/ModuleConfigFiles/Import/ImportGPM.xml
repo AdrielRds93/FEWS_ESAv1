@@ -3,18 +3,18 @@
 	<import>
 		<general>
 			<importType>NETCDF-CF_GRID</importType>
+			<folder>$IMPORT_FOLDER$/GPM</folder>
+<!--
 			<serverUrl>https://gpm1.gesdisc.eosdis.nasa.gov/opendap/GPM_L3/GPM_3IMERGHHE.06/%TIME_ZERO(yyyy)%/%TIME_ZERO(DDD)%/catalog.xml</serverUrl>
 			<backupServerUrl>https://gpm2.gesdisc.eosdis.nasa.gov/opendap/GPM_L3/GPM_3IMERGHHE.06/%TIME_ZERO(yyyy)%/%TIME_ZERO(DDD)%/catalog.xml</backupServerUrl>
 			<fileNameObservationDateTimePattern>'3B-HHR-E.MS.MRG.3IMERG.'yyyyMMdd'-S'HHmmss'-E?'</fileNameObservationDateTimePattern>
-<!--
 			<user>%USERGPM%</user>
 			<password>%PSWRDGPM%</password>
 -->
-			<relativeViewPeriod unit="hour" start="-6" end="0" startOverrulable="true" endOverrulable="true"/>
+			<fileNameObservationDateTimePattern>'3B-HHR-E.MS.MRG.3IMERG.'yyyyMMdd'-S'HHmmss'-E?'</fileNameObservationDateTimePattern>
 			<idMapId>IdImportGPM</idMapId>
 			<unitConversionsId>ImportUnitConversions</unitConversionsId>
 			<missingValue>-999</missingValue>
-
 			<importTimeZone>
 				<timeZoneOffset>+00:00</timeZoneOffset>
 			</importTimeZone>
