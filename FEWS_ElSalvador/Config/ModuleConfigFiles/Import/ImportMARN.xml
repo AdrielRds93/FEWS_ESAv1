@@ -4,7 +4,7 @@
 	<import>
 		<general>
 			<importType>csv</importType>
-			<folder>$IMPORT_FOLDER$/Datos/Convencionales</folder>
+			<folder>$IMPORT_FOLDER$/Datos/Convencional</folder>
 			<idMapId>IdImportMARN_daily</idMapId>
 			<unitConversionsId>ImportUnitConversions</unitConversionsId>
 			<importTimeZone>
