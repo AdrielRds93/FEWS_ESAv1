@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskProperties xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/taskProperties.xsd" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <workflowId>ImportForecast</workflowId>
+    <taskSelection>
+        <singleTask>
+		<time0>%TIME0%</time0>
+        </singleTask>
+    </taskSelection>
+    <forecastPriority>Normal</forecastPriority>
+    <makeForcastCurrent>true</makeForcastCurrent>
+</taskProperties>
