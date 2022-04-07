@@ -114,6 +114,7 @@ java/lang/Byte
 java/lang/Short
 java/lang/Integer
 java/lang/Long
+java/util/Iterator
 java/lang/NullPointerException
 java/lang/ArithmeticException
 java/io/ObjectStreamField
@@ -172,7 +173,6 @@ java/util/Collections$SynchronizedSet
 java/util/Collections$SynchronizedCollection
 java/lang/reflect/Array
 java/util/concurrent/ConcurrentHashMap$EntryIterator
-java/util/Iterator
 java/util/concurrent/ConcurrentHashMap$BaseIterator
 java/util/concurrent/ConcurrentHashMap$Traverser
 java/util/concurrent/ConcurrentHashMap$MapEntry
@@ -195,7 +195,6 @@ java/io/FilterOutputStream
 java/io/BufferedOutputStream
 java/io/OutputStreamWriter
 java/io/Writer
-sun/nio/cs/StreamEncoder
 java/nio/charset/Charset
 sun/nio/cs/StandardCharsets
 java/nio/charset/spi/CharsetProvider
@@ -229,6 +228,7 @@ jdk/internal/reflect/Reflection
 java/util/HashMap$Node
 jdk/internal/reflect/NativeConstructorAccessorImpl
 jdk/internal/reflect/DelegatingConstructorAccessorImpl
+sun/nio/cs/StreamEncoder
 sun/nio/cs/SingleByte$Encoder
 sun/nio/cs/ArrayEncoder
 java/nio/charset/CharsetEncoder
@@ -552,6 +552,9 @@ java/lang/Package
 java/lang/NamedPackage
 java/lang/Package$VersionInfo
 sun/nio/ByteBuffered
+java/util/zip/CRC32
+java/util/zip/Checksum
+java/util/zip/Checksum$1
 java/security/SecureClassLoader$CodeSourceKey
 java/security/SecureClassLoader$1
 sun/security/util/LazyCodeSourcePermissionCollection
