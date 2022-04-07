@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<!-- Importar Pronosticos -->
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportGEFS</moduleInstanceId>
+	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<workflowId>PreprocessGEFS</workflowId>
+	</activity>
+</workflow>

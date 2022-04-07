@@ -15,6 +15,18 @@
 		<description>Importar pronosticos meteorologicos NOAA</description>
 		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
 	</workflowDescriptor>
+	<workflowDescriptor id="ImportForecastGFS" name="Import meteorological forecast GFS" forecast="true" visible="true" autoApprove="false">
+		<description>Importar pronosticos meteorologicos NOAA - GFS</description>
+		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportForecastGEFS" name="Import meteorological forecast GEFS" forecast="true" visible="true" autoApprove="false">
+		<description>Importar pronosticos meteorologicos NOAA - GEFS</description>
+		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportForecastWRF" name="Import meteorological forecast WRF" forecast="true" visible="true" autoApprove="false">
+		<description>Importar pronosticos meteorologicos WRF</description>
+		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	</workflowDescriptor>
 	<!-- preprocess forecast workflows -->
 	<!--Update workflows-->
 	<!--Forecast GFS workflows-->
