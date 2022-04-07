@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<variable>
+		<variableId>P</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-240" end="336" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_1d</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>AggregateInputsGFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.basin</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep id="daily09"/>
+			<relativeViewPeriod unit="hour" start="-240" end="336" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="AggregateGFS">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>P</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>P_1d</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+</transformationModule>

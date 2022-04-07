@@ -3,6 +3,9 @@
 <workflowDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflowDescriptors.xsd" version="1.0">
 	<!-- Download data workflow -->
 	<!-- Import data workflow -->
+	<workflowDescriptor id="ImportGPM" name="Import GPM observations" forecast="false" visible="true" allowApprove="false">
+		<description>Import GPM observed data</description>
+	</workflowDescriptor>
 	<!-- preprocess data workflow -->
 	<!-- Import forecast workflow -->
 	<workflowDescriptor id="Import" name="Import observations" forecast="false" visible="true" allowApprove="false">
@@ -21,6 +24,9 @@
 	<!-- Archive workflows -->
 	<!-- Export workflows -->
 	<workflowDescriptor id="ImportarCalibracion" name="Calibration: import observations" forecast="false" visible="true" allowApprove="false">
+		<description>Importación de datos para la calibración</description>
+	</workflowDescriptor>
+	<workflowDescriptor id="PreprocesarCalibracion" name="Calibration: Preprocess observations" forecast="false" visible="true" allowApprove="false">
 		<description>Importación de datos para la calibración</description>
 	</workflowDescriptor>
 </workflowDescriptors>

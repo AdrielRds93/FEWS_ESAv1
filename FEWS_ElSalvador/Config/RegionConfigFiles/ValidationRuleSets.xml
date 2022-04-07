@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<validationRuleSets version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/validationRuleSets.xsd">
+	<!--Import precipitacion-->
+	<validationRuleSet validationRuleSetId="Precipitation_5min" timeZone="0">
+		<extremeValues>
+			<hardMax constantLimit="20"/>
+			<hardMin constantLimit="0.0"/>
+			<softMax constantLimit="15"/>
+		</extremeValues>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_5min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</validationRuleSet>
+	<validationRuleSet validationRuleSetId="Precipitation_10min" timeZone="0">
+		<extremeValues>
+			<hardMax constantLimit="40"/>
+			<hardMin constantLimit="0.0"/>
+			<softMax constantLimit="30"/>
+		</extremeValues>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_10min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="10"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</validationRuleSet>
+	<validationRuleSet validationRuleSetId="Precipitation_15min" timeZone="0">
+		<extremeValues>
+			<hardMax constantLimit="60"/>
+			<hardMin constantLimit="0.0"/>
+			<softMax constantLimit="45"/>
+		</extremeValues>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_15min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</validationRuleSet>
+	<validationRuleSet validationRuleSetId="Precipitacion_24h" timeZone="0">
+		<extremeValues>
+			<hardMax constantLimit="500"/>
+			<hardMin constantLimit="0.0"/>
+		</extremeValues>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_diaria</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</validationRuleSet>
+	<validationRuleSet validationRuleSetId="H_negative" timeZone="0">
+		<extremeValues>
+			<hardMin constantLimit="0"/>
+		</extremeValues>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationSetId>MARN_H_5min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationSetId>MARN_H_15min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</validationRuleSet>
+</validationRuleSets>

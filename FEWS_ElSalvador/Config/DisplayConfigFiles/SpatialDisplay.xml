@@ -154,6 +154,7 @@
 					<file>ElSalvador_Departamentos.shp</file>
 					<geoDatum>WGS 1984</geoDatum>
 					<visible>false</visible>
+					<toolTip>%NA2%</toolTip>
 					<lineColor>black</lineColor>
 					<fillRgbColor>FFFFFF</fillRgbColor>
 					<opaquenessPercentage>20</opaquenessPercentage>
@@ -162,29 +163,42 @@
 					<file>ElSalvador_Municipios.shp</file>
 					<geoDatum>WGS 1984</geoDatum>
 					<visible>false</visible>
+					<toolTip>%NA2%</toolTip>
 					<lineColor>black</lineColor>
 					<fillRgbColor>FFFFFF</fillRgbColor>
 					<opaquenessPercentage>20</opaquenessPercentage>
 				</esriShapeLayer>
 			</layerGroup>
-			<layerGroup id="Cuencas hidrograficas">
-				<esriShapeLayer id="Regiones">
+			<layerGroup id="Watersheds">
+				<esriShapeLayer id="Regiones" name="Hydrological Regions">
 					<description>Regions</description>
 					<file>Regions.shp</file>
 					<geoDatum>WGS 1984</geoDatum>
 					<visible>true</visible>
+					<toolTip>%region%</toolTip>
 					<lineColor>black</lineColor>
 					<fillRgbColor>FFFFFF</fillRgbColor>
 					<opaquenessPercentage>20</opaquenessPercentage>
 					<lineWidth value="2"/>
 				</esriShapeLayer>
-				<esriShapeLayer id="Red hidrográfica">
+				<esriShapeLayer id="Red hidrográfica" name="Drainage">
 					<description>Rivers</description>
 					<file>Rivers.shp</file>
 					<geoDatum>WGS 1984</geoDatum>
-					<visible>true</visible>
+					<visible>false</visible>
 					<lineColor>light blue</lineColor>
 					<opaquenessPercentage>20</opaquenessPercentage>
+				</esriShapeLayer>
+				<esriShapeLayer id="Lempa" name="Lempa Subbasins">
+					<description>Lempa subbasins</description>
+					<file>Subbasin_Lempa.shp</file>
+					<geoDatum>WGS 1984</geoDatum>
+					<visible>false</visible>
+					<toolTip>%BasinName%</toolTip>
+					<lineColor>black</lineColor>
+					<fillRgbColor>FFFFFF</fillRgbColor>
+					<opaquenessPercentage>20</opaquenessPercentage>
+					<lineWidth value="2"/>
 				</esriShapeLayer>
 			</layerGroup>
 		</geoMap>
@@ -357,8 +371,8 @@
 					<opaquenessPercentage>20</opaquenessPercentage>
 				</esriShapeLayer>
 			</layerGroup>
-			<layerGroup id="Cuencas hidrograficas">
-				<esriShapeLayer id="Regiones">
+			<layerGroup id="Watersheds">
+				<esriShapeLayer id="Regiones" name="Hydrological Regions">
 					<description>Regions</description>
 					<file>Regions.shp</file>
 					<geoDatum>WGS 1984</geoDatum>
@@ -369,13 +383,24 @@
 					<opaquenessPercentage>20</opaquenessPercentage>
 					<lineWidth value="2"/>
 				</esriShapeLayer>
-				<esriShapeLayer id="Red hidrográfica">
+				<esriShapeLayer id="Red hidrográfica" name="Drainage">
 					<description>Rivers</description>
 					<file>Rivers.shp</file>
 					<geoDatum>WGS 1984</geoDatum>
-					<visible>true</visible>
+					<visible>false</visible>
 					<lineColor>light blue</lineColor>
 					<opaquenessPercentage>20</opaquenessPercentage>
+				</esriShapeLayer>
+				<esriShapeLayer id="Lempa" name="Lempa Subbasins">
+					<description>Lempa subbasins</description>
+					<file>Subbasin_Lempa.shp</file>
+					<geoDatum>WGS 1984</geoDatum>
+					<visible>false</visible>
+					<toolTip>%BasinName%</toolTip>
+					<lineColor>black</lineColor>
+					<fillRgbColor>FFFFFF</fillRgbColor>
+					<opaquenessPercentage>20</opaquenessPercentage>
+					<lineWidth value="2"/>
 				</esriShapeLayer>
 			</layerGroup>
 		</geoMap>
@@ -393,7 +418,6 @@
 					<moduleInstanceId>PreprocessP</moduleInstanceId>
 					<valueType>scalar</valueType>
 					<parameterId>P.obs</parameterId>
-					<qualifierId>q3</qualifierId>
 					<locationSetId>ESA_P</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
 					<timeStep id="daily07"/>
@@ -419,10 +443,34 @@
 					<moduleInstanceId>PreprocessP</moduleInstanceId>
 					<valueType>scalar</valueType>
 					<parameterId>P.obs</parameterId>
-					<qualifierId>q1</qualifierId>
 					<locationSetId>ESA_P</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep unit="hour"/>
+					<timeStep unit="hour" multiplier="1"/>
+					<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</dataLayer>
+			<movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="72"/>
+			<classBreaksId>Class.Precipitacion</classBreaksId>
+		</gridPlot>
+		<gridPlot id="GPM hourly precipitation [mm]" name="GPM Hourly precipitation [mm]">
+			<dataLayer>
+				<onlyCircles>true</onlyCircles>
+				<circleSizeFunction>12</circleSizeFunction>
+				<circleBorderSize>1</circleBorderSize>
+				<circleBorderColor>gray</circleBorderColor>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportGPM</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>P.obs</parameterId>
+					<locationId>GPM</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="minute" multiplier="30"/>
 					<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 					<readWriteMode>add originals</readWriteMode>
 				</timeSeriesSet>
@@ -440,7 +488,7 @@
 				<moduleInstanceId>PreprocessP</moduleInstanceId>
 				<valueType>scalar</valueType>
 				<parameterId>P.basin</parameterId>
-				<locationSetId>CuencasESA</locationSetId>
+				<locationSetId>SubbasinLempa</locationSetId>
 				<timeSeriesType>external historical</timeSeriesType>
 				<timeStep unit="hour" multiplier="3"/>
 				<relativeViewPeriod unit="hour" start="-240" end="0"/>
@@ -463,10 +511,10 @@
 				<circleBorderSize>1</circleBorderSize>
 				<circleBorderColor>gray</circleBorderColor>
 				<timeSeriesSet>
-					<moduleInstanceId>PreprocessQ</moduleInstanceId>
+					<moduleInstanceId>PreprocessHQ</moduleInstanceId>
 					<valueType>scalar</valueType>
 					<parameterId>Q.obs</parameterId>
-					<locationSetId>ESA_Q</locationSetId>
+					<locationSetId>MARN_Q</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
 					<timeStep unit="hour" multiplier="3"/>
 					<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
@@ -569,6 +617,7 @@
 				<timeStep unit="hour" multiplier="1"/>
 				<readWriteMode>read complete forecast</readWriteMode>
 			</timeSeriesSet>
+			<classBreaksId>Class.Temperatura</classBreaksId>
 		</gridPlot>
 	</gridPlotGroup>
 </gridDisplay>

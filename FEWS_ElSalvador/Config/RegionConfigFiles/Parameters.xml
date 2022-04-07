@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <parameterGroups version="1.0" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
+	<parameterGroup id="Valor_res0.01">
+		<parameterType>instantaneous</parameterType>
+		<unit>-</unit>
+		<valueResolution>0.001</valueResolution>
+		<parameter id="Fraction" name="Fraction">
+			<shortName>Fraction</shortName>
+			<valueResolution>0.0001</valueResolution>
+		</parameter>
+	</parameterGroup>
 	<parameterGroup id="Precipitation">
 		<parameterType>accumulative</parameterType>
 		<unit>mm</unit>

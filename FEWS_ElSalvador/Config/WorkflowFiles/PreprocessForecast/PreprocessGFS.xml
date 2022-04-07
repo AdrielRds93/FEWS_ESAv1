@@ -8,4 +8,12 @@
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>PreprocessGFS</moduleInstanceId>
 	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>AggregateInputsGFS</moduleInstanceId>
+	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>MergeInputsGFS</moduleInstanceId>
+	</activity>
 </workflow>

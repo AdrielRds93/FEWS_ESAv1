@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<variable>
+		<variableId>MARN_5min_acc_C</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs.acc</parameterId>
+			<locationSetId>MARN_P_5min_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>MARN_10min_acc_C</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs.acc</parameterId>
+			<locationSetId>MARN_P_10min_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="10"/>
+			<relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>MARN_5min_C</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_5min_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>MARN_10min_C</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_10min_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="10"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>MARN_5minToHourly_C</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_5min_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>MARN_10minToHourly_C</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_10min_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>MARN_5minToDay_C</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_5min_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>MARN_10minToDay_C</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_10min_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>MARN_day_C</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_diaria_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>hourMerged_C</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<qualifierId>q1</qualifierId>
+			<locationSetId>ESA_P_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>dayMerged_C</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<qualifierId>q3</qualifierId>
+			<locationSetId>ESA_P_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>hourCuencas_C</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.basin</parameterId>
+			<qualifierId>q1</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>dayCuencas_C</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.basin</parameterId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>dayCuencas.hour_C</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.basin</parameterId>
+			<qualifierId>q3</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>hourCuencas.day_C</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.basin</parameterId>
+			<qualifierId>q2</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>fraction.day_C</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Fraction</parameterId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>fraction.hour_C</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Fraction</parameterId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>hourCuencas.hour_C</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.basin</parameterId>
+			<qualifierId>q2</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Cuenca.hour_C</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.basin</parameterId>
+			<qualifierId>q2</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Cuenca.3hour_C</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.basin</parameterId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--Deaccumulate rainfall to inst rainfall-->
+	<transformation id="MARN_Instantaneous_5min_C">
+		<deaccumulation>
+			<sum>
+				<inputVariable>
+					<variableId>MARN_5min_acc_C</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>MARN_5min_C</variableId>
+				</outputVariable>
+			</sum>
+		</deaccumulation>
+	</transformation>
+	<transformation id="MARN_Instantaneous_10min_C">
+		<deaccumulation>
+			<sum>
+				<inputVariable>
+					<variableId>MARN_10min_acc_C</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>MARN_10min_C</variableId>
+				</outputVariable>
+			</sum>
+		</deaccumulation>
+	</transformation>
+	<!--Aggregate to HOURLY measurement and combine it-->
+	<transformation id="MARN_Aggregation_5minToHourly_C">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>MARN_5min_C</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>MARN_5minToHourly_C</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<transformation id="MARN_Aggregation_10minToHourly">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>MARN_10min_C</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>MARN_10minToHourly_C</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<transformation id="Merge hourly data">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>MARN_5minToHourly_C</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>MARN_10minToHourly_C</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>hourMerged_C</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<!--Aggregate to DAILY measurement and combine it-->
+	<transformation id="MARN_Aggregation_5minToDaily_C">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>MARN_5min_C</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>MARN_5minToDay_C</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<transformation id="MARN_Aggregation_10minToDaily_C">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>MARN_10min_C</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>MARN_10minToDay_C</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<transformation id="Merge daily data_C">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>MARN_day_C</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>MARN_5minToDay_C</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>MARN_10minToDay_C</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>dayMerged_C</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<!-- Spatial interpolation (Thiessen) in subbasin Lempa-->
+	<transformation id="ThiessenPolygon day_C">
+		<interpolationSpatial>
+			<thiessenPolygon>
+				<inputVariable>
+					<variableId>dayMerged_C</variableId>
+				</inputVariable>
+				<distanceGeoDatum>UTM21S</distanceGeoDatum>
+				<outputVariable>
+					<variableId>dayCuencas_C</variableId>
+				</outputVariable>
+			</thiessenPolygon>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="ThiessenPolygon hour_C">
+		<interpolationSpatial>
+			<thiessenPolygon>
+				<inputVariable>
+					<variableId>hourMerged_C</variableId>
+				</inputVariable>
+				<distanceGeoDatum>UTM21S</distanceGeoDatum>
+				<outputVariable>
+					<variableId>hourCuencas_C</variableId>
+				</outputVariable>
+			</thiessenPolygon>
+		</interpolationSpatial>
+	</transformation>
+	<!-- Combine hourly and daily -->
+	<transformation id="cuencaDay2hour_C">
+		<disaggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>dayCuencas_C</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>dayCuencas.hour_C</variableId>
+				</outputVariable>
+			</accumulative>
+		</disaggregation>
+	</transformation>
+	<transformation id="cuencaHour2day_C">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>hourCuencas_C</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>hourCuencas.day_C</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<transformation id="CalcFractions_C">
+		<user>
+			<simple>
+				<expression>dayCuencas_C/hourCuencas.day_C</expression>
+				<outputVariable>
+					<variableId>fraction.day_C</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="CalcFractions_C">
+		<disaggregation>
+			<meanToMean>
+				<inputVariable>
+					<variableId>fraction.day_C</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>fraction.hour_C</variableId>
+				</outputVariable>
+			</meanToMean>
+		</disaggregation>
+	</transformation>
+	<transformation id="expression_C">
+		<user>
+			<simple>
+				<expression>fraction.hour_C*hourCuencas_C</expression>
+				<outputVariable>
+					<variableId>hourCuencas.hour_C</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="MergeCompleteWithHour_C">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>hourCuencas.hour_C</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>hourCuencas_C</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>dayCuencas.hour_C</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Cuenca.hour_C</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="Aggregate_C">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>Cuenca.hour_C</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Cuenca.3hour_C</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+</transformationModule>

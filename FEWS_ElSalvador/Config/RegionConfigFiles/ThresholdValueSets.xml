@@ -1,0 +1,607 @@
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<thresholdValueSets xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/thresholdValueSets.xsd">
+	<thresholdValueSet id="Warning_Laquesera" name="Warning La Quesera">
+		<levelThresholdValue>
+			<levelThresholdId>Sin alerta</levelThresholdId>
+			<value>0</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Preaviso</levelThresholdId>
+			<value>2.3</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Aviso</levelThresholdId>
+			<value>3.4</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Alerta</levelThresholdId>
+			<value>4.1</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Emergencia</levelThresholdId>
+			<value>4.3</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Nivel de desborde</levelThresholdId>
+			<value>4.5</value>
+		</levelThresholdValue>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationId>89</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-10" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</thresholdValueSet>
+	<thresholdValueSet id="Warning_Belloso" name="Warning Belloso">
+		<levelThresholdValue>
+			<levelThresholdId>Sin alerta</levelThresholdId>
+			<value>0</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Preaviso</levelThresholdId>
+			<value>1.8</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Aviso</levelThresholdId>
+			<value>2.7</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Alerta</levelThresholdId>
+			<value>3.2</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Emergencia</levelThresholdId>
+			<value>3.4</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Nivel de desborde</levelThresholdId>
+			<value>3.6</value>
+		</levelThresholdValue>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationId>28</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<relativeViewPeriod unit="day" start="-10" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</thresholdValueSet>
+	<thresholdValueSet id="Warning_CitalaR" name="Warning CitalaR">
+		<levelThresholdValue>
+			<levelThresholdId>Sin alerta</levelThresholdId>
+			<value>0</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Preaviso</levelThresholdId>
+			<value>2</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Aviso</levelThresholdId>
+			<value>3</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Alerta</levelThresholdId>
+			<value>3.6</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Emergencia</levelThresholdId>
+			<value>3.8</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Nivel de desborde</levelThresholdId>
+			<value>4</value>
+		</levelThresholdValue>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationId>250</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-10" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</thresholdValueSet>
+	<thresholdValueSet id="Warning_ElJocote" name="Warning El Jocote">
+		<levelThresholdValue>
+			<levelThresholdId>Sin alerta</levelThresholdId>
+			<value>0</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Preaviso</levelThresholdId>
+			<value>3.3</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Aviso</levelThresholdId>
+			<value>4.9</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Alerta</levelThresholdId>
+			<value>5.9</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Emergencia</levelThresholdId>
+			<value>6.2</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Nivel de desborde</levelThresholdId>
+			<value>6.5</value>
+		</levelThresholdValue>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationId>129</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-10" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</thresholdValueSet>
+	<thresholdValueSet id="Warning_ElPiro" name="Warning El Piro">
+		<levelThresholdValue>
+			<levelThresholdId>Sin alerta</levelThresholdId>
+			<value>0</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Preaviso</levelThresholdId>
+			<value>3</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Aviso</levelThresholdId>
+			<value>4.5</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Alerta</levelThresholdId>
+			<value>5.4</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Emergencia</levelThresholdId>
+			<value>5.7</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Nivel de desborde</levelThresholdId>
+			<value>6</value>
+		</levelThresholdValue>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationId>106</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-10" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</thresholdValueSet>
+	<thresholdValueSet id="Warning_Zapotillo" name="Warning Zapotillo">
+		<levelThresholdValue>
+			<levelThresholdId>Sin alerta</levelThresholdId>
+			<value>0</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Preaviso</levelThresholdId>
+			<value>4.5</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Aviso</levelThresholdId>
+			<value>6.8</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Alerta</levelThresholdId>
+			<value>8.1</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Emergencia</levelThresholdId>
+			<value>8.6</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Nivel de desborde</levelThresholdId>
+			<value>9</value>
+		</levelThresholdValue>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationId>2</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-10" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</thresholdValueSet>
+	<thresholdValueSet id="Warning_LasFlores" name="Warning LasFlores">
+		<levelThresholdValue>
+			<levelThresholdId>Sin alerta</levelThresholdId>
+			<value>0</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Preaviso</levelThresholdId>
+			<value>6</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Aviso</levelThresholdId>
+			<value>9</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Alerta</levelThresholdId>
+			<value>10.8</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Emergencia</levelThresholdId>
+			<value>11.4</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Nivel de desborde</levelThresholdId>
+			<value>12</value>
+		</levelThresholdValue>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationId>11</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-10" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</thresholdValueSet>
+	<thresholdValueSet id="Warning_Metayate" name="Warning Metayate">
+		<levelThresholdValue>
+			<levelThresholdId>Sin alerta</levelThresholdId>
+			<value>0</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Preaviso</levelThresholdId>
+			<value>3.3</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Aviso</levelThresholdId>
+			<value>3.5</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Alerta</levelThresholdId>
+			<value>6</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Emergencia</levelThresholdId>
+			<value>6.3</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Nivel de desborde</levelThresholdId>
+			<value>6.7</value>
+		</levelThresholdValue>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationId>257</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-10" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</thresholdValueSet>
+	<thresholdValueSet id="Warning_Montecristo" name="Warning Montecristo">
+		<levelThresholdValue>
+			<levelThresholdId>Sin alerta</levelThresholdId>
+			<value>0</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Preaviso</levelThresholdId>
+			<value>0.7</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Aviso</levelThresholdId>
+			<value>1</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Alerta</levelThresholdId>
+			<value>1.3</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Nivel de desborde</levelThresholdId>
+			<value>1.4</value>
+		</levelThresholdValue>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationId>59</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-10" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</thresholdValueSet>
+	<thresholdValueSet id="Warning_Osicala" name="Warning Osicala">
+		<levelThresholdValue>
+			<levelThresholdId>Sin alerta</levelThresholdId>
+			<value>0</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Preaviso</levelThresholdId>
+			<value>2.3</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Aviso</levelThresholdId>
+			<value>3.4</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Alerta</levelThresholdId>
+			<value>4.11</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Emergencia</levelThresholdId>
+			<value>4.3</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Nivel de desborde</levelThresholdId>
+			<value>4.5</value>
+		</levelThresholdValue>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationId>9</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<relativeViewPeriod unit="day" start="-10" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</thresholdValueSet>
+	<thresholdValueSet id="Warning_DosCerros" name="Warning DosCerros">
+		<levelThresholdValue>
+			<levelThresholdId>Sin alerta</levelThresholdId>
+			<value>0</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Preaviso</levelThresholdId>
+			<value>2.8</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Aviso</levelThresholdId>
+			<value>4.1</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Alerta</levelThresholdId>
+			<value>5</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Emergencia</levelThresholdId>
+			<value>5.2</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Nivel de desborde</levelThresholdId>
+			<value>5.5</value>
+		</levelThresholdValue>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationId>132</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-10" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</thresholdValueSet>
+	<thresholdValueSet id="Warning_SanIsidro" name="Warning SanIsidro">
+		<levelThresholdValue>
+			<levelThresholdId>Sin alerta</levelThresholdId>
+			<value>0</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Preaviso</levelThresholdId>
+			<value>2.3</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Aviso</levelThresholdId>
+			<value>3.4</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Alerta</levelThresholdId>
+			<value>4.1</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Emergencia</levelThresholdId>
+			<value>4.3</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Nivel de desborde</levelThresholdId>
+			<value>4.5</value>
+		</levelThresholdValue>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationId>88</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-10" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</thresholdValueSet>
+	<thresholdValueSet id="Warning_SanSimon" name="Warning SanSimon">
+		<levelThresholdValue>
+			<levelThresholdId>Sin alerta</levelThresholdId>
+			<value>0</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Aviso</levelThresholdId>
+			<value>3.4</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Alerta</levelThresholdId>
+			<value>4.9</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Emergencia</levelThresholdId>
+			<value>6.0</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Nivel de desborde</levelThresholdId>
+			<value>6.8</value>
+		</levelThresholdValue>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationId>253</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-10" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</thresholdValueSet>
+	<thresholdValueSet id="Warning_SanVicentehidro" name="Warning SanVicenteHidro">
+		<levelThresholdValue>
+			<levelThresholdId>Sin alerta</levelThresholdId>
+			<value>0</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Preaviso</levelThresholdId>
+			<value>2.5</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Aviso</levelThresholdId>
+			<value>3.8</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Alerta</levelThresholdId>
+			<value>4.5</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Emergencia</levelThresholdId>
+			<value>4.8</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Nivel de desborde</levelThresholdId>
+			<value>5</value>
+		</levelThresholdValue>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationId>90</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-10" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</thresholdValueSet>
+	<thresholdValueSet id="Warning_Tamarindo" name="Warning Tamarindo">
+		<levelThresholdValue>
+			<levelThresholdId>Sin alerta</levelThresholdId>
+			<value>0</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Preaviso</levelThresholdId>
+			<value>3.5</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Aviso</levelThresholdId>
+			<value>5.3</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Alerta</levelThresholdId>
+			<value>6.3</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Emergencia</levelThresholdId>
+			<value>6.7</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Nivel de desborde</levelThresholdId>
+			<value>7</value>
+		</levelThresholdValue>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationId>12</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-10" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</thresholdValueSet>
+	<thresholdValueSet id="Warning_Zoologico" name="Warning Zoologico">
+		<levelThresholdValue>
+			<levelThresholdId>Sin alerta</levelThresholdId>
+			<value>0</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Preaviso</levelThresholdId>
+			<value>2.2</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Aviso</levelThresholdId>
+			<value>3.3</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Alerta</levelThresholdId>
+			<value>3.9</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Emergencia</levelThresholdId>
+			<value>4.2</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Nivel de desborde</levelThresholdId>
+			<value>4.4</value>
+		</levelThresholdValue>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationId>264</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-10" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</thresholdValueSet>
+	<thresholdValueSet id="Warning_Bermeja" name="Warning Bermeja">
+		<levelThresholdValue>
+			<levelThresholdId>Sin alerta</levelThresholdId>
+			<value>0</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Preaviso</levelThresholdId>
+			<value>4.7</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Aviso</levelThresholdId>
+			<value>7.1</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Alerta</levelThresholdId>
+			<value>8.5</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Emergencia</levelThresholdId>
+			<value>9</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>Nivel de desborde</levelThresholdId>
+			<value>9.4</value>
+		</levelThresholdValue>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationId>267</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-10" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</thresholdValueSet>
+</thresholdValueSets>

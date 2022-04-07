@@ -61,6 +61,34 @@
 		</timeSeriesSet>
 	</variable>
 	<variable>
+		<variableId>PSuma010_Cuencas</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc.GEFS.Perc010</parameterId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-36" end="336" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>PSuma020_Cuencas</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc.GEFS.Perc020</parameterId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-36" end="336" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
 		<variableId>PSuma033_Cuencas</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
@@ -94,6 +122,34 @@
 			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>P.pro.acc.GEFS.Perc067</parameterId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-36" end="336" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>PSuma080_Cuencas</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc.GEFS.Perc080</parameterId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-36" end="336" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>PSuma090_Cuencas</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc.GEFS.Perc090</parameterId>
 			<locationSetId>SubbasinLempa</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
@@ -138,6 +194,32 @@
 			</sum>
 		</accumulation>
 	</transformation>
+	<transformation id="PSuma010">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>PSuma_Cuencas</variableId>
+				</inputVariable>
+				<value>10</value>
+				<outputVariable>
+					<variableId>PSuma010_Cuencas</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="PSuma020">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>PSuma_Cuencas</variableId>
+				</inputVariable>
+				<value>20</value>
+				<outputVariable>
+					<variableId>PSuma020_Cuencas</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
 	<transformation id="PSuma033">
 		<statisticsEnsemble>
 			<percentileExceedence>
@@ -173,6 +255,32 @@
 				<value>67</value>
 				<outputVariable>
 					<variableId>PSuma067_Cuencas</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="PSuma080">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>PSuma_Cuencas</variableId>
+				</inputVariable>
+				<value>80</value>
+				<outputVariable>
+					<variableId>PSuma080_Cuencas</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="PSuma090">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>PSuma_Cuencas</variableId>
+				</inputVariable>
+				<value>90</value>
+				<outputVariable>
+					<variableId>PSuma090_Cuencas</variableId>
 				</outputVariable>
 			</percentileExceedence>
 		</statisticsEnsemble>

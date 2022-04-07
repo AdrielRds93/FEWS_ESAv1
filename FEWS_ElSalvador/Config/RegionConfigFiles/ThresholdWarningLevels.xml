@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<thresholdWarningLevels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/thresholdWarningLevels.xsd">
+	<thresholdWarningLevel id="0" name="Sin alerta">
+		<color>white</color>
+		<iconName>default1.gif</iconName>
+		<historicOverlayIconName>default1.gif</historicOverlayIconName>
+		<forecastOverlayIconName>default1.gif</forecastOverlayIconName>
+	</thresholdWarningLevel>
+	<thresholdWarningLevel id="1" name="Preaviso">
+		<color>green</color>
+		<iconName>Warninglevel1.gif</iconName>
+		<historicOverlayIconName>Warninglevel1.gif</historicOverlayIconName>
+		<forecastOverlayIconName>Warninglevel1.gif</forecastOverlayIconName>
+	</thresholdWarningLevel>
+	<thresholdWarningLevel id="2" name="Aviso">
+		<color>yellow</color>
+		<iconName>warninglevel2.gif</iconName>
+		<historicOverlayIconName>warninglevel2.gif</historicOverlayIconName>
+		<forecastOverlayIconName>warninglevel2.gif</forecastOverlayIconName>
+	</thresholdWarningLevel>
+	<thresholdWarningLevel id="3" name="Alerta">
+		<color>red</color>
+		<iconName>warninglevel3.gif</iconName>
+		<historicOverlayIconName>warninglevel3.gif</historicOverlayIconName>
+		<forecastOverlayIconName>warninglevel3.gif</forecastOverlayIconName>
+	</thresholdWarningLevel>
+	<thresholdWarningLevel id="4" name="Emergencia">
+		<color>red</color>
+		<iconName>warninglevel4.gif</iconName>
+		<historicOverlayIconName>warninglevel4.gif</historicOverlayIconName>
+		<forecastOverlayIconName>warninglevel4.gif</forecastOverlayIconName>
+	</thresholdWarningLevel>
+	<thresholdWarningLevel id="5" name="Nivel de desborde">
+		<color>red</color>
+		<iconName>warninglevel5.gif</iconName>
+		<historicOverlayIconName>warninglevel5.gif</historicOverlayIconName>
+		<forecastOverlayIconName>warninglevel5.gif</forecastOverlayIconName>
+	</thresholdWarningLevel>
+</thresholdWarningLevels>
