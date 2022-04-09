@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <explorer version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/explorer.xsd">
 	<description>Configuration of the main FEWS display</description>
@@ -340,7 +340,7 @@
 		<timeZoneOffset>-06:00</timeZoneOffset>
 		<dateTimeFormat>yyyy-MM-dd HH:mm:ss</dateTimeFormat>
 		<cardinalTimeStep unit="minute" multiplier="15"/>
-		<!--<adjustSystemTimeAutomatically>true</adjustSystemTimeAutomatically>-->
+		<adjustSystemTimeAutomatically>true</adjustSystemTimeAutomatically>
 	</dateTime>
 	<logPanelConfig>
 		<clientFilter>
