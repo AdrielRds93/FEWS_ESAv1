@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <displayGroups xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0//displayGroups.xsd" version="1.0">
-	<plot id="Subbasin_GFS">
+	<plot id="Cuencas_GFS">
 		<subplot>
 			<inverted>false</inverted>
 			<plotWeight>1</plotWeight>
@@ -22,27 +22,12 @@
 			</line>
 		</subplot>
 	</plot>
-	<plot id="Subbasin_GEFS_Percentile">
+	<plot id="Cuencas_GEFS_Percentiles">
 		<subplot>
 			<inverted>false</inverted>
-			<plotWeight>2</plotWeight>
-			<line>
-				<color>blue</color>
-				<lineStyle>solid;thick</lineStyle>
-				<timeSeriesSet>
-					<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>P.pro.acc.GEFS.Perc050</parameterId>
-					<locationSetId>SubbasinLempa</locationSetId>
-					<timeSeriesType>external forecasting</timeSeriesType>
-					<timeStep unit="hour" multiplier="3"/>
-					<relativeViewPeriod unit="hour" start="-240" end="120" endOverrulable="true"/>
-					<readWriteMode>read only</readWriteMode>
-					<ensembleId>GEFS</ensembleId>
-				</timeSeriesSet>
-			</line>
+			<plotWeight>1</plotWeight>
 			<area>
-				<color>deep sky blue2</color>
+				<color>blue</color>
 				<opaquenessPercentage>10</opaquenessPercentage>
 				<timeSeriesSet>
 					<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
@@ -52,7 +37,6 @@
 					<timeSeriesType>external forecasting</timeSeriesType>
 					<timeStep unit="hour" multiplier="3"/>
 					<readWriteMode>read complete forecast</readWriteMode>
-					<ensembleId>GEFS</ensembleId>
 				</timeSeriesSet>
 				<timeSeriesSet>
 					<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
@@ -62,11 +46,10 @@
 					<timeSeriesType>external forecasting</timeSeriesType>
 					<timeStep unit="hour" multiplier="3"/>
 					<readWriteMode>read complete forecast</readWriteMode>
-					<ensembleId>GEFS</ensembleId>
 				</timeSeriesSet>
 			</area>
 			<area>
-				<color>deep sky blue2</color>
+				<color>blue</color>
 				<opaquenessPercentage>20</opaquenessPercentage>
 				<timeSeriesSet>
 					<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
@@ -76,7 +59,6 @@
 					<timeSeriesType>external forecasting</timeSeriesType>
 					<timeStep unit="hour" multiplier="3"/>
 					<readWriteMode>read complete forecast</readWriteMode>
-					<ensembleId>GEFS</ensembleId>
 				</timeSeriesSet>
 				<timeSeriesSet>
 					<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
@@ -86,11 +68,10 @@
 					<timeSeriesType>external forecasting</timeSeriesType>
 					<timeStep unit="hour" multiplier="3"/>
 					<readWriteMode>read complete forecast</readWriteMode>
-					<ensembleId>GEFS</ensembleId>
 				</timeSeriesSet>
 			</area>
 			<area>
-				<color>deep sky blue2</color>
+				<color>blue</color>
 				<opaquenessPercentage>50</opaquenessPercentage>
 				<timeSeriesSet>
 					<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
@@ -100,7 +81,6 @@
 					<timeSeriesType>external forecasting</timeSeriesType>
 					<timeStep unit="hour" multiplier="3"/>
 					<readWriteMode>read complete forecast</readWriteMode>
-					<ensembleId>GEFS</ensembleId>
 				</timeSeriesSet>
 				<timeSeriesSet>
 					<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
@@ -110,34 +90,9 @@
 					<timeSeriesType>external forecasting</timeSeriesType>
 					<timeStep unit="hour" multiplier="3"/>
 					<readWriteMode>read complete forecast</readWriteMode>
-					<ensembleId>GEFS</ensembleId>
 				</timeSeriesSet>
 			</area>
-		</subplot>
-	</plot>
-	<plot id="Subbasin_GEFS_Ensemble">
-		<subplot>
-			<inverted>false</inverted>
-			<plotWeight>2</plotWeight>
-			<line>
-				<color>gray90</color>
-				<lineStyle>solid;thick</lineStyle>
-				<timeSeriesSet>
-					<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>P.pro.acc</parameterId>
-					<qualifierId>GEFS</qualifierId>
-					<locationSetId>SubbasinLempa</locationSetId>
-					<timeSeriesType>external forecasting</timeSeriesType>
-					<timeStep unit="hour" multiplier="3"/>
-					<relativeViewPeriod unit="hour" start="-240" end="120" endOverrulable="true"/>
-					<readWriteMode>read only</readWriteMode>
-					<ensembleId>GEFS</ensembleId>
-				</timeSeriesSet>
-			</line>
-			<line>
-				<color>black</color>
-				<lineStyle>solid</lineStyle>
+			<lineStyle>solid;thick</lineStyle>
 				<timeSeriesSet>
 					<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
 					<valueType>scalar</valueType>
@@ -147,9 +102,7 @@
 					<timeStep unit="hour" multiplier="3"/>
 					<relativeViewPeriod unit="hour" start="-240" end="120" endOverrulable="true"/>
 					<readWriteMode>read only</readWriteMode>
-					<ensembleId>GEFS</ensembleId>
 				</timeSeriesSet>
-			</line>
 		</subplot>
 	</plot>
 	<displayGroup name="SubbasinLempa">
@@ -158,15 +111,14 @@
 				<locationSetId>SubbasinLempa</locationSetId>
 				<includeChildren>true</includeChildren>
 			</locationLoop>
-			<displayGroup id="GFS Subbasin" name="GFS Forecast">
-				<display name="Deterministic Forecast">
-					<plotId>Subbasin_GFS</plotId>
+			<displayGroup name="GFS">
+				<display name="GFS Cuencas">
+					<plotId>Cuencas_GFS</plotId>
 				</display>
 			</displayGroup>
-			<displayGroup id="GEFS Subbasin" name="GEFS Forecast">
-				<nodeId>GEFS</nodeId>
-				<display name="Ensemble Forecast">
-					<plotId>Subbasin_GEFS_Ensemble</plotId>
+			<displayGroup name="GEFS">
+				<display name="GEFS Cuencas">
+					<plotId>Cuencas_GEFS_Percentiles</plotId>
 				</display>
 			</displayGroup>
 		</displayGroup>

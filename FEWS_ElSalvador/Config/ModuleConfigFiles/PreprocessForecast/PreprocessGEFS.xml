@@ -26,7 +26,7 @@
 			<timeSeriesType>temporary external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="6"/>
 			<relativeViewPeriod unit="hour" start="-36" end="336" endOverrulable="true"/>
-			<readWriteMode>read only</readWriteMode>
+			<readWriteMode>add originals</readWriteMode>
 			<ensembleId>GEFS</ensembleId>
 		</timeSeriesSet>
 	</variable>
@@ -41,7 +41,7 @@
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<relativeViewPeriod unit="hour" start="-36" end="336" endOverrulable="true"/>
-			<readWriteMode>read only</readWriteMode>
+			<readWriteMode>add originals</readWriteMode>
 			<ensembleId>GEFS</ensembleId>
 		</timeSeriesSet>
 	</variable>
@@ -56,7 +56,7 @@
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<relativeViewPeriod unit="hour" start="-36" end="336" endOverrulable="true"/>
-			<readWriteMode>read only</readWriteMode>
+			<readWriteMode>add originals</readWriteMode>
 			<ensembleId>GEFS</ensembleId>
 		</timeSeriesSet>
 	</variable>
@@ -70,8 +70,7 @@
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<relativeViewPeriod unit="hour" start="-36" end="336" endOverrulable="true"/>
-			<readWriteMode>read only</readWriteMode>
-			<ensembleId>GEFS</ensembleId>
+			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -84,8 +83,7 @@
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<relativeViewPeriod unit="hour" start="-36" end="336" endOverrulable="true"/>
-			<readWriteMode>read only</readWriteMode>
-			<ensembleId>GEFS</ensembleId>
+			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -98,8 +96,7 @@
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<relativeViewPeriod unit="hour" start="-36" end="336" endOverrulable="true"/>
-			<readWriteMode>read only</readWriteMode>
-			<ensembleId>GEFS</ensembleId>
+			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -112,8 +109,7 @@
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<relativeViewPeriod unit="hour" start="-36" end="336" endOverrulable="true"/>
-			<readWriteMode>read only</readWriteMode>
-			<ensembleId>GEFS</ensembleId>
+			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -126,8 +122,7 @@
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<relativeViewPeriod unit="hour" start="-36" end="336" endOverrulable="true"/>
-			<readWriteMode>read only</readWriteMode>
-			<ensembleId>GEFS</ensembleId>
+			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -140,8 +135,7 @@
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<relativeViewPeriod unit="hour" start="-36" end="336" endOverrulable="true"/>
-			<readWriteMode>read only</readWriteMode>
-			<ensembleId>GEFS</ensembleId>
+			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -154,8 +148,7 @@
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<relativeViewPeriod unit="hour" start="-36" end="336" endOverrulable="true"/>
-			<readWriteMode>read only</readWriteMode>
-			<ensembleId>GEFS</ensembleId>
+			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<transformation id="P_6hr">
