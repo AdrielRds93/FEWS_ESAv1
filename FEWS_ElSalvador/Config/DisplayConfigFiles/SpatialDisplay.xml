@@ -458,6 +458,25 @@
 			<movingAccumulationTimeSpan unit="hour" multiplier="72"/>
 			<classBreaksId>Class.Precipitacion</classBreaksId>
 		</gridPlot>
+		<gridPlot id="Mean areal precipitation[mm]" name="Mean areal precipitation [mm]">
+			<timeSeriesSet>
+				<moduleInstanceId>PreprocessP</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>P.basin</parameterId>
+				<locationSetId>SubbasinLempa</locationSetId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="hour" multiplier="3"/>
+				<relativeViewPeriod unit="hour" start="-240" end="0"/>
+				<readWriteMode>read only</readWriteMode>
+			</timeSeriesSet>
+			<movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="72"/>
+			<classBreaksId>Class.Precipitacion</classBreaksId>
+		</gridPlot>
 		<gridPlot id="GPM hourly precipitation [mm]" name="GPM Hourly precipitation [mm]">
 			<dataLayer>
 				<onlyCircles>true</onlyCircles>
@@ -475,25 +494,6 @@
 					<readWriteMode>add originals</readWriteMode>
 				</timeSeriesSet>
 			</dataLayer>
-			<movingAccumulationTimeSpan unit="hour" multiplier="3"/>
-			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
-			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
-			<movingAccumulationTimeSpan unit="hour" multiplier="24"/>
-			<movingAccumulationTimeSpan unit="hour" multiplier="48"/>
-			<movingAccumulationTimeSpan unit="hour" multiplier="72"/>
-			<classBreaksId>Class.Precipitacion</classBreaksId>
-		</gridPlot>
-		<gridPlot id="Mean areal precipitation[mm]" name="Mean areal precipitation [mm]">
-			<timeSeriesSet>
-				<moduleInstanceId>PreprocessP</moduleInstanceId>
-				<valueType>scalar</valueType>
-				<parameterId>P.basin</parameterId>
-				<locationSetId>SubbasinLempa</locationSetId>
-				<timeSeriesType>external historical</timeSeriesType>
-				<timeStep unit="hour" multiplier="3"/>
-				<relativeViewPeriod unit="hour" start="-240" end="0"/>
-				<readWriteMode>read only</readWriteMode>
-			</timeSeriesSet>
 			<movingAccumulationTimeSpan unit="hour" multiplier="3"/>
 			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
 			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
