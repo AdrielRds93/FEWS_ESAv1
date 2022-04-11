@@ -157,8 +157,7 @@
 			<locationSetId>SubbasinLempa</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
-			<readWriteMode>read complete forecast</readWriteMode>
-			<ensembleId>GEFS</ensembleId>
+			<readWriteMode>read only</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
@@ -167,8 +166,7 @@
 			<locationSetId>SubbasinLempa</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
-			<readWriteMode>read complete forecast</readWriteMode>
-			<ensembleId>GEFS</ensembleId>
+			<readWriteMode>read only</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
@@ -177,8 +175,7 @@
 			<locationSetId>SubbasinLempa</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
-			<readWriteMode>read complete forecast</readWriteMode>
-			<ensembleId>GEFS</ensembleId>
+			<readWriteMode>read only</readWriteMode>
 		</timeSeriesSet>
 	</filter>
 	<filter id="WRFLempa" name="WRF @ Lempa">
