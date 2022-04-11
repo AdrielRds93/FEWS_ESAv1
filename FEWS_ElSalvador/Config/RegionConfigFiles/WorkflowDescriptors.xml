@@ -3,13 +3,13 @@
 <workflowDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflowDescriptors.xsd" version="1.0">
 	<!-- Download data workflow -->
 	<!-- Import data workflow -->
-	<workflowDescriptor id="ImportGPM" name="Import GPM observations" forecast="false" visible="true" allowApprove="false">
-		<description>Import GPM observed data</description>
-	</workflowDescriptor>
 	<!-- preprocess data workflow -->
 	<!-- Import forecast workflow -->
 	<workflowDescriptor id="Import" name="Import observations" forecast="false" visible="true" allowApprove="false">
 		<description>Import observed data</description>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportGPM" name="Import GPM observations" forecast="false" visible="true" allowApprove="false">
+		<description>Import GPM observed data</description>
 	</workflowDescriptor>
 	<workflowDescriptor id="ImportForecast" name="Import meteorological forecast" forecast="true" visible="true" autoApprove="false">
 		<description>Importar pronosticos meteorologicos NOAA</description>
