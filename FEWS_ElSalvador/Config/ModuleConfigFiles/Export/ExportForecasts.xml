@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by AppsPortables.com (AppsPortables.com) -->
+<timeSeriesExportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesExportRun.xsd">
+	<export>
+		<general>
+			<exportTypeStandard>csv</exportTypeStandard>
+			<folder>$EXPORT_FOLDER$/</folder>
+			<exportFileName>
+				<name>$LOCATION$_CurrentForecastsGEFS.csv</name>
+			</exportFileName>
+			<exportTimeZone>
+				<timeZoneName>GMT-6</timeZoneName>
+			</exportTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc.GEFS.Perc000</parameterId>
+			<locationId>$LOCATION$</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc.GEFS.Perc020</parameterId>
+			<locationId>$LOCATION$</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc.GEFS.Perc050</parameterId>
+			<locationId>$LOCATION$</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc.GEFS.Perc080</parameterId>
+			<locationId>$LOCATION$</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc.GEFS.Perc100</parameterId>
+			<locationId>$LOCATION$</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</export>
+	<export>
+		<general>
+			<exportTypeStandard>csv</exportTypeStandard>
+			<folder>$EXPORT_FOLDER$/</folder>
+			<exportFileName>
+				<name>$LOCATION$_CurrentForecastsGFS.csv</name>
+			</exportFileName>
+			<exportTimeZone>
+				<timeZoneName>GMT-6</timeZoneName>
+			</exportTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationId>$LOCATION$</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</export>
+</timeSeriesExportRun>

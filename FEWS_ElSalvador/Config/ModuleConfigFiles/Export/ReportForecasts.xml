@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<description>Plot Current Forecast with python</description>
+		<rootDir>%REGION_HOME%/Modules/PythonScripts</rootDir>
+		<workDir>%ROOT_DIR%</workDir>
+		<exportDir>%REGION_HOME%/Export</exportDir>
+		<importDir>%REGION_HOME%/Import</importDir>
+		<dumpFileDir>$DUMPFILEDIR$</dumpFileDir>
+		<dumpDir>%WORK_DIR%</dumpDir>
+		<diagnosticFile>%WORK_DIR%</diagnosticFile>
+	</general>
+	<activities>
+		<executeActivities>
+			<executeActivity>
+				<command>
+					<executable>$PYTHON_EXE$</executable>
+				</command>
+				<arguments>
+					<argument>%WORK_DIR%/plotCurrentForecasts.py</argument>
+					<argument>%REGION_HOME%/Export/$LOCATION$_CurrentForecastsGEFS.csv</argument>
+					<argument>%REGION_HOME%/Export/$LOCATION$_CurrentForecastsGFS.csv</argument>
+					<argument>%REGION_HOME%/Export/$LOCATION$_CurrentForecasts.png</argument>
+				</arguments>
+				<timeOut>60000</timeOut>
+				<waitForOtherRun>true</waitForOtherRun>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+<!--			<executeActivity>
+				<command>
+					<executable>$PYTHON_EXE$</executable>
+				</command>
+				<arguments>
+					<argument>%WORK_DIR%/sendReportTelegram_TEST.py</argument>
+					<argument>%ROOT_DIR%/Export/$LOCATION$_CurrentForecasts.png</argument>
+					<argument>Forecast $LOCATION$</argument>
+				</arguments>
+				<timeOut>60000</timeOut>
+				<waitForOtherRun>true</waitForOtherRun>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+-->		</executeActivities>
+	</activities>
+</generalAdapterRun>

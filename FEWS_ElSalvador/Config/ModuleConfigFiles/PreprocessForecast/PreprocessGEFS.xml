@@ -61,6 +61,19 @@
 		</timeSeriesSet>
 	</variable>
 	<variable>
+		<variableId>PSuma000_Cuencas</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc.GEFS.Perc000</parameterId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-36" end="336" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
 		<variableId>PSuma010_Cuencas</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
@@ -151,6 +164,19 @@
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>
+	<variable>
+		<variableId>PSuma100_Cuencas</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc.GEFS.Perc100</parameterId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-36" end="336" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
 	<transformation id="P_6hr">
 		<interpolationSpatial>
 			<average>
@@ -186,6 +212,30 @@
 				</outputVariable>
 			</sum>
 		</accumulation>
+	</transformation>
+	<transformation id="PSuma000">
+		<statisticsEnsemble>
+			<max>
+				<inputVariable>
+					<variableId>PSuma_Cuencas</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>PSuma000_Cuencas</variableId>
+				</outputVariable>
+			</max>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="PSuma100">
+		<statisticsEnsemble>
+			<min>
+				<inputVariable>
+					<variableId>PSuma_Cuencas</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>PSuma100_Cuencas</variableId>
+				</outputVariable>
+			</min>
+		</statisticsEnsemble>
 	</transformation>
 	<transformation id="PSuma010">
 		<statisticsEnsemble>

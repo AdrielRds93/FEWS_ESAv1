@@ -9,6 +9,8 @@
 	<moduleInstanceDescriptor id="ImportWRF"/>
 	<moduleInstanceDescriptor id="ImportGPM"/>
 	<!-- Exports -->
+	<moduleInstanceDescriptor id="ExportForecasts"/>
+	<moduleInstanceDescriptor id="ReportForecasts"/>
 	<!--Preprocess and analysis-->
 	<moduleInstanceDescriptor id="PreprocessP"/>
 	<moduleInstanceDescriptor id="PreprocessH"/>
