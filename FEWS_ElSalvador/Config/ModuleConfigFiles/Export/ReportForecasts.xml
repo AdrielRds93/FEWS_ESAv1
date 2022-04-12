@@ -26,19 +26,19 @@
 				<waitForOtherRun>true</waitForOtherRun>
 				<ignoreDiagnostics>true</ignoreDiagnostics>
 			</executeActivity>
-<!--			<executeActivity>
+			<executeActivity>
 				<command>
 					<executable>$PYTHON_EXE$</executable>
 				</command>
 				<arguments>
 					<argument>%WORK_DIR%/sendReportTelegram_TEST.py</argument>
-					<argument>%ROOT_DIR%/Export/$LOCATION$_CurrentForecasts.png</argument>
-					<argument>Forecast $LOCATION$</argument>
+					<argument>%REGION_HOME%/Export/$LOCATION$_CurrentForecasts.png</argument>
+					<argument>Pronóstico $LOCATION$</argument>
 				</arguments>
 				<timeOut>60000</timeOut>
 				<waitForOtherRun>true</waitForOtherRun>
 				<ignoreDiagnostics>true</ignoreDiagnostics>
 			</executeActivity>
--->		</executeActivities>
+		</executeActivities>
 	</activities>
 </generalAdapterRun>

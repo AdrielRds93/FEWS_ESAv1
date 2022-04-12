@@ -2,7 +2,7 @@ import sys
 import telegram
 
 bot = telegram.Bot(token='5218957595:AAFabMP37uZZtYSNuf_3UPyDxWQkZFAZw98')
-chat_id = -#AGREGARCHATID
+chat_id = -1001510346693
 filename = sys.argv[1]
 caption = sys.argv[2]
 
