@@ -32,7 +32,7 @@ ax.plot(datesGEFS[0:lastvalue], dataGEFS.P050[0:lastvalue], color='blue', label=
 #aspect for all subplots
 fontsize = 8
 date_form = DateFormatter("%d-%m")
-ax.set_ylabel('Precipitation [mm/6hr]', fontsize=fontsize)
+ax.set_ylabel('Precipitation [mm]', fontsize=fontsize)
 ax.grid(linestyle='--')
 ax.xaxis.set_major_formatter(date_form)
 ax.legend(loc='upper left', fontsize=fontsize)
