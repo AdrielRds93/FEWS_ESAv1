@@ -7,7 +7,7 @@
 		<moduleInstanceId>ImportGEFS</moduleInstanceId>
 	</activity>
 	<activity>
-		<runIndependent>true</runIndependent>
+		<runIndependent>false</runIndependent>
 		<workflowId>PreprocessGEFS</workflowId>
 	</activity>
 </workflow>

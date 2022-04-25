@@ -14,4 +14,18 @@
 		<runIndependent>false</runIndependent>
 		<moduleInstanceId>ReportForecasts</moduleInstanceId>
 	</activity>
+	<activity>
+		<properties>
+			<string key="LOCATION" value="SUB_02"></string>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ExportForecasts</moduleInstanceId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="LOCATION" value="SUB_02"></string>
+		</properties>
+		<runIndependent>false</runIndependent>
+		<moduleInstanceId>ReportForecasts</moduleInstanceId>
+	</activity>
 </workflow>
