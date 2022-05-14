@@ -340,7 +340,7 @@
 		<timeZoneOffset>-06:00</timeZoneOffset>
 		<dateTimeFormat>yyyy-MM-dd HH:mm:ss</dateTimeFormat>
 		<cardinalTimeStep unit="minute" multiplier="15"/>
-		<adjustSystemTimeAutomatically>true</adjustSystemTimeAutomatically>
+		<adjustSystemTimeAutomatically>false</adjustSystemTimeAutomatically>
 	</dateTime>
 	<logPanelConfig>
 		<clientFilter>

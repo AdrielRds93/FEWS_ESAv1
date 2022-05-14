@@ -50,6 +50,22 @@
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</validationRuleSet>
+	<validationRuleSet validationRuleSetId="Precipitation_60min" timeZone="0">
+		<extremeValues>
+			<hardMax constantLimit="240"/>
+			<hardMin constantLimit="0.0"/>
+			<softMax constantLimit="180"/>
+		</extremeValues>
+		<timeSeriesSet>
+			<moduleInstanceId>DeaccumP_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</validationRuleSet>
 	<validationRuleSet validationRuleSetId="Precipitacion_24h" timeZone="0">
 		<extremeValues>
 			<hardMax constantLimit="500"/>

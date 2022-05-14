@@ -6,4 +6,8 @@
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>ImportMARN_c</moduleInstanceId>
 	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>DeaccumP_c</moduleInstanceId>
+	</activity>
 </workflow>

@@ -198,12 +198,13 @@
 	</filter>
 	<!--FILTERS-->
 	<filter id="Observation_cal" name="Observation (cal)">
-		<child foreignKey="P_C"/>
+		<child foreignKey="PDaily_C"/>
+		<child foreignKey="PHourly_C"/>
 		<child foreignKey="H_C"/>
 		<child foreignKey="Q_C"/>
 		<child foreignKey="T_C"/>
 	</filter>
-	<filter id="P_C" name="Precipitation (cal)">
+	<filter id="PDaily_C" name="Daily Precipitation (cal)">
 		<validationIconsVisible>true</validationIconsVisible>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
@@ -216,11 +217,14 @@
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
+	</filter>
+	<filter id="PHourly_C" name="Hourly Precipitation (cal)">
+		<validationIconsVisible>true</validationIconsVisible>
 		<timeSeriesSet>
-			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
+			<moduleInstanceId>DeaccumP_c</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>P.obs.acc</parameterId>
-			<locationSetId>MARN_P_C</locationSetId>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_60min_C</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<relativeViewPeriod unit="day" start="-3" end="0"/>

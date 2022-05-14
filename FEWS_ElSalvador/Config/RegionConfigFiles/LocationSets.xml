@@ -254,6 +254,14 @@
 			</anyValid>
 		</constraints>
 	</locationSet>
+	<locationSet id="MARN_P_60min_C">
+		<locationSetId>MARN_P_C</locationSetId>
+		<constraints>
+			<not>
+				<attributeTextContains id="RESOLUTION_P" contains="Diaria"/>
+			</not>
+		</constraints>
+	</locationSet>
 	<locationSet id="MARN_H_C">
 		<locationSetId>MARN_C</locationSetId>
 		<constraints>
