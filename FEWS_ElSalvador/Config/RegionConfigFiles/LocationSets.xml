@@ -278,6 +278,9 @@
 			<anyValid>
 				<attributeTextContains id="PARAMETER" contains="H"/>
 			</anyValid>
+			<not>
+				<idStartsWith prefix="CEL"/>
+			</not>
 		</constraints>
 	</locationSet>
 	<locationSet id="MARN_H_5min_C">
@@ -304,14 +307,6 @@
 			</anyValid>
 		</constraints>
 	</locationSet>
-	<locationSet id="MARN_H_60min_C">
-		<locationSetId>MARN_H_C</locationSetId>
-		<constraints>
-			<anyValid>
-				<attributeTextEquals id="RESOLUTION_H" equals="Horaria"/>
-			</anyValid>
-		</constraints>
-	</locationSet>
 	<locationSet id="MARN_T_C">
 		<locationSetId>MARN_C</locationSetId>
 		<constraints>
@@ -326,13 +321,30 @@
 			<anyValid>
 				<attributeTextContains id="PARAMETER" contains="Q"/>
 			</anyValid>
+			<not>
+				<idStartsWith prefix="CEL"/>
+			</not>
 		</constraints>
 	</locationSet>
-	<locationSet id="MARN_Q_60min_C">
-		<locationSetId>MARN_Q_C</locationSetId>
+	<locationSet id="CEL">
+		<locationSetId>MARN_C</locationSetId>
+		<constraints>
+			<idStartsWith prefix="CEL"/>
+		</constraints>
+	</locationSet>
+	<locationSet id="CEL_H_C">
+		<locationSetId>CEL</locationSetId>
 		<constraints>
 			<anyValid>
-				<attributeTextEquals id="RESOLUTION_H" equals="Horaria"/>
+				<attributeTextContains id="PARAMETER" contains="H"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="CEL_Q_C">
+		<locationSetId>CEL</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextContains id="PARAMETER" contains="Q"/>
 			</anyValid>
 		</constraints>
 	</locationSet>

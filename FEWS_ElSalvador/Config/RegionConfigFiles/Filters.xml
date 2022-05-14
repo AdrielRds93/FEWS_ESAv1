@@ -238,28 +238,6 @@
 			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>H.obs</parameterId>
-			<locationSetId>MARN_H_5min_C</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="minute" multiplier="5"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
-			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
-		</timeSeriesSet>
-		<timeSeriesSet>
-			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>H.obs</parameterId>
-			<locationSetId>MARN_H_10min_C</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="minute" multiplier="10"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
-			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
-		</timeSeriesSet>
-		<timeSeriesSet>
-			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>H.obs</parameterId>
 			<locationSetId>MARN_H_15min_C</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="15"/>
@@ -271,7 +249,7 @@
 			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>H.obs</parameterId>
-			<locationSetId>MARN_H_60min_C</locationSetId>
+			<locationSetId>CEL_H_C</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<relativeViewPeriod unit="day" start="-3" end="0"/>
@@ -282,21 +260,21 @@
 	<filter id="Q_C" name="Discharge (cal)">
 		<validationIconsVisible>true</validationIconsVisible>
 		<timeSeriesSet>
-			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
+			<moduleInstanceId>PreprocessQ_c</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>Q.obs</parameterId>
-			<locationSetId>MARN_Q_60min_C</locationSetId>
+			<locationSetId>MARN_Q_C</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="1"/>
+			<timeStep unit="hour" multiplier="3"/>
 			<relativeViewPeriod unit="day" start="-3" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
+			<moduleInstanceId>PreprocessQ_c</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>Q.obs</parameterId>
-			<locationSetId>MARN_Q_C</locationSetId>
+			<locationSetId>CEL_Q_C</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<relativeViewPeriod unit="day" start="-3" end="0"/>

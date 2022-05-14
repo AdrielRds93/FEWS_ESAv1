@@ -6,4 +6,12 @@
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>PreprocessP_c</moduleInstanceId>
 	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessHQ_c</moduleInstanceId>
+	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessQ_c</moduleInstanceId>
+	</activity>
 </workflow>

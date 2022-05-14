@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<variable>
+		<variableId>MARN_Q_15min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessHQ_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationSetId>MARN_Q_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>MARN_Q_3hour</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessQ_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationSetId>MARN_Q_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>CEL_Q_60min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationSetId>CEL_Q_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>CEL_Q_180min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessQ_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationSetId>CEL_Q_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--<Transformations for Calibration>-->
+	<transformation id="Aggregation_MARN_Q_15minTo3Hourly">
+		<aggregation>
+			<meanToMean>
+				<inputVariable>
+					<variableId>MARN_Q_15min</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>MARN_Q_3hour</variableId>
+				</outputVariable>
+			</meanToMean>
+		</aggregation>
+	</transformation>
+	<transformation id="Aggregation_CEL_Q_HourlyTo3Hourly">
+		<aggregation>
+			<meanToMean>
+				<inputVariable>
+					<variableId>CEL_Q_60min</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>CEL_Q_180min</variableId>
+				</outputVariable>
+			</meanToMean>
+		</aggregation>
+	</transformation>
+</transformationModule>

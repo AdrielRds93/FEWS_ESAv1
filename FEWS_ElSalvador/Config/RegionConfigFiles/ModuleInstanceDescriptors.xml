@@ -39,4 +39,6 @@
 	<!--Preprocess for Calibration-->
 	<moduleInstanceDescriptor id="ImportMARN_c"/>
 	<moduleInstanceDescriptor id="PreprocessP_c"/>
+	<moduleInstanceDescriptor id="PreprocessHQ_c"/>
+	<moduleInstanceDescriptor id="PreprocessQ_c"/>
 </moduleInstanceDescriptors>

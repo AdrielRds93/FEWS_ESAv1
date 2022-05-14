@@ -80,7 +80,7 @@
 			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>H.obs</parameterId>
-			<locationSetId>MARN_H_60min_C</locationSetId>
+			<locationSetId>CEL_H_C</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -90,7 +90,7 @@
 			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>Q.obs</parameterId>
-			<locationSetId>MARN_Q_C</locationSetId>
+			<locationSetId>CEL_Q_C</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
