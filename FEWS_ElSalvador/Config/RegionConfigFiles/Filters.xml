@@ -221,7 +221,7 @@
 	<filter id="PHourly_C" name="Hourly Precipitation (cal)">
 		<validationIconsVisible>true</validationIconsVisible>
 		<timeSeriesSet>
-			<moduleInstanceId>DeaccumP_c</moduleInstanceId>
+			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>P.obs</parameterId>
 			<locationSetId>MARN_P_60min_C</locationSetId>

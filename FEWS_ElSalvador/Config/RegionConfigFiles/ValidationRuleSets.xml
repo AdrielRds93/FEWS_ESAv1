@@ -57,10 +57,10 @@
 			<softMax constantLimit="180"/>
 		</extremeValues>
 		<timeSeriesSet>
-			<moduleInstanceId>DeaccumP_c</moduleInstanceId>
+			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>P.obs</parameterId>
-			<locationSetId>MARN_P_C</locationSetId>
+			<locationSetId>MARN_P_60min_C</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
