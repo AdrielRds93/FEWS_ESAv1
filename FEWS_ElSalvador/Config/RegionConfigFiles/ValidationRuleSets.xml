@@ -81,10 +81,14 @@
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</validationRuleSet>
-	<validationRuleSet validationRuleSetId="H_negative" timeZone="0">
+	<validationRuleSet validationRuleSetId="H_negative_5min" timeZone="0">
 		<extremeValues>
 			<hardMin constantLimit="0"/>
 		</extremeValues>
+		<temporaryShift validationFlag="unreliable">
+			<rateOfTemporaryShift constantLimit="0.0063"/>
+			<temporaryShiftPeriod constantLimit="3600"/>
+		</temporaryShift>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportMARN</moduleInstanceId>
 			<valueType>scalar</valueType>
@@ -94,11 +98,29 @@
 			<timeStep unit="minute" multiplier="5"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
+	</validationRuleSet>
+	<validationRuleSet validationRuleSetId="H_negative_15min" timeZone="0">
+		<extremeValues>
+			<hardMin constantLimit="0"/>
+		</extremeValues>
+		<temporaryShift validationFlag="unreliable">
+			<rateOfTemporaryShift constantLimit="0.0021"/>
+			<temporaryShiftPeriod constantLimit="3600"/>
+		</temporaryShift>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportMARN</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>H.obs</parameterId>
 			<locationSetId>MARN_H_15min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationSetId>MARN_H_C</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="15"/>
 			<readWriteMode>add originals</readWriteMode>
