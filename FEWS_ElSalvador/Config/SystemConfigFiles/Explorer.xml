@@ -201,6 +201,17 @@
 				<opaquenessPercentage>20</opaquenessPercentage>
 				<lineWidth value="2"/>
 			</esriShapeLayer>
+			<esriShapeLayer id="Lempa_model" name="Lempa Hydrological Model">
+				<description>SubbasinLempa_model</description>
+				<file>Cuenca_modelo.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>false</visible>
+				<toolTip>%BasinName%</toolTip>
+				<lineColor>black</lineColor>
+				<fillRgbColor>FFFFFF</fillRgbColor>
+				<opaquenessPercentage>20</opaquenessPercentage>
+				<lineWidth value="2"/>
+			</esriShapeLayer>
 		</layerGroup>
 	</map>
 	<fileMenu>

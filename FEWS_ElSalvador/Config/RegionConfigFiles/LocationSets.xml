@@ -185,6 +185,16 @@
 			</attribute>
 		</esriShapeFile>
 	</locationSet>
+	<locationSet id="SubbasinLempa_model">
+		<esriShapeFile>
+			<file>Cuenca_modelo.shp</file>
+			<id>%BasinName%</id>
+			<name>%BasinName%</name>
+			<attribute id="SubBasin">
+				<text>%BasinName%</text>
+			</attribute>
+		</esriShapeFile>
+	</locationSet>
 	<!--Grids-->
 	<locationSet id="Grids">
 		<locationId>GFS</locationId>
@@ -315,6 +325,14 @@
 		<constraints>
 			<anyValid>
 				<attributeTextContains id="PARAMETER" contains="Q"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="MARN_Q_60min_C">
+		<locationSetId>MARN_Q_C</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="RESOLUTION_H" equals="Horaria"/>
 			</anyValid>
 		</constraints>
 	</locationSet>
