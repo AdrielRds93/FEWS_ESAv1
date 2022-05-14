@@ -286,6 +286,14 @@
 			</anyValid>
 		</constraints>
 	</locationSet>
+	<locationSet id="MARN_H_60min_C">
+		<locationSetId>MARN_H_C</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="RESOLUTION_H" equals="Horaria"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
 	<locationSet id="MARN_T_C">
 		<locationSetId>MARN_C</locationSetId>
 		<constraints>

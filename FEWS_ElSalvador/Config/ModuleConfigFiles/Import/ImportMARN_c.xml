@@ -65,4 +65,36 @@
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 	</import>
+	<import>
+		<general>
+			<importType>csv</importType>
+			<folder>$IMPORT_FOLDER$/DatosCalibracion/CEL</folder>
+			<idMapId>IdImportMARN_c</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneOffset>-06:00</timeZoneOffset>
+			</importTimeZone>
+			<dataFeedId>CEL (cal)</dataFeedId>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationSetId>MARN_H_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationSetId>MARN_Q_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+	</import>
 </timeSeriesImportRun>
