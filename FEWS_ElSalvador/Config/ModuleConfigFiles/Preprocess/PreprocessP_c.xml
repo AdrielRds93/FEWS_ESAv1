@@ -2,25 +2,12 @@
 <!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
 	<variable>
-		<variableId>MARN_acc_C</variableId>
-		<timeSeriesSet>
-			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>P.obs.acc</parameterId>
-			<locationSetId>MARN_P_C</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="1"/>
-			<relativeViewPeriod unit="hour" start="-240" startOverrulable="true" end="0"/>
-			<readWriteMode>add originals</readWriteMode>
-		</timeSeriesSet>
-	</variable>
-	<variable>
 		<variableId>MARN_inst_C</variableId>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
+			<moduleInstanceId>DeaccumP_c</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>P.obs</parameterId>
-			<locationSetId>MARN_P_C</locationSetId>
+			<locationSetId>MARN_P_60min_C</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
@@ -33,7 +20,7 @@
 			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>P.obs</parameterId>
-			<locationSetId>MARN_P_C</locationSetId>
+			<locationSetId>MARN_P_60min_C</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="daily07"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
@@ -88,7 +75,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>P.basin</parameterId>
 			<qualifierId>q1</qualifierId>
-			<locationSetId>SubbasinLempa</locationSetId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
@@ -101,7 +88,7 @@
 			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>P.basin</parameterId>
-			<locationSetId>SubbasinLempa</locationSetId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="daily07"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
@@ -115,7 +102,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>P.basin</parameterId>
 			<qualifierId>q3</qualifierId>
-			<locationSetId>SubbasinLempa</locationSetId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
@@ -129,7 +116,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>P.basin</parameterId>
 			<qualifierId>q2</qualifierId>
-			<locationSetId>SubbasinLempa</locationSetId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="daily07"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
@@ -142,7 +129,7 @@
 			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>Fraction</parameterId>
-			<locationSetId>SubbasinLempa</locationSetId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="daily07"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
@@ -155,7 +142,7 @@
 			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>Fraction</parameterId>
-			<locationSetId>SubbasinLempa</locationSetId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
@@ -169,7 +156,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>P.basin</parameterId>
 			<qualifierId>q2</qualifierId>
-			<locationSetId>SubbasinLempa</locationSetId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
 			<timeSeriesType>temporary</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
@@ -183,7 +170,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>P.basin</parameterId>
 			<qualifierId>q2</qualifierId>
-			<locationSetId>SubbasinLempa</locationSetId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
@@ -196,7 +183,7 @@
 			<moduleInstanceId>PreprocessP_c</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>P.basin</parameterId>
-			<locationSetId>SubbasinLempa</locationSetId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
@@ -204,18 +191,6 @@
 		</timeSeriesSet>
 	</variable>
 	<!--Deaccumulate rainfall to inst rainfall and merge to hourmerged_C-->
-	<transformation id="MARN_Instantaneous_C">
-		<deaccumulation>
-			<sum>
-				<inputVariable>
-					<variableId>MARN_acc_C</variableId>
-				</inputVariable>
-				<outputVariable>
-					<variableId>MARN_inst_C</variableId>
-				</outputVariable>
-			</sum>
-		</deaccumulation>
-	</transformation>
 	<transformation id="Merge hourly data_C">
 		<merge>
 			<simple>
@@ -235,6 +210,10 @@
 				<inputVariable>
 					<variableId>MARN_inst_C</variableId>
 				</inputVariable>
+				<validationRule>
+					<inputMissingPercentage>25</inputMissingPercentage>
+					<outputValueFlag>reliable</outputValueFlag>
+				</validationRule>
 				<outputVariable>
 					<variableId>MARN_hourlyToDay_C</variableId>
 				</outputVariable>
