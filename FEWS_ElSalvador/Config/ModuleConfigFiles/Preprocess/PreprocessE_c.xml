@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<variable>
+		<variableId>Eobs</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>E.obs</parameterId>
+			<locationSetId>MARN_E_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Eobs_merge</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessE_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>E.obs</parameterId>
+			<qualifierId>q3</qualifierId>
+			<locationSetId>MARN_E_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Eobs_cuenca</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessE_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>E.basin</parameterId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--<Transformations for Calibration>-->
+	<transformation id="Merge data_C">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>Eobs</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Eobs_merge</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<!--Interpolate Eobs-->
+	<transformation id="ThiessenPolygon_Tobs">
+		<interpolationSpatial>
+			<thiessenPolygon>
+				<inputVariable>
+					<variableId>Eobs_merge</variableId>
+				</inputVariable>
+				<distanceGeoDatum>UTM21S</distanceGeoDatum>
+				<outputVariable>
+					<variableId>Eobs_cuenca</variableId>
+				</outputVariable>
+			</thiessenPolygon>
+		</interpolationSpatial>
+	</transformation>
+</transformationModule>
