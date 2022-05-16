@@ -348,4 +348,12 @@
 			</anyValid>
 		</constraints>
 	</locationSet>
+	<locationSet id="MARN_E_C">
+		<locationSetId>MARN_C</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextContains id="PARAMETER" contains="E"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
 </locationSets>

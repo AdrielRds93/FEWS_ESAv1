@@ -203,6 +203,7 @@
 		<child foreignKey="H_C"/>
 		<child foreignKey="Q_C"/>
 		<child foreignKey="T_C"/>
+		<child foreignKey="E_C"/>
 	</filter>
 	<filter id="PDaily_C" name="Daily Precipitation (cal)">
 		<validationIconsVisible>true</validationIconsVisible>
@@ -291,6 +292,20 @@
 			<locationSetId>MARN_T_C</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="10"/>
+			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+	</filter>
+	<filter id="E_C" name="Potential Evapotranspiration (cal)">
+		<validationIconsVisible>true</validationIconsVisible>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>E.obs</parameterId>
+			<locationSetId>MARN_E_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
 			<relativeViewPeriod unit="day" start="-3" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>1</synchLevel>

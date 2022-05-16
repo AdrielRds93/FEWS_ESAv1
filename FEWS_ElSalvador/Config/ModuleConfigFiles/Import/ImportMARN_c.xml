@@ -22,6 +22,16 @@
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>E.obs</parameterId>
+			<locationSetId>MARN_E_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
 	</import>
 	<import>
 		<general>

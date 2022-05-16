@@ -5,7 +5,8 @@
 	<parameter external="PrecipitacionAcumulada" internal="P.obs.acc"/>
 	<parameter external="Nivel" internal="H.obs"/>
 	<parameter external="Temperatura" internal="T.obs"/>
-	<parameter external="Discharge" internal="Q.obs"/>	
+	<parameter external="Discharge" internal="Q.obs"/>
+	<parameter external="ETo" internal="E.obs"/>	
 	<!--Rainfall gauges-->
 	<enableOneToOneMapping></enableOneToOneMapping>
 </idMap>

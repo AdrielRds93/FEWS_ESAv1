@@ -71,6 +71,20 @@
 			<shortName>P.pro.acc.GEFS.Perc100</shortName>
 		</parameter>
 	</parameterGroup>
+	<parameterGroup id="Potential Evapotranspiration">
+		<parameterType>instantaneous</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="E.obs" name="E.obs (Potential Evapotranspiration)">
+			<shortName>E</shortName>
+		</parameter>
+		<parameter id="E.basin" name="E.basin (Mean ETo per basin)">
+			<shortName>E.basin</shortName>
+		</parameter>
+		<parameter id="E.pro" name="E.pro (Forecast Temperatura)">
+			<shortName>E.pro</shortName>
+		</parameter>
+	</parameterGroup>
 	<parameterGroup id="Temperature">
 		<parameterType>instantaneous</parameterType>
 		<unit>oC</unit>
