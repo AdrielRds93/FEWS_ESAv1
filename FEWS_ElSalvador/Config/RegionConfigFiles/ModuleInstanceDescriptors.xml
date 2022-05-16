@@ -41,4 +41,5 @@
 	<moduleInstanceDescriptor id="PreprocessP_c"/>
 	<moduleInstanceDescriptor id="PreprocessHQ_c"/>
 	<moduleInstanceDescriptor id="PreprocessQ_c"/>
+	<moduleInstanceDescriptor id="PreprocessT_c"/>
 </moduleInstanceDescriptors>

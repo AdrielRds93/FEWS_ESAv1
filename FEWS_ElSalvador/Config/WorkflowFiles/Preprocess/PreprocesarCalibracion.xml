@@ -14,4 +14,8 @@
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>PreprocessQ_c</moduleInstanceId>
 	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessT_c</moduleInstanceId>
+	</activity>
 </workflow>
