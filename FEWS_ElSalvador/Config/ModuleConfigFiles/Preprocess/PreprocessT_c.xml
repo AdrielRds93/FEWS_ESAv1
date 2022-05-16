@@ -2,7 +2,7 @@
 <!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
 	<variable>
-		<variableId>MARN_Tobs</variableId>
+		<variableId>Tobs</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
 			<valueType>scalar</valueType>
@@ -10,13 +10,27 @@
 			<locationSetId>MARN_T_C</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="10"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 	</variable>
 	<variable>
-		<variableId>10minMerged_C</variableId>
+		<variableId>Tobs_60min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessT_c</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.obs</parameterId>
+			<locationSetId>MARN_T_C</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tobs_merge</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessT_c</moduleInstanceId>
 			<valueType>scalar</valueType>
@@ -24,13 +38,13 @@
 			<qualifierId>q1</qualifierId>
 			<locationSetId>MARN_T_C</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="minute" multiplier="10"/>
+			<timeStep unit="hour" multiplier="1"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
-		<variableId>10minCuencas_C</variableId>
+		<variableId>Tobs_cuenca</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessT_c</moduleInstanceId>
 			<valueType>scalar</valueType>
@@ -38,17 +52,17 @@
 			<qualifierId>q1</qualifierId>
 			<locationSetId>SubbasinLempa_model</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="minute" multiplier="10"/>
+			<timeStep unit="hour" multiplier="1"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
-		<variableId>MARN_Tobs_3hour</variableId>
+		<variableId>Tobs_cuenca_3hour</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessT_c</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>T.obs</parameterId>
+			<parameterId>T.basin</parameterId>
 			<locationSetId>SubbasinLempa_model</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
@@ -57,28 +71,44 @@
 		</timeSeriesSet>
 	</variable>
 	<!--<Transformations for Calibration>-->
+	<transformation id="MARN_Aggregation_hourlyToDaily_C">
+		<aggregation>
+			<meanToMean>
+				<inputVariable>
+					<variableId>Tobs</variableId>
+				</inputVariable>
+				<validationRule>
+					<inputMissingPercentage>25</inputMissingPercentage>
+					<outputValueFlag>reliable</outputValueFlag>
+				</validationRule>
+				<outputVariable>
+					<variableId>Tobs_60min</variableId>
+				</outputVariable>
+			</meanToMean>
+		</aggregation>
+	</transformation>
 	<transformation id="Merge data_C">
 		<merge>
 			<simple>
 				<inputVariable>
-					<variableId>MARN_Tobs</variableId>
+					<variableId>Tobs_60min</variableId>
 				</inputVariable>
 				<outputVariable>
-					<variableId>10minMerged_C</variableId>
+					<variableId>Tobs_merge</variableId>
 				</outputVariable>
 			</simple>
 		</merge>
 	</transformation>
 	<!--Interpolate Tobs-->
-	<transformation id="ThiessenPolygon 3hour_C">
+	<transformation id="ThiessenPolygon_Tobs">
 		<interpolationSpatial>
 			<thiessenPolygon>
 				<inputVariable>
-					<variableId>10minMerged_C</variableId>
+					<variableId>Tobs_merge</variableId>
 				</inputVariable>
 				<distanceGeoDatum>UTM21S</distanceGeoDatum>
 				<outputVariable>
-					<variableId>10minCuencas_C</variableId>
+					<variableId>Tobs_cuenca</variableId>
 				</outputVariable>
 			</thiessenPolygon>
 		</interpolationSpatial>
@@ -87,14 +117,10 @@
 		<aggregation>
 			<meanToMean>
 				<inputVariable>
-					<variableId>10minCuencas_C</variableId>
+					<variableId>Tobs_cuenca</variableId>
 				</inputVariable>
-				<validationRule>
-					<inputMissingPercentage>25</inputMissingPercentage>
-					<outputValueFlag>reliable</outputValueFlag>
-				</validationRule>
 				<outputVariable>
-					<variableId>MARN_Tobs_3hour</variableId>
+					<variableId>Tobs_cuenca_3hour</variableId>
 				</outputVariable>
 			</meanToMean>
 		</aggregation>
