@@ -17,6 +17,7 @@
 	<moduleInstanceDescriptor id="PreprocessHQ"/>
 	<moduleInstanceDescriptor id="PreprocessQ"/>
 	<moduleInstanceDescriptor id="PreprocessT"/>
+	<moduleInstanceDescriptor id="PreprocessGPM"/>
 	<moduleInstanceDescriptor id="PreprocessGFS"/>
 	<moduleInstanceDescriptor id="PreprocessGEFS"/>
 	<moduleInstanceDescriptor id="PreprocessWRF"/>

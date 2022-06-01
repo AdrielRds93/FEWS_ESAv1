@@ -6,4 +6,8 @@
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>ImportGPM</moduleInstanceId>
 	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessGPM</moduleInstanceId>
+	</activity>
 </workflow>

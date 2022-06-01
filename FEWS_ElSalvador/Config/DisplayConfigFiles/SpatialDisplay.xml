@@ -490,7 +490,7 @@
 					<locationId>GPM</locationId>
 					<timeSeriesType>external historical</timeSeriesType>
 					<timeStep unit="minute" multiplier="30"/>
-					<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+					<relativeViewPeriod unit="day" start="-3" end="0" startOverrulable="true"/>
 					<readWriteMode>add originals</readWriteMode>
 				</timeSeriesSet>
 			</dataLayer>
