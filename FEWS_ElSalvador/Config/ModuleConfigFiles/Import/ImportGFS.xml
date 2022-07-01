@@ -9,7 +9,7 @@
 			<idMapId>IdImportGFS</idMapId>
 			<unitConversionsId>ImportUnitConversions</unitConversionsId>
 			<importTimeZone>
-				<timeZoneOffset>+00:00</timeZoneOffset>
+				<timeZoneName>GMT</timeZoneName>
 			</importTimeZone>
 			<dataFeedId>GFS</dataFeedId>
 			<expiryTime unit="day" multiplier="3"/>
