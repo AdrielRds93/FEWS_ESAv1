@@ -349,6 +349,17 @@
 			<relativeViewPeriod unit="day" start="-3" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_Forecast-GEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.sim</parameterId>
+			<locationSetId>HBV_SubcuencaLempa</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
 	</filter>
 	<filter id="HBV_DA" name="Modelo HBV-DA">
 		<timeSeriesSet>

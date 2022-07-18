@@ -36,6 +36,7 @@
 	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_UpdatePre"/>
 	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_ForecastPre"/>
 	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_Forecast"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_Forecast-GEFS"/>
 	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_ForecastDA"/>
 	<!--Mantenimiento de la base de datos-->
 	<!--Preprocess for Calibration-->
