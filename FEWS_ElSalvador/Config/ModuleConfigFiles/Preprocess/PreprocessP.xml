@@ -213,6 +213,20 @@
 		</timeSeriesSet>
 	</variable>
 	<variable>
+		<variableId>hourCuencas_Model</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.basin</parameterId>
+			<qualifierId>q1</qualifierId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
 		<variableId>dayCuencas</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessP</moduleInstanceId>
@@ -314,6 +328,32 @@
 			<valueType>scalar</valueType>
 			<parameterId>P.basin</parameterId>
 			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>CuencaModelo.3hour_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.basin</parameterId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>CuencaModelo.3hour</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.basin</parameterId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
@@ -497,6 +537,19 @@
 			</thiessenPolygon>
 		</interpolationSpatial>
 	</transformation>
+	<transformation id="ThiessenPolygon hour_cuencaModelo">
+		<interpolationSpatial>
+			<thiessenPolygon>
+				<inputVariable>
+					<variableId>hourMerged</variableId>
+				</inputVariable>
+				<distanceGeoDatum>UTM21S</distanceGeoDatum>
+				<outputVariable>
+					<variableId>hourCuencas_Model</variableId>
+				</outputVariable>
+			</thiessenPolygon>
+		</interpolationSpatial>
+	</transformation>
 	<!-- Combine hourly and daily -->
 	<transformation id="cuencaDay2hour">
 		<disaggregation>
@@ -583,5 +636,30 @@
 				</outputVariable>
 			</accumulative>
 		</aggregation>
+	</transformation>
+	<transformation id="Aggregate_Model">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>hourCuencas_Model</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>CuencaModelo.3hour_temp</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<transformation id="DefaultP">
+		<interpolationSerial>
+			<default>
+				<inputVariable>
+					<variableId>CuencaModelo.3hour_temp</variableId>
+				</inputVariable>
+				<defaultValue>0.0</defaultValue>
+				<outputVariable>
+					<variableId>CuencaModelo.3hour</variableId>
+				</outputVariable>
+			</default>
+		</interpolationSerial>
 	</transformation>
 </transformationModule>

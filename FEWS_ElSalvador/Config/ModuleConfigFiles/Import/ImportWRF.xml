@@ -5,13 +5,18 @@
 		<general>
 			<importTypeStandard>grib2</importTypeStandard>
 			<folder>$IMPORT_FOLDER$/WRF/</folder>
+			<fileNameObservationDateTimePattern>yyMMddHHmm'_wrfout_arw_d03.grb2'</fileNameObservationDateTimePattern>
+			<deleteImportedFiles>false</deleteImportedFiles>
 			<idMapId>IdImportWRF</idMapId>	
 			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+
 			<importTimeZone>
 				<timeZoneOffset>+00:00</timeZoneOffset>
 			</importTimeZone>
+			
 			<dataFeedId>WRF</dataFeedId>
 			<expiryTime unit="day" multiplier="3"/>
+			
 		</general>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportWRF</moduleInstanceId>

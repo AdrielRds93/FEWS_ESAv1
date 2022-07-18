@@ -356,4 +356,8 @@
 			</anyValid>
 		</constraints>
 	</locationSet>
+	<locationSet id="HBV_SubcuencaLempa">
+		<locationId>2</locationId>
+		<locationId>12</locationId>
+	</locationSet>
 </locationSets>

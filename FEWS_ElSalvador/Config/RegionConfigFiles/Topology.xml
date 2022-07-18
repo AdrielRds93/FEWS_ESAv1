@@ -30,4 +30,16 @@
 			<localRun>false</localRun>
 		</node>
 	</nodes>
+	<nodes id="HBV_Model" name="Modelo HBV">
+		<node id="UpdateRun" name="Simulación histórica">
+			<workflowId>HBV_Update</workflowId>
+			<graceTime unit="hour" multiplier="6"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ForecastRun" name="Simulación pronóstico GFS">
+			<workflowId>HBV_Forecast</workflowId>
+			<graceTime unit="hour" multiplier="6"/>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
 </topology>

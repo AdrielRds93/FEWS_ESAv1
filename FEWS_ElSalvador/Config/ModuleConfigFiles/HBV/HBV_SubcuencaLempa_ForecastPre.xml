@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<variable>
+		<variableId>T_MOD1</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_ForecastPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.basin</parameterId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="day" start="0" end="15" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>EPW-SUB_MOD1_15d</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_ForecastPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>E.basin</parameterId>
+			<locationId>SUB_MOD1</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep daysOfMonth="15"/>
+			<relativeViewPeriod unit="day" start="0" end="15" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>EPW-SUB_MOD1</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_ForecastPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>E.basin</parameterId>
+			<locationId>SUB_MOD1</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="day" start="0" end="15" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>EPW-SUB_MOD2_15d</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_ForecastPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>E.basin</parameterId>
+			<locationId>SUB_MOD2</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep daysOfMonth="15"/>
+			<relativeViewPeriod unit="day" start="0" end="15" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>EPW-SUB_MOD2</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_ForecastPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>E.basin</parameterId>
+			<locationId>SUB_MOD2</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="day" start="0" end="15" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_Guajoyo</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_ForecastPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.sim</parameterId>
+			<locationId>CEL_01</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="day" start="0" end="15" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="default">
+		<interpolationSerial>
+			<default>
+				<inputVariable>
+					<variableId>Q_Guajoyo</variableId>
+				</inputVariable>
+				<defaultValue>30.0</defaultValue>
+				<outputVariable>
+					<variableId>Q_Guajoyo</variableId>
+				</outputVariable>
+			</default>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="E_Climatology_SUB_MOD1">
+		<profile>
+			<timeSeries>
+				<inputProfile>
+					<data value="3.38" monthDay="--01-15"/>
+					<data value="4.17" monthDay="--02-15"/>
+					<data value="4.25" monthDay="--03-15"/>
+					<data value="4.4" monthDay="--04-15"/>
+					<data value="4.17" monthDay="--05-15"/>
+					<data value="3.37" monthDay="--06-15"/>
+					<data value="4.06" monthDay="--07-15"/>
+					<data value="3.977777778" monthDay="--08-15"/>
+					<data value="3.488888889" monthDay="--09-15"/>
+					<data value="3.2" monthDay="--10-15"/>
+					<data value="3.011111111" monthDay="--11-15"/>
+					<data value="3.177777778" monthDay="--12-15"/>
+				</inputProfile>
+				<type>cyclic</type>
+				<outputVariable>
+					<variableId>EPW-SUB_MOD1_15d</variableId>
+				</outputVariable>
+			</timeSeries>
+		</profile>
+	</transformation>
+	<transformation id="E_Climatology_SUB_MOD2">
+		<profile>
+			<timeSeries>
+				<inputProfile>
+					<data value="4.24" monthDay="--01-15"/>
+					<data value="4.93" monthDay="--02-15"/>
+					<data value="5.21" monthDay="--03-15"/>
+					<data value="5.21" monthDay="--04-15"/>
+					<data value="4.85" monthDay="--05-15"/>
+					<data value="3.85" monthDay="--06-15"/>
+					<data value="4.49" monthDay="--07-15"/>
+					<data value="4.355555556" monthDay="--08-15"/>
+					<data value="3.911111111" monthDay="--09-15"/>
+					<data value="3.633333333" monthDay="--10-15"/>
+					<data value="3.788888889" monthDay="--11-15"/>
+					<data value="3.766666667" monthDay="--12-15"/>
+				</inputProfile>
+				<type>cyclic</type>
+				<outputVariable>
+					<variableId>EPW-SUB_MOD2_15d</variableId>
+				</outputVariable>
+			</timeSeries>
+		</profile>
+	</transformation>
+	<transformation id="EPW-SUB_MOD1">
+		<interpolationSerial>
+			<linear>
+				<inputVariable>
+					<variableId>EPW-SUB_MOD1_15d</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>EPW-SUB_MOD1</variableId>
+				</outputVariable>
+			</linear>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="EPW-SUB_MOD2">
+		<interpolationSerial>
+			<linear>
+				<inputVariable>
+					<variableId>EPW-SUB_MOD2_15d</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>EPW-SUB_MOD2</variableId>
+				</outputVariable>
+			</linear>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="T_default">
+		<user>
+			<simple>
+				<expression>20</expression>
+				<outputVariable>
+					<variableId>T_MOD1</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+</transformationModule>

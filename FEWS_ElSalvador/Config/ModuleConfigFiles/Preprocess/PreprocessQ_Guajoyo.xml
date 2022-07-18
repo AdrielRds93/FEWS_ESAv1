@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<variable>
+		<variableId>Q_Guajoyo</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessQ_Guajoyo</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.sim</parameterId>
+			<locationId>CEL_01</locationId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="day" start="-30" end="0" startOverrulable="false"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="default">
+		<interpolationSerial>
+			<default>
+				<inputVariable>
+					<variableId>Q_Guajoyo</variableId>
+				</inputVariable>
+				<defaultValue>30.0</defaultValue>
+				<outputVariable>
+					<variableId>Q_Guajoyo</variableId>
+				</outputVariable>
+			</default>
+		</interpolationSerial>
+	</transformation>
+</transformationModule>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<rootDir>%REGION_HOME%/Modules/HBV/work</rootDir>
+		<workDir>%ROOT_DIR%</workDir>
+		<exportDir>%ROOT_DIR%</exportDir>
+		<exportDataSetDir>%ROOT_DIR%</exportDataSetDir>
+		<exportIdMap>HBV_Subcuenca</exportIdMap>
+		<importDir>%ROOT_DIR%</importDir>
+		<importIdMap>HBV_Subcuenca</importIdMap>
+		<dumpFileDir>%REGION_HOME%/DumpFiles</dumpFileDir>
+		<dumpDir>%ROOT_DIR%</dumpDir>
+		<diagnosticFile>%ROOT_DIR%/diag.xml</diagnosticFile>
+	</general>
+	<activities>
+		<startUpActivities>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/*.xml</filter>
+			</purgeActivity>
+		</startUpActivities>
+		<exportActivities>
+			<exportStateActivity>				
+				<moduleInstanceId>HBV_SubcuencaLempa_Update</moduleInstanceId>
+				<stateExportDir>%ROOT_DIR%</stateExportDir>
+				<stateConfigFile>%ROOT_DIR%/statePI.xml</stateConfigFile>
+				<stateLocations type="file">
+					<stateLocation>
+						<readLocation>state_import.xml</readLocation>
+						<writeLocation>state_export.xml</writeLocation>
+					</stateLocation>
+				</stateLocations>
+				<stateSelection>
+					<warmState>
+						<stateSearchPeriod unit="hour" start="-240" end="-1"/>
+					</warmState>
+				</stateSelection>
+			</exportStateActivity>
+			<exportTimeSeriesActivity>
+				<exportFile>timeseries_import.xml</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessP</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>P.basin</parameterId>
+						<locationSetId>SubbasinLempa_model</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="3"/>
+						<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessT</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>T.basin</parameterId>
+						<locationSetId>SubbasinLempa_model</locationSetId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="3"/>
+						<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessE</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>E.basin</parameterId>
+						<locationSetId>SubbasinLempa_model</locationSetId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="3"/>
+						<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessQ_Guajoyo</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>Q.sim</parameterId>
+						<locationId>CEL_01</locationId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="3"/>
+						<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportTimeSeriesActivity>
+			<exportDataSetActivity>
+				<moduleInstanceId>HBV_SubcuencaLempa_Update</moduleInstanceId>
+			</exportDataSetActivity>
+			<exportParameterActivity>
+				<fileName>rtcParameterConfig_HBV.xml</fileName>
+				<moduleInstanceId>HBV_SubcuencaLempa_Update</moduleInstanceId>
+			</exportParameterActivity>
+		</exportActivities>
+		<executeActivities>
+			<executeActivity>
+				<command>
+					<executable>hbv96.bat</executable>
+				</command>
+				<arguments/>
+				<timeOut>300000</timeOut>
+			</executeActivity>
+		</executeActivities>
+		<importActivities>
+			<importStateActivity>
+				<stateConfigFile>%ROOT_DIR%/statePI.xml</stateConfigFile>
+			</importStateActivity>
+			<importTimeSeriesActivity>
+				<importFile>timeseries_export.xml</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>HBV_SubcuencaLempa_Update</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>Q.sim</parameterId>
+						<locationSetId>HBV_SubcuencaLempa</locationSetId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="3"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importTimeSeriesActivity>
+		</importActivities>
+	</activities>
+</generalAdapterRun>

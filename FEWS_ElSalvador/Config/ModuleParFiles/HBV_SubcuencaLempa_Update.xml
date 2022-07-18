@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<parameters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews/PI" xsi:schemaLocation="http://www.wldelft.nl/fews/PI http://fews.wldelft.nl/schemas/version1.0/pi-schemas/pi_modelparameters.xsd" version="1.5">
+	<modifierType>MOD20</modifierType>
+	<group id="default">
+		<parameter id="ECORR0">
+			<dblValue>2</dblValue>
+		</parameter>
+		<parameter id="RFCF0">
+			<dblValue>1.950676</dblValue>
+		</parameter>
+		<parameter id="SFCF0">
+			<dblValue>0.74000000000</dblValue>
+		</parameter>
+		<parameter id="TT0">
+			<dblValue>2.25500000000</dblValue>
+		</parameter>
+		<parameter id="TTI0">
+			<dblValue>1.47000000000</dblValue>
+		</parameter>
+		<parameter id="CFMAX0">
+			<dblValue>1.87400000000</dblValue>
+		</parameter>
+		<parameter id="CFR0">
+			<dblValue>0.09800000000</dblValue>
+		</parameter>
+		<parameter id="CWH0">
+			<dblValue>0.00650000000</dblValue>
+		</parameter>
+		<parameter id="TM0">
+			<dblValue>-0.10100000000</dblValue>
+		</parameter>
+		<parameter id="BETA0">
+			<dblValue>0.807817</dblValue>
+		</parameter>
+		<parameter id="CFLUX0">
+			<dblValue>0.630309</dblValue>
+		</parameter>
+		<parameter id="ETF0">
+			<dblValue>0.041736</dblValue>
+		</parameter>
+		<parameter id="FC0">
+			<dblValue>400</dblValue>
+		</parameter>
+		<parameter id="LP0">
+			<dblValue>0.118212</dblValue>
+		</parameter>
+		<parameter id="ALPHA0">
+			<dblValue>0.117831</dblValue>
+		</parameter>
+		<parameter id="K0">
+			<dblValue>0.238686</dblValue>
+		</parameter>
+		<parameter id="K1_0">
+			<dblValue>0.007605</dblValue>
+		</parameter>
+		<parameter id="PERC0">
+			<dblValue>10</dblValue>
+		</parameter>
+		<parameter id="LIC0">
+			<dblValue>0</dblValue>
+		</parameter>
+		<parameter id="ECORR1">
+			<dblValue>0.5</dblValue>
+		</parameter>
+		<parameter id="RFCF1">
+			<dblValue>2</dblValue>
+		</parameter>
+		<parameter id="SFCF1">
+			<dblValue>0.74000000000</dblValue>
+		</parameter>
+		<parameter id="TT1">
+			<dblValue>2.25500000000</dblValue>
+		</parameter>
+		<parameter id="TTI1">
+			<dblValue>1.47000000000</dblValue>
+		</parameter>
+		<parameter id="CFMAX1">
+			<dblValue>1.87400000000</dblValue>
+		</parameter>
+		<parameter id="CFR1">
+			<dblValue>0.09800000000</dblValue>
+		</parameter>
+		<parameter id="CWH1">
+			<dblValue>0.00650000000</dblValue>
+		</parameter>
+		<parameter id="TM1">
+			<dblValue>-0.10100000000</dblValue>
+		</parameter>
+		<parameter id="BETA1">
+			<dblValue>0.5</dblValue>
+		</parameter>
+		<parameter id="CFLUX1">
+			<dblValue>0.01</dblValue>
+		</parameter>
+		<parameter id="ETF1">
+			<dblValue>0.018087</dblValue>
+		</parameter>
+		<parameter id="FC1">
+			<dblValue>50</dblValue>
+		</parameter>
+		<parameter id="LP1">
+			<dblValue>0.9</dblValue>
+		</parameter>
+		<parameter id="ALPHA1">
+			<dblValue>0.616513</dblValue>
+		</parameter>
+		<parameter id="K1">
+			<dblValue>0.000042</dblValue>
+		</parameter>
+		<parameter id="K1_1">
+			<dblValue>0.026237</dblValue>
+		</parameter>
+		<parameter id="PERC1">
+			<dblValue>10</dblValue>
+		</parameter>
+		<parameter id="LIC1">
+			<dblValue>9.997954</dblValue>
+		</parameter>
+		<parameter id="k_B2">
+			<dblValue>10000</dblValue>
+		</parameter>
+		<parameter id="eps_B2">
+			<dblValue>0.256989</dblValue>
+		</parameter>
+		<parameter id="k_B3">
+			<dblValue>14470.2585</dblValue>
+		</parameter>
+		<parameter id="eps_B3">
+			<dblValue>0.45</dblValue>
+		</parameter>
+		<parameter id="k_B0">
+			<dblValue>10900</dblValue>
+		</parameter>
+		<parameter id="eps_B0">
+			<dblValue>0.25</dblValue>
+		</parameter>
+		<parameter id="k_B1">
+			<dblValue>47700</dblValue>
+		</parameter>
+		<parameter id="eps_B1">
+			<dblValue>0.25</dblValue>
+		</parameter>
+		<parameter id="SFCF">
+			<dblValue>1.0</dblValue>
+		</parameter>
+		<parameter id="TT">
+			<dblValue>0</dblValue>
+		</parameter>
+		<parameter id="TTI">
+			<dblValue>2</dblValue>
+		</parameter>
+	</group>
+</parameters>

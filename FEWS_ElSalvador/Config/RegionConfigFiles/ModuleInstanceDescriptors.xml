@@ -13,9 +13,11 @@
 	<moduleInstanceDescriptor id="ReportForecasts"/>
 	<!--Preprocess and analysis-->
 	<moduleInstanceDescriptor id="PreprocessP"/>
+	<moduleInstanceDescriptor id="PreprocessE"/>
 	<moduleInstanceDescriptor id="PreprocessH"/>
 	<moduleInstanceDescriptor id="PreprocessHQ"/>
 	<moduleInstanceDescriptor id="PreprocessQ"/>
+	<moduleInstanceDescriptor id="PreprocessQ_Guajoyo"/>
 	<moduleInstanceDescriptor id="PreprocessT"/>
 	<moduleInstanceDescriptor id="PreprocessGPM"/>
 	<moduleInstanceDescriptor id="PreprocessGFS"/>
@@ -28,14 +30,11 @@
 	<!--Forecast Length Estimator Modules-->
 	<moduleInstanceDescriptor id="ForecastLenghtEstimatorGFS"/>
 	<moduleInstanceDescriptor id="ForecastLenghtEstimatorGEFS"/>
-	<!--PREP Modules Update and Fcst-->
-	<!--POST Modules-->
-	<!-- SAC-SMA -->
-	<!-- UNIT-HG -->
-	<!-- FLOOD MAP -->
-	<!-- ARMA -->
-	<!-- ADD FLOWS -->
-	<!--OpenArchive-->
+	<!--Model runs-->
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_Update"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_UpdatePre"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_ForecastPre"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_Forecast"/>
 	<!--Mantenimiento de la base de datos-->
 	<!--Preprocess for Calibration-->
 	<moduleInstanceDescriptor id="ImportMARN_c"/>

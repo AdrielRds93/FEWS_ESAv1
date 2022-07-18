@@ -8,6 +8,10 @@
 	</activity>
 	<activity>
 		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessE</moduleInstanceId>
+	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
 		<moduleInstanceId>PreprocessH</moduleInstanceId>
 	</activity>
 	<activity>

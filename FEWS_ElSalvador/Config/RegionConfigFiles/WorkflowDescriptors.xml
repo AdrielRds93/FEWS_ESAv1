@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <workflowDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflowDescriptors.xsd" version="1.0">
 	<!-- Download data workflow -->
 	<!-- Import data workflow -->
 	<!-- preprocess data workflow -->
 	<!-- Import forecast workflow -->
-	<workflowDescriptor id="Import" name="Import observations" forecast="false" visible="true" allowApprove="false">
+	<workflowDescriptor id="Import" name="Import observations" forecast="true" visible="true" allowApprove="false">
 		<description>Import observed data</description>
 	</workflowDescriptor>
 	<workflowDescriptor id="ImportGPM" name="Import GPM observations" forecast="false" visible="true" allowApprove="false">
@@ -23,12 +23,20 @@
 		<description>Importar pronosticos meteorologicos NOAA - GEFS</description>
 		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="ImportForecastWRF" name="Import meteorological forecast WRF" forecast="true" visible="false" autoApprove="false">
+	<workflowDescriptor id="ImportForecastWRF" name="Import meteorological forecast WRF" forecast="true" visible="true" autoApprove="false">
 		<description>Importar pronosticos meteorologicos WRF</description>
 		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
 	</workflowDescriptor>
 	<!-- preprocess forecast workflows -->
 	<!--Update workflows-->
+	<workflowDescriptor id="HBV_Update" name="HBV_Update" forecast="true" visible="true" allowApprove="true" autoApprove="true">
+		<description>Simulación histórica del modelo HBV</description>
+		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="HBV_Forecast" name="HBV_Forecast" forecast="true" visible="true" allowApprove="true" autoApprove="true">
+		<description>Simulación pronóstico del modelo HBV</description>
+		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	</workflowDescriptor>
 	<!--Forecast GFS workflows-->
 	<!--Forecast_GEFS workflows -->
 	<!-- Maintenance workflows -->
@@ -41,6 +49,7 @@
 	<workflowDescriptor id="PreprocesarCalibracion" name="Calibration: Preprocess observations" forecast="false" visible="true" allowApprove="false">
 		<description>Importación de datos para la calibración</description>
 	</workflowDescriptor>
+	<workflowDescriptor id="Preprocess" name="Preprocess" forecast="true" visible="false" allowApprove="false"/>
 	<workflowDescriptor id="ReportForecasts" name="Reporte Pronósticos" forecast="false" visible="true" allowApprove="false">
 		<description>Reporte Pronósticos</description>
 	</workflowDescriptor>

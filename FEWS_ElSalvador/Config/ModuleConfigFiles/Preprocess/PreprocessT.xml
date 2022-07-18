@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<variable>
+		<variableId>T_MOD1</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessT</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.basin</parameterId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="day" start="-30" end="0" startOverrulable="false"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="T_default">
+		<user>
+			<simple>
+				<expression>20</expression>
+				<outputVariable>
+					<variableId>T_MOD1</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+</transformationModule>
