@@ -149,5 +149,46 @@
 		<parameter id="TTI">
 			<dblValue>2</dblValue>
 		</parameter>
+
+		<!-- parametros de asimilacion de datos-->
+		<parameter id="PFacM">
+			<dblValue>0.7</dblValue>
+		</parameter>
+		<parameter id="PFacX">
+			<dblValue>1.3</dblValue>
+		</parameter>
+		<parameter id="SMUpdateM">
+			<dblValue>-2.0</dblValue>
+		</parameter>
+		<parameter id="SMUpdateX">
+			<dblValue>2.0</dblValue>
+		</parameter>
+		<parameter id="UZUpdateM">
+			<dblValue>-2.0</dblValue>
+		</parameter>
+		<parameter id="UZUpdateX">
+			<dblValue>2.0</dblValue>
+		</parameter>
+		<parameter id="LZUpdateM">
+			<dblValue>-2.0</dblValue>
+		</parameter>
+		<parameter id="LZUpdateX">
+			<dblValue>2.0</dblValue>
+		</parameter>
+		<parameter id="wUpdate_P">
+			<dblValue>1.0</dblValue>
+		</parameter>
+		<parameter id="wUpdate_SM">
+			<dblValue>1.0</dblValue>
+		</parameter>
+		<parameter id="wUpdate_UZ">
+			<dblValue>1.0</dblValue>
+		</parameter>
+		<parameter id="wUpdate_LZ">
+			<dblValue>1.0</dblValue>
+		</parameter>
+		<parameter id="wDelta_Q">
+			<dblValue>1.0</dblValue>
+		</parameter>		
 	</group>
 </parameters>

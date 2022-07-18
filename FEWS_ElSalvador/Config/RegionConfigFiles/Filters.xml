@@ -324,7 +324,11 @@
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 	</filter>
-	<filter id="HBV_Model" name="Modelo HBV">
+	<filter id="HBV_Model">
+		<child foreignKey="HBV"/>
+		<child foreignKey="HBV_DA"/>
+	</filter>
+	<filter id="HBV" name="Modelo HBV">
 		<timeSeriesSet>
 			<moduleInstanceId>HBV_SubcuencaLempa_Update</moduleInstanceId>
 			<valueType>scalar</valueType>
@@ -337,6 +341,38 @@
 		</timeSeriesSet>
 		<timeSeriesSet>
 			<moduleInstanceId>HBV_SubcuencaLempa_Forecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.sim</parameterId>
+			<locationSetId>HBV_SubcuencaLempa</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="HBV_DA" name="Modelo HBV-DA">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationSetId>HBV_SubcuencaLempa</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_UpdateDA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.sim</parameterId>
+			<locationSetId>HBV_SubcuencaLempa</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_ForecastDA</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>Q.sim</parameterId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>

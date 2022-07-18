@@ -41,5 +41,15 @@
 			<graceTime unit="hour" multiplier="6"/>
 			<localRun>false</localRun>
 		</node>
+		<node id="UpdateRunDA" name="Simulación histórica con asimilación">
+			<workflowId>HBV_UpdateDA</workflowId>
+			<graceTime unit="hour" multiplier="6"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ForecastRunDA" name="Simulación pronóstico GFS con asimilación">
+			<workflowId>HBV_ForecastDA</workflowId>
+			<graceTime unit="hour" multiplier="6"/>
+			<localRun>false</localRun>
+		</node>
 	</nodes>
 </topology>
