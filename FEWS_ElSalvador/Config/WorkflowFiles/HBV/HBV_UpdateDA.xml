@@ -18,12 +18,10 @@
 		<runIndependent>false</runIndependent>
 		<moduleInstanceId>PreprocessQ_Guajoyo</moduleInstanceId>
 	</activity>
-<!--
 	<activity>
 		<runIndependent>false</runIndependent>
 		<moduleInstanceId>PreprocessHQ</moduleInstanceId>
 	</activity>
--->
 	<activity>
 		<runIndependent>false</runIndependent>
 		<moduleInstanceId>HBV_SubcuencaLempa_UpdateDA</moduleInstanceId>
