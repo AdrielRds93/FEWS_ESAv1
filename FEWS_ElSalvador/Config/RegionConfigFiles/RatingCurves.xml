@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <RatingCurves xmlns="http://www.wldelft.nl/fews/PI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews/PI http://fews.wldelft.nl/schemas/version1.0/pi-schemas/pi_ratingcurves.xsd">
-	<timeZone>1.0</timeZone>
+	<timeZone>-6.0</timeZone>
+	<!--CitalaR-->
 	<ratingCurve>
 		<header>
 			<locationId>250</locationId>
@@ -11,21 +12,188 @@
 			<stageUnit>m</stageUnit>
 			<dischargeUnit>m3/s</dischargeUnit>
 		</header>
-		<powerEquation minStage="0.8" maxStage="2.15" alpha="-0.797" beta="1.24" cr="114.107"/>
-		<powerEquation minStage="2.15" maxStage="7" alpha="-0.587" beta="1.53" cr="86.104"/>
+		<powerEquation minStage="0.8" maxStage="2.15" alpha="0.797" beta="1.24" cr="114.107"/>
+		<powerEquation minStage="2.15" maxStage="7" alpha="0.587" beta="1.53" cr="86.104"/>
+	</ratingCurve>
+	<!--Zapotillo-->
+	<ratingCurve>
+		<header>
+			<locationId>2</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2014-05-01" time="00:00:00"/>
+			<endDate date="2015-04-30" time="00:00:00"/>
+			<stationName>El Zapotillo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="1.33" maxStage="7.00" alpha="0.484" beta="1.74" cr="74.672"/>
 	</ratingCurve>
 	<ratingCurve>
 		<header>
 			<locationId>2</locationId>
 			<qualifierId>Power</qualifierId>
-			<startDate date="1900-01-01" time="00:00:00"/>
+			<startDate date="2016-05-01" time="00:00:00"/>
+			<endDate date="2017-04-30" time="00:00:00"/>
 			<stationName>El Zapotillo</stationName>
 			<stageUnit>m</stageUnit>
 			<dischargeUnit>m3/s</dischargeUnit>
 		</header>
-		<powerEquation minStage="0.39" maxStage="2.28" alpha="-0.385" beta="2.16" cr="63.884"/>
-		<powerEquation minStage="2.28" maxStage="7" alpha="-0.385" beta="3.43" cr="28.173"/>
+		<powerEquation minStage="1.39" maxStage="7.00" alpha="0.362" beta="2.01" cr="53.907"/>
 	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>2</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2017-05-01" time="00:00:00"/>
+			<endDate date="2019-02-25" time="00:00:00"/>
+			<stationName>El Zapotillo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="1.11" maxStage="7.00" alpha="0.370" beta="2.16" cr="63.884"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>2</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2019-02-25" time="00:00:00"/>
+			<endDate date="2020-11-21" time="00:00:00"/>
+			<stationName>El Zapotillo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="1.33" maxStage="7.00" alpha="0.420" beta="2.16" cr="63.884"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>2</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2020-11-21" time="00:00:00"/>
+			<endDate date="2020-12-26" time="00:00:00"/>
+			<stationName>El Zapotillo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="0.46" maxStage="2.28" alpha="0.460" beta="2.16" cr="63.884"/>
+		<powerEquation minStage="2.28" maxStage="7.00" alpha="0.460" beta="3.50" cr="26.942"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>2</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2020-12-26" time="00:00:00"/>
+			<endDate date="2021-03-10" time="00:00:00"/>
+			<stationName>El Zapotillo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="0.49" maxStage="2.28" alpha="0.490" beta="2.16" cr="63.884"/>
+		<powerEquation minStage="2.28" maxStage="7.00" alpha="0.490" beta="3.43" cr="28.173"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>2</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2021-03-10" time="00:00:00"/>
+			<endDate date="2021-06-05" time="00:00:00"/>
+			<stationName>El Zapotillo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="0.46" maxStage="2.28" alpha="0.456" beta="2.16" cr="63.884"/>
+		<powerEquation minStage="2.28" maxStage="7.00" alpha="0.456" beta="3.43" cr="28.173"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>2</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2021-06-05" time="00:00:00"/>
+			<endDate date="2021-06-13" time="00:00:00"/>
+			<stationName>El Zapotillo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="0.57" maxStage="2.28" alpha="0.565" beta="2.16" cr="63.884"/>
+		<powerEquation minStage="2.28" maxStage="7.00" alpha="0.565" beta="3.43" cr="28.173"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>2</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2021-06-13" time="00:00:00"/>
+			<endDate date="2021-07-02" time="00:00:00"/>
+			<stationName>El Zapotillo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="0.49" maxStage="2.28" alpha="0.490" beta="2.16" cr="63.884"/>
+		<powerEquation minStage="2.28" maxStage="7.00" alpha="0.490" beta="3.43" cr="28.173"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>2</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2021-07-02" time="00:00:00"/>
+			<endDate date="2021-08-05" time="00:00:00"/>
+			<stationName>El Zapotillo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="0.51" maxStage="2.28" alpha="0.510" beta="2.16" cr="63.884"/>
+		<powerEquation minStage="2.28" maxStage="7.00" alpha="0.510" beta="3.43" cr="28.173"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>2</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2021-08-05" time="00:00:00"/>
+			<endDate date="2021-10-19" time="00:00:00"/>
+			<stationName>El Zapotillo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="0.44" maxStage="2.28" alpha="0.440" beta="2.16" cr="63.884"/>
+		<powerEquation minStage="2.28" maxStage="7.00" alpha="0.440" beta="3.43" cr="28.173"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>2</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2021-10-19" time="00:00:00"/>
+			<endDate date="2021-10-30" time="00:00:00"/>
+			<stationName>El Zapotillo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="0.54" maxStage="2.28" alpha="0.541" beta="2.16" cr="63.884"/>
+		<powerEquation minStage="2.28" maxStage="7.00" alpha="0.541" beta="3.43" cr="28.173"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>2</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2021-10-30" time="00:00:00"/>
+			<endDate date="2021-11-29" time="00:00:00"/>
+			<stationName>El Zapotillo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="0.41" maxStage="2.28" alpha="0.408" beta="2.16" cr="63.884"/>
+		<powerEquation minStage="2.28" maxStage="7.00" alpha="0.408" beta="3.43" cr="28.173"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>2</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2021-11-29" time="00:00:00"/>
+			<stationName>El Zapotillo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="0.39" maxStage="2.28" alpha="0.385" beta="2.16" cr="63.884"/>
+		<powerEquation minStage="2.28" maxStage="7.00" alpha="0.385" beta="3.43" cr="28.173"/>
+	</ratingCurve>
+	<!--Paso del oso	-->
 	<ratingCurve>
 		<header>
 			<locationId>143</locationId>
@@ -35,20 +203,282 @@
 			<stageUnit>m</stageUnit>
 			<dischargeUnit>m3/s</dischargeUnit>
 		</header>
-		<powerEquation minStage="1.56" maxStage="15" alpha="-1.555" beta="1.77" cr="54.619"/>
+		<powerEquation minStage="1.56" maxStage="15" alpha="1.555" beta="1.77" cr="54.619"/>
+	</ratingCurve>
+	<!--Tamarindo-->
+	<ratingCurve>
+		<header>
+			<locationId>12</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2017-05-01" time="00:00:00"/>
+			<endDate date="2018-10-27" time="00:00:00"/>
+			<stationName>Tamarindo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="2.11" maxStage="2.68" alpha="2.10" beta="1.81" cr="74.788"/>
+		<powerEquation minStage="2.68" maxStage="7.24" alpha="2.10" beta="1.97" cr="81.821"/>
 	</ratingCurve>
 	<ratingCurve>
 		<header>
 			<locationId>12</locationId>
 			<qualifierId>Power</qualifierId>
-			<startDate date="1900-01-01" time="00:00:00"/>
+			<startDate date="2018-10-27" time="00:00:00"/>
+			<endDate date="2019-03-12" time="00:00:00"/>
 			<stationName>Tamarindo</stationName>
 			<stageUnit>m</stageUnit>
 			<dischargeUnit>m3/s</dischargeUnit>
 		</header>
-		<powerEquation minStage="1.74" maxStage="4.25" alpha="-1.74" beta="1.81" cr="74.788"/>
-		<powerEquation minStage="4.25" maxStage="7.00" alpha="-1.74" beta="1.97" cr="81.821"/>
+		<powerEquation minStage="2.11" maxStage="2.68" alpha="2.00" beta="1.81" cr="74.788"/>
+		<powerEquation minStage="2.68" maxStage="11.00" alpha="2.00" beta="1.97" cr="81.821"/>
 	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>12</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2019-03-12" time="00:00:00"/>
+			<endDate date="2020-10-13" time="00:00:00"/>
+			<stationName>Tamarindo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="2.10" maxStage="4.25" alpha="2.10" beta="1.81" cr="74.788"/>
+		<powerEquation minStage="4.25" maxStage="7.00" alpha="2.10" beta="1.97" cr="81.821"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>12</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2020-10-13" time="00:00:00"/>
+			<endDate date="2020-11-06" time="00:00:00"/>
+			<stationName>Tamarindo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="2.02" maxStage="4.25" alpha="2.020" beta="1.81" cr="74.788"/>
+		<powerEquation minStage="4.25" maxStage="7" alpha="2.020" beta="1.97" cr="81.821"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>12</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2020-11-06" time="00:00:00"/>
+			<endDate date="2020-11-19" time="00:00:00"/>
+			<stationName>Tamarindo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="1.94" maxStage="4.25" alpha="1.937" beta="1.81" cr="74.788"/>
+		<powerEquation minStage="4.25" maxStage="7.00" alpha="1.937" beta="1.97" cr="81.821"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>12</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2020-11-19" time="00:00:00"/>
+			<endDate date="2020-12-11" time="00:00:00"/>
+			<stationName>Tamarindo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="2.05" maxStage="4.25" alpha="2.052" beta="1.81" cr="74.788"/>
+		<powerEquation minStage="4.25" maxStage="7.00" alpha="2.052" beta="1.97" cr="81.821"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>12</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2020-12-11" time="00:00:00"/>
+			<endDate date="2020-12-26" time="00:00:00"/>
+			<stationName>Tamarindo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="2.04" maxStage="4.25" alpha="2.035" beta="1.81" cr="74.788"/>
+		<powerEquation minStage="4.25" maxStage="7.00" alpha="2.035" beta="1.97" cr="81.821"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>12</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2020-12-26" time="00:00:00"/>
+			<endDate date="2021-01-07" time="00:00:00"/>
+			<stationName>Tamarindo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="1.97" maxStage="4.25" alpha="1.970" beta="1.81" cr="74.788"/>
+		<powerEquation minStage="4.25" maxStage="7.00" alpha="1.970" beta="1.97" cr="81.821"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>12</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2021-01-07" time="00:00:00"/>
+			<endDate date="2021-06-25" time="00:00:00"/>
+			<stationName>Tamarindo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="2.10" maxStage="4.25" alpha="2.10" beta="1.81" cr="74.788"/>
+		<powerEquation minStage="4.25" maxStage="7.00" alpha="2.10" beta="1.97" cr="81.821"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>12</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2021-06-25" time="00:00:00"/>
+			<endDate date="2021-07-28" time="00:00:00"/>
+			<stationName>Tamarindo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="2.04" maxStage="4.25" alpha="2.040" beta="1.81" cr="74.788"/>
+		<powerEquation minStage="4.25" maxStage="7.00" alpha="2.040" beta="1.97" cr="81.821"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>12</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2021-07-28" time="00:00:00"/>
+			<endDate date="2021-08-05" time="00:00:00"/>
+			<stationName>Tamarindo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="1.86" maxStage="4.25" alpha="1.860" beta="1.81" cr="74.788"/>
+		<powerEquation minStage="4.25" maxStage="7.00" alpha="1.860" beta="1.97" cr="81.821"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>12</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2021-08-05" time="00:00:00"/>
+			<endDate date="2021-08-22" time="00:00:00"/>
+			<stationName>Tamarindo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="1.95" maxStage="4.25" alpha="1.947" beta="1.81" cr="74.788"/>
+		<powerEquation minStage="4.25" maxStage="7.00" alpha="1.947" beta="1.97" cr="81.821"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>12</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2021-08-22" time="00:00:00"/>
+			<endDate date="2021-09-10" time="00:00:00"/>
+			<stationName>Tamarindo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="2.05" maxStage="4.25" alpha="2.053" beta="1.81" cr="74.788"/>
+		<powerEquation minStage="4.25" maxStage="7.00" alpha="2.053" beta="1.97" cr="81.821"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>12</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2021-09-10" time="00:00:00"/>
+			<endDate date="2021-10-10" time="00:00:00"/>
+			<stationName>Tamarindo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="2.05" maxStage="4.25" alpha="2.045" beta="1.81" cr="74.788"/>
+		<powerEquation minStage="4.25" maxStage="7.00" alpha="2.045" beta="1.97" cr="81.821"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>12</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2021-10-10" time="00:00:00"/>
+			<endDate date="2021-10-20" time="00:00:00"/>
+			<stationName>Tamarindo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="1.99" maxStage="4.25" alpha="1.990" beta="1.81" cr="74.788"/>
+		<powerEquation minStage="4.25" maxStage="7.00" alpha="1.990" beta="1.97" cr="81.821"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>12</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2021-10-20" time="00:00:00"/>
+			<endDate date="2021-11-04" time="00:00:00"/>
+			<stationName>Tamarindo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="1.90" maxStage="4.25" alpha="1.900" beta="1.81" cr="74.788"/>
+		<powerEquation minStage="4.25" maxStage="7.00" alpha="1.900" beta="1.97" cr="81.821"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>12</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2021-11-04" time="00:00:00"/>
+			<endDate date="2022-02-20" time="00:00:00"/>
+			<stationName>Tamarindo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="2.19" maxStage="4.25" alpha="2.190" beta="1.81" cr="74.788"/>
+		<powerEquation minStage="4.25" maxStage="7.00" alpha="2.190" beta="1.97" cr="81.821"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>12</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2022-02-20" time="00:00:00"/>
+			<endDate date="2022-03-29" time="00:00:00"/>
+			<stationName>Tamarindo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="2.21" maxStage="4.25" alpha="2.210" beta="1.81" cr="74.788"/>
+		<powerEquation minStage="4.25" maxStage="7.00" alpha="2.210" beta="1.97" cr="81.821"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>12</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2022-03-29" time="00:00:00"/>
+			<endDate date="2022-05-03" time="00:00:00"/>
+			<stationName>Tamarindo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="2.15" maxStage="4.25" alpha="2.150" beta="1.81" cr="74.788"/>
+		<powerEquation minStage="4.25" maxStage="7.00" alpha="2.150" beta="1.97" cr="81.821"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>12</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2022-05-03" time="00:00:00"/>
+			<endDate date="2022-05-24" time="00:00:00"/>
+			<stationName>Tamarindo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="2.21" maxStage="4.25" alpha="2.210" beta="1.81" cr="74.788"/>
+		<powerEquation minStage="4.25" maxStage="7.00" alpha="2.210" beta="1.97" cr="81.821"/>
+	</ratingCurve>
+	<ratingCurve>
+		<header>
+			<locationId>12</locationId>
+			<qualifierId>Power</qualifierId>
+			<startDate date="2022-05-24" time="00:00:00"/>
+			<stationName>Tamarindo</stationName>
+			<stageUnit>m</stageUnit>
+			<dischargeUnit>m3/s</dischargeUnit>
+		</header>
+		<powerEquation minStage="2.17" maxStage="4.25" alpha="2.170" beta="1.81" cr="74.788"/>
+		<powerEquation minStage="4.25" maxStage="7.00" alpha="2.170" beta="1.97" cr="81.821"/>
+	</ratingCurve>
+	<!--Montecristo-->
 	<ratingCurve>
 		<header>
 			<locationId>59</locationId>
@@ -58,8 +488,9 @@
 			<stageUnit>m</stageUnit>
 			<dischargeUnit>m3/s</dischargeUnit>
 		</header>
-		<powerEquation minStage="0.37" maxStage="1.40" alpha="-0.33" beta="2.23" cr="26.477"/>
+		<powerEquation minStage="0.37" maxStage="1.40" alpha="0.33" beta="2.23" cr="26.477"/>
 	</ratingCurve>
+	<!--SF Dos Cerros-->
 	<ratingCurve>
 		<header>
 			<locationId>132</locationId>
@@ -69,8 +500,9 @@
 			<stageUnit>m</stageUnit>
 			<dischargeUnit>m3/s</dischargeUnit>
 		</header>
-		<powerEquation minStage="0.10" maxStage="6.24" alpha="-0.10" beta="1.89" cr="17.745"/>
+		<powerEquation minStage="0.10" maxStage="6.24" alpha="0.10" beta="1.89" cr="17.745"/>
 	</ratingCurve>
+	<!--El Jocote -->
 	<ratingCurve>
 		<header>
 			<locationId>129</locationId>
@@ -80,8 +512,9 @@
 			<stageUnit>m</stageUnit>
 			<dischargeUnit>m3/s</dischargeUnit>
 		</header>
-		<powerEquation minStage="0.40" maxStage="6.50" alpha="-0.395" beta="1.978" cr="20.475"/>
+		<powerEquation minStage="0.40" maxStage="6.50" alpha="0.395" beta="1.978" cr="20.475"/>
 	</ratingCurve>
+	<!--Metayate-->
 	<ratingCurve>
 		<header>
 			<locationId>257</locationId>
@@ -91,6 +524,6 @@
 			<stageUnit>m</stageUnit>
 			<dischargeUnit>m3/s</dischargeUnit>
 		</header>
-		<powerEquation minStage="0.99" maxStage="2.00" alpha="-0.985" beta="3.96" cr="82.678"/>
+		<powerEquation minStage="0.99" maxStage="2.00" alpha="0.985" beta="3.96" cr="82.678"/>
 	</ratingCurve>
 </RatingCurves>
