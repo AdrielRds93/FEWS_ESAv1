@@ -210,7 +210,7 @@
 		<header>
 			<locationId>12</locationId>
 			<qualifierId>Power</qualifierId>
-			<startDate date="2017-05-01" time="00:00:00"/>
+			<startDate date="2010-05-01" time="00:00:00"/> <!--real date 2017-05-01-->
 			<endDate date="2018-10-27" time="00:00:00"/>
 			<stationName>Tamarindo</stationName>
 			<stageUnit>m</stageUnit>
