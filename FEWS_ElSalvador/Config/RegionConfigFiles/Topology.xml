@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <topology xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/topology.xsd">
 	<enableAutoRun>false</enableAutoRun>
-	<nodes id="Import_Observations" name="Import observations">
-		<node id="ImportObservations_MARN" name="MARN">
+	<nodes id="ImportObs" name="Importar observaciones">
+		<node id="ImportMARN" name="MARN">
 			<workflowId>Import</workflowId>
 			<graceTime unit="hour" multiplier="3"/>
 			<localRun>false</localRun>
 		</node>
-		<node id="ImportObservations_GPM" name="GPM">
+		<node id="ImportGPM" name="GPM">
 			<workflowId>ImportGPM</workflowId>
 			<graceTime unit="hour" multiplier="3"/>
 			<localRun>false</localRun>
 		</node>
 	</nodes>
-	<nodes id="Import_Forecasts" name="Import and process forecast">
+	<nodes id="ImportFor" name="Importar pronósticos">
+		<node id="ImportForecasts_WRF" name="WRF">
+			<workflowId>ImportForecastWRF</workflowId>
+			<graceTime unit="hour" multiplier="6"/>
+			<localRun>false</localRun>
+		</node>
 		<node id="ImportForecasts_GFS" name="GFS">
 			<workflowId>ImportForecastGFS</workflowId>
 			<graceTime unit="hour" multiplier="6"/>
@@ -24,32 +29,43 @@
 			<graceTime unit="hour" multiplier="6"/>
 			<localRun>false</localRun>
 		</node>
-		<node id="ImportForecasts_WRF" name="WRF">
-			<workflowId>ImportForecastWRF</workflowId>
+	</nodes>
+	<nodes id="ProcessData" name="Procesar">
+		<node id="ProcessObs" name="Procesar observaciones">
+			<workflowId>Preprocess</workflowId>
+			<graceTime unit="hour" multiplier="6"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ProcessFor" name="Procesar observaciones">
+			<workflowId>PreprocessForecast</workflowId>
 			<graceTime unit="hour" multiplier="6"/>
 			<localRun>false</localRun>
 		</node>
 	</nodes>
 	<nodes id="HBV_Model" name="Modelo HBV">
-		<node id="UpdateRun" name="Simulación histórica">
-			<workflowId>HBV_Update</workflowId>
-			<graceTime unit="hour" multiplier="6"/>
-			<localRun>false</localRun>
-		</node>
-		<node id="ForecastRun" name="Simulación pronóstico GFS">
-			<workflowId>HBV_Forecast</workflowId>
-			<graceTime unit="hour" multiplier="6"/>
-			<localRun>false</localRun>
-		</node>
-		<node id="UpdateRunDA" name="Simulación histórica con asimilación">
-			<workflowId>HBV_UpdateDA</workflowId>
-			<graceTime unit="hour" multiplier="6"/>
-			<localRun>false</localRun>
-		</node>
-		<node id="ForecastRunDA" name="Simulación pronóstico GFS con asimilación">
-			<workflowId>HBV_ForecastDA</workflowId>
-			<graceTime unit="hour" multiplier="6"/>
-			<localRun>false</localRun>
-		</node>
+		<nodes id="NoDA" name="Sin asimilación">
+			<node id="UpdateRun" name="Simulación histórica">
+				<workflowId>HBV_Update</workflowId>
+				<graceTime unit="hour" multiplier="6"/>
+				<localRun>false</localRun>
+			</node>
+			<node id="ForecastRun" name="Pronóstico GFS">
+				<workflowId>HBV_Forecast</workflowId>
+				<graceTime unit="hour" multiplier="6"/>
+				<localRun>false</localRun>
+			</node>
+		</nodes>
+		<nodes id="WithDA" name="Con asimilación">
+			<node id="UpdateRunDA" name="Simulación histórica">
+				<workflowId>HBV_UpdateDA</workflowId>
+				<graceTime unit="hour" multiplier="6"/>
+				<localRun>false</localRun>
+			</node>
+			<node id="ForecastRunDA" name="Pronóstico GFS">
+				<workflowId>HBV_ForecastDA</workflowId>
+				<graceTime unit="hour" multiplier="6"/>
+				<localRun>false</localRun>
+			</node>
+		</nodes>
 	</nodes>
 </topology>

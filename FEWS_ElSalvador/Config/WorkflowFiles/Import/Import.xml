@@ -6,8 +6,4 @@
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>ImportMARN</moduleInstanceId>
 	</activity>
-	<activity>
-		<runIndependent>true</runIndependent>
-		<workflowId>Preprocess</workflowId>
-	</activity>
 </workflow>

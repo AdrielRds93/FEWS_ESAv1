@@ -14,8 +14,4 @@
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>ImportWRF</moduleInstanceId>
 	</activity>
-	<activity>
-		<runIndependent>true</runIndependent>
-		<workflowId>PreprocessForecast</workflowId>
-	</activity>
 </workflow>

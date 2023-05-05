@@ -187,7 +187,7 @@
 			<dblValue>1.0</dblValue>
 		</parameter>
 		<parameter id="wDelta_Q">
-			<dblValue>1.0</dblValue>
+			<dblValue>10.0</dblValue>
 		</parameter>
 	</group>
 </parameters>

@@ -133,15 +133,6 @@
 				</properties>
 			</layer>
 			<layerGroup id="Admin">
-				<esriShapeLayer id="World">
-					<file>cntry98.shp</file>
-					<geoDatum>WGS 1984</geoDatum>
-					<visible>false</visible>
-					<toolTip>%CNTRY_NAME%</toolTip>
-					<lineColor>black</lineColor>
-					<fillRgbColor>FFFFFF</fillRgbColor>
-					<opaquenessPercentage>20</opaquenessPercentage>
-				</esriShapeLayer>
 				<esriShapeLayer id="Countries">
 					<file>Countries.shp</file>
 					<geoDatum>WGS 1984</geoDatum>

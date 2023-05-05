@@ -1,117 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <filters version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/filters.xsd">
-	<defaultFilterId>FEWS-ELSALVADOR</defaultFilterId>
-	<!--FILTER For PI Web Service-->
-	<filter id="FEWS-ELSALVADOR" name="FEWS El Salvador">
-		<child foreignKey="Observations"/>
-		<child foreignKey="ObservedLempaBasin"/>
-		<child foreignKey="ForecastLempaBasin"/>
+	<filter id="Importados" name="Datos importados">
+		<child foreignKey="Importados_Meteo"/>
+		<child foreignKey="Importados_Hidro"/>
 	</filter>
-	<!--FILTERS-->
-	<filter id="Observations" name="Observations">
-		<child foreignKey="Precipitation"/>
-		<child foreignKey="WaterStage"/>
-		<child foreignKey="Discharge"/>
-		<child foreignKey="Temperature"/>
+	<filter id="Procesados" name="Datos procesados">
+		<child foreignKey="Procesados_Meteo"/>
+		<child foreignKey="Procesados_Hidro"/>
 	</filter>
-	<filter id="ObservedLempaBasin" name="Observed data - By Basins">
-		<child foreignKey="StationLempa"/>
-		<child foreignKey="GPMLempa"/>
+	<filter id="Calibracion" name="Datos calibracion">
+		<child foreignKey="PDaily_C"/>
+		<child foreignKey="PHourly_C"/>
+		<child foreignKey="H_C"/>
+		<child foreignKey="Q_C"/>
+		<child foreignKey="T_C"/>
+		<child foreignKey="E_C"/>
 	</filter>
-	<filter id="ForecastLempaBasin" name="Forecast data - By Basins">
-		<child foreignKey="GFSLempa"/>
-		<child foreignKey="GEFSLempa"/>
-		<child foreignKey="WRFLempa"/>
-	</filter>
-	<!--SUB-FILTERS-->
-	<!--Observations-->
-	<filter id="Precipitation" name="Precipitation">
-		<validationIconsVisible>true</validationIconsVisible>
-		<timeSeriesSet>
-			<moduleInstanceId>PreprocessP</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>P.obs</parameterId>
-			<locationSetId>MARN_P_5min</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="minute" multiplier="5"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
-			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
-		</timeSeriesSet>
-		<timeSeriesSet>
-			<moduleInstanceId>PreprocessP</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>P.obs</parameterId>
-			<locationSetId>MARN_P_10min</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="minute" multiplier="10"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
-			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
-		</timeSeriesSet>
-		<timeSeriesSet>
-			<moduleInstanceId>PreprocessP</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>P.obs</parameterId>
-			<locationSetId>MARN_P_15min</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="minute" multiplier="15"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
-			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
-		</timeSeriesSet>
-		<timeSeriesSet>
-			<moduleInstanceId>ImportMARN</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>P.obs</parameterId>
-			<locationSetId>MARN_P_diaria</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep id="daily07"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
-			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
-		</timeSeriesSet>
-	</filter>
-	<filter id="WaterStage" name="Water stage">
-		<validationIconsVisible>true</validationIconsVisible>
-		<timeSeriesSet>
-			<moduleInstanceId>ImportMARN</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>H.obs</parameterId>
-			<locationSetId>MARN_H_5min</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="minute" multiplier="5"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
-			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
-		</timeSeriesSet>
-		<timeSeriesSet>
-			<moduleInstanceId>ImportMARN</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>H.obs</parameterId>
-			<locationSetId>MARN_H_15min</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="minute" multiplier="15"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
-			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
-		</timeSeriesSet>
-	</filter>
-	<filter id="Discharge" name="Discharge">
-		<validationIconsVisible>true</validationIconsVisible>
-		<timeSeriesSet>
-			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>Q.obs</parameterId>
-			<locationSetId>MARN_Q</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
-			<readWriteMode>add originals</readWriteMode>
-		</timeSeriesSet>
-	</filter>
-	<filter id="Temperature" name="Air temperature">
+	<filter id="Importados_Meteo" name="Meteo">
 		<validationIconsVisible>true</validationIconsVisible>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportMARN</moduleInstanceId>
@@ -120,11 +25,89 @@
 			<locationSetId>MARN_T</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="10"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_diaria</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>	
+	</filter>
+	<filter id="Importados_Hidro" name="Hidro">
+		<validationIconsVisible>true</validationIconsVisible>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationSetId>MARN_H_5min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationSetId>MARN_H_15min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</filter>
-	<!--Observed data Lempa Basin-->
+	<filter id="Procesados_Meteo" name="Meteo">
+		<validationIconsVisible>true</validationIconsVisible>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_5min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_10min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="10"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P_15min</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="Procesados_Hidro" name="Hidro">
+		<validationIconsVisible>true</validationIconsVisible>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationSetId>MARN_Q</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</filter>
 	<filter id="StationLempa" name="Stations @ Lempa">
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessP</moduleInstanceId>
@@ -137,19 +120,6 @@
 			<readWriteMode>read only</readWriteMode>
 		</timeSeriesSet>
 	</filter>
-	<filter id="GPMLempa" name="GPM @ Lempa">
-		<timeSeriesSet>
-			<moduleInstanceId>PreprocessGPM</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>P.basin</parameterId>
-			<locationSetId>SubbasinLempa</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="minute" multiplier="30"/>
-			<relativeViewPeriod unit="day" start="-2" end="0"/>
-			<readWriteMode>read only</readWriteMode>
-		</timeSeriesSet>
-	</filter>
-	<!--Forecast Lempa Basin-->
 	<filter id="GFSLempa" name="GFS @ Lempa">
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessGFS</moduleInstanceId>
@@ -203,21 +173,87 @@
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</filter>
-	<!--PronosticosHydro-->
-	<!--InundacionesHistoricas-->
-	<!--ObservacionesCalibracion-->
-	<filter id="DATA_CALIBRATION" name="Calibration data (Lempa basin)">
-		<child foreignKey="Observation_cal"/>
+	<filter id="HBV_Model">
+		<child foreignKey="HBV"/>
+		<child foreignKey="HBV_DA"/>
 	</filter>
-	<!--FILTERS-->
-	<filter id="Observation_cal" name="Observation (cal)">
-		<child foreignKey="PDaily_C"/>
-		<child foreignKey="PHourly_C"/>
-		<child foreignKey="H_C"/>
-		<child foreignKey="Q_C"/>
-		<child foreignKey="T_C"/>
-		<child foreignKey="E_C"/>
+	<filter id="HBV" name="Modelo HBV">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationSetId>HBV_SubcuencaLempa</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_Update</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.sim</parameterId>
+			<locationSetId>HBV_SubcuencaLempa</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_Forecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.sim</parameterId>
+			<locationSetId>HBV_SubcuencaLempa</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_Forecast-GEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.sim</parameterId>
+			<locationSetId>HBV_SubcuencaLempa</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
 	</filter>
+	<filter id="HBV_DA" name="Modelo HBV-DA">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationSetId>HBV_SubcuencaLempa</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_UpdateDA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.sim</parameterId>
+			<locationSetId>HBV_SubcuencaLempa</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_ForecastDA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.sim</parameterId>
+			<locationSetId>HBV_SubcuencaLempa</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+
+	<!--filtros con datos de calibración -->
 	<filter id="PDaily_C" name="Daily Precipitation (cal)">
 		<validationIconsVisible>true</validationIconsVisible>
 		<timeSeriesSet>
@@ -227,7 +263,7 @@
 			<locationSetId>MARN_P_diaria_C</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="daily07"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
@@ -241,7 +277,7 @@
 			<locationSetId>MARN_P_60min_C</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
@@ -255,7 +291,7 @@
 			<locationSetId>MARN_H_15min_C</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="15"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
@@ -266,7 +302,7 @@
 			<locationSetId>CEL_H_C</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
@@ -280,7 +316,7 @@
 			<locationSetId>MARN_Q_C</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
@@ -291,7 +327,7 @@
 			<locationSetId>CEL_Q_C</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
@@ -305,7 +341,7 @@
 			<locationSetId>MARN_T_C</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="10"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
@@ -319,88 +355,9 @@
 			<locationSetId>MARN_E_C</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="daily07"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<relativeViewPeriod unit="day" start="-1" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>1</synchLevel>
-		</timeSeriesSet>
-	</filter>
-	<filter id="HBV_Model">
-		<child foreignKey="HBV"/>
-		<child foreignKey="HBV_DA"/>
-	</filter>
-	<filter id="HBV" name="Modelo HBV">
-		<timeSeriesSet>
-			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>Q.obs</parameterId>
-			<locationSetId>HBV_SubcuencaLempa</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
-			<readWriteMode>add originals</readWriteMode>
-		</timeSeriesSet>
-		<timeSeriesSet>
-			<moduleInstanceId>HBV_SubcuencaLempa_Update</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>Q.sim</parameterId>
-			<locationSetId>HBV_SubcuencaLempa</locationSetId>
-			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
-			<readWriteMode>add originals</readWriteMode>
-		</timeSeriesSet>
-		<timeSeriesSet>
-			<moduleInstanceId>HBV_SubcuencaLempa_Forecast</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>Q.sim</parameterId>
-			<locationSetId>HBV_SubcuencaLempa</locationSetId>
-			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
-			<readWriteMode>add originals</readWriteMode>
-		</timeSeriesSet>
-		<timeSeriesSet>
-			<moduleInstanceId>HBV_SubcuencaLempa_Forecast-GEFS</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>Q.sim</parameterId>
-			<locationSetId>HBV_SubcuencaLempa</locationSetId>
-			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
-			<readWriteMode>add originals</readWriteMode>
-			<ensembleId>GEFS</ensembleId>
-		</timeSeriesSet>
-	</filter>
-	<filter id="HBV_DA" name="Modelo HBV-DA">
-		<timeSeriesSet>
-			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>Q.obs</parameterId>
-			<locationSetId>HBV_SubcuencaLempa</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
-			<readWriteMode>add originals</readWriteMode>
-		</timeSeriesSet>
-		<timeSeriesSet>
-			<moduleInstanceId>HBV_SubcuencaLempa_UpdateDA</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>Q.sim</parameterId>
-			<locationSetId>HBV_SubcuencaLempa</locationSetId>
-			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
-			<readWriteMode>add originals</readWriteMode>
-		</timeSeriesSet>
-		<timeSeriesSet>
-			<moduleInstanceId>HBV_SubcuencaLempa_ForecastDA</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>Q.sim</parameterId>
-			<locationSetId>HBV_SubcuencaLempa</locationSetId>
-			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
-			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</filter>
 </filters>

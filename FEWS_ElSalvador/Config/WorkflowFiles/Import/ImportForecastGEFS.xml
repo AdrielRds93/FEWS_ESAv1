@@ -6,8 +6,4 @@
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>ImportGEFS</moduleInstanceId>
 	</activity>
-	<activity>
-		<runIndependent>false</runIndependent>
-		<workflowId>PreprocessGEFS</workflowId>
-	</activity>
 </workflow>

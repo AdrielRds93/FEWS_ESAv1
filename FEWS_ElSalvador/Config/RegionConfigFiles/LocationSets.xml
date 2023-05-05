@@ -107,6 +107,14 @@
 			</anyValid>
 		</constraints>
 	</locationSet>
+	<locationSet id="MARN_T_diaria">
+		<locationSetId>MARN_T</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="RESOLUTION_T" equals="Diaria"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
 	<locationSet id="MARN_H">
 		<locationSetId>MARN_OPERATIONAL</locationSetId>
 		<constraints>
