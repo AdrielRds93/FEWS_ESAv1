@@ -20,7 +20,24 @@
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="daily07"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Tmax.obs</parameterId>
+			<locationSetId>MARN_T_diaria</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Tmin.obs</parameterId>
+			<locationSetId>MARN_T_diaria</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</import>
 	<import>
