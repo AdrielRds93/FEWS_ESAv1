@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <explorer version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/explorer.xsd">
-	<description>Configuration of the main FEWS display</description>
 	<systemInformation>
-		<systemCaption>El Salvador</systemCaption>
+		<systemCaption>Sistema de Pronóstico Hidrológico FEWS-ESA</systemCaption>
 		<systemHelpUrl>https://publicwiki.deltares.nl/display/FEWSDOC/Home</systemHelpUrl>
 	</systemInformation>
 	<globalDatum>msnm</globalDatum>
@@ -94,10 +93,10 @@
 		<backgroundColor>white</backgroundColor>
 		<openStreetMapLayer id="Open Street Map">
 			<url>http://tile.openstreetmap.org</url>
-			<visible>true</visible>
+			<visible>false</visible>
 			<cacheDir>$tempDir$/OsmTiles</cacheDir>
 		</openStreetMapLayer>
-		<layer id="Canvas" name="ArcGIS Canvas World LightGray Base">
+		<layer id="Canvas" name="World LightGray Base">
 			<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
 			<visible>false</visible>
 			<properties>
@@ -109,7 +108,7 @@
 				<int key="tileSize" value="256"/>
 			</properties>
 		</layer>
-		<layer id="ArcGIS World" name="ArcGIS World_Imagery">
+		<layer id="ArcGIS World" name="World_Imagery">
 			<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
 			<visible>false</visible>
 			<properties>
@@ -121,9 +120,9 @@
 				<int key="tileSize" value="256"/>
 			</properties>
 		</layer>
-		<layer id="ArcGIS World Topo" name="ArcGIS World_Topo_Map">
+		<layer id="ArcGIS World Topo" name="World Topo Map">
 			<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
-			<visible>false</visible>
+			<visible>true</visible>
 			<properties>
 				<string key="tileUrlPattern" value="http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%"/>
 				<string key="cacheDir" value="%REGION_HOME%/mapcache/Esri_topo"/>
@@ -161,8 +160,8 @@
 				<opaquenessPercentage>20</opaquenessPercentage>
 			</esriShapeLayer>
 		</layerGroup>
-		<layerGroup id="Watersheds">
-			<esriShapeLayer id="Regiones" name="Hydrological Regions">
+		<layerGroup id="Cuencas">
+			<esriShapeLayer id="Regiones" name="Regiones">
 				<description>Regions</description>
 				<file>Regions.shp</file>
 				<geoDatum>WGS 1984</geoDatum>
@@ -171,9 +170,9 @@
 				<lineColor>black</lineColor>
 				<fillRgbColor>FFFFFF</fillRgbColor>
 				<opaquenessPercentage>20</opaquenessPercentage>
-				<lineWidth value="2"/>
+<!--				<lineWidth value="2"/>-->
 			</esriShapeLayer>
-			<esriShapeLayer id="Red hidrográfica" name="Drainage">
+			<esriShapeLayer id="Red hidrográfica" name="Drenaje">
 				<description>Rivers</description>
 				<file>Rivers.shp</file>
 				<geoDatum>WGS 1984</geoDatum>
@@ -182,7 +181,7 @@
 				<lineColor>light blue</lineColor>
 				<opaquenessPercentage>20</opaquenessPercentage>
 			</esriShapeLayer>
-			<esriShapeLayer id="Lempa" name="Lempa Subbasins">
+			<esriShapeLayer id="Lempa" name="Subcuencas Lempa">
 				<description>Lempa subbasins</description>
 				<file>Subbasin_Lempa.shp</file>
 				<geoDatum>WGS 1984</geoDatum>
@@ -193,7 +192,7 @@
 				<opaquenessPercentage>20</opaquenessPercentage>
 				<lineWidth value="2"/>
 			</esriShapeLayer>
-			<esriShapeLayer id="Lempa_model" name="Lempa Hydrological Model">
+			<esriShapeLayer id="Lempa_model" name="Subcuencas Modelo">
 				<description>SubbasinLempa_model</description>
 				<file>Cuenca_modelo.shp</file>
 				<geoDatum>WGS 1984</geoDatum>
@@ -206,9 +205,6 @@
 			</esriShapeLayer>
 		</layerGroup>
 	</map>
-	<fileMenu>
-		<exportTimeSeries visible="true"/>
-	</fileMenu>
 	<explorerTasks>
 		<explorerTask name="Map Display">
 			<mnemonic>A</mnemonic>
@@ -370,14 +366,23 @@
 		</clientFilter>
 	</logPanelConfig>
 	<panelSizes>
-		<loggingPanelSize>5</loggingPanelSize>
-		<listsPanelSize>22</listsPanelSize>
-		<filterListSize>29</filterListSize>
-		<locationListSize>45</locationListSize>
-		<parameterListSize>25</parameterListSize>
-		<forecastListSize>5</forecastListSize>
+		<loggingPanelSize>0</loggingPanelSize>
+		<listsPanelSize>0</listsPanelSize>
+		<filterListSize>30</filterListSize>
+		<locationListSize>30</locationListSize>
+		<parameterListSize>30</parameterListSize>
+		<qualifierListSize>0</qualifierListSize>
+		<forecastListSize>0</forecastListSize>
 	</panelSizes>
-	<!--The following defines the port to listen to for SOAP requests 
-    (used for automated workflow execution in stand-alone mode)-->
-	<piServicePortRange start="8100" end="8200"/>
+	<panelHeaderLabels>
+		<filterPanelHeader>Fuente de datos</filterPanelHeader>
+		<locationPanelHeader>Ubicaciones</locationPanelHeader>
+		<parameterPanelHeader>Parámetros</parameterPanelHeader>
+		<qualifierPanelHeader>Calificadores</qualifierPanelHeader>
+		<forecastPanelHeader>Simulaciones</forecastPanelHeader>
+	</panelHeaderLabels>
+	<notification enabled="true"/>
+	<fileMenu>
+		<exportTimeSeries visible="true"/>
+	</fileMenu>
 </explorer>

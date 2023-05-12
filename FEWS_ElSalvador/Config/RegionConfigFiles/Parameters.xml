@@ -10,31 +10,31 @@
 			<valueResolution>0.0001</valueResolution>
 		</parameter>
 	</parameterGroup>
-	<parameterGroup id="Precipitation">
+	<parameterGroup id="Precipitation" name="Precipitación">
 		<parameterType>accumulative</parameterType>
 		<unit>mm</unit>
 		<valueResolution>0.01</valueResolution>
-		<parameter id="P" name="P (precipitation)">
+		<parameter id="P" name="P">
 			<shortName>P</shortName>
 		</parameter>
-		<parameter id="P.obs" name="P.obs (Observed precipitation)">
+		<parameter id="P.obs" name="P.obs">
 			<shortName>P.obs</shortName>
 		</parameter>
-		<parameter id="P.pro" name="P.pro (Precipitation forecast)">
+		<parameter id="P.pro" name="P.pro">
 			<shortName>P.pro</shortName>
 		</parameter>
-		<parameter id="P.basin" name="P.basin (Mean areal precipitation)">
+		<parameter id="P.basin" name="P.basin">
 			<shortName>P.basin</shortName>
 		</parameter>
 	</parameterGroup>
-	<parameterGroup id="Accumulated precipitation">
+	<parameterGroup id="Precipitación acumulada">
 		<parameterType>instantaneous</parameterType>
 		<unit>mm</unit>
 		<valueResolution>0.1</valueResolution>
-		<parameter id="P.obs.acc" name="P.obs.acc (Observed accumulated precipitation)">
+		<parameter id="P.obs.acc" name="P.obs.acc">
 			<shortName>P.obs.acc</shortName>
 		</parameter>
-		<parameter id="P.pro.acc" name="P.pro.acc (Forecast accumulated Precipitation)">
+		<parameter id="P.pro.acc" name="P.pro.acc">
 			<shortName>P.pro.acc</shortName>
 		</parameter>
 		<parameter id="P.pro.acc.GEFS.Perc000" name="P.pro.acc.GEFS.Perc000">
@@ -71,43 +71,43 @@
 			<shortName>P.pro.acc.GEFS.Perc100</shortName>
 		</parameter>
 	</parameterGroup>
-	<parameterGroup id="Potential Evapotranspiration">
+	<parameterGroup id="Evapotranspiración potencial">
 		<parameterType>instantaneous</parameterType>
 		<unit>mm</unit>
 		<valueResolution>0.1</valueResolution>
-		<parameter id="E.obs" name="E.obs (Potential Evapotranspiration)">
+		<parameter id="E.obs" name="E.obs">
 			<shortName>E</shortName>
 		</parameter>
-		<parameter id="E.basin" name="E.basin (Mean ETo per basin)">
+		<parameter id="E.basin" name="E.basin">
 			<shortName>E.basin</shortName>
 		</parameter>
-		<parameter id="E.pro" name="E.pro (Forecast Temperatura)">
+		<parameter id="E.pro" name="E.pro">
 			<shortName>E.pro</shortName>
 		</parameter>
 	</parameterGroup>
-	<parameterGroup id="Temperature">
+	<parameterGroup id="Temperatura">
 		<parameterType>instantaneous</parameterType>
 		<unit>oC</unit>
 		<valueResolution>0.1</valueResolution>
 		<parameter id="T" name="T">
 			<shortName>T</shortName>
 		</parameter>
-		<parameter id="Tmed.obs" name="Tmed.obs (Mean observed temperature)">
-			<shortName>Tmed.obs</shortName>
-		</parameter>
-		<parameter id="Tmin.obs" name="Tmin.obs (Min observed temperature)">
-			<shortName>Tmin.obs</shortName>
-		</parameter>
-		<parameter id="Tmax.obs" name="Tmax.obs (Max observed temperature)">
-			<shortName>Tmax.obs</shortName>
-		</parameter>
-		<parameter id="T.obs" name="T.obs (Observed temperature)">
+		<parameter id="T.obs" name="T.obs">
 			<shortName>T.obs</shortName>
 		</parameter>
-		<parameter id="T.basin" name="T.basin (Mean Temperature per basin)">
+		<parameter id="Tmed.obs" name="Tmed.obs">
+			<shortName>Tmed.obs</shortName>
+		</parameter>
+		<parameter id="Tmin.obs" name="Tmin.obs">
+			<shortName>Tmin.obs</shortName>
+		</parameter>
+		<parameter id="Tmax.obs" name="Tmax.obs">
+			<shortName>Tmax.obs</shortName>
+		</parameter>
+		<parameter id="T.basin" name="T.basin">
 			<shortName>T.basin</shortName>
 		</parameter>
-		<parameter id="T.pro" name="T.pro (Forecast Temperatura)">
+		<parameter id="T.pro" name="T.pro">
 			<shortName>T.pro</shortName>
 		</parameter>
 	</parameterGroup>
@@ -115,10 +115,10 @@
 		<parameterType>mean</parameterType>
 		<unit>m3/s</unit>
 		<valueResolution>0.01</valueResolution>
-		<parameter id="Q.obs" name="Q.obs (Observed discharge)">
+		<parameter id="Q.obs" name="Q.obs">
 			<shortName>Q.obs</shortName>
 		</parameter>
-		<parameter id="Q.sim" name="Q.sim (Simulated discharge)">
+		<parameter id="Q.sim" name="Q.sim">
 			<shortName>Q.sim</shortName>
 		</parameter>
 	</parameterGroup>
@@ -127,16 +127,16 @@
 		<unit>m</unit>
 		<valueResolution>0.01</valueResolution>
 		<usesDatum>true</usesDatum>
-		<parameter id="H.obs" name="H.obs (Observed water stage)">
+		<parameter id="H.obs" name="H.obs">
 			<shortName>H.obs</shortName>
 		</parameter>
-		<parameter id="H.sim" name="H simulated (Simulated water stage)">
+		<parameter id="H.sim" name="H simulated">
 			<shortName>H.sim</shortName>
 		</parameter>
-		<parameter id="H.for" name="H forecasted (Forecast water stage)">
+		<parameter id="H.for" name="H forecasted">
 			<shortName>H.for</shortName>
 		</parameter>
-		<parameter id="H.upd" name="H.upd (updated water stage)">
+		<parameter id="H.upd" name="H.upd">
 			<shortName>H.upd</shortName>
 		</parameter>
 	</parameterGroup>
@@ -148,11 +148,11 @@
 			<shortName>Factor</shortName>
 		</parameter>
 	</parameterGroup>
-	<parameterGroup id="Volume">
+	<parameterGroup id="Volumen">
 		<parameterType>instantaneous</parameterType>
 		<unit>%</unit>
 		<valueResolution>0.01</valueResolution>
-		<parameter id="V.obs" name="V.obs (Observed volume)">
+		<parameter id="V.obs" name="V.obs">
 			<shortName>V.obs</shortName>
 		</parameter>
 	</parameterGroup>
