@@ -4,6 +4,4 @@
 	<parameter external="Rainfall" internal="P.obs"/>
 	<parameter external="TempMax" internal="Tmax.obs"/>
 	<parameter external="TempMin" internal="Tmin.obs"/>
-	<!--Rainfall gauges-->
-	<enableOneToOneMapping></enableOneToOneMapping>
 </idMap>

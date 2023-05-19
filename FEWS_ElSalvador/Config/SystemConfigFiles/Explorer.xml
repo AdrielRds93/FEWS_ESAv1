@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <explorer version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/explorer.xsd">
 	<systemInformation>
 		<systemCaption>Sistema de Pronóstico Hidrológico FEWS-ESA</systemCaption>
@@ -170,7 +169,6 @@
 				<lineColor>black</lineColor>
 				<fillRgbColor>FFFFFF</fillRgbColor>
 				<opaquenessPercentage>20</opaquenessPercentage>
-<!--				<lineWidth value="2"/>-->
 			</esriShapeLayer>
 			<esriShapeLayer id="Red hidrográfica" name="Drenaje">
 				<description>Rivers</description>
@@ -187,10 +185,8 @@
 				<geoDatum>WGS 1984</geoDatum>
 				<visible>false</visible>
 				<toolTip>%BasinName%</toolTip>
-				<lineColor>black</lineColor>
-				<fillRgbColor>FFFFFF</fillRgbColor>
+				<lineColor>blue</lineColor>
 				<opaquenessPercentage>20</opaquenessPercentage>
-				<lineWidth value="2"/>
 			</esriShapeLayer>
 			<esriShapeLayer id="Lempa_model" name="Subcuencas Modelo">
 				<description>SubbasinLempa_model</description>
@@ -198,23 +194,23 @@
 				<geoDatum>WGS 1984</geoDatum>
 				<visible>false</visible>
 				<toolTip>%BasinName%</toolTip>
-				<lineColor>black</lineColor>
+				<lineColor>aquamarine2</lineColor>
 				<fillRgbColor>FFFFFF</fillRgbColor>
 				<opaquenessPercentage>20</opaquenessPercentage>
-				<lineWidth value="2"/>
 			</esriShapeLayer>
 		</layerGroup>
 	</map>
 	<explorerTasks>
-		<explorerTask name="Map Display">
+		<explorerTask name="Mapa">
 			<mnemonic>A</mnemonic>
 			<arguments>MapDisplay</arguments>
 			<taskClass>nl.wldelft.fews.gui.plugin.map.MapDisplay</taskClass>
 			<toolbarTask>false</toolbarTask>
 			<menubarTask>true</menubarTask>
 			<accelerator>ctrl A</accelerator>
+			<toolWindow>false</toolWindow>
 		</explorerTask>
-		<explorerTask name="Data Display">
+		<explorerTask name="Series de Tiempo">
 			<mnemonic>D</mnemonic>
 			<taskClass>nl.wldelft.fews.gui.plugin.timeseries.EditorTimeSeriesDialog</taskClass>
 			<toolbarTask>true</toolbarTask>
@@ -224,7 +220,7 @@
 			<doubleClickLocationEnabled>false</doubleClickLocationEnabled>
 			<loadAtStartup>true</loadAtStartup>
 		</explorerTask>
-		<explorerTask name="Spatial Data">
+		<explorerTask name="Despliegue Espacial">
 			<mnemonic>G</mnemonic>
 			<arguments>GridDisplay</arguments>
 			<taskClass>nl.wldelft.fews.gui.plugin.grid.GridDisplay</taskClass>
@@ -264,7 +260,7 @@
 		<explorerTask name="Modifiers">
 			<mnemonic>X</mnemonic>
 			<taskClass>nl.wldelft.fews.gui.plugin.modifiersdisplay.ModifiersPanel</taskClass>
-			<toolbarTask>true</toolbarTask>
+			<toolbarTask>false</toolbarTask>
 			<menubarTask>false</menubarTask>
 			<allowMultipleInstances>false</allowMultipleInstances>
 			<accelerator>ctrl M</accelerator>
@@ -333,7 +329,7 @@
 		<timeLastRefresh>true</timeLastRefresh>
 		<statusOfSystem>true</statusOfSystem>
 		<mouseCoordinates>true</mouseCoordinates>
-		<userName>true</userName>
+		<userName>false</userName>
 	</statusBarConfig>
 	<dateTime>
 		<timeZoneOffset>-06:00</timeZoneOffset>

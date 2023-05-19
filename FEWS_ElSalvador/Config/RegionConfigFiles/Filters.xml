@@ -1,14 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <filters version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/filters.xsd">
-	<defaultFilterId>FEWS-ELSALVADOR</defaultFilterId>
-	<!--FILTER For PI Web Service-->
+	<filter id="Estaciones">
+		<child foreignKey="Convencionales"/>
+		<child foreignKey="Telemétricas"/>
+	</filter>
+	<filter id="Cuencas">
+		<child foreignKey="Observaciones"/>
+		<child foreignKey="Pronóstico"/>
+	</filter>
+	<filter id="Simulaciones">
+		<child foreignKey="LempaAlta_HBV"/>
+	</filter>
+	<filter id="LempaAlta_HBV" name="HBV Lempa Alta">
+		<child foreignKey="LempaAlta_HBV_sinDA"/>
+		<child foreignKey="LempaAlta_HBV_conDA"/>
+	</filter>
+	<filter id="Observaciones">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessObs</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour"/>
+			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessT</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.obs</parameterId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="Pronóstico">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessWRF</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro</parameterId>
+			<qualifierId>WRF</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="0" end="5"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="Convencionales">
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_CONVENCIONAL</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Tmax.obs</parameterId>
+			<locationSetId>MARN_T_diaria</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMARN</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Tmin.obs</parameterId>
+			<locationSetId>MARN_T_diaria</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="Telemétricas">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessT</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.obs</parameterId>
+			<locationSetId>MARN_T</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<!--
 	<filter id="FEWS-ELSALVADOR" name="FEWS El Salvador">
 		<child foreignKey="Observations"/>
 		<child foreignKey="ObservedLempaBasin"/>
 		<child foreignKey="ForecastLempaBasin"/>
 	</filter>
-	<!--FILTERS-->
 	<filter id="Observations" name="Observations">
 		<child foreignKey="Precipitation"/>
 		<child foreignKey="WaterStage"/>
@@ -24,8 +125,6 @@
 		<child foreignKey="GEFSLempa"/>
 		<child foreignKey="WRFLempa"/>
 	</filter>
-	<!--SUB-FILTERS-->
-	<!--Observations-->
 	<filter id="Precipitation" name="Precipitation">
 		<validationIconsVisible>true</validationIconsVisible>
 		<timeSeriesSet>
@@ -118,7 +217,6 @@
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</filter>
-	<!--Observed data Lempa Basin-->
 	<filter id="StationLempa" name="Stations @ Lempa">
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessP</moduleInstanceId>
@@ -143,7 +241,6 @@
 			<readWriteMode>read only</readWriteMode>
 		</timeSeriesSet>
 	</filter>
-	<!--Forecast Lempa Basin-->
 	<filter id="GFSLempa" name="GFS @ Lempa">
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessGFS</moduleInstanceId>
@@ -202,13 +299,12 @@
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</filter>
-	<!--PronosticosHydro-->
-	<!--InundacionesHistoricas-->
-	<!--ObservacionesCalibracion-->
+
+-->
+	<!--ObservacionesCalibracion
 	<filter id="DATA_CALIBRATION" name="Calibration data (Lempa basin)">
 		<child foreignKey="Observation_cal"/>
 	</filter>
-	<!--FILTERS-->
 	<filter id="Observation_cal" name="Observation (cal)">
 		<child foreignKey="PDaily_C"/>
 		<child foreignKey="PHourly_C"/>
@@ -314,12 +410,8 @@
 			<relativeViewPeriod unit="day" start="-3" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
-	</filter>
-	<filter id="HBV_Model">
-		<child foreignKey="HBV"/>
-		<child foreignKey="HBV_DA"/>
-	</filter>
-	<filter id="HBV" name="Modelo HBV">
+	</filter>-->
+	<filter id="LempaAlta_HBV_sinDA" name="sin asimilación">
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
 			<valueType>scalar</valueType>
@@ -362,7 +454,7 @@
 			<ensembleId>GEFS</ensembleId>
 		</timeSeriesSet>
 	</filter>
-	<filter id="HBV_DA" name="Modelo HBV-DA">
+	<filter id="LempaAlta_HBV_conDA" name="con asimilación">
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
 			<valueType>scalar</valueType>

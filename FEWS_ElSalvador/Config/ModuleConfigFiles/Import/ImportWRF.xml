@@ -1,39 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
 	<import>
 		<general>
 			<importTypeStandard>grib2</importTypeStandard>
-			<folder>$IMPORT_FOLDER$/WRF/</folder>
-<!--
-			<fileNameObservationDateTimePattern>yyMMddHHmm'_wrfout_arw_d03.grb2'</fileNameObservationDateTimePattern>
--->
-			<deleteImportedFiles>false</deleteImportedFiles>
+			<folder>$IMPORT_FOLDER$/$FORECAST$/</folder>
+			<fileNamePatternFilter>*d02.grb2</fileNamePatternFilter>
 			<idMapId>IdImportWRF</idMapId>	
 			<unitConversionsId>ImportUnitConversions</unitConversionsId>
-
-			<importTimeZone>
-				<timeZoneOffset>+00:00</timeZoneOffset>
-			</importTimeZone>
-			
-			<dataFeedId>WRF</dataFeedId>
-			<expiryTime unit="day" multiplier="3"/>
-			
+			<dataFeedId>$FORECAST$</dataFeedId>
 		</general>
 		<timeSeriesSet>
-			<moduleInstanceId>ImportWRF</moduleInstanceId>
+			<moduleInstanceId>Import$FORECAST$</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>P.pro</parameterId>
-			<locationId>WRF</locationId>
+			<locationId>WRF-d02</locationId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
-			<moduleInstanceId>ImportWRF</moduleInstanceId>
+			<moduleInstanceId>Import$FORECAST$</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>T.pro</parameterId>
-			<locationId>WRF</locationId>
+			<locationId>WRF-d02</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<externUnit parameterId="P.pro" unit="mm" cumulativeSum="true"/>
+	</import>
+	<import>
+		<general>
+			<importTypeStandard>grib2</importTypeStandard>
+			<folder>$IMPORT_FOLDER$/$FORECAST$/</folder>
+			<fileNamePatternFilter>*d03.grb2</fileNamePatternFilter>
+			<idMapId>IdImportWRF</idMapId>	
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<dataFeedId>$FORECAST$</dataFeedId>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>Import$FORECAST$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.pro</parameterId>
+			<locationId>WRF-d03</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import$FORECAST$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>T.pro</parameterId>
+			<locationId>WRF-d03</locationId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>

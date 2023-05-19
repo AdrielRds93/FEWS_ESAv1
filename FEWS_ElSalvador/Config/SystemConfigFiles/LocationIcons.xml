@@ -2,7 +2,7 @@
 <!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <locationIcons xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/locationIcons.xsd">
 	<rootDir>Icons</rootDir>
-	<locationIcon>
+<!--	<locationIcon>
 		<iconId>fluvial_site_data</iconId>
 		<locationSetId>ESA_H</locationSetId>
 	</locationIcon>
@@ -10,16 +10,21 @@
 		<iconId>fluvial_site_data</iconId>
 		<locationSetId>ESA_Q</locationSetId>
 	</locationIcon>
+-->
 	<locationIcon>
 		<iconId>meteo_site_data</iconId>
-		<locationSetId>ESA_P</locationSetId>
+		<locationSetId>METEO</locationSetId>
 	</locationIcon>
 	<locationIcon>
-		<iconId>meteo_site_data.gif</iconId>
-		<locationSetId>MARN_C</locationSetId>
+		<iconId>rain.png</iconId>
+		<locationSetId>PLUVIO</locationSetId>
+	</locationIcon>
+	<locationIcon>
+		<iconId>hydro_site_data</iconId>
+		<locationSetId>HIDRO</locationSetId>
 	</locationIcon>
 	<locationIcon>
 		<iconId>catchment_centre_point_data</iconId>
-		<locationSetId>SubbasinLempa</locationSetId>
+		<locationSetId>Basins</locationSetId>
 	</locationIcon>
 </locationIcons>

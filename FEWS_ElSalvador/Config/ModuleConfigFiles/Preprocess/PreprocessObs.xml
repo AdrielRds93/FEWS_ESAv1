@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<variable>
+		<variableId>hourMerged</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>MARN_P</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>dayMerged</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessP</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>ESA_P</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>hourCuencas</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessObs</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>dayCuencas</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessObs</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>dayCuencas.hour</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessObs</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>hourCuencas.day</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessObs</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>fraction.day</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessObs</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Fraction</parameterId>
+			<locationSetId>Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="daily07"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>fraction.hour</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessObs</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Fraction</parameterId>
+			<locationSetId>Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>hourCuencas.hour</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessObs</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>Basins</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Cuenca.hour</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessObs</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Cuenca.3hour</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessObs</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+
+	<!-- Spatial interpolation (Thiessen) in subbasin Lempa-->
+	<transformation id="ThiessenPolygon day">
+		<interpolationSpatial>
+			<thiessenPolygon>
+				<inputVariable>
+					<variableId>dayMerged</variableId>
+				</inputVariable>
+				<distanceGeoDatum>UTM21S</distanceGeoDatum>
+				<outputVariable>
+					<variableId>dayCuencas</variableId>
+				</outputVariable>
+			</thiessenPolygon>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="ThiessenPolygon hour">
+		<interpolationSpatial>
+			<thiessenPolygon>
+				<inputVariable>
+					<variableId>hourMerged</variableId>
+				</inputVariable>
+				<distanceGeoDatum>UTM21S</distanceGeoDatum>
+				<outputVariable>
+					<variableId>hourCuencas</variableId>
+				</outputVariable>
+			</thiessenPolygon>
+		</interpolationSpatial>
+	</transformation>
+	<!-- Combine hourly and daily -->
+	<transformation id="cuencaDay2hour">
+		<disaggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>dayCuencas</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>dayCuencas.hour</variableId>
+				</outputVariable>
+			</accumulative>
+		</disaggregation>
+	</transformation>
+	<transformation id="cuencaHour2day">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>hourCuencas</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>hourCuencas.day</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<transformation id="CalcFractions">
+		<user>
+			<simple>
+				<expression>dayCuencas/hourCuencas.day</expression>
+				<outputVariable>
+					<variableId>fraction.day</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="CalcFractions">
+		<disaggregation>
+			<meanToMean>
+				<inputVariable>
+					<variableId>fraction.day</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>fraction.hour</variableId>
+				</outputVariable>
+			</meanToMean>
+		</disaggregation>
+	</transformation>
+	<transformation id="expression">
+		<user>
+			<simple>
+				<expression>fraction.hour*hourCuencas</expression>
+				<outputVariable>
+					<variableId>hourCuencas.hour</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="MergeCompleteWithHour">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>hourCuencas.hour</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>hourCuencas</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>dayCuencas.hour</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Cuenca.hour</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="Aggregate">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>Cuenca.hour</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Cuenca.3hour</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<transformation id="DefaultP">
+		<interpolationSerial>
+			<default>
+				<inputVariable>
+					<variableId>Cuenca.3hour</variableId>
+				</inputVariable>
+				<defaultValue>0.0</defaultValue>
+				<outputVariable>
+					<variableId>Cuenca.3hour</variableId>
+				</outputVariable>
+			</default>
+		</interpolationSerial>
+	</transformation>
+</transformationModule>

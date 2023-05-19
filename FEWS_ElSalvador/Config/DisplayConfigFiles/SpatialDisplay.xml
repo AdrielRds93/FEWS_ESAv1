@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <gridDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
-	<title>Spatial Display</title>
+	<title>Despliegue Espacial</title>
 	<defaults>
-		<parameterGroupId>Observed data</parameterGroupId>
-		<plotGroupId>P_Observed</plotGroupId>
-		<plotGroupId>Q_Observed</plotGroupId>
 		<geoMap>
 			<geoDatum>WGS 1984</geoDatum>
 			<projection>mercator</projection>
@@ -170,7 +166,6 @@
 					<lineColor>black</lineColor>
 					<fillRgbColor>FFFFFF</fillRgbColor>
 					<opaquenessPercentage>20</opaquenessPercentage>
-					<lineWidth value="2"/>
 				</esriShapeLayer>
 				<esriShapeLayer id="Red hidrográfica" name="Drainage">
 					<description>Rivers</description>
@@ -189,276 +184,22 @@
 					<lineColor>black</lineColor>
 					<fillRgbColor>FFFFFF</fillRgbColor>
 					<opaquenessPercentage>20</opaquenessPercentage>
-					<lineWidth value="2"/>
-				</esriShapeLayer>
-			</layerGroup>
-		</geoMap>
-		<timeDisplayLabels>bottomRight</timeDisplayLabels>
-	</defaults>
-	<defaults>
-		<parameterGroupId>Forecast precipitation</parameterGroupId>
-		<plotGroupId>GFS</plotGroupId>
-		<plotGroupId>GEFS</plotGroupId>
-		<geoMap>
-			<geoDatum>WGS 1984</geoDatum>
-			<projection>mercator</projection>
-			<defaultExtent id="ElSalvador" name="El Salvador">
-				<left>-90.153</left>
-				<right>-87.644</right>
-				<top>14.712419</top>
-				<bottom>13.154</bottom>
-			</defaultExtent>
-			<extraExtent id="Jiboa" name="Jiboa">
-				<left>-89.186581</left>
-				<right>-88.837655</right>
-				<top>13.75012</top>
-				<bottom>13.353592</bottom>
-			</extraExtent>
-			<extraExtent id="Lempa" name="Lempa">
-				<left>-90.112382</left>
-				<right>-87.80639</right>
-				<top>14.712419</top>
-				<bottom>13.231514</bottom>
-			</extraExtent>
-			<extraExtent id="BahiaDeJiquilisco" name="Bahia De Jiquilisco">
-				<left>-88.760417</left>
-				<right>-88.231967</right>
-				<top>13.497757</top>
-				<bottom>13.163768</bottom>
-			</extraExtent>
-			<extraExtent id="CaraSucia+SanPedro" name="Cara Sucia + San Pedro">
-				<left>-90.102094</left>
-				<right>-89.759019</right>
-				<top>13.885067</top>
-				<bottom>13.598373</bottom>
-			</extraExtent>
-			<extraExtent id="EsteroDeJaltepeque" name="Estero De Jaltepeque">
-				<left>-89.033754</left>
-				<right>-88.6823</right>
-				<top>13.614675</top>
-				<bottom>13.26048</bottom>
-			</extraExtent>
-			<extraExtent id="Goascoran" name="Goascoran">
-				<left>-88.005021</left>
-				<right>-87.582377</right>
-				<top>14.166294</top>
-				<bottom>13.362992</bottom>
-			</extraExtent>
-			<extraExtent id="GrandeDeSanMiguel" name="Grande De San Miguel">
-				<left>-88.469749</left>
-				<right>-87.958979</right>
-				<top>13.791888</top>
-				<bottom>13.167756</bottom>
-			</extraExtent>
-			<extraExtent id="GrandeDeSonsonate+Banderas" name="Grande De Sonsonate + Banderas">
-				<left>-89.843595</left>
-				<right>-89.493089</right>
-				<top>13.902805</top>
-				<bottom>13.522977</bottom>
-			</extraExtent>
-			<extraExtent id="LagoDeCoatepeque" name="Lago De Coatepeque">
-				<left>-89.634218</left>
-				<right>-89.51509</right>
-				<top>13.896947</top>
-				<bottom>13.826493</bottom>
-			</extraExtent>
-			<extraExtent id="Mandinga+Comalapa" name="Mandinga + Comalapa">
-				<left>-89.732937</left>
-				<right>-89.062988</right>
-				<top>13.684119</top>
-				<bottom>13.404078</bottom>
-			</extraExtent>
-			<extraExtent id="Paz" name="Paz">
-				<left>-90.276278</left>
-				<right>-89.57465</right>
-				<top>14.403582</top>
-				<bottom>13.722829</bottom>
-			</extraExtent>
-			<extraExtent id="Sirama" name="Sirama">
-				<left>-88.242815</left>
-				<right>-87.779521</right>
-				<top>13.600249</top>
-				<bottom>13.154899</bottom>
-			</extraExtent>
-			<scaleBarVisible>true</scaleBarVisible>
-			<northArrowVisible>true</northArrowVisible>
-			<labelsVisible>true</labelsVisible>
-			<backgroundColor>white</backgroundColor>
-			<openStreetMapLayer id="Open Street Map">
-				<url>http://tile.openstreetmap.org</url>
-				<visible>false</visible>
-				<cacheDir>$tempDir$/OsmTiles</cacheDir>
-			</openStreetMapLayer>
-			<layer id="Canvas" name="ArcGIS Canvas World LightGray Base">
-				<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
-				<visible>true</visible>
-				<properties>
-					<string key="tileUrlPattern" value="http://server.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%"/>
-					<string key="cacheDir" value="$tempDir$/Esri_Canvas_World_Light_Gray_Base"/>
-					<int key="minZoomLevel" value="2"/>
-					<int key="maxZoomLevel" value="17"/>
-					<int key="topZoomLevel" value="19"/>
-					<int key="tileSize" value="256"/>
-				</properties>
-			</layer>
-			<layer id="ArcGIS World" name="ArcGIS World_Imagery">
-				<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
-				<visible>false</visible>
-				<properties>
-					<string key="tileUrlPattern" value="http://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%"/>
-					<string key="cacheDir" value="$tempDir$/ArcGIS World_Imagery"/>
-					<int key="minZoomLevel" value="2"/>
-					<int key="maxZoomLevel" value="17"/>
-					<int key="topZoomLevel" value="19"/>
-					<int key="tileSize" value="256"/>
-				</properties>
-			</layer>
-			<layer id="ArcGIS World Topo" name="ArcGIS World_Topo_Map">
-				<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
-				<visible>false</visible>
-				<properties>
-					<string key="tileUrlPattern" value="http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%"/>
-					<string key="cacheDir" value="%REGION_HOME%/mapcache/Esri_topo"/>
-					<int key="minZoomLevel" value="1"/>
-					<int key="maxZoomLevel" value="19"/>
-					<int key="topZoomLevel" value="21"/>
-					<int key="tileSize" value="256"/>
-				</properties>
-			</layer>
-			<layerGroup id="Admin">
-				<esriShapeLayer id="World">
-					<file>cntry98.shp</file>
-					<geoDatum>WGS 1984</geoDatum>
-					<visible>false</visible>
-					<toolTip>%CNTRY_NAME%</toolTip>
-					<lineColor>black</lineColor>
-					<fillRgbColor>FFFFFF</fillRgbColor>
-					<opaquenessPercentage>20</opaquenessPercentage>
-				</esriShapeLayer>
-				<esriShapeLayer id="Countries">
-					<file>Countries.shp</file>
-					<geoDatum>WGS 1984</geoDatum>
-					<visible>false</visible>
-					<lineColor>black</lineColor>
-					<fillRgbColor>FFFFFF</fillRgbColor>
-					<opaquenessPercentage>20</opaquenessPercentage>
-				</esriShapeLayer>
-				<esriShapeLayer id="Departments">
-					<file>ElSalvador_Departamentos.shp</file>
-					<geoDatum>WGS 1984</geoDatum>
-					<visible>false</visible>
-					<toolTip>%NA2%</toolTip>
-					<lineColor>black</lineColor>
-					<fillRgbColor>FFFFFF</fillRgbColor>
-					<opaquenessPercentage>20</opaquenessPercentage>
-				</esriShapeLayer>
-				<esriShapeLayer id="Municipalities">
-					<file>ElSalvador_Municipios.shp</file>
-					<geoDatum>WGS 1984</geoDatum>
-					<visible>false</visible>
-					<toolTip>%NA2%</toolTip>
-					<lineColor>black</lineColor>
-					<fillRgbColor>FFFFFF</fillRgbColor>
-					<opaquenessPercentage>20</opaquenessPercentage>
-				</esriShapeLayer>
-			</layerGroup>
-			<layerGroup id="Watersheds">
-				<esriShapeLayer id="Regiones" name="Hydrological Regions">
-					<description>Regions</description>
-					<file>Regions.shp</file>
-					<geoDatum>WGS 1984</geoDatum>
-					<visible>true</visible>
-					<toolTip>%region%</toolTip>
-					<lineColor>black</lineColor>
-					<fillRgbColor>FFFFFF</fillRgbColor>
-					<opaquenessPercentage>20</opaquenessPercentage>
-					<lineWidth value="2"/>
-				</esriShapeLayer>
-				<esriShapeLayer id="Red hidrográfica" name="Drainage">
-					<description>Rivers</description>
-					<file>Rivers.shp</file>
-					<geoDatum>WGS 1984</geoDatum>
-					<visible>false</visible>
-					<lineColor>light blue</lineColor>
-					<opaquenessPercentage>20</opaquenessPercentage>
-				</esriShapeLayer>
-				<esriShapeLayer id="Lempa" name="Lempa Subbasins">
-					<description>Lempa subbasins</description>
-					<file>Subbasin_Lempa.shp</file>
-					<geoDatum>WGS 1984</geoDatum>
-					<visible>false</visible>
-					<toolTip>%BasinName%</toolTip>
-					<lineColor>black</lineColor>
-					<fillRgbColor>FFFFFF</fillRgbColor>
-					<opaquenessPercentage>20</opaquenessPercentage>
-					<lineWidth value="2"/>
 				</esriShapeLayer>
 			</layerGroup>
 		</geoMap>
 		<timeDisplayLabels>bottomRight</timeDisplayLabels>
 	</defaults>
 	<gridPlotGroup id="P_Observed" name="Observed precipitation">
-		<gridPlot id="Daily precipitation [mm]" name="Daily precipitation [mm]">
-			<dataLayer>
-				<visibleInSpatialDisplay>true</visibleInSpatialDisplay>
-				<onlyCircles>true</onlyCircles>
-				<circleSizeFunction>12</circleSizeFunction>
-				<circleBorderSize>1</circleBorderSize>
-				<circleBorderColor>gray</circleBorderColor>
-				<timeSeriesSet>
-					<moduleInstanceId>PreprocessP</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>P.obs</parameterId>
-					<locationSetId>ESA_P</locationSetId>
-					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="daily07"/>
-					<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
-					<readWriteMode>add originals</readWriteMode>
-				</timeSeriesSet>
-			</dataLayer>
-			<movingAccumulationTimeSpan unit="day" multiplier="2"/>
-			<movingAccumulationTimeSpan unit="day" multiplier="3"/>
-			<movingAccumulationTimeSpan unit="day" multiplier="4"/>
-			<movingAccumulationTimeSpan unit="day" multiplier="5"/>
-			<movingAccumulationTimeSpan unit="day" multiplier="6"/>
-			<movingAccumulationTimeSpan unit="day" multiplier="7"/>
-			<classBreaksId>Class.Precipitacion</classBreaksId>
-		</gridPlot>
-		<gridPlot id="Hourly precipitation [mm]" name="Hourly precipitation [mm]">
-			<dataLayer>
-				<onlyCircles>true</onlyCircles>
-				<circleSizeFunction>12</circleSizeFunction>
-				<circleBorderSize>1</circleBorderSize>
-				<circleBorderColor>gray</circleBorderColor>
-				<timeSeriesSet>
-					<moduleInstanceId>PreprocessP</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>P.obs</parameterId>
-					<locationSetId>ESA_P</locationSetId>
-					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep unit="hour" multiplier="1"/>
-					<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
-					<readWriteMode>add originals</readWriteMode>
-				</timeSeriesSet>
-			</dataLayer>
-			<movingAccumulationTimeSpan unit="hour" multiplier="3"/>
-			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
-			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
-			<movingAccumulationTimeSpan unit="hour" multiplier="24"/>
-			<movingAccumulationTimeSpan unit="hour" multiplier="48"/>
-			<movingAccumulationTimeSpan unit="hour" multiplier="72"/>
-			<classBreaksId>Class.Precipitacion</classBreaksId>
-		</gridPlot>
 		<gridPlot id="Mean areal precipitation[mm]" name="Mean areal precipitation [mm]">
 			<timeSeriesSet>
-				<moduleInstanceId>PreprocessP</moduleInstanceId>
+				<moduleInstanceId>PreprocessObs</moduleInstanceId>
 				<valueType>scalar</valueType>
 				<parameterId>P.basin</parameterId>
 				<locationSetId>SubbasinLempa</locationSetId>
-				<timeSeriesType>external historical</timeSeriesType>
-				<timeStep unit="hour" multiplier="3"/>
-				<relativeViewPeriod unit="hour" start="-240" end="0"/>
-				<readWriteMode>read only</readWriteMode>
+				<timeSeriesType>simulated historical</timeSeriesType>
+				<timeStep unit="hour" multiplier="1"/>
+				<relativeViewPeriod unit="day" start="-3" end="0"/>
+				<readWriteMode>add originals</readWriteMode>
 			</timeSeriesSet>
 			<movingAccumulationTimeSpan unit="hour" multiplier="3"/>
 			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
@@ -468,7 +209,7 @@
 			<movingAccumulationTimeSpan unit="hour" multiplier="72"/>
 			<classBreaksId>Class.Precipitacion</classBreaksId>
 		</gridPlot>
-		<gridPlot id="GPM hourly precipitation [mm]" name="GPM Hourly precipitation [mm]">
+		<gridPlot id="GPM" name="GPM Precipitación [mm]">
 			<dataLayer>
 				<onlyCircles>true</onlyCircles>
 				<circleSizeFunction>12</circleSizeFunction>
@@ -492,27 +233,6 @@
 			<movingAccumulationTimeSpan unit="hour" multiplier="48"/>
 			<movingAccumulationTimeSpan unit="hour" multiplier="72"/>
 			<classBreaksId>Class.Precipitacion</classBreaksId>
-		</gridPlot>
-	</gridPlotGroup>
-	<gridPlotGroup id="Q_Observed" name="Observed discharge">
-		<gridPlot id="Observed discharge [m3/s]" name="Observed discharge [m3/s]">
-			<dataLayer>
-				<onlyCircles>true</onlyCircles>
-				<circleSizeFunction>12</circleSizeFunction>
-				<circleBorderSize>1</circleBorderSize>
-				<circleBorderColor>gray</circleBorderColor>
-				<timeSeriesSet>
-					<moduleInstanceId>PreprocessHQ</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>Q.obs</parameterId>
-					<locationSetId>MARN_Q</locationSetId>
-					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep unit="hour" multiplier="3"/>
-					<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
-					<readWriteMode>add originals</readWriteMode>
-				</timeSeriesSet>
-			</dataLayer>
-			<classBreaksId>Class.Caudal</classBreaksId>
 		</gridPlot>
 	</gridPlotGroup>
 	<gridPlotGroup id="GFS" name="GFS Forecast">
@@ -581,34 +301,296 @@
 			<classBreaksId>Class.Temperatura</classBreaksId>
 		</gridPlot>
 	</gridPlotGroup>
-	<gridPlotGroup id="WRF" name="WRF Forecast">
-		<gridPlot id="WRF Precipitacion [mm]" name="Precipitación [mm]">
-			<timeSeriesSet>
-				<moduleInstanceId>ImportWRF</moduleInstanceId>
-				<valueType>grid</valueType>
-				<parameterId>P.pro</parameterId>
-				<locationId>WRF</locationId>
-				<timeSeriesType>external forecasting</timeSeriesType>
-				<timeStep unit="hour" multiplier="1"/>
-				<readWriteMode>read complete forecast</readWriteMode>
-			</timeSeriesSet>
-			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
-			<movingAccumulationTimeSpan unit="hour" multiplier="24"/>
-			<movingAccumulationTimeSpan unit="hour" multiplier="48"/>
-			<movingAccumulationTimeSpan unit="hour" multiplier="72"/>
-			<classBreaksId>Class.Precipitacion</classBreaksId>
-		</gridPlot>
-		<gridPlot id="GEFS Temperatura [oC]" name="Temperatura [°C]">
-			<timeSeriesSet>
-				<moduleInstanceId>ImportWRF</moduleInstanceId>
-				<valueType>grid</valueType>
-				<parameterId>T.pro</parameterId>
-				<locationId>WRF</locationId>
-				<timeSeriesType>external forecasting</timeSeriesType>
-				<timeStep unit="hour" multiplier="1"/>
-				<readWriteMode>read complete forecast</readWriteMode>
-			</timeSeriesSet>
-			<classBreaksId>Class.Temperatura</classBreaksId>
-		</gridPlot>
+	<gridPlotGroup id="WRF-d02" name="WRF Dominio 02">
+		<gridPlotGroup id="P_WRF-d02" name="Precipitación [mm]">
+			<gridPlot id="P_WRFA-d02" name="WRF-A">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWRFA</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>P.pro</parameterId>
+					<locationId>WRF-d02</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="72"/>
+				<classBreaksId>Class.Precipitacion</classBreaksId>
+			</gridPlot>
+			<gridPlot id="P_WRFC-d02" name="WRF-C">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWRFC</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>P.pro</parameterId>
+					<locationId>WRF-d02</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="72"/>
+				<classBreaksId>Class.Precipitacion</classBreaksId>
+			</gridPlot>
+			<gridPlot id="P_WRFD-d02" name="WRF-D">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWRFD</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>P.pro</parameterId>
+					<locationId>WRF-d02</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="72"/>
+				<classBreaksId>Class.Precipitacion</classBreaksId>
+			</gridPlot>
+			<gridPlot id="P_WRFE-d02" name="WRF-E">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWRFE</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>P.pro</parameterId>
+					<locationId>WRF-d02</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="72"/>
+				<classBreaksId>Class.Precipitacion</classBreaksId>
+			</gridPlot>
+			<gridPlot id="P_WRFF-d02" name="WRF-F">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWRFF</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>P.pro</parameterId>
+					<locationId>WRF-d02</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="72"/>
+				<classBreaksId>Class.Precipitacion</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+		<gridPlotGroup id="T_WRF-d02" name="Temperatura [°C]">
+			<gridPlot id="T_WRFA-d02" name="WRF-A">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWRFA</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>T.pro</parameterId>
+					<locationId>WRF-d02</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperatura</classBreaksId>
+			</gridPlot>
+			<gridPlot id="T_WRFC-d02" name="WRF-C">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWRFC</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>T.pro</parameterId>
+					<locationId>WRF-d02</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperatura</classBreaksId>
+			</gridPlot>
+			<gridPlot id="T_WRFD-d02" name="WRF-D">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWRFD</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>T.pro</parameterId>
+					<locationId>WRF-d02</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperatura</classBreaksId>
+			</gridPlot>
+			<gridPlot id="T_WRFE-d02" name="WRF-E">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWRFE</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>T.pro</parameterId>
+					<locationId>WRF-d02</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperatura</classBreaksId>
+			</gridPlot>
+			<gridPlot id="T_WRFF-d02" name="WRF-F">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWRFF</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>T.pro</parameterId>
+					<locationId>WRF-d02</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperatura</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+	</gridPlotGroup>
+	<gridPlotGroup id="WRF-d03" name="WRF Dominio 03">
+		<gridPlotGroup id="P_WRF-d03" name="Precipitación [mm]">
+			<gridPlot id="P_WRFA-d03" name="WRF-A">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWRFA</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>P.pro</parameterId>
+					<locationId>WRF-d03</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="72"/>
+				<classBreaksId>Class.Precipitacion</classBreaksId>
+			</gridPlot>
+			<gridPlot id="P_WRFC-d03" name="WRF-C">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWRFC</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>P.pro</parameterId>
+					<locationId>WRF-d03</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="72"/>
+				<classBreaksId>Class.Precipitacion</classBreaksId>
+			</gridPlot>
+			<gridPlot id="P_WRFD-d03" name="WRF-D">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWRFD</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>P.pro</parameterId>
+					<locationId>WRF-d03</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="72"/>
+				<classBreaksId>Class.Precipitacion</classBreaksId>
+			</gridPlot>
+			<gridPlot id="P_WRFE-d03" name="WRF-E">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWRFE</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>P.pro</parameterId>
+					<locationId>WRF-d03</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="72"/>
+				<classBreaksId>Class.Precipitacion</classBreaksId>
+			</gridPlot>
+			<gridPlot id="P_WRFF-d03" name="WRF-F">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWRFF</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>P.pro</parameterId>
+					<locationId>WRF-d03</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="24"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="48"/>
+				<movingAccumulationTimeSpan unit="hour" multiplier="72"/>
+				<classBreaksId>Class.Precipitacion</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+		<gridPlotGroup id="T_WRF-d03" name="Temperatura [°C]">
+			<gridPlot id="T_WRFA-d03" name="WRF-A">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWRFA</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>T.pro</parameterId>
+					<locationId>WRF-d03</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperatura</classBreaksId>
+			</gridPlot>
+			<gridPlot id="T_WRFC-d03" name="WRF-C">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWRFC</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>T.pro</parameterId>
+					<locationId>WRF-d03</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperatura</classBreaksId>
+			</gridPlot>
+			<gridPlot id="T_WRFD-d03" name="WRF-D">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWRFD</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>T.pro</parameterId>
+					<locationId>WRF-d03</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperatura</classBreaksId>
+			</gridPlot>
+			<gridPlot id="T_WRFE-d03" name="WRF-E">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWRFE</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>T.pro</parameterId>
+					<locationId>WRF-d03</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperatura</classBreaksId>
+			</gridPlot>
+			<gridPlot id="T_WRFF-d03" name="WRF-F">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWRFF</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>T.pro</parameterId>
+					<locationId>WRF-d03</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperatura</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
 	</gridPlotGroup>
 </gridDisplay>

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
 	<variable>
 		<variableId>P</variableId>
@@ -21,8 +20,8 @@
 			<valueType>scalar</valueType>
 			<parameterId>P.pro</parameterId>
 			<qualifierId>WRF</qualifierId>
-			<locationSetId>SubbasinLempa</locationSetId>
-			<timeSeriesType>external forecasting</timeSeriesType>
+			<locationSetId>Basins</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<relativeViewPeriod unit="hour" start="-36" end="336" endOverrulable="true"/>
 			<readWriteMode>read only</readWriteMode>

@@ -7,6 +7,11 @@
 	<moduleInstanceDescriptor id="ImportGFS"/>
 	<moduleInstanceDescriptor id="ImportGEFS"/>
 	<moduleInstanceDescriptor id="ImportWRF"/>
+	<moduleInstanceDescriptor id="ImportWRFA"/>
+	<moduleInstanceDescriptor id="ImportWRFC"/>
+	<moduleInstanceDescriptor id="ImportWRFD"/>
+	<moduleInstanceDescriptor id="ImportWRFE"/>
+	<moduleInstanceDescriptor id="ImportWRFF"/>
 	<moduleInstanceDescriptor id="ImportGPM"/>
 	<!-- Exports -->
 	<moduleInstanceDescriptor id="ExportForecasts"/>
@@ -19,6 +24,7 @@
 	<moduleInstanceDescriptor id="PreprocessQ"/>
 	<moduleInstanceDescriptor id="PreprocessQ_Guajoyo"/>
 	<moduleInstanceDescriptor id="PreprocessT"/>
+	<moduleInstanceDescriptor id="PreprocessObs"/>
 	<moduleInstanceDescriptor id="PreprocessGPM"/>
 	<moduleInstanceDescriptor id="PreprocessGFS"/>
 	<moduleInstanceDescriptor id="PreprocessGEFS"/>

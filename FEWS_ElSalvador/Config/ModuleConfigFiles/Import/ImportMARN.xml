@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
 	<import>
 		<general>
+			<description>Importar red de estaciones convencionales</description>
 			<importType>csv</importType>
 			<folder>$IMPORT_FOLDER$/Datos/Convencional</folder>
 			<idMapId>IdImportMARN_daily</idMapId>
@@ -10,7 +10,7 @@
 			<importTimeZone>
 				<timeZoneOffset>-06:00</timeZoneOffset>
 			</importTimeZone>
-			<dataFeedId>Daily gauges </dataFeedId>
+			<dataFeedId>Convencionales</dataFeedId>
 		</general>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportMARN</moduleInstanceId>
@@ -42,6 +42,7 @@
 	</import>
 	<import>
 		<general>
+			<description>Importar red de estaciones telemétricas</description>
 			<importType>csv</importType>
 			<folder>$IMPORT_FOLDER$/Datos/Telemetria</folder>
 			<idMapId>IdImportMARN</idMapId>
@@ -49,7 +50,7 @@
 			<importTimeZone>
 				<timeZoneOffset>-06:00</timeZoneOffset>
 			</importTimeZone>
-			<dataFeedId>Telemetry gauges</dataFeedId>
+			<dataFeedId>Telemétricas</dataFeedId>
 		</general>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportMARN</moduleInstanceId>
@@ -59,7 +60,6 @@
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="5"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportMARN</moduleInstanceId>
@@ -69,7 +69,6 @@
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="15"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportMARN</moduleInstanceId>
@@ -79,7 +78,6 @@
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="5"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportMARN</moduleInstanceId>
@@ -89,7 +87,6 @@
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="10"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportMARN</moduleInstanceId>
@@ -99,7 +96,6 @@
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="15"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportMARN</moduleInstanceId>
@@ -109,7 +105,6 @@
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="10"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 	</import>
 </timeSeriesImportRun>
