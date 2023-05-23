@@ -1,7 +1,164 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <displayGroups xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0//displayGroups.xsd" version="1.0">
-	<plot id="Subbasin_GFS">
+	<plot id="Subbasin_Template">
+		<subplot>
+			<line>
+				<color>orange</color>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGFS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.pro.acc</parameterId>
+					<qualifierId>GFS</qualifierId>
+					<locationSetId>SubbasinLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>main</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>aquamarine</color>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWRFA</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.pro.acc</parameterId>
+					<qualifierId>WRF-d02</qualifierId>
+					<locationSetId>SubbasinLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>aquamarine</color>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWRFC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.pro.acc</parameterId>
+					<qualifierId>WRF-d02</qualifierId>
+					<locationSetId>SubbasinLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>main</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>aquamarine</color>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWRFD</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.pro.acc</parameterId>
+					<qualifierId>WRF-d02</qualifierId>
+					<locationSetId>SubbasinLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>main</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>aquamarine</color>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWRFE</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.pro.acc</parameterId>
+					<qualifierId>WRF-d02</qualifierId>
+					<locationSetId>SubbasinLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>main</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>aquamarine</color>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWRFF</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.pro.acc</parameterId>
+					<qualifierId>WRF-d02</qualifierId>
+					<locationSetId>SubbasinLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>main</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>wheat</color>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWRFA</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.pro.acc</parameterId>
+					<qualifierId>WRF-d03</qualifierId>
+					<locationSetId>SubbasinLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>main</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>wheat</color>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWRFC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.pro.acc</parameterId>
+					<qualifierId>WRF-d03</qualifierId>
+					<locationSetId>SubbasinLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>main</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>wheat</color>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWRFD</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.pro.acc</parameterId>
+					<qualifierId>WRF-d03</qualifierId>
+					<locationSetId>SubbasinLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>main</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>wheat</color>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWRFE</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.pro.acc</parameterId>
+					<qualifierId>WRF-d03</qualifierId>
+					<locationSetId>SubbasinLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>main</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>wheat</color>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWRFF</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>P.pro.acc</parameterId>
+					<qualifierId>WRF-d03</qualifierId>
+					<locationSetId>SubbasinLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+		<!--agregar temperatura-->
+	</plot>
+
+<!--	<plot id="Subbasin_GFS">
 		<subplot>
 			<inverted>false</inverted>
 			<plotWeight>1</plotWeight>
@@ -141,26 +298,14 @@
 			</line>
 		</subplot>
 	</plot>
-	<displayGroup name="SubbasinLempa">
+-->	<displayGroup name="SubbasinLempa">
 		<displayGroup name=" ">
 			<locationLoop>
 				<locationSetId>SubbasinLempa</locationSetId>
-				<includeChildren>true</includeChildren>
-			</locationLoop>
-			<displayGroup id="GFS Subbasin" name="GFS Forecast">
-				<display name="Deterministic Forecast">
-					<plotId>Subbasin_GFS</plotId>
-				</display>
-			</displayGroup>
-			<displayGroup id="GEFS Subbasin" name="GEFS Forecast">
-				<nodeId>GEFS</nodeId>
-				<display name="Ensemble Forecast (Percentile)">
-					<plotId>Subbasin_GEFS_Percentiles</plotId>
-				</display>
-				<display name="Ensemble Forecast">
-					<plotId>Subbasin_GEFS_Ensemble</plotId>
-				</display>
-			</displayGroup>
+			</locationLoop>			
+			<display name="Precipitación">
+				<plotId>Subbasin_Template</plotId>
+			</display>
 		</displayGroup>
 	</displayGroup>
 </displayGroups>

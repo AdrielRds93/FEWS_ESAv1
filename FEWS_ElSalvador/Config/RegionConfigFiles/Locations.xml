@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <locations version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/locations.xsd">
 	<geoDatum>WGS 1984</geoDatum>
-	<!--Estaciones INA-->
-	<!--Grids SISSA.  -->
-	<!-- grids - forecasting -->
 	<location id="WRF-d02" name="WRF-d02">
 		<description>WRF-d02</description>
 		<shortName>WRF-d02</shortName>
@@ -29,19 +25,7 @@
 		<x>-89.00</x>
 		<y>13.80</y>
 	</location>
-	<location id="GFS_ESA" name="GFS ESA">
-		<description>GFS ESA</description>
-		<shortName>GFS ESA</shortName>
-		<x>-89.00</x>
-		<y>13.80</y>
-	</location>
-	<location id="GEFS" name="GEFS">
-		<description>GEFS</description>
-		<shortName>GEFS</shortName>
-		<x>-89.00</x>
-		<y>13.80</y>
-	</location>
-	<location id="GEFS_ESA" name="GEFS ESA">
+	<location id="GEFS" name="GEFS ESA">
 		<description>GEFS ESA</description>
 		<shortName>GEFS ESA</shortName>
 		<x>-89.00</x>
@@ -53,6 +37,4 @@
 		<y>0</y>
 		<z>0</z>
 	</location>
-	<!--Locations de los Centroid de las Cuencas usados para los modelos de prediciones.  -->
-	<!-- Flood mapping branches -->
 </locations>

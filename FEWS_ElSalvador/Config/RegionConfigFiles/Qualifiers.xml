@@ -3,6 +3,8 @@
 	<qualifier id="GFS" name="GFS"/>
 	<qualifier id="GEFS" name="GEFS"/>
 	<qualifier id="WRF" name="WRF"/>
+	<qualifier id="WRF-d02" name="WRF-d02"/>
+	<qualifier id="WRF-d03" name="WRF-d03"/>
 	<qualifier id="7am" name="7am"/>
 	<qualifier id="9am" name="9am"/>
 	<qualifier id="q1" name="q1"/>

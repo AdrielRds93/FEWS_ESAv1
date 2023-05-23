@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
 	<import>
 		<general>
@@ -12,13 +11,12 @@
 				<timeZoneName>GMT</timeZoneName>
 			</importTimeZone>
 			<dataFeedId>GFS</dataFeedId>
-			<expiryTime unit="day" multiplier="3"/>
 		</general>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportGFS</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>T.pro</parameterId>
-			<locationId>GFS_ESA</locationId>
+			<locationId>GFS</locationId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -27,7 +25,7 @@
 			<moduleInstanceId>ImportGFS</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>P.pro</parameterId>
-			<locationId>GFS_ESA</locationId>
+			<locationId>GFS</locationId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>add originals</readWriteMode>

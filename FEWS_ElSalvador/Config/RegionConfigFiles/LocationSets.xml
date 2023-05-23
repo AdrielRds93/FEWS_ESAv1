@@ -155,6 +155,7 @@
 	<locationSet id="MARN_Q">
 		<locationSetId>MARN_OPERATIONAL</locationSetId>
 		<constraints>
+			<attributeTextContains id="PARAMETER" contains="H"/>
 			<attributeTextContains id="PARAMETER" contains="Q"/>
 		</constraints>
 	</locationSet>

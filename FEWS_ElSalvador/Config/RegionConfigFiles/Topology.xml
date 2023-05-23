@@ -42,8 +42,12 @@
 		</node>
 	</nodes>
 	<nodes id="Preprocess" name="Procesar Cuencas">
-		<node id="PreprocessObs" name="Observaciones">
+		<node id="PreprocessObs" name="Estaciones">
 			<workflowId>PreprocessObs</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="PreprocessGPM" name="GPM">
+			<workflowId>PreprocessGPM</workflowId>
 			<localRun>false</localRun>
 		</node>
 		<node id="PreprocessFor" name="Pronósticos">

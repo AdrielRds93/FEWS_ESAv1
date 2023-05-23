@@ -8,15 +8,11 @@
 			<fileNameObservationDateTimePattern>'3B-HHR-E.MS.MRG.3IMERG.'yyyyMMdd'-S'HHmmss'-E?'</fileNameObservationDateTimePattern>
 			<user>cphsv</user>
 			<password>Inundaciones2020</password>
-			<relativeViewPeriod unit="hour" start="-6" end="0" startOverrulable="true" endOverrulable="true"/>
+			<relativeViewPeriod unit="hour" start="-12" end="0" startOverrulable="true" endOverrulable="true"/>
 			<idMapId>IdImportGPM</idMapId>
 			<unitConversionsId>ImportUnitConversions</unitConversionsId>
 			<missingValue>-999</missingValue>
-			<importTimeZone>
-				<timeZoneOffset>+00:00</timeZoneOffset>
-			</importTimeZone>
 			<dataFeedId>GPM</dataFeedId>
-			<expiryTime unit="day" multiplier="3"/>
 		</general>
 		<properties>
 			<int key="connection_retry_count" value="3"/>
@@ -29,8 +25,6 @@
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="30"/>
 			<readWriteMode>add originals</readWriteMode>
-			<expiryTime unit="day" multiplier="3"/>
 		</timeSeriesSet>
-		<externUnit parameterId="P.obs" unit="mm/hr"/>
 	</import>
 </timeSeriesImportRun>

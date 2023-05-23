@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <moduleInstanceDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/moduleInstanceDescriptors.xsd" version="1.0">
-	<!-- Downloads data -->
+
 	<!-- Imports -->
 	<moduleInstanceDescriptor id="ImportMARN"/>
+	<moduleInstanceDescriptor id="ImportGPM"/>
 	<moduleInstanceDescriptor id="ImportGFS"/>
 	<moduleInstanceDescriptor id="ImportGEFS"/>
 	<moduleInstanceDescriptor id="ImportWRF"/>
@@ -12,30 +12,41 @@
 	<moduleInstanceDescriptor id="ImportWRFD"/>
 	<moduleInstanceDescriptor id="ImportWRFE"/>
 	<moduleInstanceDescriptor id="ImportWRFF"/>
-	<moduleInstanceDescriptor id="ImportGPM"/>
+
 	<!-- Exports -->
 	<moduleInstanceDescriptor id="ExportForecasts"/>
 	<moduleInstanceDescriptor id="ReportForecasts"/>
-	<!--Preprocess and analysis-->
+
+	<!--are these needed?-->
 	<moduleInstanceDescriptor id="PreprocessP"/>
+	<moduleInstanceDescriptor id="PreprocessT"/>
 	<moduleInstanceDescriptor id="PreprocessE"/>
 	<moduleInstanceDescriptor id="PreprocessH"/>
 	<moduleInstanceDescriptor id="PreprocessHQ"/>
 	<moduleInstanceDescriptor id="PreprocessQ"/>
 	<moduleInstanceDescriptor id="PreprocessQ_Guajoyo"/>
-	<moduleInstanceDescriptor id="PreprocessT"/>
+
+	<!--Preprocess and analysis-->
 	<moduleInstanceDescriptor id="PreprocessObs"/>
 	<moduleInstanceDescriptor id="PreprocessGPM"/>
 	<moduleInstanceDescriptor id="PreprocessGFS"/>
 	<moduleInstanceDescriptor id="PreprocessGEFS"/>
 	<moduleInstanceDescriptor id="PreprocessWRF"/>
+	<moduleInstanceDescriptor id="PreprocessWRFA"/>
+	<moduleInstanceDescriptor id="PreprocessWRFC"/>
+	<moduleInstanceDescriptor id="PreprocessWRFD"/>
+	<moduleInstanceDescriptor id="PreprocessWRFE"/>
+	<moduleInstanceDescriptor id="PreprocessWRFF"/>
+
 	<moduleInstanceDescriptor id="MergeInputsGFS"/>
 	<moduleInstanceDescriptor id="MergeInputsGEFS"/>
 	<moduleInstanceDescriptor id="AggregateInputsGFS"/>
 	<moduleInstanceDescriptor id="AggregateInputsGEFS"/>	
+
 	<!--Forecast Length Estimator Modules-->
 	<moduleInstanceDescriptor id="ForecastLenghtEstimatorGFS"/>
 	<moduleInstanceDescriptor id="ForecastLenghtEstimatorGEFS"/>
+
 	<!--Model runs-->
 	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_Update"/>
 	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_UpdateDA"/>
@@ -44,7 +55,7 @@
 	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_Forecast"/>
 	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_Forecast-GEFS"/>
 	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_ForecastDA"/>
-	<!--Mantenimiento de la base de datos-->
+
 	<!--Preprocess for Calibration-->
 	<moduleInstanceDescriptor id="ImportMARN_c"/>
 	<moduleInstanceDescriptor id="PreprocessP_c"/>
@@ -52,4 +63,5 @@
 	<moduleInstanceDescriptor id="PreprocessQ_c"/>
 	<moduleInstanceDescriptor id="PreprocessT_c"/>
 	<moduleInstanceDescriptor id="PreprocessE_c"/>
+
 </moduleInstanceDescriptors>

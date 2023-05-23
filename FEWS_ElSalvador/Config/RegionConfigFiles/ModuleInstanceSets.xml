@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <moduleInstanceSets xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/moduleInstanceSets.xsd" version="1.1">
+	<moduleInstanceSet id="PreprocessForecast">
+		<moduleInstanceId>PreprocessGFS</moduleInstanceId>
+		<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+		<moduleInstanceId>PreprocessWRFA</moduleInstanceId>
+		<moduleInstanceId>PreprocessWRFC</moduleInstanceId>
+		<moduleInstanceId>PreprocessWRFD</moduleInstanceId>
+		<moduleInstanceId>PreprocessWRFE</moduleInstanceId>
+		<moduleInstanceId>PreprocessWRFF</moduleInstanceId>
+	</moduleInstanceSet>
+
 	<moduleInstanceSet id="Preprocess_P">
 		<moduleInstanceId>PreprocessP</moduleInstanceId>
 	</moduleInstanceSet>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<variable>
+		<variableId>P</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import$FORECAST$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.pro</parameterId>
+			<locationId>$FORECAST_LOCATION$</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="$FORECAST_TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_Cuencas</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Preprocess$FORECAST$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro</parameterId>
+			<qualifierId>$FORECAST_LOCATION$</qualifierId>
+			<locationSetId>Basins</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="$FORECAST_TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_Cuencas_acc</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Preprocess$FORECAST$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>$FORECAST_LOCATION$</qualifierId>
+			<locationSetId>Basins</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="$FORECAST_TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="P">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>P</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>P_Cuencas</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="P_acc">
+		<accumulation>
+			<sum>
+				<inputVariable>
+					<variableId>P_Cuencas</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>P_Cuencas_acc</variableId>
+				</outputVariable>
+			</sum>
+		</accumulation>
+	</transformation>
+</transformationModule>

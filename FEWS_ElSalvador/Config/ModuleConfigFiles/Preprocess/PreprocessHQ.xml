@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
 	<!--Variables Curvas de Aforo GENERALES-->
 	<variable>
@@ -8,9 +7,9 @@
 			<moduleInstanceId>PreprocessH</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>H.obs</parameterId>
-			<locationSetId>MARN_H</locationSetId>
+			<locationSetId>MARN_Q</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
+			<timeStep unit="hour" multiplier="1"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
@@ -23,7 +22,7 @@
 			<parameterId>Q.obs</parameterId>
 			<locationSetId>MARN_Q</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
+			<timeStep unit="hour" multiplier="1"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
 	<variable>
 		<variableId>GPM</variableId>
@@ -10,7 +9,20 @@
 			<locationId>GPM</locationId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="30"/>
-			<relativeViewPeriod unit="day" start="-3" end="0" startOverrulable="true"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>GPM_hour</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGPM</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationId>GPM</locationId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>
@@ -19,20 +31,31 @@
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessGPM</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>P.basin</parameterId>
+			<parameterId>P.obs</parameterId>
 			<locationSetId>SubbasinLempa</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="minute" multiplier="30"/>
-			<relativeViewPeriod unit="day" start="-3" end="0" startOverrulable="true"/>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>
-	<!--Deaccumulate rainfall to inst rainfall-->
+	<transformation id="accumulateHour">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>GPM</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>GPM_hour</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
 	<transformation id="basin_gpm">
 		<interpolationSpatial>
 			<average>
 				<inputVariable>
-					<variableId>GPM</variableId>
+					<variableId>GPM_hour</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>GPM_Basin</variableId>

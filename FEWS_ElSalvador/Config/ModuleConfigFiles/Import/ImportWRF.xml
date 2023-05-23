@@ -27,7 +27,6 @@
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
-		<externUnit parameterId="P.pro" unit="mm" cumulativeSum="true"/>
 	</import>
 	<import>
 		<general>
@@ -56,6 +55,5 @@
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
-		<externUnit parameterId="P.pro" unit="mm" cumulativeSum="true"/>
 	</import>
 </timeSeriesImportRun>

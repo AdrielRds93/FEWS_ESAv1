@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<variable>
+		<variableId>Cuenca.hour</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessObs</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Cuenca.3hour</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Temp_60min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessT</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.obs</parameterId>
+			<locationSetId>MARN_T</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="60"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Temp_60min.3hour</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.obs</parameterId>
+			<locationSetId>MARN_T</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="AggregateP">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>Cuenca.hour</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Cuenca.3hour</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<transformation id="DefaultP">
+		<interpolationSerial>
+			<default>
+				<inputVariable>
+					<variableId>Cuenca.3hour</variableId>
+				</inputVariable>
+				<defaultValue>0.0</defaultValue>
+				<outputVariable>
+					<variableId>Cuenca.3hour</variableId>
+				</outputVariable>
+			</default>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="AggregateT">
+		<aggregation>
+			<meanToMean>
+				<inputVariable>
+					<variableId>Temp_60min</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Temp_60min.3hour</variableId>
+				</outputVariable>
+			</meanToMean>
+		</aggregation>
+	</transformation>
+</transformationModule>

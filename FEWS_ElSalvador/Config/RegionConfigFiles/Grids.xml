@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <grids xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/grids.xsd">
-	<regular locationId="GFS_ESA">
+	<regular locationId="GFS">
 		<rows>15</rows>
 		<columns>25</columns>
 		<geoDatum>WGS 1984</geoDatum>
@@ -12,7 +11,7 @@
 		<xCellSize>0.25</xCellSize>
 		<yCellSize>0.25</yCellSize>
 	</regular>
-	<regular locationId="GEFS_ESA">
+	<regular locationId="GEFS">
 		<rows>8</rows>
 		<columns>13</columns>
 		<geoDatum>WGS 1984</geoDatum>
@@ -24,51 +23,47 @@
 		<yCellSize>0.5</yCellSize>
 	</regular>
 	<regular locationId="WRF-d02">
-        <rows>102</rows>
-        <columns>117</columns>
-        <mercator>
-            <originLongitude>267.47198486328125</originLongitude>
-            <standardParallelLatitude>13.87399959564209</standardParallelLatitude>
-        </mercator>
-        <gridCorners>
-            <geoDatum>WGS 1984</geoDatum>
-            <upperLeft>
-                <x>-92.56969927258177</x>
-                <y>18.79186640812043</y>
-                <z>0.0</z>
-            </upperLeft>
-            <lowerRight>
-                <x>-82.81561148063588</x>
-                <y>10.574026429041313</y>
-                <z>0.0</z>
-            </lowerRight>
-        </gridCorners>
+		<rows>102</rows>
+		<columns>117</columns>
+		<mercator>
+			<originLongitude>267.47198486328125</originLongitude>
+			<standardParallelLatitude>13.87399959564209</standardParallelLatitude>
+		</mercator>
+		<gridCorners>
+			<geoDatum>WGS 1984</geoDatum>
+			<upperLeft>
+				<x>-92.56969927258177</x>
+				<y>18.79186640812043</y>
+				<z>0.0</z>
+			</upperLeft>
+			<lowerRight>
+				<x>-82.81561148063588</x>
+				<y>10.574026429041313</y>
+				<z>0.0</z>
+			</lowerRight>
+		</gridCorners>
 	</regular>
-    <regular locationId="WRF-d03">
-        <rows>87</rows>
-        <columns>111</columns>
-        <mercator>
-            <originLongitude>269.61297607421875</originLongitude>
-            <standardParallelLatitude>13.87399959564209</standardParallelLatitude>
-        </mercator>
-        <gridCorners>
-            <geoDatum>WGS 1984</geoDatum>
-            <upperLeft>
-                <x>-90.40091863773557</x>
-                <y>14.963255246352732</y>
-                <z>0.0</z>
-            </upperLeft>
-            <lowerRight>
-                <x>-87.31629258387238</x>
-                <y>12.61544033302966</y>
-                <z>0.0</z>
-            </lowerRight>
-        </gridCorners>
-    </regular>
-
-
-
-
+	<regular locationId="WRF-d03">
+		<rows>87</rows>
+		<columns>111</columns>
+		<mercator>
+			<originLongitude>269.61297607421875</originLongitude>
+			<standardParallelLatitude>13.87399959564209</standardParallelLatitude>
+		</mercator>
+		<gridCorners>
+			<geoDatum>WGS 1984</geoDatum>
+			<upperLeft>
+				<x>-90.40091863773557</x>
+				<y>14.963255246352732</y>
+				<z>0.0</z>
+			</upperLeft>
+			<lowerRight>
+				<x>-87.31629258387238</x>
+				<y>12.61544033302966</y>
+				<z>0.0</z>
+			</lowerRight>
+		</gridCorners>
+	</regular>
 	<regular locationId="WRF">
 		<rows>87</rows>
 		<columns>111</columns>
@@ -101,17 +96,4 @@
 		<xCellSize>0.1</xCellSize>
 		<yCellSize>0.1</yCellSize>
 	</regular>
-	<!-- activar para una configuracion con OpenDap/Hyrax
-	<regular locationId="GPM">
-		<rows>60</rows>
-		<columns>80</columns>
-		<geoDatum>WGS 1984</geoDatum>
-		<firstCellCenter>
-			<x>-93.25</x>
-			<y>16.05</y>
-		</firstCellCenter>
-		<xCellSize>0.1</xCellSize>
-		<yCellSize>0.1</yCellSize>
-	</regular>
--->
 </grids>

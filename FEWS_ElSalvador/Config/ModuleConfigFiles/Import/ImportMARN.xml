@@ -12,6 +12,7 @@
 			</importTimeZone>
 			<dataFeedId>Convencionales</dataFeedId>
 		</general>
+		<tolerance parameterId="P.obs" timeUnit="minute" unitCount="10"/>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportMARN</moduleInstanceId>
 			<valueType>scalar</valueType>

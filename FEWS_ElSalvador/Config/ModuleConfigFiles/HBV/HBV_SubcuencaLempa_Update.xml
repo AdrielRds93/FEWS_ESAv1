@@ -39,19 +39,19 @@
 				<exportFile>timeseries_import.xml</exportFile>
 				<timeSeriesSets>
 					<timeSeriesSet>
-						<moduleInstanceId>PreprocessP</moduleInstanceId>
+						<moduleInstanceId>HBV_SubcuencaLempa_UpdatePre</moduleInstanceId>
 						<valueType>scalar</valueType>
-						<parameterId>P.basin</parameterId>
+						<parameterId>P.obs</parameterId>
 						<locationSetId>SubbasinLempa_model</locationSetId>
-						<timeSeriesType>external historical</timeSeriesType>
+						<timeSeriesType>simulated historical</timeSeriesType>
 						<timeStep unit="hour" multiplier="3"/>
 						<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
 					<timeSeriesSet>
-						<moduleInstanceId>PreprocessT</moduleInstanceId>
+						<moduleInstanceId>HBV_SubcuencaLempa_UpdatePre</moduleInstanceId>
 						<valueType>scalar</valueType>
-						<parameterId>T.basin</parameterId>
+						<parameterId>T.obs</parameterId>
 						<locationSetId>SubbasinLempa_model</locationSetId>
 						<timeSeriesType>simulated historical</timeSeriesType>
 						<timeStep unit="hour" multiplier="3"/>
@@ -61,7 +61,7 @@
 					<timeSeriesSet>
 						<moduleInstanceId>PreprocessE</moduleInstanceId>
 						<valueType>scalar</valueType>
-						<parameterId>E.basin</parameterId>
+						<parameterId>E.sim</parameterId>
 						<locationSetId>SubbasinLempa_model</locationSetId>
 						<timeSeriesType>simulated historical</timeSeriesType>
 						<timeStep unit="hour" multiplier="3"/>

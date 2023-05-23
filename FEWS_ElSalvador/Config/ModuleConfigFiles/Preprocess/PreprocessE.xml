@@ -5,7 +5,7 @@
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessE</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>E.basin</parameterId>
+			<parameterId>E.sim</parameterId>
 			<locationId>SUB_MOD1</locationId>
 			<timeSeriesType>simulated historical</timeSeriesType>
 			<timeStep daysOfMonth="15"/>
@@ -18,7 +18,7 @@
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessE</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>E.basin</parameterId>
+			<parameterId>E.sim</parameterId>
 			<locationId>SUB_MOD1</locationId>
 			<timeSeriesType>simulated historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
@@ -31,7 +31,7 @@
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessE</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>E.basin</parameterId>
+			<parameterId>E.sim</parameterId>
 			<locationId>SUB_MOD2</locationId>
 			<timeSeriesType>simulated historical</timeSeriesType>
 			<timeStep daysOfMonth="15"/>
@@ -44,7 +44,7 @@
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessE</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>E.basin</parameterId>
+			<parameterId>E.sim</parameterId>
 			<locationId>SUB_MOD2</locationId>
 			<timeSeriesType>simulated historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>

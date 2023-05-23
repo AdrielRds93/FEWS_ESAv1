@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <filters version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/filters.xsd">
 	<filter id="Estaciones">
 		<child foreignKey="Convencionales"/>
@@ -22,7 +22,7 @@
 			<parameterId>P.obs</parameterId>
 			<locationSetId>SubbasinLempa</locationSetId>
 			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep unit="hour"/>
+			<timeStep unit="hour" multiplier="1"/>
 			<relativeViewPeriod unit="day" start="-3" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>

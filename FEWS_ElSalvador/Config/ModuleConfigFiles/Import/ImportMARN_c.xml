@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
 	<import>
 		<general>
@@ -20,7 +19,6 @@
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="daily07"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
@@ -30,7 +28,6 @@
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="daily07"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 	</import>
 	<import>
@@ -52,7 +49,6 @@
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="15"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
@@ -62,7 +58,6 @@
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
@@ -72,7 +67,6 @@
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="10"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 	</import>
 	<import>
@@ -94,7 +88,6 @@
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportMARN_c</moduleInstanceId>
@@ -104,7 +97,6 @@
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>1</synchLevel>
 		</timeSeriesSet>
 	</import>
 </timeSeriesImportRun>

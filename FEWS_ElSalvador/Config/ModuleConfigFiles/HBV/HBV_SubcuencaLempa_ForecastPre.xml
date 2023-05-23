@@ -18,7 +18,7 @@
 		<timeSeriesSet>
 			<moduleInstanceId>HBV_SubcuencaLempa_ForecastPre</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>E.basin</parameterId>
+			<parameterId>E.sim</parameterId>
 			<locationId>SUB_MOD1</locationId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
 			<timeStep daysOfMonth="15"/>
@@ -31,7 +31,7 @@
 		<timeSeriesSet>
 			<moduleInstanceId>HBV_SubcuencaLempa_ForecastPre</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>E.basin</parameterId>
+			<parameterId>E.sim</parameterId>
 			<locationId>SUB_MOD1</locationId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
@@ -44,7 +44,7 @@
 		<timeSeriesSet>
 			<moduleInstanceId>HBV_SubcuencaLempa_ForecastPre</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>E.basin</parameterId>
+			<parameterId>E.sim</parameterId>
 			<locationId>SUB_MOD2</locationId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
 			<timeStep daysOfMonth="15"/>
@@ -57,7 +57,7 @@
 		<timeSeriesSet>
 			<moduleInstanceId>HBV_SubcuencaLempa_ForecastPre</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>E.basin</parameterId>
+			<parameterId>E.sim</parameterId>
 			<locationId>SUB_MOD2</locationId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>

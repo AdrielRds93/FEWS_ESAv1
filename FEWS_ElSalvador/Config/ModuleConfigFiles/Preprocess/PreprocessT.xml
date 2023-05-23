@@ -9,6 +9,7 @@
 			<locationSetId>MARN_T</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="10"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>
@@ -21,19 +22,7 @@
 			<locationSetId>MARN_T</locationSetId>
 			<timeSeriesType>simulated historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="60"/>
-			<readWriteMode>add originals</readWriteMode>
-		</timeSeriesSet>
-	</variable>
-	<variable>
-		<variableId>Temp_Basins</variableId>
-		<timeSeriesSet>
-			<moduleInstanceId>PreprocessT</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>T.obs</parameterId>
-			<locationSetId>Basins</locationSetId>
-			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="1"/>
-			<relativeViewPeriod unit="day" start="-30" end="0" startOverrulable="false"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>
@@ -48,32 +37,5 @@
 				</outputVariable>
 			</meanToMean>
 		</aggregation>
-	</transformation>
-	<transformation id="TempBasins">
-		<interpolationSpatial>
-			<kriging>
-				<inputVariable>
-					<variableId>Temp_60min</variableId>
-				</inputVariable>
-				<interpolationType>seriesgeneration</interpolationType>
-				<valueOption>normal</valueOption>
-				<variogram>
-					<type>exponential</type>
-					<nugget>0.1</nugget>
-					<sill>1</sill>
-					<range>360</range>
-				</variogram>
-				<numberOfPoints>10</numberOfPoints>
-				<distanceParameters>
-					<g1>73</g1>
-					<g2>111</g2>
-					<g3>0</g3>
-					<g4>0</g4>
-				</distanceParameters>
-				<outputVariable>
-					<variableId>Temp_Basins</variableId>
-				</outputVariable>
-			</kriging>
-		</interpolationSpatial>
 	</transformation>
 </transformationModule>

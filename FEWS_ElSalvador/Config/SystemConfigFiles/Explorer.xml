@@ -230,34 +230,52 @@
 			<accelerator>ctrl G</accelerator>
 			<loadAtStartup>true</loadAtStartup>
 		</explorerTask>
-		<explorerTask name="Manual Forecast">
+		<explorerTask name="Pronóstico Manual">
 			<mnemonic>M</mnemonic>
 			<taskClass>nl.wldelft.fews.gui.plugin.manualforecast.ManualForecastDialog</taskClass>
 			<toolbarTask>true</toolbarTask>
 			<menubarTask>true</menubarTask>
+			<accelerator>ctrl M</accelerator>
 		</explorerTask>
-		<explorerTask name="Forecast Management">
+		<explorerTask name="Administrador de Pronósticos">
 			<mnemonic>F</mnemonic>
 			<taskClass>nl.wldelft.fews.gui.plugin.forecast.ForecastDialog</taskClass>
 			<toolbarTask>true</toolbarTask>
 			<menubarTask>true</menubarTask>
 			<accelerator>ctrl F</accelerator>
 		</explorerTask>
-		<explorerTask name="Workflow Navigator">
+		<explorerTask name="Navegador Flujos de Trabajo">
 			<arguments>WorkflowNavigator</arguments>
 			<taskClass>nl.wldelft.fews.gui.plugin.workflownavigator.WorkflowNavigator</taskClass>
 			<toolbarTask>true</toolbarTask>
 			<menubarTask>true</menubarTask>
 			<loadAtStartup>false</loadAtStartup>
 		</explorerTask>
-		<explorerTask name="System Monitor">
+		<explorerTask name="Monitor del Sistema ">
 			<mnemonic>S</mnemonic>
 			<taskClass>nl.wldelft.fews.gui.plugin.systemmonitor.SystemMonitorDialog</taskClass>
 			<toolbarTask>true</toolbarTask>
 			<menubarTask>true</menubarTask>
 			<accelerator>ctrl S</accelerator>
 		</explorerTask>
-		<explorerTask name="Modifiers">
+		<explorerTask name="Base de Datos">
+			<mnemonic>L</mnemonic>
+			<taskClass>nl.wldelft.fews.gui.plugin.timeseriestableviewer.TimeSeriesTableViewer</taskClass>
+			<toolbarTask>true</toolbarTask>
+			<menubarTask>true</menubarTask>
+			<accelerator>ctrl L</accelerator>
+			<toolWindow>false</toolWindow>
+			<loadAtStartup>false</loadAtStartup>
+		</explorerTask>
+		<explorerTask name="Árbol de Pronósticos">
+			<taskClass>nl.wldelft.fews.gui.plugin.selection.SegmentSelectionDialog</taskClass>
+			<toolbarTask>false</toolbarTask>
+			<menubarTask>false</menubarTask>
+			<toolWindow>true</toolWindow>
+			<loadAtStartup>true</loadAtStartup>
+		</explorerTask>
+<!--
+		<explorerTask name="Modificadores">
 			<mnemonic>X</mnemonic>
 			<taskClass>nl.wldelft.fews.gui.plugin.modifiersdisplay.ModifiersPanel</taskClass>
 			<toolbarTask>false</toolbarTask>
@@ -267,34 +285,11 @@
 			<toolWindow>false</toolWindow>
 			<loadAtStartup>false</loadAtStartup>
 		</explorerTask>
-		<explorerTask name="Forecast Tree">
-			<taskClass>nl.wldelft.fews.gui.plugin.selection.SegmentSelectionDialog</taskClass>
-			<toolbarTask>false</toolbarTask>
-			<menubarTask>false</menubarTask>
-			<toolWindow>true</toolWindow>
-			<loadAtStartup>true</loadAtStartup>
-		</explorerTask>
 		<explorerTask name="Forecaster Product Info">
 			<predefinedDisplay>forecast product info</predefinedDisplay>
 			<toolbarTask>false</toolbarTask>
 			<menubarTask>true</menubarTask>
 			<allowMultipleInstances>false</allowMultipleInstances>
-			<toolWindow>false</toolWindow>
-			<loadAtStartup>false</loadAtStartup>
-		</explorerTask>
-		<explorerTask name="Workflow Navigator">
-			<predefinedDisplay>workflow navigator</predefinedDisplay>
-			<toolbarTask>false</toolbarTask>
-			<menubarTask>false</menubarTask>
-			<toolWindow>false</toolWindow>
-			<loadAtStartup>false</loadAtStartup>
-		</explorerTask>
-		<explorerTask name="Database Lister">
-			<mnemonic>L</mnemonic>
-			<predefinedDisplay>time series lister</predefinedDisplay>
-			<toolbarTask>true</toolbarTask>
-			<menubarTask>true</menubarTask>
-			<accelerator>ctrl L</accelerator>
 			<toolWindow>false</toolWindow>
 			<loadAtStartup>false</loadAtStartup>
 		</explorerTask>
@@ -313,14 +308,7 @@
 			<toolWindow>true</toolWindow>
 			<loadAtStartup>false</loadAtStartup>
 		</explorerTask>
-		<explorerTask name="Web Browser">
-			<mnemonic>h</mnemonic>
-			<taskClass>nl.wldelft.fews.gui.plugin.webbrowser.WebBrowserDisplay</taskClass>
-			<toolbarTask>false</toolbarTask>
-			<menubarTask>true</menubarTask>
-			<accelerator>ctrl R</accelerator>
-			<loadAtStartup>false</loadAtStartup>
-		</explorerTask>
+-->
 	</explorerTasks>
 	<statusBarConfig>
 		<dateTimeFormat>yyyy-MM-dd HH:mm:ss</dateTimeFormat>

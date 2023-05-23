@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <parameterGroups version="1.0" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
 	<parameterGroup id="Valor_res0.01">
 		<parameterType>instantaneous</parameterType>
@@ -11,7 +10,7 @@
 		</parameter>
 	</parameterGroup>
 	<parameterGroup id="Precipitation" name="Precipitación">
-		<parameterType>accumulative</parameterType>
+		<parameterType>mean</parameterType>
 		<unit>mm</unit>
 		<valueResolution>0.01</valueResolution>
 		<parameter id="P" name="P">
@@ -26,17 +25,17 @@
 		<parameter id="P.basin" name="P.basin">
 			<shortName>P.basin</shortName>
 		</parameter>
-	</parameterGroup>
-	<parameterGroup id="Precipitación acumulada">
-		<parameterType>instantaneous</parameterType>
-		<unit>mm</unit>
-		<valueResolution>0.1</valueResolution>
 		<parameter id="P.obs.acc" name="P.obs.acc">
 			<shortName>P.obs.acc</shortName>
 		</parameter>
 		<parameter id="P.pro.acc" name="P.pro.acc">
 			<shortName>P.pro.acc</shortName>
 		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Precipitación acumulada">
+		<parameterType>accumulative</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.1</valueResolution>
 		<parameter id="P.pro.acc.GEFS.Perc000" name="P.pro.acc.GEFS.Perc000">
 			<shortName>P.pro.acc.GEFS.Perc000</shortName>
 		</parameter>
@@ -78,8 +77,8 @@
 		<parameter id="E.obs" name="E.obs">
 			<shortName>E</shortName>
 		</parameter>
-		<parameter id="E.basin" name="E.basin">
-			<shortName>E.basin</shortName>
+		<parameter id="E.sim" name="E.sim">
+			<shortName>E.sim</shortName>
 		</parameter>
 		<parameter id="E.pro" name="E.pro">
 			<shortName>E.pro</shortName>

@@ -99,7 +99,7 @@
 			<parameterId>Fraction</parameterId>
 			<locationSetId>Basins</locationSetId>
 			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep unit="hour"/>
+			<timeStep unit="hour" multiplier="1"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
@@ -125,20 +125,33 @@
 			<parameterId>P.obs</parameterId>
 			<locationSetId>Basins</locationSetId>
 			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep unit="hour"/>
+			<timeStep unit="hour" multiplier="1"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
-		<variableId>Cuenca.3hour</variableId>
+		<variableId>Temp_60min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessT</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.obs</parameterId>
+			<locationSetId>MARN_T</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Temp_Basins</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessObs</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>P.obs</parameterId>
+			<parameterId>T.obs</parameterId>
 			<locationSetId>Basins</locationSetId>
 			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
+			<timeStep unit="hour" multiplier="1"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
@@ -246,29 +259,32 @@
 			</simple>
 		</merge>
 	</transformation>
-	<transformation id="Aggregate">
-		<aggregation>
-			<accumulative>
+	<!-- interpolación de temperatura usando Kriging-->
+	<transformation id="TempBasins">
+		<interpolationSpatial>
+			<kriging>
 				<inputVariable>
-					<variableId>Cuenca.hour</variableId>
+					<variableId>Temp_60min</variableId>
 				</inputVariable>
+				<interpolationType>seriesgeneration</interpolationType>
+				<valueOption>normal</valueOption>
+				<variogram>
+					<type>exponential</type>
+					<nugget>0.1</nugget>
+					<sill>1</sill>
+					<range>360</range>
+				</variogram>
+				<numberOfPoints>10</numberOfPoints>
+				<distanceParameters>
+					<g1>73</g1>
+					<g2>111</g2>
+					<g3>0</g3>
+					<g4>0</g4>
+				</distanceParameters>
 				<outputVariable>
-					<variableId>Cuenca.3hour</variableId>
+					<variableId>Temp_Basins</variableId>
 				</outputVariable>
-			</accumulative>
-		</aggregation>
-	</transformation>
-	<transformation id="DefaultP">
-		<interpolationSerial>
-			<default>
-				<inputVariable>
-					<variableId>Cuenca.3hour</variableId>
-				</inputVariable>
-				<defaultValue>0.0</defaultValue>
-				<outputVariable>
-					<variableId>Cuenca.3hour</variableId>
-				</outputVariable>
-			</default>
-		</interpolationSerial>
+			</kriging>
+		</interpolationSpatial>
 	</transformation>
 </transformationModule>

@@ -1,16 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
-	<!--Pronosticos de precipitation-->
 	<activity>
+		<properties>
+			<string key="FORECAST" value="WRFA"/>
+			<string key="FORECAST_LOCATION" value="WRF-d02"/>
+			<string key="FORECAST_TIMESTEP" value="1"/>
+			<string key="ENSEMBLE" value="main"/>
+		</properties>
 		<runIndependent>true</runIndependent>
-		<workflowId>PreprocessGFS</workflowId>
+		<moduleInstanceId>PreprocessWRFA</moduleInstanceId>
+		<moduleConfigFileName>PreprocessForecast</moduleConfigFileName>
 	</activity>
 	<activity>
+		<properties>
+			<string key="FORECAST" value="WRFA"/>
+			<string key="FORECAST_LOCATION" value="WRF-d03"/>
+			<string key="FORECAST_TIMESTEP" value="1"/>
+			<string key="ENSEMBLE" value="main"/>
+		</properties>
 		<runIndependent>true</runIndependent>
-		<workflowId>PreprocessGEFS</workflowId>
+		<moduleInstanceId>PreprocessWRFA</moduleInstanceId>
+		<moduleConfigFileName>PreprocessForecast</moduleConfigFileName>
 	</activity>
 	<activity>
+		<properties>
+			<string key="FORECAST" value="WRFC"/>
+			<string key="FORECAST_LOCATION" value="WRF-d02"/>
+			<string key="FORECAST_TIMESTEP" value="1"/>
+			<string key="ENSEMBLE" value="main"/>
+		</properties>
 		<runIndependent>true</runIndependent>
-		<workflowId>PreprocessWRF</workflowId>
+		<moduleInstanceId>PreprocessWRFC</moduleInstanceId>
+		<moduleConfigFileName>PreprocessForecast</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="FORECAST" value="WRFC"/>
+			<string key="FORECAST_LOCATION" value="WRF-d03"/>
+			<string key="FORECAST_TIMESTEP" value="1"/>
+			<string key="ENSEMBLE" value="main"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessWRFC</moduleInstanceId>
+		<moduleConfigFileName>PreprocessForecast</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="FORECAST" value="WRFD"/>
+			<string key="FORECAST_LOCATION" value="WRF-d02"/>
+			<string key="FORECAST_TIMESTEP" value="1"/>
+			<string key="ENSEMBLE" value="main"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessWRFD</moduleInstanceId>
+		<moduleConfigFileName>PreprocessForecast</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="FORECAST" value="WRFD"/>
+			<string key="FORECAST_LOCATION" value="WRF-d03"/>
+			<string key="FORECAST_TIMESTEP" value="1"/>
+			<string key="ENSEMBLE" value="main"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessWRFD</moduleInstanceId>
+		<moduleConfigFileName>PreprocessForecast</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="FORECAST" value="WRFE"/>
+			<string key="FORECAST_LOCATION" value="WRF-d02"/>
+			<string key="FORECAST_TIMESTEP" value="1"/>
+			<string key="ENSEMBLE" value="main"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessWRFE</moduleInstanceId>
+		<moduleConfigFileName>PreprocessForecast</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="FORECAST" value="WRFE"/>
+			<string key="FORECAST_LOCATION" value="WRF-d03"/>
+			<string key="FORECAST_TIMESTEP" value="1"/>
+			<string key="ENSEMBLE" value="main"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessWRFE</moduleInstanceId>
+		<moduleConfigFileName>PreprocessForecast</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="FORECAST" value="WRFF"/>
+			<string key="FORECAST_LOCATION" value="WRF-d02"/>
+			<string key="FORECAST_TIMESTEP" value="1"/>
+			<string key="ENSEMBLE" value="main"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessWRFF</moduleInstanceId>
+		<moduleConfigFileName>PreprocessForecast</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="FORECAST" value="WRFF"/>
+			<string key="FORECAST_LOCATION" value="WRF-d03"/>
+			<string key="FORECAST_TIMESTEP" value="1"/>
+			<string key="ENSEMBLE" value="main"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessWRFF</moduleInstanceId>
+		<moduleConfigFileName>PreprocessForecast</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="FORECAST" value="GFS"/>
+			<string key="FORECAST_LOCATION" value="GFS"/>
+			<string key="FORECAST_TIMESTEP" value="3"/>
+			<string key="ENSEMBLE" value="main"/>
+		</properties>
+		<runIndependent>true</runIndependent>		
+		<moduleInstanceId>PreprocessGFS</moduleInstanceId>
+		<moduleConfigFileName>PreprocessForecast</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="FORECAST" value="GEFS"/>
+			<string key="FORECAST_LOCATION" value="GEFS"/>
+			<string key="FORECAST_TIMESTEP" value="6"/>
+			<string key="ENSEMBLE" value="GEFS"/>
+		</properties>
+		<runIndependent>true</runIndependent>		
+		<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+		<moduleConfigFileName>PreprocessForecast</moduleConfigFileName>
 	</activity>
 </workflow>
