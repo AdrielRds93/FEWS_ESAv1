@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
-	<parameter internal="P.pro" external="P.obs"/>
-	<parameter internal="T.pro" external="T.obs"/>
-	<location internal="2" external="QNodeSim[1]"/>
-	<location internal="12" external="QNodeSim[2]"/>
+	<parameter external="Discharge" internal="Q.obs"/>
+	<parameter external="DamLevel" internal="H.obs"/>
 	<enableOneToOneMapping/>
 </idMap>

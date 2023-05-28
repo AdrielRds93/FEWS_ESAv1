@@ -39,19 +39,9 @@
 				<exportFile>timeseries_import.xml</exportFile>
 				<timeSeriesSets>
 					<timeSeriesSet>
-						<moduleInstanceId>PreprocessP</moduleInstanceId>
+						<moduleInstanceId>HBV_SubcuencaLempa_UpdatePre</moduleInstanceId>
 						<valueType>scalar</valueType>
-						<parameterId>P.basin</parameterId>
-						<locationSetId>SubbasinLempa_model</locationSetId>
-						<timeSeriesType>external historical</timeSeriesType>
-						<timeStep unit="hour" multiplier="3"/>
-						<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
-						<readWriteMode>add originals</readWriteMode>
-					</timeSeriesSet>
-					<timeSeriesSet>
-						<moduleInstanceId>PreprocessT</moduleInstanceId>
-						<valueType>scalar</valueType>
-						<parameterId>T.basin</parameterId>
+						<parameterId>P.obs</parameterId>
 						<locationSetId>SubbasinLempa_model</locationSetId>
 						<timeSeriesType>simulated historical</timeSeriesType>
 						<timeStep unit="hour" multiplier="3"/>
@@ -59,7 +49,17 @@
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
 					<timeSeriesSet>
-						<moduleInstanceId>PreprocessE</moduleInstanceId>
+						<moduleInstanceId>HBV_SubcuencaLempa_UpdatePre</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>T.obs</parameterId>
+						<locationSetId>SubbasinLempa_model</locationSetId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="3"/>
+						<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>HBV_SubcuencaLempa_UpdatePre</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>E.sim</parameterId>
 						<locationSetId>SubbasinLempa_model</locationSetId>
@@ -69,7 +69,7 @@
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
 					<timeSeriesSet>
-						<moduleInstanceId>PreprocessQ_Guajoyo</moduleInstanceId>
+						<moduleInstanceId>HBV_SubcuencaLempa_UpdatePre</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>Q.sim</parameterId>
 						<locationId>CEL_01</locationId>
@@ -84,7 +84,7 @@
 						<parameterId>Q.obs</parameterId>
 						<locationSetId>HBV_SubcuencaLempa</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
-						<timeStep unit="hour" multiplier="3"/>
+						<timeStep unit="hour" multiplier="1"/>
 						<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
@@ -119,6 +119,15 @@
 						<valueType>scalar</valueType>
 						<parameterId>Q.sim</parameterId>
 						<locationSetId>HBV_SubcuencaLempa</locationSetId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="3"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>HBV_SubcuencaLempa_UpdateDA</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>Q.sim</parameterId>
+						<locationId>CEL_01</locationId>
 						<timeSeriesType>simulated historical</timeSeriesType>
 						<timeStep unit="hour" multiplier="3"/>
 						<readWriteMode>add originals</readWriteMode>

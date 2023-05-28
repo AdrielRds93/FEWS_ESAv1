@@ -157,8 +157,325 @@
 		</subplot>
 		<!--agregar temperatura-->
 	</plot>
-
-<!--	<plot id="Subbasin_GFS">
+	<plot id="HBV">
+		<subplot>
+			<line>
+				<label>Qobs</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_UpdatePre</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.obs</parameterId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<relativeViewPeriod unit="day" start="-3" end="0"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>Sin Asimilación</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_Update</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.sim</parameterId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<relativeViewPeriod unit="day" start="-3" end="0"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>WRFA-d02</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_Forecast_WRFA</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.sim</parameterId>
+					<qualifierId>WRF-d02</qualifierId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>WRFC-d02</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_Forecast_WRFC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.sim</parameterId>
+					<qualifierId>WRF-d02</qualifierId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>WRFD-d02</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_Forecast_WRFD</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.sim</parameterId>
+					<qualifierId>WRF-d02</qualifierId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>WRFE-d02</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_Forecast_WRFE</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.sim</parameterId>
+					<qualifierId>WRF-d02</qualifierId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>WRFF-d02</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_Forecast_WRFF</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.sim</parameterId>
+					<qualifierId>WRF-d02</qualifierId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>WRFA-d03</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_Forecast_WRFA</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.sim</parameterId>
+					<qualifierId>WRF-d03</qualifierId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>WRFC-d03</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_Forecast_WRFC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.sim</parameterId>
+					<qualifierId>WRF-d03</qualifierId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>WRFD-d03</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_Forecast_WRFD</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.sim</parameterId>
+					<qualifierId>WRF-d03</qualifierId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>WRFE-d03</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_Forecast_WRFE</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.sim</parameterId>
+					<qualifierId>WRF-d03</qualifierId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>WRFF-d03</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_Forecast_WRFF</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.sim</parameterId>
+					<qualifierId>WRF-d03</qualifierId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+		<subplot>
+			<line>
+				<label>Qobs</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_UpdatePre</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.obs</parameterId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<relativeViewPeriod unit="day" start="-3" end="0"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>Con Asimilación</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_UpdateDA</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.sim</parameterId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<relativeViewPeriod unit="day" start="-3" end="0"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>WRFA-d02</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_ForecastDA_WRFA</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.sim</parameterId>
+					<qualifierId>WRF-d02</qualifierId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>WRFC-d02</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_ForecastDA_WRFC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.sim</parameterId>
+					<qualifierId>WRF-d02</qualifierId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>WRFD-d02</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_ForecastDA_WRFD</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.sim</parameterId>
+					<qualifierId>WRF-d02</qualifierId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>WRFE-d02</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_ForecastDA_WRFE</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.sim</parameterId>
+					<qualifierId>WRF-d02</qualifierId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>WRFF-d02</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_ForecastDA_WRFF</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.sim</parameterId>
+					<qualifierId>WRF-d02</qualifierId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>WRFA-d03</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_ForecastDA_WRFA</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.sim</parameterId>
+					<qualifierId>WRF-d03</qualifierId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>WRFC-d03</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_ForecastDA_WRFC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.sim</parameterId>
+					<qualifierId>WRF-d03</qualifierId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>WRFD-d03</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_ForecastDA_WRFD</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.sim</parameterId>
+					<qualifierId>WRF-d03</qualifierId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>WRFE-d03</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_ForecastDA_WRFE</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.sim</parameterId>
+					<qualifierId>WRF-d03</qualifierId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>WRFF-d03</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HBV_SubcuencaLempa_ForecastDA_WRFF</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.sim</parameterId>
+					<qualifierId>WRF-d03</qualifierId>
+					<locationSetId>HBV_SubcuencaLempa</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+	</plot>
+	<!--	<plot id="Subbasin_GFS">
 		<subplot>
 			<inverted>false</inverted>
 			<plotWeight>1</plotWeight>
@@ -298,14 +615,55 @@
 			</line>
 		</subplot>
 	</plot>
--->	<displayGroup name="SubbasinLempa">
+-->
+	<displayGroup name="Precipitación por Cuencas">
 		<displayGroup name=" ">
 			<locationLoop>
 				<locationSetId>SubbasinLempa</locationSetId>
-			</locationLoop>			
+			</locationLoop>
 			<display name="Precipitación">
 				<plotId>Subbasin_Template</plotId>
 			</display>
 		</displayGroup>
+	</displayGroup>
+	<displayGroup name="Pronóstico Hidrológico">
+		<display name="Guajoyo">
+			<subplot>
+				<line>
+					<label>Sin Asimilación</label>
+					<timeSeriesSet>
+						<moduleInstanceId>HBV_SubcuencaLempa_UpdatePre</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>Q.sim</parameterId>
+						<locationId>CEL_01</locationId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="3"/>
+						<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+				</line>
+				<line>
+					<label>Con Asimilación</label>
+					<timeSeriesSet>
+						<moduleInstanceId>HBV_SubcuencaLempa_UpdateDA</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>Q.sim</parameterId>
+						<locationId>CEL_01</locationId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="3"/>
+						<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+				</line>
+			</subplot>
+		</display>
+		<display>
+			<locationId>2</locationId>
+			<plotId>HBV</plotId>
+		</display>
+		<display>
+			<locationId>12</locationId>
+			<plotId>HBV</plotId>
+		</display>
 	</displayGroup>
 </displayGroups>

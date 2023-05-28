@@ -40,38 +40,41 @@
 				<exportFile>timeseries_import.xml</exportFile>
 				<timeSeriesSets>
 					<timeSeriesSet>
-						<moduleInstanceId>PreprocessGFS</moduleInstanceId>
+						<moduleInstanceId>HBV_SubcuencaLempa_ForecastPre_$FORECAST$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>P.pro</parameterId>
-						<qualifierId>GFS</qualifierId>
-						<locationSetId>SubbasinLempa_model</locationSetId>
-						<timeSeriesType>external forecasting</timeSeriesType>
-						<timeStep unit="hour" multiplier="3"/>
-						<relativeViewPeriod unit="day" start="0" end="15" endOverrulable="true"/>
-						<readWriteMode>read only</readWriteMode>
-					</timeSeriesSet>
-					<timeSeriesSet>
-						<moduleInstanceId>HBV_SubcuencaLempa_ForecastPre</moduleInstanceId>
-						<valueType>scalar</valueType>
-						<parameterId>T.basin</parameterId>
+						<qualifierId>$FORECAST_LOCATION$</qualifierId>
 						<locationSetId>SubbasinLempa_model</locationSetId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
 						<timeStep unit="hour" multiplier="3"/>
 						<relativeViewPeriod unit="day" start="0" end="15" endOverrulable="true"/>
-						<readWriteMode>add originals</readWriteMode>
+						<readWriteMode>read only</readWriteMode>
+						<ensembleId>$ENSEMBLE$</ensembleId>
 					</timeSeriesSet>
 					<timeSeriesSet>
-						<moduleInstanceId>HBV_SubcuencaLempa_ForecastPre</moduleInstanceId>
+						<moduleInstanceId>HBV_SubcuencaLempa_ForecastPre_$FORECAST$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>T.pro</parameterId>
+						<locationSetId>SubbasinLempa_model</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="3"/>
+						<relativeViewPeriod unit="day" start="0" end="15" endOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+						<ensembleId>main</ensembleId>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>HBV_SubcuencaLempa_ForecastPre_$FORECAST$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>E.sim</parameterId>
 						<locationSetId>SubbasinLempa_model</locationSetId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
 						<timeStep unit="hour" multiplier="3"/>
 						<relativeViewPeriod unit="day" start="0" end="15" endOverrulable="true"/>
-						<readWriteMode>add originals</readWriteMode>
+						<readWriteMode>read only</readWriteMode>
+						<ensembleId>main</ensembleId>
 					</timeSeriesSet>
 					<timeSeriesSet>
-						<moduleInstanceId>HBV_SubcuencaLempa_ForecastPre</moduleInstanceId>
+						<moduleInstanceId>HBV_SubcuencaLempa_ForecastPre_$FORECAST$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>Q.sim</parameterId>
 						<locationId>CEL_01</locationId>
@@ -79,6 +82,7 @@
 						<timeStep unit="hour" multiplier="3"/>
 						<relativeViewPeriod unit="day" start="0" end="15" endOverrulable="true"/>
 						<readWriteMode>add originals</readWriteMode>
+						<ensembleId>main</ensembleId>
 					</timeSeriesSet>
 				</timeSeriesSets>
 			</exportTimeSeriesActivity>
@@ -104,13 +108,15 @@
 				<importFile>timeseries_export.xml</importFile>
 				<timeSeriesSets>
 					<timeSeriesSet>
-						<moduleInstanceId>HBV_SubcuencaLempa_ForecastDA</moduleInstanceId>
+						<moduleInstanceId>HBV_SubcuencaLempa_ForecastDA_$FORECAST$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>Q.sim</parameterId>
+						<qualifierId>$FORECAST_LOCATION$</qualifierId>
 						<locationSetId>HBV_SubcuencaLempa</locationSetId>
-						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
 						<timeStep unit="hour" multiplier="3"/>
 						<readWriteMode>add originals</readWriteMode>
+						<ensembleId>$ENSEMBLE$</ensembleId>
 					</timeSeriesSet>
 				</timeSeriesSets>
 			</importTimeSeriesActivity>

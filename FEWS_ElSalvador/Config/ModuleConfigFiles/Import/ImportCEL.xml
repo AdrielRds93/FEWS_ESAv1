@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<description>Importar datos de CEL</description>
+			<importType>csv</importType>
+			<folder>$IMPORT_FOLDER$/Datos/CEL</folder>
+			<idMapId>IdImportCEL</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneOffset>-06:00</timeZoneOffset>
+			</importTimeZone>
+			<dataFeedId>CEL</dataFeedId>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCEL</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationSetId>CEL_Presas</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCEL</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>H.obs</parameterId>
+			<locationSetId>CEL_Presas</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
+</timeSeriesImportRun>

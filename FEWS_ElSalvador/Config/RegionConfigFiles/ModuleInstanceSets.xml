@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <moduleInstanceSets xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/moduleInstanceSets.xsd" version="1.1">
+
+	<moduleInstanceSet id="HBV_SubcuencaLempa_Forecast_WRF">
+		<moduleInstanceId>HBV_SubcuencaLempa_Forecast_WRFA</moduleInstanceId>
+		<moduleInstanceId>HBV_SubcuencaLempa_Forecast_WRFC</moduleInstanceId>
+		<moduleInstanceId>HBV_SubcuencaLempa_Forecast_WRFD</moduleInstanceId>
+		<moduleInstanceId>HBV_SubcuencaLempa_Forecast_WRFF</moduleInstanceId>
+		<moduleInstanceId>HBV_SubcuencaLempa_Forecast_WRFE</moduleInstanceId>	
+	</moduleInstanceSet>
+	<moduleInstanceSet id="HBV_SubcuencaLempa_ForecastDA_WRF">
+		<moduleInstanceId>HBV_SubcuencaLempa_ForecastDA_WRFA</moduleInstanceId>
+		<moduleInstanceId>HBV_SubcuencaLempa_ForecastDA_WRFC</moduleInstanceId>
+		<moduleInstanceId>HBV_SubcuencaLempa_ForecastDA_WRFD</moduleInstanceId>
+		<moduleInstanceId>HBV_SubcuencaLempa_ForecastDA_WRFF</moduleInstanceId>
+		<moduleInstanceId>HBV_SubcuencaLempa_ForecastDA_WRFE</moduleInstanceId>	
+	</moduleInstanceSet>
+
 	<moduleInstanceSet id="PreprocessForecast">
 		<moduleInstanceId>PreprocessGFS</moduleInstanceId>
 		<moduleInstanceId>PreprocessGEFS</moduleInstanceId>

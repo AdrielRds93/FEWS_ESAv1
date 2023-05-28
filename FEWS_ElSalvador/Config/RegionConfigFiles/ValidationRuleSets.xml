@@ -12,7 +12,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>P.obs</parameterId>
 			<locationSetId>MARN_P_5min</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
+			<timeSeriesType>simulated historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="5"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
@@ -28,7 +28,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>P.obs</parameterId>
 			<locationSetId>MARN_P_10min</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
+			<timeSeriesType>simulated historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="10"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
@@ -44,7 +44,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>P.obs</parameterId>
 			<locationSetId>MARN_P_15min</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
+			<timeSeriesType>simulated historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="15"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>

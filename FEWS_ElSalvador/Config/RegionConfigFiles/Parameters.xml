@@ -10,7 +10,7 @@
 		</parameter>
 	</parameterGroup>
 	<parameterGroup id="Precipitation" name="Precipitación">
-		<parameterType>mean</parameterType>
+		<parameterType>accumulative</parameterType>
 		<unit>mm</unit>
 		<valueResolution>0.01</valueResolution>
 		<parameter id="P" name="P">

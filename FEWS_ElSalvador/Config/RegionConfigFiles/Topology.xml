@@ -2,6 +2,10 @@
 <topology xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/topology.xsd">
 	<enableAutoRun>false</enableAutoRun>
 	<nodes id="ImportObs" name="Importar observaciones">
+		<node id="ImportCEL" name="CEL">
+			<workflowId>ImportCEL</workflowId>
+			<localRun>false</localRun>
+		</node>
 		<node id="ImportMARN" name="MARN">
 			<workflowId>ImportMARN</workflowId>
 			<localRun>false</localRun>
@@ -55,14 +59,30 @@
 			<localRun>false</localRun>
 		</node>
 	</nodes>
-	<nodes id="HBV_Model" name="Modelo HBV">
-		<nodes id="NoDA" name="Sin asimilación">
+	<nodes id="HBV_Model" name="Modelo HBV - Lempa Alta">
+		<nodes id="WithoutDA" name="Sin asimilación">
 			<node id="UpdateRun" name="Simulación histórica">
 				<workflowId>HBV_Update</workflowId>
 				<localRun>false</localRun>
 			</node>
-			<node id="ForecastRun" name="Pronóstico GFS">
-				<workflowId>HBV_Forecast</workflowId>
+			<node id="ForecastRun-WRFA" name="Pronóstico WRFA">
+				<workflowId>HBV_Forecast_WRFA</workflowId>
+				<localRun>false</localRun>
+			</node>
+			<node id="ForecastRun-WRFC" name="Pronóstico WRFC">
+				<workflowId>HBV_Forecast_WRFC</workflowId>
+				<localRun>false</localRun>
+			</node>
+			<node id="ForecastRun-WRFD" name="Pronóstico WRFD">
+				<workflowId>HBV_Forecast_WRFD</workflowId>
+				<localRun>false</localRun>
+			</node>
+			<node id="ForecastRun-WRFE" name="Pronóstico WRFE">
+				<workflowId>HBV_Forecast_WRFE</workflowId>
+				<localRun>false</localRun>
+			</node>
+			<node id="ForecastRun-WRFF" name="Pronóstico WRFF">
+				<workflowId>HBV_Forecast_WRFF</workflowId>
 				<localRun>false</localRun>
 			</node>
 		</nodes>
@@ -71,8 +91,24 @@
 				<workflowId>HBV_UpdateDA</workflowId>
 				<localRun>false</localRun>
 			</node>
-			<node id="ForecastRunDA" name="Pronóstico GFS">
-				<workflowId>HBV_ForecastDA</workflowId>
+			<node id="ForecastRunDA-WRFA" name="Pronóstico WRFA">
+				<workflowId>HBV_ForecastDA_WRFA</workflowId>
+				<localRun>false</localRun>
+			</node>
+			<node id="ForecastRunDA-WRFC" name="Pronóstico WRFC">
+				<workflowId>HBV_ForecastDA_WRFC</workflowId>
+				<localRun>false</localRun>
+			</node>
+			<node id="ForecastRunDA-WRFD" name="Pronóstico WRFD">
+				<workflowId>HBV_ForecastDA_WRFD</workflowId>
+				<localRun>false</localRun>
+			</node>
+			<node id="ForecastRunDA-WRFE" name="Pronóstico WRFE">
+				<workflowId>HBV_ForecastDA_WRFE</workflowId>
+				<localRun>false</localRun>
+			</node>
+			<node id="ForecastRunDA-WRFF" name="Pronóstico WRFf">
+				<workflowId>HBV_ForecastDA_WRFF</workflowId>
 				<localRun>false</localRun>
 			</node>
 		</nodes>

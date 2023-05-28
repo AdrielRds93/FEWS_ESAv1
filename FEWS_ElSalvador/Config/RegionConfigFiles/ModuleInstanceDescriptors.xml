@@ -2,6 +2,7 @@
 <moduleInstanceDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/moduleInstanceDescriptors.xsd" version="1.0">
 
 	<!-- Imports -->
+	<moduleInstanceDescriptor id="ImportCEL"/>
 	<moduleInstanceDescriptor id="ImportMARN"/>
 	<moduleInstanceDescriptor id="ImportGPM"/>
 	<moduleInstanceDescriptor id="ImportGFS"/>
@@ -44,17 +45,45 @@
 	<moduleInstanceDescriptor id="AggregateInputsGEFS"/>	
 
 	<!--Forecast Length Estimator Modules-->
+	<moduleInstanceDescriptor id="ForecastLenghtEstimator"/>
 	<moduleInstanceDescriptor id="ForecastLenghtEstimatorGFS"/>
 	<moduleInstanceDescriptor id="ForecastLenghtEstimatorGEFS"/>
+	<moduleInstanceDescriptor id="ForecastLenghtEstimatorWRFA"/>
+	<moduleInstanceDescriptor id="ForecastLenghtEstimatorWRFC"/>
+	<moduleInstanceDescriptor id="ForecastLenghtEstimatorWRFD"/>
+	<moduleInstanceDescriptor id="ForecastLenghtEstimatorWRFE"/>
+	<moduleInstanceDescriptor id="ForecastLenghtEstimatorWRFF"/>
 
 	<!--Model runs-->
 	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_Update"/>
 	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_UpdateDA"/>
 	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_UpdatePre"/>
 	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_ForecastPre"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_ForecastPre_GFS"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_ForecastPre_GEFS"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_ForecastPre_WRFA"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_ForecastPre_WRFC"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_ForecastPre_WRFD"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_ForecastPre_WRFE"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_ForecastPre_WRFF"/>
 	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_Forecast"/>
-	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_Forecast-GEFS"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_Forecast_GFS"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_Forecast_GEFS"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_Forecast_WRFA"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_Forecast_WRFC"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_Forecast_WRFD"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_Forecast_WRFE"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_Forecast_WRFF"/>
 	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_ForecastDA"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_ForecastDA_GFS"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_ForecastDA_GEFS"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_ForecastDA_WRFA"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_ForecastDA_WRFC"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_ForecastDA_WRFD"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_ForecastDA_WRFE"/>
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_ForecastDA_WRFF"/>
+
+	<moduleInstanceDescriptor id="HBV_SubcuencaLempa_Forecast-GEFS"/>
 
 	<!--Preprocess for Calibration-->
 	<moduleInstanceDescriptor id="ImportMARN_c"/>
