@@ -14,6 +14,33 @@
 		</timeSeriesSet>
 	</variable>
 	<variable>
+		<variableId>T</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import$FORECAST$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>T.pro</parameterId>
+			<locationId>$FORECAST_LOCATION$</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="$FORECAST_TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>T_Cuencas</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Preprocess$FORECAST$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.pro</parameterId>
+			<qualifierId>$FORECAST_LOCATION$</qualifierId>
+			<locationSetId>Basins</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="$FORECAST_TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
 		<variableId>P_Cuencas</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>Preprocess$FORECAST$</moduleInstanceId>
@@ -49,6 +76,18 @@
 				</inputVariable>
 				<outputVariable>
 					<variableId>P_Cuencas</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="T">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>T</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>T_Cuencas</variableId>
 				</outputVariable>
 			</average>
 		</interpolationSpatial>

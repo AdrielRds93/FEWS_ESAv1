@@ -25,6 +25,7 @@
 	<moduleInstanceDescriptor id="PreprocessH"/>
 	<moduleInstanceDescriptor id="PreprocessHQ"/>
 	<moduleInstanceDescriptor id="PreprocessQ"/>
+	<moduleInstanceDescriptor id="PreprocessClim"/>
 	<moduleInstanceDescriptor id="PreprocessQ_Guajoyo"/>
 
 	<!--Preprocess and analysis-->

@@ -2,6 +2,7 @@
 <timeSteps xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSteps.xsd">
 	<timeStep id="daily07" times="07:00" label="Diario 07:00 horas " timeZone="GMT-6:00"/>
 	<timeStep id="daily09" times="09:00" label="Diario 09:00 horas " timeZone="GMT-6:00"/>
+	<timeStep id="3hourly" times="01:00 04:00 07:00 10:00 13:00 16:00 19:00 22:00" label="cada 3 horas" timeZone="GMT-6"/>
 	<timeStep id="daily" label="Diario" unit="day" timeZone="GMT-6:00"/>
 	<timeStep id="weekly" label="Semanal" unit="week" timeZone="GMT-6:00"/>
 	<timeStep id="monthly" label="Mensual" unit="month" timeZone="GMT-6:00"/>

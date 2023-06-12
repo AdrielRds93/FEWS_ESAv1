@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <locationSets version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/locationSets.xsd">
 	<!--Estaciones-->
 	<locationSet id="Stations">
@@ -341,7 +341,10 @@
 		<locationId>12</locationId>
 	</locationSet>
 	<locationSet id="CEL_Presas">
-		<locationId>CEL_01</locationId>
+		<locationId>CH1</locationId>
+		<locationId>CH2</locationId>
+		<locationId>CH3</locationId>
+		<locationId>CH4</locationId>
 	</locationSet>
 
 </locationSets>

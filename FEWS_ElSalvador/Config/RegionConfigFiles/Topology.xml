@@ -46,6 +46,10 @@
 		</node>
 	</nodes>
 	<nodes id="Preprocess" name="Procesar Cuencas">
+		<node id="PreprocessClim" name="Climatología">
+			<workflowId>PreprocessClim</workflowId>
+			<localRun>false</localRun>
+		</node>
 		<node id="PreprocessObs" name="Estaciones">
 			<workflowId>PreprocessObs</workflowId>
 			<localRun>false</localRun>
@@ -63,6 +67,14 @@
 		<nodes id="WithoutDA" name="Sin asimilación">
 			<node id="UpdateRun" name="Simulación histórica">
 				<workflowId>HBV_Update</workflowId>
+				<localRun>false</localRun>
+			</node>
+			<node id="ForecastRun-GFS" name="Pronóstico GFS">
+				<workflowId>HBV_Forecast_GFS</workflowId>
+				<localRun>false</localRun>
+			</node>
+			<node id="ForecastRun-GEFS" name="Pronóstico GEFS">
+				<workflowId>HBV_Forecast_GEFS</workflowId>
 				<localRun>false</localRun>
 			</node>
 			<node id="ForecastRun-WRFA" name="Pronóstico WRFA">
@@ -89,6 +101,14 @@
 		<nodes id="WithDA" name="Con asimilación">
 			<node id="UpdateRunDA" name="Simulación histórica">
 				<workflowId>HBV_UpdateDA</workflowId>
+				<localRun>false</localRun>
+			</node>
+			<node id="ForecastRunDA-GFS" name="Pronóstico GFS">
+				<workflowId>HBV_ForecastDA_GFS</workflowId>
+				<localRun>false</localRun>
+			</node>
+			<node id="ForecastRunDA-GEFS" name="Pronóstico GEFS">
+				<workflowId>HBV_ForecastDA_GEFS</workflowId>
 				<localRun>false</localRun>
 			</node>
 			<node id="ForecastRunDA-WRFA" name="Pronóstico WRFA">

@@ -13,8 +13,61 @@
 		<child foreignKey="LempaAlta_HBV"/>
 	</filter>
 	<filter id="LempaAlta_HBV" name="HBV Lempa Alta">
+		<child foreignKey="LempaAlta_HBV_entradas"/>
 		<child foreignKey="LempaAlta_HBV_sinDA"/>
 		<child foreignKey="LempaAlta_HBV_conDA"/>
+	</filter>
+	<filter id="LempaAlta_HBV_entradas" name="entradas">
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.obs</parameterId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>E.sim</parameterId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.sim</parameterId>
+			<locationId>CH1</locationId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessHQ</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationSetId>HBV_SubcuencaLempa</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
 	</filter>
 	<filter id="PresasCEL" name="Presas CEL">
 		<timeSeriesSet>
@@ -24,7 +77,7 @@
 			<locationSetId>CEL_Presas</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -34,7 +87,7 @@
 			<locationSetId>CEL_Presas</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</filter>
@@ -46,30 +99,285 @@
 			<locationSetId>SubbasinLempa</locationSetId>
 			<timeSeriesType>simulated historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessT</moduleInstanceId>
+			<moduleInstanceId>PreprocessObs</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>T.obs</parameterId>
-			<locationSetId>SubbasinLempa</locationSetId>
+			<locationSetId>Basins</locationSetId>
 			<timeSeriesType>simulated historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</filter>
 	<filter id="Pronóstico">
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessWRF</moduleInstanceId>
+			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>P.pro</parameterId>
-			<qualifierId>WRF</qualifierId>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>GEFS</qualifierId>
+			<locationSetId>Basins</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationSetId>Basins</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessWRFA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>WRF-d02</qualifierId>
 			<locationSetId>SubbasinLempa</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
-			<relativeViewPeriod unit="day" start="0" end="5"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessWRFC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>WRF-d02</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessWRFD</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>WRF-d02</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessWRFE</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>WRF-d02</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessWRFF</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>WRF-d02</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessWRFA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>WRF-d03</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessWRFC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>WRF-d03</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessWRFD</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>WRF-d03</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessWRFE</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>WRF-d03</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessWRFF</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>WRF-d03</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.pro</parameterId>
+			<qualifierId>GEFS</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.pro</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessWRFA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.pro</parameterId>
+			<qualifierId>WRF-d02</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessWRFC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.pro</parameterId>
+			<qualifierId>WRF-d02</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessWRFD</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.pro</parameterId>
+			<qualifierId>WRF-d02</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessWRFE</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.pro</parameterId>
+			<qualifierId>WRF-d02</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessWRFF</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.pro</parameterId>
+			<qualifierId>WRF-d02</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessWRFA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.pro</parameterId>
+			<qualifierId>WRF-d03</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessWRFC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.pro</parameterId>
+			<qualifierId>WRF-d03</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessWRFD</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.pro</parameterId>
+			<qualifierId>WRF-d03</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessWRFE</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.pro</parameterId>
+			<qualifierId>WRF-d03</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessWRFF</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.pro</parameterId>
+			<qualifierId>WRF-d03</qualifierId>
+			<locationSetId>SubbasinLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</filter>
@@ -81,7 +389,7 @@
 			<locationSetId>MARN_CONVENCIONAL</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="daily07"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -91,7 +399,7 @@
 			<locationSetId>MARN_T_diaria</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="daily07"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -101,7 +409,7 @@
 			<locationSetId>MARN_T_diaria</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="daily07"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</filter>
@@ -113,7 +421,7 @@
 			<locationSetId>MARN_TELEMETRICA</locationSetId>
 			<timeSeriesType>simulated historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -123,7 +431,7 @@
 			<locationSetId>MARN_TELEMETRICA</locationSetId>
 			<timeSeriesType>simulated historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</filter>
@@ -441,8 +749,8 @@
 			<parameterId>Q.obs</parameterId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -451,8 +759,31 @@
 			<parameterId>Q.sim</parameterId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_Forecast_GEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.sim</parameterId>
+			<qualifierId>GEFS</qualifierId>
+			<locationSetId>HBV_SubcuencaLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_Forecast_GFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.sim</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationSetId>HBV_SubcuencaLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -462,8 +793,8 @@
 			<qualifierId>WRF-d02</qualifierId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -473,8 +804,8 @@
 			<qualifierId>WRF-d02</qualifierId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -484,8 +815,8 @@
 			<qualifierId>WRF-d02</qualifierId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -495,8 +826,8 @@
 			<qualifierId>WRF-d02</qualifierId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -506,8 +837,8 @@
 			<qualifierId>WRF-d02</qualifierId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -517,8 +848,8 @@
 			<qualifierId>WRF-d03</qualifierId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -528,8 +859,8 @@
 			<qualifierId>WRF-d03</qualifierId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -539,8 +870,8 @@
 			<qualifierId>WRF-d03</qualifierId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -550,8 +881,8 @@
 			<qualifierId>WRF-d03</qualifierId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -561,8 +892,8 @@
 			<qualifierId>WRF-d03</qualifierId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</filter>
@@ -573,8 +904,8 @@
 			<parameterId>Q.obs</parameterId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -583,8 +914,31 @@
 			<parameterId>Q.sim</parameterId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_ForecastDA_GEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.sim</parameterId>
+			<qualifierId>GEFS</qualifierId>
+			<locationSetId>HBV_SubcuencaLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HBV_SubcuencaLempa_ForecastDA_GFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.sim</parameterId>
+			<qualifierId>GFS</qualifierId>
+			<locationSetId>HBV_SubcuencaLempa</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -594,8 +948,8 @@
 			<qualifierId>WRF-d02</qualifierId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -605,8 +959,8 @@
 			<qualifierId>WRF-d02</qualifierId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -616,8 +970,8 @@
 			<qualifierId>WRF-d02</qualifierId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -627,8 +981,8 @@
 			<qualifierId>WRF-d02</qualifierId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -638,8 +992,8 @@
 			<qualifierId>WRF-d02</qualifierId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -649,8 +1003,8 @@
 			<qualifierId>WRF-d03</qualifierId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -660,8 +1014,8 @@
 			<qualifierId>WRF-d03</qualifierId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -671,8 +1025,8 @@
 			<qualifierId>WRF-d03</qualifierId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -682,8 +1036,8 @@
 			<qualifierId>WRF-d03</qualifierId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -693,8 +1047,8 @@
 			<qualifierId>WRF-d03</qualifierId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-3" end="0"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-24" end="120"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</filter>

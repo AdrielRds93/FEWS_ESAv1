@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<properties>
+		<string key="FORECAST" value="GFS"/>
+		<string key="FORECAST_LOCATION" value="GFS"/>
+		<string key="FORECAST_TIMESTEP" value="3"/>
+		<string key="ENSEMBLE" value="main"/>
+	</properties>
+	<activity>
+		<moduleInstanceId>ForecastLenghtEstimatorGFS</moduleInstanceId>
+		<moduleConfigFileName>ForecastLenghtEstimator</moduleConfigFileName>
+	</activity>
+	<activity>
+		<moduleInstanceId>HBV_SubcuencaLempa_ForecastPre_GFS</moduleInstanceId>
+		<moduleConfigFileName>HBV_SubcuencaLempa_ForecastPre</moduleConfigFileName>
+	</activity>
+	<activity>
+		<moduleInstanceId>HBV_SubcuencaLempa_Forecast_GFS</moduleInstanceId>
+		<moduleConfigFileName>HBV_SubcuencaLempa_Forecast</moduleConfigFileName>
+	</activity>
+</workflow>

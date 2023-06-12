@@ -44,7 +44,7 @@
 						<parameterId>P.obs</parameterId>
 						<locationSetId>SubbasinLempa_model</locationSetId>
 						<timeSeriesType>simulated historical</timeSeriesType>
-						<timeStep unit="hour" multiplier="3"/>
+						<timeStep id="3hourly"/>
 						<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
@@ -54,7 +54,7 @@
 						<parameterId>T.obs</parameterId>
 						<locationSetId>SubbasinLempa_model</locationSetId>
 						<timeSeriesType>simulated historical</timeSeriesType>
-						<timeStep unit="hour" multiplier="3"/>
+						<timeStep id="3hourly"/>
 						<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
@@ -64,7 +64,7 @@
 						<parameterId>E.sim</parameterId>
 						<locationSetId>SubbasinLempa_model</locationSetId>
 						<timeSeriesType>simulated historical</timeSeriesType>
-						<timeStep unit="hour" multiplier="3"/>
+						<timeStep id="3hourly"/>
 						<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
@@ -72,9 +72,9 @@
 						<moduleInstanceId>HBV_SubcuencaLempa_UpdatePre</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>Q.sim</parameterId>
-						<locationId>CEL_01</locationId>
+						<locationId>CH1</locationId>
 						<timeSeriesType>simulated historical</timeSeriesType>
-						<timeStep unit="hour" multiplier="3"/>
+						<timeStep id="3hourly"/>
 						<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
@@ -120,16 +120,16 @@
 						<parameterId>Q.sim</parameterId>
 						<locationSetId>HBV_SubcuencaLempa</locationSetId>
 						<timeSeriesType>simulated historical</timeSeriesType>
-						<timeStep unit="hour" multiplier="3"/>
+						<timeStep id="3hourly"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
 					<timeSeriesSet>
 						<moduleInstanceId>HBV_SubcuencaLempa_UpdateDA</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>Q.sim</parameterId>
-						<locationId>CEL_01</locationId>
+						<locationId>CH1</locationId>
 						<timeSeriesType>simulated historical</timeSeriesType>
-						<timeStep unit="hour" multiplier="3"/>
+						<timeStep id="3hourly"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
 				</timeSeriesSets>

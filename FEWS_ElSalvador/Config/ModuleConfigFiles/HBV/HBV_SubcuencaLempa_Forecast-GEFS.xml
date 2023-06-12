@@ -77,7 +77,7 @@
 						<moduleInstanceId>HBV_SubcuencaLempa_ForecastPre</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>Q.sim</parameterId>
-						<locationId>CEL_01</locationId>
+						<locationId>CH1</locationId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
 						<timeStep unit="hour" multiplier="3"/>
 						<relativeViewPeriod unit="day" start="0" end="15" endOverrulable="true"/>

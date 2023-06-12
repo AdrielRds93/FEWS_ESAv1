@@ -21,7 +21,7 @@
 			<parameterId>Q.obs</parameterId>
 			<locationSetId>HBV_SubcuencaLempa</locationSetId>
 			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
+			<timeStep id="3hourly"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
@@ -47,7 +47,7 @@
 			<parameterId>P.obs</parameterId>
 			<locationSetId>SubbasinLempa_model</locationSetId>
 			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
+			<timeStep id="3hourly"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
@@ -73,160 +73,102 @@
 			<parameterId>T.obs</parameterId>
 			<locationSetId>SubbasinLempa_model</locationSetId>
 			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
+			<timeStep id="3hourly"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
-		<variableId>Q_Guajoyo</variableId>
+		<variableId>Q_Guajoyo_1hr_OBS</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCEL</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationId>CH1</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_Guajoyo_1hr</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>HBV_SubcuencaLempa_UpdatePre</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>Q.sim</parameterId>
-			<locationId>CEL_01</locationId>
+			<locationId>CH1</locationId>
 			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
+			<timeStep unit="hour" multiplier="1"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
-		<variableId>EPW-SUB_MOD1_15d</variableId>
+		<variableId>Q_Guajoyo_3hr</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>HBV_SubcuencaLempa_UpdatePre</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>E.sim</parameterId>
-			<locationId>SUB_MOD1</locationId>
+			<parameterId>Q.sim</parameterId>
+			<locationId>CH1</locationId>
 			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep daysOfMonth="15"/>
-			<relativeViewPeriod unit="day" start="-60" end="60" startOverrulable="true"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
-		<variableId>EPW-SUB_MOD1</variableId>
+		<variableId>EPW_1hr</variableId>
 		<timeSeriesSet>
-			<moduleInstanceId>HBV_SubcuencaLempa_UpdatePre</moduleInstanceId>
+			<moduleInstanceId>PreprocessClim</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>E.sim</parameterId>
-			<locationId>SUB_MOD1</locationId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
 			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-60" end="60" startOverrulable="true"/>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
-		<variableId>EPW-SUB_MOD2_15d</variableId>
+		<variableId>EPW_3hr</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>HBV_SubcuencaLempa_UpdatePre</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>E.sim</parameterId>
-			<locationId>SUB_MOD2</locationId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
 			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep daysOfMonth="15"/>
-			<relativeViewPeriod unit="day" start="-60" end="60" startOverrulable="true"/>
+			<timeStep id="3hourly"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0" startOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</variable>
-	<variable>
-		<variableId>EPW-SUB_MOD2</variableId>
-		<timeSeriesSet>
-			<moduleInstanceId>HBV_SubcuencaLempa_UpdatePre</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>E.sim</parameterId>
-			<locationId>SUB_MOD2</locationId>
-			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<relativeViewPeriod unit="day" start="-60" end="60" startOverrulable="true"/>
-			<readWriteMode>add originals</readWriteMode>
-		</timeSeriesSet>
-	</variable>
-	<transformation id="E_Climatology_SUB_MOD1">
-		<profile>
-			<timeSeries>
-				<inputProfile>
-					<data value="0.4225" monthDay="--01-15"/>
-					<data value="0.5213" monthDay="--02-15"/>
-					<data value="0.5313" monthDay="--03-15"/>
-					<data value="0.5500" monthDay="--04-15"/>
-					<data value="0.5213" monthDay="--05-15"/>
-					<data value="0.4213" monthDay="--06-15"/>
-					<data value="0.5075" monthDay="--07-15"/>
-					<data value="0.4972" monthDay="--08-15"/>
-					<data value="0.4361" monthDay="--09-15"/>
-					<data value="0.4000" monthDay="--10-15"/>
-					<data value="0.3764" monthDay="--11-15"/>
-					<data value="0.3972" monthDay="--12-15"/>
-				</inputProfile>
-				<type>cyclic</type>
-				<outputVariable>
-					<variableId>EPW-SUB_MOD1_15d</variableId>
-				</outputVariable>
-			</timeSeries>
-		</profile>
-	</transformation>
-	<transformation id="E_Climatology_SUB_MOD2">
-		<profile>
-			<timeSeries>
-				<inputProfile>
-					<data value="0.5300" monthDay="--01-15"/>
-					<data value="0.6163" monthDay="--02-15"/>
-					<data value="0.6513" monthDay="--03-15"/>
-					<data value="0.6513" monthDay="--04-15"/>
-					<data value="0.6063" monthDay="--05-15"/>
-					<data value="0.4813" monthDay="--06-15"/>
-					<data value="0.5613" monthDay="--07-15"/>
-					<data value="0.5444" monthDay="--08-15"/>
-					<data value="0.4889" monthDay="--09-15"/>
-					<data value="0.4542" monthDay="--10-15"/>
-					<data value="0.4736" monthDay="--11-15"/>
-					<data value="0.4708" monthDay="--12-15"/>
-				</inputProfile>
-				<type>cyclic</type>
-				<outputVariable>
-					<variableId>EPW-SUB_MOD2_15d</variableId>
-				</outputVariable>
-			</timeSeries>
-		</profile>
-	</transformation>
-	<transformation id="EPW-SUB_MOD1">
-		<interpolationSerial>
-			<linear>
+	<transformation id="EPW">
+		<aggregation>
+			<accumulative>
 				<inputVariable>
-					<variableId>EPW-SUB_MOD1_15d</variableId>
+					<variableId>EPW_1hr</variableId>
 				</inputVariable>
 				<outputVariable>
-					<variableId>EPW-SUB_MOD1</variableId>
+					<variableId>EPW_3hr</variableId>
 				</outputVariable>
-			</linear>
-		</interpolationSerial>
-	</transformation>
-	<transformation id="EPW-SUB_MOD2">
-		<interpolationSerial>
-			<linear>
-				<inputVariable>
-					<variableId>EPW-SUB_MOD2_15d</variableId>
-				</inputVariable>
-				<outputVariable>
-					<variableId>EPW-SUB_MOD2</variableId>
-				</outputVariable>
-			</linear>
-		</interpolationSerial>
+			</accumulative>
+		</aggregation>
 	</transformation>
 	<transformation id="default_QGuajoyo">
 		<profile>
 			<timeSeries>
 				<inputProfile>
-					<data value="40" time="00:00:00"/>
-					<data value="40" time="12:00:00"/>
-					<data value="0.0" time="15:00:00"/>
-					<data value="0.0" time="21:00:00"/>
+					<data value="35" time="00:00:00"/>
+					<data value="35" time="06:00:00"/>
+					<data value="2" time="07:00:00"/>
+					<data value="2" time="13:00:00"/>
+					<data value="2" time="21:00:00"/>
+					<data value="35.0" time="22:00:00"/>
 				</inputProfile>
 				<type>cyclic</type>
 				<outputVariable>
-					<variableId>Q_Guajoyo</variableId>
+					<variableId>Q_Guajoyo_1hr</variableId>
 				</outputVariable>
 			</timeSeries>
 		</profile>
@@ -235,10 +177,37 @@
 		<interpolationSerial>
 			<linear>
 				<inputVariable>
-					<variableId>Q_Guajoyo</variableId>
+					<variableId>Q_Guajoyo_1hr</variableId>
 				</inputVariable>
 				<outputVariable>
-					<variableId>Q_Guajoyo</variableId>
+					<variableId>Q_Guajoyo_1hr</variableId>
+				</outputVariable>
+			</linear>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="Merge_Guajoyo">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>Q_Guajoyo_1hr_OBS</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>Q_Guajoyo_1hr</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Q_Guajoyo_1hr</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="InterpolateGuajoyo">
+		<interpolationSerial>
+			<linear>
+				<inputVariable>
+					<variableId>Q_Guajoyo_1hr</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Q_Guajoyo_3hr</variableId>
 				</outputVariable>
 			</linear>
 		</interpolationSerial>

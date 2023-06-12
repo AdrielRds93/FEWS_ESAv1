@@ -3,7 +3,7 @@
 	<import>
 		<general>
 			<importType>NETCDF-CF_GRID</importType>
-			<serverUrl>https://nomads.ncep.noaa.gov/dods/gefs/gefs%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-21600)%/gefs_pgrb2ap5_all_%RELATIVE_TIME_IN_SECONDS(HH,-21600)%z</serverUrl>
+			<serverUrl>https://nomads.ncep.noaa.gov/dods/gefs/gefs%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-21600)%/gefs_pgrb2ap5_all_00z</serverUrl>
 			<idMapId>IdImportGEFS</idMapId>
 			<unitConversionsId>ImportUnitConversions</unitConversionsId>
 			<importTimeZone>

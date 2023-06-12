@@ -32,7 +32,6 @@
 				<stateSelection>
 					<warmState>
 						<stateSearchPeriod unit="hour" start="0" end="0"/>
-						<insertColdState>false</insertColdState>
 					</warmState>
 				</stateSelection>
 			</exportStateActivity>
@@ -46,9 +45,8 @@
 						<qualifierId>$FORECAST_LOCATION$</qualifierId>
 						<locationSetId>SubbasinLempa_model</locationSetId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="hour" multiplier="3"/>
-						<relativeViewPeriod unit="day" start="0" end="15" endOverrulable="true"/>
-						<readWriteMode>read only</readWriteMode>
+						<timeStep id="3hourly"/>
+						<readWriteMode>read complete forecast</readWriteMode>
 						<ensembleId>$ENSEMBLE$</ensembleId>
 					</timeSeriesSet>
 					<timeSeriesSet>
@@ -57,10 +55,9 @@
 						<parameterId>T.pro</parameterId>
 						<locationSetId>SubbasinLempa_model</locationSetId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="hour" multiplier="3"/>
-						<relativeViewPeriod unit="day" start="0" end="15" endOverrulable="true"/>
-						<readWriteMode>read only</readWriteMode>
-						<ensembleId>main</ensembleId>
+						<timeStep id="3hourly"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<ensembleId>$ENSEMBLE$</ensembleId>
 					</timeSeriesSet>
 					<timeSeriesSet>
 						<moduleInstanceId>HBV_SubcuencaLempa_ForecastPre_$FORECAST$</moduleInstanceId>
@@ -68,21 +65,19 @@
 						<parameterId>E.sim</parameterId>
 						<locationSetId>SubbasinLempa_model</locationSetId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="hour" multiplier="3"/>
-						<relativeViewPeriod unit="day" start="0" end="15" endOverrulable="true"/>
-						<readWriteMode>read only</readWriteMode>
-						<ensembleId>main</ensembleId>
+						<timeStep id="3hourly"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<ensembleId>$ENSEMBLE$</ensembleId>
 					</timeSeriesSet>
 					<timeSeriesSet>
-						<moduleInstanceId>HBV_SubcuencaLempa_ForecastPre_$FORECAST$</moduleInstanceId>
+						<moduleInstanceId>HBV_SubcuencaLempa_ForecastPre</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>Q.sim</parameterId>
-						<locationId>CEL_01</locationId>
+						<locationId>CH1</locationId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="hour" multiplier="3"/>
-						<relativeViewPeriod unit="day" start="0" end="15" endOverrulable="true"/>
-						<readWriteMode>add originals</readWriteMode>
-						<ensembleId>main</ensembleId>
+						<timeStep id="3hourly"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<ensembleId>$ENSEMBLE$</ensembleId>
 					</timeSeriesSet>
 				</timeSeriesSets>
 			</exportTimeSeriesActivity>
@@ -114,7 +109,7 @@
 						<qualifierId>$FORECAST_LOCATION$</qualifierId>
 						<locationSetId>HBV_SubcuencaLempa</locationSetId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="hour" multiplier="3"/>
+						<timeStep id="3hourly"/>
 						<readWriteMode>add originals</readWriteMode>
 						<ensembleId>$ENSEMBLE$</ensembleId>
 					</timeSeriesSet>

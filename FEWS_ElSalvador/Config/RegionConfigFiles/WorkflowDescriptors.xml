@@ -1,141 +1,185 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <workflowDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflowDescriptors.xsd" version="1.0">
-	<workflowDescriptor id="ImportCEL" name="Importar CEL" forecast="true" visible="true" allowApprove="false"/>
-	<workflowDescriptor id="ImportMARN" name="Importar MARN" forecast="true" visible="true" allowApprove="false"/>
-	<workflowDescriptor id="ImportGPM" name="Importar GPM" forecast="false" visible="true" allowApprove="false"/>
-	<workflowDescriptor id="ImportForecast" name="Importar pronósticos NOAA" forecast="true" visible="false" autoApprove="false">
+	<workflowDescriptor id="ImportCEL" name="Importar CEL" forecast="false"/>
+	<workflowDescriptor id="ImportGPM" name="Importar GPM" forecast="false">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportMARN" name="Importar MARN">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportForecastGFS" name="Importar GFS" forecast="false">
 		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="ImportForecastGFS" name="Importar GFS" forecast="true" visible="false" autoApprove="false">
+	<workflowDescriptor id="ImportForecastGEFS" name="Importar GEFS" forecast="false">
 		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="ImportForecastGEFS" name="Importar GEFS" forecast="true" visible="false" autoApprove="false">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="ImportForecastWRFA" name="Importar WRFA" forecast="false"/>
+	<workflowDescriptor id="ImportForecastWRFC" name="Importar WRFC" forecast="false"/>
+	<workflowDescriptor id="ImportForecastWRFD" name="Importar WRFD" forecast="false"/>
+	<workflowDescriptor id="ImportForecastWRFE" name="Importar WRFE" forecast="false"/>
+	<workflowDescriptor id="ImportForecastWRFF" name="Importar WRFF" forecast="false"/>
+	<workflowDescriptor id="PreprocessClim" name="Procesar climatología">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="ImportForecastWRFA" name="Importar WRFA" forecast="true" visible="true" autoApprove="false">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="PreprocessObs" name="Procesar estaciones por cuenca">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="ImportForecastWRFC" name="Importar WRFC" forecast="true" visible="true" autoApprove="false">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="PreprocessGPM" name="Procesar GPM por cuenca">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="ImportForecastWRFD" name="Importar WRFD" forecast="true" visible="true" autoApprove="false">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="PreprocessFor" name="Procesar pronósticos">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="ImportForecastWRFE" name="Importar WRFE" forecast="true" visible="true" autoApprove="false">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="ReportForecasts" name="Reporte Pronósticos" forecast="false">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="ImportForecastWRFF" name="Importar WRFF" forecast="true" visible="true" autoApprove="false">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_Update" name="HBV_Update">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="Preprocess" name="Procesar observaciones" forecast="true" visible="false" allowApprove="false"/>
-	<workflowDescriptor id="PreprocessObs" name="Procesar estaciones por cuenca" forecast="true" visible="false" allowApprove="false"/>
-	<workflowDescriptor id="PreprocessGPM" name="Procesar GPM por cuenca" forecast="true" visible="false" allowApprove="false"/>
-	<workflowDescriptor id="PreprocessFor" name="Procesar pronósticos" forecast="true" visible="false" allowApprove="false">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_Forecast_GFS" name="HBV_Forecast_GFS">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="ReportForecasts" name="Reporte Pronósticos" forecast="false" visible="true" allowApprove="false"/>
-	<workflowDescriptor id="HBV_Update" name="HBV_Update" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_Forecast_GEFS" name="HBV_Forecast_GEFS">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_Forecast_WRFA" name="HBV_Forecast_WRFA" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_Forecast_WRFA" name="HBV_Forecast_WRFA">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_Forecast_WRFC" name="HBV_Forecast_WRFC" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_Forecast_WRFC" name="HBV_Forecast_WRFC">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_Forecast_WRFD" name="HBV_Forecast_WRFD" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_Forecast_WRFD" name="HBV_Forecast_WRFD">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_Forecast_WRFE" name="HBV_Forecast_WRFE" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_Forecast_WRFE" name="HBV_Forecast_WRFE">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_Forecast_WRFF" name="HBV_Forecast_WRFF" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_Forecast_WRFF" name="HBV_Forecast_WRFF">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_Forecast_WRFA-d02" name="HBV_Forecast_WRFA-d02" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_Forecast_WRFA-d02" name="HBV_Forecast_WRFA-d02" visible="false">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_Forecast_WRFA-d03" name="HBV_Forecast_WRFA-d03" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_Forecast_WRFA-d03" name="HBV_Forecast_WRFA-d03" visible="false">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_Forecast_WRFC-d02" name="HBV_Forecast_WRFC-d02" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_Forecast_WRFC-d02" name="HBV_Forecast_WRFC-d02" visible="false">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_Forecast_WRFC-d03" name="HBV_Forecast_WRFC-d03" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_Forecast_WRFC-d03" name="HBV_Forecast_WRFC-d03" visible="false">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_Forecast_WRFD-d02" name="HBV_Forecast_WRFD-d02" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_Forecast_WRFD-d02" name="HBV_Forecast_WRFD-d02" visible="false">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_Forecast_WRFD-d03" name="HBV_Forecast_WRFD-d03" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_Forecast_WRFD-d03" name="HBV_Forecast_WRFD-d03" visible="false">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_Forecast_WRFE-d02" name="HBV_Forecast_WRFE-d02" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_Forecast_WRFE-d02" name="HBV_Forecast_WRFE-d02" visible="false">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_Forecast_WRFE-d03" name="HBV_Forecast_WRFE-d03" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_Forecast_WRFE-d03" name="HBV_Forecast_WRFE-d03" visible="false">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_Forecast_WRFF-d02" name="HBV_Forecast_WRFF-d02" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_Forecast_WRFF-d02" name="HBV_Forecast_WRFF-d02" visible="false">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_Forecast_WRFF-d03" name="HBV_Forecast_WRFF-d03" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_Forecast_WRFF-d03" name="HBV_Forecast_WRFF-d03" visible="false">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-
-	<workflowDescriptor id="HBV_UpdateDA" name="HBV_UpdateDA" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_UpdateDA" name="HBV_UpdateDA">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_ForecastDA_WRFA" name="HBV_ForecastDA_WRFA" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_ForecastDA_GFS" name="HBV_ForecastDA_GFS">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_ForecastDA_WRFC" name="HBV_ForecastDA_WRFC" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_ForecastDA_GEFS" name="HBV_ForecastDA_GEFS">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_ForecastDA_WRFD" name="HBV_ForecastDA_WRFD" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_ForecastDA_WRFA" name="HBV_ForecastDA_WRFA">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_ForecastDA_WRFE" name="HBV_ForecastDA_WRFE" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_ForecastDA_WRFC" name="HBV_ForecastDA_WRFC">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_ForecastDA_WRFF" name="HBV_ForecastDA_WRFF" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_ForecastDA_WRFD" name="HBV_ForecastDA_WRFD">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_ForecastDA_WRFA-d02" name="HBV_ForecastDA_WRFA-d02" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_ForecastDA_WRFE" name="HBV_ForecastDA_WRFE">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_ForecastDA_WRFA-d03" name="HBV_ForecastDA_WRFA-d03" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_ForecastDA_WRFF" name="HBV_ForecastDA_WRFF">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_ForecastDA_WRFC-d02" name="HBV_ForecastDA_WRFC-d02" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_ForecastDA_WRFA-d02" name="HBV_ForecastDA_WRFA-d02" visible="false">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_ForecastDA_WRFC-d03" name="HBV_ForecastDA_WRFC-d03" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_ForecastDA_WRFA-d03" name="HBV_ForecastDA_WRFA-d03" visible="false">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_ForecastDA_WRFD-d02" name="HBV_ForecastDA_WRFD-d02" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_ForecastDA_WRFC-d02" name="HBV_ForecastDA_WRFC-d02" visible="false">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_ForecastDA_WRFD-d03" name="HBV_ForecastDA_WRFD-d03" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_ForecastDA_WRFC-d03" name="HBV_ForecastDA_WRFC-d03" visible="false">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_ForecastDA_WRFE-d02" name="HBV_ForecastDA_WRFE-d02" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_ForecastDA_WRFD-d02" name="HBV_ForecastDA_WRFD-d02" visible="false">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_ForecastDA_WRFE-d03" name="HBV_ForecastDA_WRFE-d03" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_ForecastDA_WRFD-d03" name="HBV_ForecastDA_WRFD-d03" visible="false">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_ForecastDA_WRFF-d02" name="HBV_ForecastDA_WRFF-d02" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_ForecastDA_WRFE-d02" name="HBV_ForecastDA_WRFE-d02" visible="false">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="HBV_ForecastDA_WRFF-d03" name="HBV_ForecastDA_WRFF-d03" autoApprove="true">
-		<cardinalTimeStep times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<workflowDescriptor id="HBV_ForecastDA_WRFE-d03" name="HBV_ForecastDA_WRFE-d03" visible="false">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-
-	<workflowDescriptor id="ImportarCalibracion" name="Calibration: import observations" forecast="false" visible="true" allowApprove="false">
-		<description>Importación de datos para la calibración</description>
+	<workflowDescriptor id="HBV_ForecastDA_WRFF-d02" name="HBV_ForecastDA_WRFF-d02" visible="false">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="PreprocesarCalibracion" name="Calibration: Preprocess observations" forecast="false" visible="true" allowApprove="false">
-		<description>Importación de datos para la calibración</description>
+	<workflowDescriptor id="HBV_ForecastDA_WRFF-d03" name="HBV_ForecastDA_WRFF-d03" visible="false">
+		<cardinalTimeStep times="07:00" timeZone="GMT-6"/>
 	</workflowDescriptor>
+	<workflowDescriptor id="ImportarCalibracion" name="Calibration: import observations" forecast="false" visible="false"/>
+	<workflowDescriptor id="PreprocesarCalibracion" name="Calibration: Preprocess observations" forecast="false" visible="false"/>
+	<rootNode>
+		<node name="Importación">
+			<workflowId>ImportCEL</workflowId>
+			<workflowId>ImportMARN</workflowId>
+			<workflowId>ImportGPM</workflowId>
+			<workflowId>ImportMARN</workflowId>
+			<workflowId>ImportForecastGFS</workflowId>
+			<workflowId>ImportForecastGEFS</workflowId>
+			<workflowId>ImportForecastWRFA</workflowId>
+			<workflowId>ImportForecastWRFC</workflowId>
+			<workflowId>ImportForecastWRFD</workflowId>
+			<workflowId>ImportForecastWRFE</workflowId>
+			<workflowId>ImportForecastWRFF</workflowId>
+		</node>
+		<node name="Procesamiento">
+			<workflowId>PreprocessClim</workflowId>
+			<workflowId>PreprocessObs</workflowId>
+			<workflowId>PreprocessGPM</workflowId>
+			<workflowId>PreprocessFor</workflowId>
+		</node>
+		<node name="Simulación">
+			<workflowId>HBV_Update</workflowId>
+			<workflowId>HBV_Forecast_GFS</workflowId>
+			<workflowId>HBV_Forecast_GEFS</workflowId>
+			<workflowId>HBV_Forecast_WRFA</workflowId>
+			<workflowId>HBV_Forecast_WRFC</workflowId>
+			<workflowId>HBV_Forecast_WRFD</workflowId>
+			<workflowId>HBV_Forecast_WRFE</workflowId>
+			<workflowId>HBV_Forecast_WRFF</workflowId>
+			<workflowId>HBV_UpdateDA</workflowId>
+			<workflowId>HBV_ForecastDA_GFS</workflowId>
+			<workflowId>HBV_ForecastDA_GEFS</workflowId>
+			<workflowId>HBV_ForecastDA_WRFA</workflowId>
+			<workflowId>HBV_ForecastDA_WRFC</workflowId>
+			<workflowId>HBV_ForecastDA_WRFD</workflowId>
+			<workflowId>HBV_ForecastDA_WRFE</workflowId>
+			<workflowId>HBV_ForecastDA_WRFF</workflowId>
+		</node>
+	</rootNode>
 </workflowDescriptors>

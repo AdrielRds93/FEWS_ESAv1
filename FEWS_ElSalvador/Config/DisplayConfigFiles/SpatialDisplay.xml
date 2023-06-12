@@ -254,7 +254,6 @@
 					<timeStep unit="hour" multiplier="6"/>
 					<readWriteMode>read complete forecast</readWriteMode>
 					<ensembleId>GEFS</ensembleId>
-					<ensembleMemberIndexRange start="0"/>
 				</timeSeriesSet>
 				<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
 				<movingAccumulationTimeSpan unit="hour" multiplier="24"/>
@@ -272,7 +271,6 @@
 					<timeStep unit="hour" multiplier="6"/>
 					<readWriteMode>read complete forecast</readWriteMode>
 					<ensembleId>GEFS</ensembleId>
-					<ensembleMemberIndexRange start="0"/>
 				</timeSeriesSet>
 				<classBreaksId>Class.Temperatura</classBreaksId>
 			</gridPlot>

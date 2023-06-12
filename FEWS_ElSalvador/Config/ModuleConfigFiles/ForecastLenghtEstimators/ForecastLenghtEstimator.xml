@@ -8,6 +8,7 @@
 		<timeSeriesType>external forecasting</timeSeriesType>
 		<timeStep unit="hour" multiplier="$FORECAST_TIMESTEP$"/>
 		<readWriteMode>read complete forecast</readWriteMode>
+		<ensembleId>$ENSEMBLE$</ensembleId>
 	</externalForecastTimeSeries>
 	<minForecastLength unit="hour" multiplier="12"/>
 </forecastLengthEstimator>
