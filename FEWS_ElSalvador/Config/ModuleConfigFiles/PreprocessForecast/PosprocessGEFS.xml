@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<variable>
+		<variableId>P_Cuencas_acc</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>GEFS</qualifierId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_perc00</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PosprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>perc00</qualifierId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_perc10</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PosprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>perc10</qualifierId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_perc20</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PosprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>perc20</qualifierId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_perc33</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PosprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>perc33</qualifierId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_perc50</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PosprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>perc50</qualifierId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_perc67</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PosprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>perc67</qualifierId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_perc80</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PosprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>perc80</qualifierId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_perc90</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PosprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>perc90</qualifierId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_perc100</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PosprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>perc100</qualifierId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="perc00">
+		<statisticsEnsemble>
+			<min>
+				<inputVariable>
+					<variableId>P_Cuencas_acc</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>P_perc00</variableId>
+				</outputVariable>
+			</min>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="perc100">
+		<statisticsEnsemble>
+			<max>
+				<inputVariable>
+					<variableId>P_Cuencas_acc</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>P_perc100</variableId>
+				</outputVariable>
+			</max>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="perc10">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>P_Cuencas_acc</variableId>
+				</inputVariable>
+				<value>10</value>
+				<outputVariable>
+					<variableId>P_perc10</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="perc20">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>P_Cuencas_acc</variableId>
+				</inputVariable>
+				<value>20</value>
+				<outputVariable>
+					<variableId>P_perc20</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="perc33">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>P_Cuencas_acc</variableId>
+				</inputVariable>
+				<value>33</value>
+				<outputVariable>
+					<variableId>P_perc33</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="perc50">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>P_Cuencas_acc</variableId>
+				</inputVariable>
+				<value>50</value>
+				<outputVariable>
+					<variableId>P_perc50</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="perc67">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>P_Cuencas_acc</variableId>
+				</inputVariable>
+				<value>67</value>
+				<outputVariable>
+					<variableId>P_perc67</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="perc80">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>P_Cuencas_acc</variableId>
+				</inputVariable>
+				<value>80</value>
+				<outputVariable>
+					<variableId>P_perc80</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="perc90">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>P_Cuencas_acc</variableId>
+				</inputVariable>
+				<value>90</value>
+				<outputVariable>
+					<variableId>P_perc90</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
+</transformationModule>

@@ -26,13 +26,13 @@
 	<moduleInstanceDescriptor id="PreprocessHQ"/>
 	<moduleInstanceDescriptor id="PreprocessQ"/>
 	<moduleInstanceDescriptor id="PreprocessClim"/>
-	<moduleInstanceDescriptor id="PreprocessQ_Guajoyo"/>
 
 	<!--Preprocess and analysis-->
 	<moduleInstanceDescriptor id="PreprocessObs"/>
 	<moduleInstanceDescriptor id="PreprocessGPM"/>
 	<moduleInstanceDescriptor id="PreprocessGFS"/>
 	<moduleInstanceDescriptor id="PreprocessGEFS"/>
+	<moduleInstanceDescriptor id="PosprocessGEFS"/>
 	<moduleInstanceDescriptor id="PreprocessWRF"/>
 	<moduleInstanceDescriptor id="PreprocessWRFA"/>
 	<moduleInstanceDescriptor id="PreprocessWRFC"/>

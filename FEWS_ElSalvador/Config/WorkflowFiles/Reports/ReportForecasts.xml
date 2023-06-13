@@ -2,28 +2,28 @@
 <workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
 	<activity>
 		<properties>
-			<string key="LOCATION" value="SUB_01"></string>
+			<string key="LOCATION" value="SUB_MOD1"></string>
 		</properties>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>ExportForecasts</moduleInstanceId>
 	</activity>
 	<activity>
 		<properties>
-			<string key="LOCATION" value="SUB_01"></string>
+			<string key="LOCATION" value="SUB_MOD1"></string>
 		</properties>
 		<runIndependent>false</runIndependent>
 		<moduleInstanceId>ReportForecasts</moduleInstanceId>
 	</activity>
 	<activity>
 		<properties>
-			<string key="LOCATION" value="SUB_02"></string>
+			<string key="LOCATION" value="SUB_MOD2"></string>
 		</properties>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>ExportForecasts</moduleInstanceId>
 	</activity>
 	<activity>
 		<properties>
-			<string key="LOCATION" value="SUB_02"></string>
+			<string key="LOCATION" value="SUB_MOD2"></string>
 		</properties>
 		<runIndependent>false</runIndependent>
 		<moduleInstanceId>ReportForecasts</moduleInstanceId>

@@ -132,4 +132,8 @@
 		<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
 		<moduleConfigFileName>PreprocessForecast</moduleConfigFileName>
 	</activity>
+	<activity>
+		<runIndependent>false</runIndependent>		
+		<moduleInstanceId>PosprocessGEFS</moduleInstanceId>
+	</activity>
 </workflow>

@@ -62,6 +62,10 @@
 			<workflowId>PreprocessFor</workflowId>
 			<localRun>false</localRun>
 		</node>
+		<node id="ReportFor" name="Reporte">
+			<workflowId>ReportForecasts</workflowId>
+			<localRun>false</localRun>
+		</node>
 	</nodes>
 	<nodes id="HBV_Model" name="Modelo HBV - Lempa Alta">
 		<nodes id="WithoutDA" name="Sin asimilación">

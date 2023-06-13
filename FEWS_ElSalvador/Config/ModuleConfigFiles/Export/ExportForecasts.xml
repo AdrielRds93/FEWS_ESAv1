@@ -12,48 +12,53 @@
 			</exportTimeZone>
 		</general>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<moduleInstanceId>PosprocessGEFS</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>P.pro.acc.GEFS.Perc000</parameterId>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>perc00</qualifierId>
 			<locationId>$LOCATION$</locationId>
-			<timeSeriesType>external forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<moduleInstanceId>PosprocessGEFS</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>P.pro.acc.GEFS.Perc020</parameterId>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>perc20</qualifierId>
 			<locationId>$LOCATION$</locationId>
-			<timeSeriesType>external forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<moduleInstanceId>PosprocessGEFS</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>P.pro.acc.GEFS.Perc050</parameterId>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>perc50</qualifierId>
 			<locationId>$LOCATION$</locationId>
-			<timeSeriesType>external forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<moduleInstanceId>PosprocessGEFS</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>P.pro.acc.GEFS.Perc080</parameterId>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>perc80</qualifierId>
 			<locationId>$LOCATION$</locationId>
-			<timeSeriesType>external forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<moduleInstanceId>PosprocessGEFS</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>P.pro.acc.GEFS.Perc100</parameterId>
+			<parameterId>P.pro.acc</parameterId>
+			<qualifierId>perc100</qualifierId>
 			<locationId>$LOCATION$</locationId>
-			<timeSeriesType>external forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</export>
@@ -71,12 +76,13 @@
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessGFS</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>P.pro</parameterId>
+			<parameterId>P.pro.acc</parameterId>
 			<qualifierId>GFS</qualifierId>
 			<locationId>$LOCATION$</locationId>
-			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</export>
+
 </timeSeriesExportRun>

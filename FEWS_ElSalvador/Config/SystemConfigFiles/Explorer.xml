@@ -194,7 +194,7 @@
 				<geoDatum>WGS 1984</geoDatum>
 				<visible>false</visible>
 				<toolTip>%BasinName%</toolTip>
-				<lineColor>aquamarine2</lineColor>
+				<lineColor>red</lineColor>
 				<fillRgbColor>FFFFFF</fillRgbColor>
 				<opaquenessPercentage>20</opaquenessPercentage>
 			</esriShapeLayer>

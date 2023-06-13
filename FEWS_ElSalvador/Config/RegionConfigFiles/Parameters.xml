@@ -32,44 +32,6 @@
 			<shortName>P.pro.acc</shortName>
 		</parameter>
 	</parameterGroup>
-	<parameterGroup id="Precipitación acumulada">
-		<parameterType>accumulative</parameterType>
-		<unit>mm</unit>
-		<valueResolution>0.1</valueResolution>
-		<parameter id="P.pro.acc.GEFS.Perc000" name="P.pro.acc.GEFS.Perc000">
-			<shortName>P.pro.acc.GEFS.Perc000</shortName>
-		</parameter>
-		<parameter id="P.pro.acc.GEFS.Perc010" name="P.pro.acc.GEFS.Perc010">
-			<shortName>P.pro.acc.GEFS.Perc010</shortName>
-		</parameter>
-		<parameter id="P.pro.acc.GEFS.Perc020" name="P.pro.acc.GEFS.Perc020">
-			<shortName>P.pro.acc.GEFS.Perc020</shortName>
-		</parameter>
-		<parameter id="P.pro.acc.GEFS.Perc025" name="P.pro.acc.GEFS.Perc025">
-			<shortName>P.pro.acc.GEFS.Perc025</shortName>
-		</parameter>
-		<parameter id="P.pro.acc.GEFS.Perc033" name="P.pro.acc.GEFS.Perc033">
-			<shortName>P.pro.acc.GEFS.Perc033</shortName>
-		</parameter>
-		<parameter id="P.pro.acc.GEFS.Perc050" name="P.pro.acc.GEFS.Perc050">
-			<shortName>P.pro.acc.GEFS.Perc050</shortName>
-		</parameter>
-		<parameter id="P.pro.acc.GEFS.Perc067" name="P.pro.acc.GEFS.Perc067">
-			<shortName>P.pro.acc.GEFS.Perc067</shortName>
-		</parameter>
-		<parameter id="P.pro.acc.GEFS.Perc075" name="P.pro.acc.GEFS.Perc075">
-			<shortName>P.pro.acc.GEFS.Perc075</shortName>
-		</parameter>
-		<parameter id="P.pro.acc.GEFS.Perc080" name="P.pro.acc.GEFS.Perc080">
-			<shortName>P.pro.acc.GEFS.Perc080</shortName>
-		</parameter>
-		<parameter id="P.pro.acc.GEFS.Perc090" name="P.pro.acc.GEFS.Perc090">
-			<shortName>P.pro.acc.GEFS.Perc090</shortName>
-		</parameter>
-		<parameter id="P.pro.acc.GEFS.Perc100" name="P.pro.acc.GEFS.Perc100">
-			<shortName>P.pro.acc.GEFS.Perc100</shortName>
-		</parameter>
-	</parameterGroup>
 	<parameterGroup id="Evapotranspiración potencial">
 		<parameterType>instantaneous</parameterType>
 		<unit>mm</unit>

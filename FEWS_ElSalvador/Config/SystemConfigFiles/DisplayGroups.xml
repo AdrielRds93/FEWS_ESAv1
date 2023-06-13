@@ -855,7 +855,7 @@
 	<displayGroup name="Pronóstico Meteorológico">
 		<displayGroup name=" ">
 			<locationLoop>
-				<locationSetId>SubbasinLempa</locationSetId>
+				<locationSetId>Basins</locationSetId>
 			</locationLoop>
 			<display name="Promedios Cuenca">
 				<plotId>Subbasin_Template</plotId>
@@ -863,14 +863,6 @@
 		</displayGroup>
 	</displayGroup>
 	<displayGroup name="Pronóstico Hidrológico">
-		<display name="SUB_MOD1">
-			<locationId>SUB_MOD1</locationId>
-			<plotId>Subbasin_Template</plotId>
-		</display>
-		<display name="SUB_MOD2">
-			<locationId>SUB_MOD2</locationId>
-			<plotId>Subbasin_Template</plotId>
-		</display>
 		<display name="Guajoyo">
 			<subplot>
 				<line>

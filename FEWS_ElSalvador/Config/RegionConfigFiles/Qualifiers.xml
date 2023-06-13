@@ -10,4 +10,13 @@
 	<qualifier id="q1" name="q1"/>
 	<qualifier id="q2" name="q2"/>
 	<qualifier id="q3" name="q3"/>
+	<qualifier id="perc00" name="perc00"/>
+	<qualifier id="perc10" name="perc10"/>
+	<qualifier id="perc20" name="perc20"/>
+	<qualifier id="perc33" name="perc33"/>
+	<qualifier id="perc50" name="perc50"/>
+	<qualifier id="perc67" name="perc67"/>
+	<qualifier id="perc80" name="perc80"/>
+	<qualifier id="perc90" name="perc90"/>
+	<qualifier id="perc100" name="perc100"/>
 </qualifiers>
