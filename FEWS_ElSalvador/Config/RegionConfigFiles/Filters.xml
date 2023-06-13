@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <filters version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/filters.xsd">
-	<filter id="Estaciones">
+	<filter id="Observaciones">
 		<child foreignKey="Convencionales"/>
 		<child foreignKey="Telemétricas"/>
 		<child foreignKey="PresasCEL"/>
 	</filter>
-	<filter id="Cuencas">
-		<child foreignKey="Observaciones"/>
+	<filter id="Promedio Cuencas">
+		<child foreignKey="Climatología"/>
+		<child foreignKey="Estaciones"/>
+		<child foreignKey="GPM"/>
 		<child foreignKey="Pronóstico"/>
 	</filter>
 	<filter id="Simulaciones">
@@ -16,6 +18,18 @@
 		<child foreignKey="LempaAlta_HBV_entradas"/>
 		<child foreignKey="LempaAlta_HBV_sinDA"/>
 		<child foreignKey="LempaAlta_HBV_conDA"/>
+	</filter>
+	<filter id="Climatología">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessClim</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>E.sim</parameterId>
+			<locationSetId>SubbasinLempa_model</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>	
 	</filter>
 	<filter id="LempaAlta_HBV_entradas" name="entradas">
 		<timeSeriesSet>
@@ -83,6 +97,16 @@
 		<timeSeriesSet>
 			<moduleInstanceId>ImportCEL</moduleInstanceId>
 			<valueType>scalar</valueType>
+			<parameterId>Q.pro</parameterId>
+			<locationSetId>CEL_Presas</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCEL</moduleInstanceId>
+			<valueType>scalar</valueType>
 			<parameterId>H.obs</parameterId>
 			<locationSetId>CEL_Presas</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
@@ -91,7 +115,7 @@
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</filter>
-	<filter id="Observaciones">
+	<filter id="Estaciones">
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessObs</moduleInstanceId>
 			<valueType>scalar</valueType>
@@ -107,6 +131,18 @@
 			<valueType>scalar</valueType>
 			<parameterId>T.obs</parameterId>
 			<locationSetId>Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-240" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="GPM">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGPM</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>SubbasinLempa</locationSetId>
 			<timeSeriesType>simulated historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<relativeViewPeriod unit="hour" start="-240" end="0"/>

@@ -21,18 +21,19 @@ datesGFS = pd.to_datetime(dataGFS.DateTime, format='%Y-%m-%d %H:%M:%S')
 
 #initialize plots and number of steps to display in GEFS
 fig, ax = plt.subplots(1,1, figsize=(6,4))
-lastvalue = 3*10
+valuesGEFS = len(dataGEFS)
+valuesGFS = len(dataGFS)
 
 #precipitation
-ax.fill_between(datesGEFS[0:lastvalue], dataGEFS.P000[0:lastvalue], dataGEFS.P100[0:lastvalue], facecolor='blue', alpha=0.2, label='min/max')
-ax.fill_between(datesGEFS[0:lastvalue], dataGEFS.P080[0:lastvalue], dataGEFS.P020[0:lastvalue], facecolor='blue', alpha=0.5, label='20/80')
-ax.plot(datesGEFS[0:lastvalue], dataGEFS.P050[0:lastvalue], color='blue', label='average')
-#ax.bar(datesGFS[0:lastvalue], dataGFS.PGFS[0:lastvalue], color='darkblue', alpha=0.8, width=0.0415, align='edge', label='GFS')
+ax.fill_between(datesGEFS[0:valuesGEFS], dataGEFS.P000[0:valuesGEFS], dataGEFS.P100[0:valuesGEFS], facecolor='blue', alpha=0.2, label='min/max')
+ax.fill_between(datesGEFS[0:valuesGEFS], dataGEFS.P020[0:valuesGEFS], dataGEFS.P080[0:valuesGEFS], facecolor='blue', alpha=0.5, label='20/80')
+ax.plot(datesGEFS[0:valuesGEFS], dataGEFS.P050[0:valuesGEFS], color='blue', label='average')
+ax.plot(datesGFS[0:valuesGFS], dataGFS.PGFS[0:valuesGFS], color='red', alpha=0.8, label='GFS')
 
 #aspect for all subplots
-fontsize = 8
-date_form = DateFormatter("%d-%m")
-ax.set_ylabel('Precipitation [mm]', fontsize=fontsize)
+fontsize = 10
+date_form = DateFormatter("%d-%b")
+ax.set_ylabel('Precipitación [mm]', fontsize=fontsize)
 ax.grid(linestyle='--')
 ax.xaxis.set_major_formatter(date_form)
 ax.legend(loc='upper left', fontsize=fontsize)

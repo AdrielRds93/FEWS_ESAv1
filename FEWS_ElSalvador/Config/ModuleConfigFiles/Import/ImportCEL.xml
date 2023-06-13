@@ -31,4 +31,26 @@
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</import>
+	<import>
+		<general>
+			<description>Importar pronóstico CEL</description>
+			<importTypeStandard>CSV</importTypeStandard>
+			<folder>$IMPORT_FOLDER$/Datos/CEL Pronostico</folder>
+			<idMapId>IdImportCEL</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneOffset>-06:00</timeZoneOffset>
+			</importTimeZone>
+			<dataFeedId>CEL</dataFeedId>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCEL</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.pro</parameterId>
+			<locationSetId>CEL_Presas</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
 </timeSeriesImportRun>
