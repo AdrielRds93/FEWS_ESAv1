@@ -8,7 +8,7 @@
 			<fileNameObservationDateTimePattern>'3B-HHR-E.MS.MRG.3IMERG.'yyyyMMdd'-S'HHmmss'-E?'</fileNameObservationDateTimePattern>
 			<user>cphsv</user>
 			<password>Inundaciones2020</password>
-			<relativeViewPeriod unit="hour" start="-18" end="0" startOverrulable="true" endOverrulable="true"/>
+			<relativeViewPeriod unit="hour" start="-48" end="0" startOverrulable="true" endOverrulable="true"/>
 			<idMapId>IdImportGPM</idMapId>
 			<unitConversionsId>ImportUnitConversions</unitConversionsId>
 			<missingValue>-999</missingValue>
