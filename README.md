@@ -6,4 +6,5 @@ Este repositorio está pensado como plataforma para compartir información y par
 
 La primera versión del sistema está basada en la configuración actual pero obsoleta de la plataforma. 
 
-última actualización: 7 de febrero del 2022
+última actualización: Junio 2023
+Actualizacion previa a final
